@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L’Almanach des Grands Officiers — Officine Universelle Buly</title>
+  <style>
+    :root {
+      --bg-color: #fbf9f5;
+      --text-color: #1a1a1a;
+      --accent-color: #8c6d3f;
+      --border-color: #2c2c2c;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Georgia', 'Times New Roman', serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      border-bottom: 3px double var(--border-color);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-style: italic;
+      color: var(--accent-color);
+      font-size: 1.1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+      border-bottom: 1px solid var(--border-color);
+      background-color: #f4efe6;
+    }
+
+    nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      border: 1px solid #dcd5c7;
+      padding: 25px;
+      background-color: #fffdf9;
+    }
+
+    h2 {
+      border-bottom: 1px solid var(--accent-color);
+      padding-bottom: 8px;
+      color: var(--accent-color);
+      font-size: 1.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2ebd9;
+    }
+
+    .btn-download {
+      display: inline-block;
+      background-color: var(--text-color);
+      color: #fff;
+      padding: 8px 15px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-top: 10px;
+    }
+
+    .btn-download:hover {
+      background-color: var(--accent-color);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>L’Almanach des Grands Officiers</h1>
+    <p class="subtitle">Recueil des savoirs, usages et mémorandies à l’usage des Officers de l’Officine Universelle Buly</p>
+  </header>
+
+  <nav>
+    <a href="#grooming">Grooming</a>
+    <a href="#organigramme">Officines</a>
+    <a href="#calendrier">Temporal</a>
+    <a href="#memorandies">Mémorandies</a>
+  </nav>
+
+  <main>
+    <!-- GROOMING -->
+    <section id="grooming">
+      <h2>I. L’Art de la Tenue & du Chignon</h2>
+      <p>L’attache des cheveux doit refléter la précision de notre maison. Le chignon d’officière se réalise en trois mouvements à l'aide de nos accessoires d'acétate et peignes en buis.</p>
+      <ul>
+        <li><b>Étape 1 :</b> Lisser la chevelure vers l'arrière avec le peigne.</li>
+        <li><b>Étape 2 :</b> Tordre la masse capillaire en nuque basse.</li>
+        <li><b>Étape 3 :</b> Planter la barrette d'écaille de biais pour verrouiller le chignon.</li>
+      </ul>
+    </section>
+
+    <!-- ORGANIGRAMME -->
+    <section id="organigramme">
+      <h2>II. La Carte des Officines & Capitaines</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Ville</th>
+            <th>Officine</th>
+            <th>Directeur / Capitaine</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Paris</td>
+            <td>Rue Bonaparte</td>
+            <td>Éléonore de V.</td>
+          </tr>
+          <tr>
+            <td>Tokyo</td>
+            <td>Aoyama</td>
+            <td>Kenji S.</td>
+          </tr>
+          <tr>
+            <td>New York</td>
+            <td>Madison Avenue</td>
+            <td>Clara R.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- MEMORANDIES / FICHES -->
+    <section id="memorandies">
+      <h2>III. La Mémorandie des Produits</h2>
+      <article>
+        <h3>L’Eau Triple</h3>
+        <p>Parfum à l'eau sans alcool. Agiter le flacon avant la vaporisation. Ne sèche pas la peau ni les cheveux.</p>
+        <a href="#" class="btn-download">📄 Télécharger la fiche Mémo (PDF)</a>
+      </article>
+    </section>
+  </main>
+
+</body>
+</html>
