@@ -7,27 +7,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Le Bleu Empire remplace le bordeaux */
-            --primary: #15294a; 
-            --primary-light: #223f6e;
-            --gold: #c5a059;
-            --gold-light: #e2c889;
-            --parchment: #fbf8f2;
-            --parchment-dark: #f2ebd9;
-            --ink: #221c19;
-            --border-color: #d4c5a9;
+            var(--primary): #15294a; 
+            var(--primary-light): #223f6e;
+            var(--gold): #c5a059;
+            var(--gold-light): #e2c889;
+            var(--parchment): #fbf8f2;
+            var(--parchment-dark): #f2ebd9;
+            var(--ink): #221c19;
+            var(--border-color): #d4c5a9;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Playfair Display', Georgia, serif;
-            background-color: var(--parchment);
-            color: var(--ink);
+            background-color: #fbf8f2;
+            color: #221c19;
             line-height: 1.6;
             padding-bottom: 60px;
         }
@@ -35,34 +30,56 @@
         /* HEADER */
         header {
             background-color: #fff;
-            border-bottom: 3px double var(--gold);
-            padding: 25px 20px 18px;
+            border-bottom: 3px double #c5a059;
+            padding: 35px 20px 25px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            position: relative;
         }
 
-        .header-logo {
-            max-width: 460px;
-            width: 100%;
-            height: auto;
-            margin: 0 auto 8px;
-            display: block;
+        .header-logo-text {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.8rem;
+            font-style: italic;
+            font-weight: 700;
+            color: #15294a;
+            margin-bottom: 5px;
+        }
+
+        .header-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 5px;
+            color: #223f6e;
+            text-transform: uppercase;
+            font-weight: 600;
         }
 
         .header-title {
             font-family: 'Cinzel', serif;
-            font-size: 1.15rem;
-            letter-spacing: 4px;
-            color: var(--primary);
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            color: #15294a;
             text-transform: uppercase;
-            margin-top: 8px;
+            margin-top: 25px;
             font-weight: 700;
+            position: relative;
+            display: inline-block;
         }
+        
+        .header-title::before, .header-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 1px;
+            background: #c5a059;
+        }
+        .header-title::before { left: -55px; }
+        .header-title::after { right: -55px; }
 
         /* NAVIGATION */
         nav {
-            background-color: var(--primary);
+            background-color: #15294a;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -77,7 +94,7 @@
         .nav-btn {
             background: transparent;
             border: 1px solid transparent;
-            color: var(--parchment);
+            color: #fbf8f2;
             font-family: 'Cinzel', serif;
             font-size: 0.85rem;
             padding: 10px 18px;
@@ -90,446 +107,103 @@
 
         .nav-btn:hover {
             background-color: rgba(197, 160, 89, 0.2);
-            color: var(--gold-light);
-            border-color: var(--gold);
+            color: #e2c889;
         }
 
         .nav-btn.active {
-            background-color: var(--gold);
-            color: var(--primary);
+            background-color: #c5a059;
+            color: #15294a;
             font-weight: 700;
-            border-color: var(--gold-light);
         }
 
         /* CONTAINER */
-        .container {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        /* SECTIONS */
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+        .tab-content { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
         .section-title {
             text-align: center;
             font-family: 'Cinzel', serif;
-            color: var(--primary);
+            color: #15294a;
             font-size: 2.2rem;
             margin-bottom: 10px;
-            position: relative;
         }
-
         .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 2px;
-            background: var(--gold);
-            margin: 12px auto 25px;
+            content: ''; display: block; width: 80px; height: 2px; background: #c5a059; margin: 12px auto 25px;
         }
-
-        .section-desc {
-            text-align: center;
-            font-style: italic;
-            max-width: 700px;
-            margin: 0 auto 35px;
-            color: #555;
-            font-size: 1.1rem;
-        }
-
-        /* CARDS & GRIDS */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
+        .section-desc { text-align: center; font-style: italic; max-width: 700px; margin: 0 auto 35px; color: #555; font-size: 1.1rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 
         /* HISTOIRE */
         .history-wrapper {
-            background: #fff;
-            border: 1px solid var(--border-color);
-            padding: 35px;
-            border-radius: 4px;
-            margin-bottom: 30px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: center;
+            background: #fff; border: 1px solid #d4c5a9; padding: 35px; border-radius: 4px;
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center;
         }
-
-        @media (max-width: 768px) {
-            .history-wrapper { grid-template-columns: 1fr; }
-        }
-
-        .history-text h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .history-text p {
-            margin-bottom: 15px;
-            font-size: 1rem;
-            text-align: justify;
-        }
+        @media (max-width: 800px) { .history-wrapper { grid-template-columns: 1fr; } }
+        .history-text h3 { font-family: 'Cinzel', serif; color: #15294a; font-size: 1.5rem; margin-bottom: 15px; }
+        .history-text p { margin-bottom: 15px; font-size: 1rem; text-align: justify; }
 
         /* GROOMING TUTOS */
-        .tuto-card {
-            background: #fff;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
-
-        .tuto-title {
-            font-family: 'Cinzel', serif;
-            color: var(--primary);
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .tuto-steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .tuto-steps { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        .step-box {
-            background: var(--parchment);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 15px;
-            text-align: center;
-        }
-
-        .step-num {
-            display: inline-block;
-            width: 28px;
-            height: 28px;
-            line-height: 28px;
-            background: var(--primary);
-            color: #fff;
-            border-radius: 50%;
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-
-        .step-svg {
-            width: 100%;
-            height: 120px;
-            margin: 10px 0;
-        }
-
-        .step-text {
-            font-size: 0.9rem;
-            color: #333;
-            font-weight: 500;
-        }
+        .tuto-card { background: #fff; border: 1px solid #d4c5a9; border-radius: 4px; padding: 25px; margin-bottom: 30px; }
+        .tuto-title { font-family: 'Cinzel', serif; color: #15294a; font-size: 1.4rem; margin-bottom: 20px; text-align: center; }
+        .tuto-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        @media (max-width: 768px) { .tuto-steps { grid-template-columns: repeat(2, 1fr); } }
+        .step-box { background: #fbf8f2; border: 1px solid #d4c5a9; border-radius: 6px; padding: 15px; text-align: center; }
+        .step-num { display: inline-block; width: 28px; height: 28px; line-height: 28px; background: #15294a; color: #fff; border-radius: 50%; font-family: 'Cinzel', serif; font-size: 0.9rem; margin-bottom: 10px; }
+        .step-svg { width: 100%; height: 100px; margin: 10px 0; }
+        .step-text { font-size: 0.9rem; color: #333; font-weight: 500; }
 
         /* FICHES PRODUITS */
         .product-card {
-            background: #fff;
-            border: 2px solid var(--border-color);
-            border-radius: 6px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
+            background: #fff; border: 2px solid #d4c5a9; border-radius: 6px; overflow: hidden;
+            display: flex; flex-direction: column; position: relative;
         }
-
-        .product-header {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .product-header.pommade { background: #eaf1f8; }
-        .product-header.eau { background: #fbf5e8; }
-        .product-header.huile { background: #fbeee8; }
-
-        .product-svg {
-            height: 160px;
-            margin: 0 auto;
-            display: block;
-        }
-
-        .product-body {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .product-name {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-
-        .product-sub {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .feature-item {
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .feature-label {
-            font-family: 'Cinzel', serif;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
-            color: var(--primary);
-            text-transform: uppercase;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 3px;
-        }
-
-        .quote-box {
-            background: var(--parchment);
-            border-left: 3px solid var(--gold);
-            padding: 12px;
-            font-style: italic;
-            font-size: 0.9rem;
-            margin: 15px 0 20px;
-            color: #444;
-        }
-
+        .product-header { padding: 30px 20px; text-align: center; border-bottom: 1px solid #d4c5a9; background: #fff; }
+        .product-svg { height: 220px; margin: 0 auto; display: block; filter: drop-shadow(5px 10px 10px rgba(0,0,0,0.15)); }
+        .product-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-name { font-family: 'Cinzel', serif; font-size: 1.5rem; color: #15294a; margin-bottom: 5px; }
+        .product-sub { font-style: italic; color: #666; margin-bottom: 20px; font-size: 0.95rem; }
+        .feature-item { margin-bottom: 15px; font-size: 0.95rem; }
+        .feature-label { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 1px; color: #15294a; text-transform: uppercase; font-weight: bold; display: block; margin-bottom: 3px; }
+        .quote-box { background: #fbf8f2; border-left: 3px solid #c5a059; padding: 12px; font-style: italic; font-size: 0.9rem; margin: 15px 0 20px; color: #444; }
+        
         .btn-download {
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            padding: 12px 20px;
-            font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            cursor: pointer;
-            width: 100%;
-            border-radius: 3px;
-            transition: background 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            background: #15294a; color: #fff; border: none; padding: 12px 20px; font-family: 'Cinzel', serif; font-size: 0.85rem;
+            letter-spacing: 1px; cursor: pointer; width: 100%; border-radius: 3px; transition: background 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top:15px;
         }
-
-        .btn-download:hover {
-            background: var(--gold);
-            color: var(--primary);
-        }
+        .btn-download:hover { background: #c5a059; color: #15294a; font-weight:bold; }
 
         /* DIRIGEANTS & BOUTIQUES */
-        .person-card {
-            text-align: center;
-            padding: 20px;
-            background: #fff;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-        }
+        .person-card { text-align: center; padding: 20px; background: #fff; border: 1px solid #d4c5a9; border-radius: 4px; }
+        .person-avatar { width: 110px; height: 110px; border-radius: 50%; background: #f2ebd9; border: 2px solid #c5a059; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .person-name { font-family: 'Cinzel', serif; font-size: 1.2rem; color: #15294a; margin-bottom: 4px; font-weight:bold; }
+        .person-role { font-style: italic; color: #666; font-size: 0.9rem; margin-bottom: 10px; }
 
-        .person-avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: var(--parchment-dark);
-            border: 2px solid var(--gold);
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .person-name {
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 4px;
-        }
-
-        .person-role {
-            font-style: italic;
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-
-        .boutique-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .boutique-item {
-            background: var(--parchment);
-            border: 1px dashed var(--border-color);
-            padding: 15px;
-            border-radius: 4px;
-        }
-
-        .boutique-city {
-            font-family: 'Cinzel', serif;
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
+        .boutique-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 25px; }
+        .boutique-item { background: #fff; border: 1px solid #d4c5a9; border-left: 4px solid #15294a; padding: 15px; border-radius: 4px; }
+        .boutique-city { font-family: 'Cinzel', serif; color: #15294a; font-weight: bold; font-size: 1.05rem; margin-bottom: 5px; }
+        .boutique-director { font-size: 0.95rem; color: #444; }
 
         /* TEMPORAL */
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        @media (max-width: 900px) {
-            .calendar-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        .month-box {
-            background: #fff;
-            border: 2px solid var(--border-color);
-            border-radius: 6px;
-            padding: 20px 15px;
-            text-align: center;
-            min-height: 140px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .month-box.highlight {
-            border-color: var(--primary);
-            background: #f4f7fb;
-        }
-
-        .month-box.gold-highlight {
-            border-color: var(--gold);
-            background: #fdfbf3;
-        }
-
-        .month-name {
-            font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            color: #888;
-            text-transform: uppercase;
-        }
-
-        .month-event {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin: 10px 0;
-        }
-
-        /* ARBRE A VOEUX */
-        .tree-container {
-            background: #fff;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 30px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: center;
-        }
-
-        @media (max-width: 850px) {
-            .tree-container { grid-template-columns: 1fr; }
-        }
-
-        .wish-form label {
-            display: block;
-            font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
-            color: var(--primary);
-            margin: 12px 0 5px;
-            text-transform: uppercase;
-        }
-
-        .wish-form input, .wish-form select, .wish-form textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid var(--border-color);
-            border-radius: 3px;
-            font-family: 'Playfair Display', serif;
-            font-size: 0.95rem;
-            background: var(--parchment);
-        }
-
-        .wish-list {
-            margin-top: 25px;
-            max-height: 300px;
-            overflow-y: auto;
-            border-top: 1px solid var(--border-color);
-            padding-top: 15px;
-        }
-
-        .wish-item {
-            background: var(--parchment);
-            border-left: 3px solid var(--gold);
-            padding: 10px 15px;
-            margin-bottom: 10px;
-            border-radius: 2px;
-            font-size: 0.9rem;
-        }
-
-        .wish-author {
-            font-weight: bold;
-            color: var(--primary);
-            font-size: 0.8rem;
-            font-family: 'Cinzel', serif;
-        }
+        .calendar-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        @media (max-width: 900px) { .calendar-grid { grid-template-columns: repeat(2, 1fr); } }
+        .month-box { background: #fff; border: 2px solid #d4c5a9; border-radius: 6px; padding: 20px 15px; text-align: center; min-height: 140px; display: flex; flex-direction: column; justify-content: flex-start; }
+        .month-box.highlight { border-color: #15294a; background: #f4f7fb; }
+        .month-box.gold-highlight { border-color: #c5a059; background: #fdfbf3; }
+        .month-name { font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 2px; color: #888; text-transform: uppercase; margin-bottom: 15px; }
+        .month-event { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #15294a; font-weight: 600; line-height: 1.3; }
+        .cal-icon { font-size: 1.8rem; margin-bottom: 5px; display: block; }
 
         /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 30px 20px 10px;
-            border-top: 1px solid var(--border-color);
-            margin-top: 50px;
-            font-size: 0.85rem;
-            color: #777;
-        }
+        footer { text-align: center; padding: 30px 20px 10px; border-top: 1px solid #d4c5a9; margin-top: 50px; font-size: 0.85rem; color: #777; }
     </style>
 </head>
 <body>
 
     <header>
-        <!-- Logo Vectoriel Officiel Buly (Passé en Bleu) -->
-        <svg class="header-logo" viewBox="0 0 520 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M45.2 38.5C40.1 38.5 35.8 42.1 35.8 48.2C35.8 55.4 41.5 61.2 49.8 61.2C58.4 61.2 65.1 54.1 65.1 44.8C65.1 33.2 53.4 24.1 38.2 24.1C18.1 24.1 4 38.9 4 58.1C4 71.3 14.2 80 28.5 80C46.8 80 62.5 65.8 68.2 52.1C68.9 50.4 68.1 49.3 66.5 49.3C65.6 49.3 64.7 49.8 64.1 50.8C59.2 62.1 45.6 74.2 29.2 74.2C17.2 74.2 9.6 66.9 9.6 56.7C9.6 41.3 22.1 29.2 38.2 29.2C50.8 29.2 60.1 36.8 60.1 45.8C60.1 52.3 55.1 56.6 49.1 56.6C43.8 56.6 40.1 52.8 40.1 48.3C40.1 44.5 42.6 42.2 45.2 38.5Z" fill="#15294a"/>
-            <text x="260" y="44" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-style="italic" font-size="34" fill="#15294a" font-weight="bold">Officine Universelle Buly</text>
-            <text x="260" y="66" text-anchor="middle" font-family="'Cinzel', serif" font-size="10" fill="#223f6e" letter-spacing="4">FONDÉE EN 1803 • PARIS</text>
-        </svg>
+        <div class="header-logo-text">Officine Universelle Buly</div>
+        <div class="header-subtitle">Fondée en 1803 • Paris</div>
         <div class="header-title">L'Almanach des Grands Officiers</div>
     </header>
 
@@ -539,7 +213,6 @@
         <button class="nav-btn" onclick="switchTab(event, 'fiches')">Fiches Produits</button>
         <button class="nav-btn" onclick="switchTab(event, 'dirigeants')">Dirigeants & Boutiques</button>
         <button class="nav-btn" onclick="switchTab(event, 'temporal')">Le Temporal</button>
-        <button class="nav-btn" onclick="switchTab(event, 'arbre')">Arbre à Vœux</button>
     </nav>
 
     <div class="container">
@@ -553,21 +226,83 @@
                 <div class="history-text">
                     <h3>L'Héritage de Jean-Vincent Bully</h3>
                     <p>Fondée en 1803 par le maître parfumeur et distillateur Jean-Vincent Bully au cœur de Paris, l'Officine s'est rapidement imposée par ses inventions cosmétiques révolutionnaires, notamment le célèbre Vinaigre de Toilette breveté qui lui valut une renommée européenne.</p>
-                    <p>Célèbre inspiration du roman <em>César Birotteau</em> d'Honoré de Balzac, la maison a été réinventée avec passion en 2014 par Ramdane Touhami et Victoire de Taillac, conservant le savoir-faire officinal, la calligraphie sur mesure et l'esthétique du XIXe siècle.</p>
+                    <p>Célèbre inspiration du roman <em>César Birotteau</em> d'Honoré de Balzac, la maison a été réinventée avec passion en 2014 par Ramdane Touhami et Victoire de Taillac, conservant le savoir-faire officinal, la calligraphie sur mesure et l'esthétique luxueuse du XIXe siècle.</p>
                 </div>
                 <div>
-                    <!-- SVG Boutique Bonaparte Illustration en Bleu -->
-                    <svg viewBox="0 0 400 300" style="width:100%; height:auto; border:1px solid #d4c5a9; background:#fff; padding:10px; border-radius:4px;">
-                        <rect x="10" y="10" width="380" height="280" fill="#fbf8f2" stroke="#15294a" stroke-width="2"/>
-                        <rect x="30" y="30" width="340" height="60" fill="#15294a"/>
-                        <text x="200" y="65" text-anchor="middle" font-family="'Cinzel', serif" font-size="18" fill="#e2c889" font-weight="bold">OFFICINE UNIVERSELLE BULY</text>
-                        <rect x="50" y="110" width="80" height="150" fill="#fff" stroke="#15294a" stroke-width="2"/>
-                        <rect x="160" y="110" width="80" height="150" fill="#15294a"/>
-                        <circle cx="225" cy="185" r="4" fill="#e2c889"/>
-                        <rect x="270" y="110" width="80" height="150" fill="#fff" stroke="#15294a" stroke-width="2"/>
-                        <line x1="90" y1="110" x2="90" y2="260" stroke="#15294a"/>
-                        <line x1="310" y1="110" x2="310" y2="260" stroke="#15294a"/>
-                        <text x="200" y="285" text-anchor="middle" font-family="'Playfair Display', serif" font-size="12" font-style="italic" fill="#15294a">6, Rue Bonaparte — Paris VIe</text>
+                    <!-- Vectorisation Fidèle Boutique Bonaparte -->
+                    <svg viewBox="0 0 500 400" style="width:100%; height:auto; border:2px solid #15294a; border-radius:4px; background:#fff;">
+                        <!-- Fond de mur -->
+                        <rect x="0" y="0" width="500" height="280" fill="#e4dec7"/>
+                        <!-- Carrelage Sol (Losanges Bleus/Blancs) -->
+                        <rect x="0" y="280" width="500" height="120" fill="#69939a"/>
+                        <path d="M0 290 L500 290 M0 310 L500 310 M0 330 L500 330 M0 350 L500 350 M0 370 L500 370 M0 390 L500 390" stroke="#fff" stroke-width="2" opacity="0.5"/>
+                        <path d="M-100 400 L300 280 M-50 400 L350 280 M0 400 L400 280 M50 400 L450 280 M100 400 L500 280 M150 400 L550 280" stroke="#fff" stroke-width="2" opacity="0.5"/>
+                        <path d="M600 400 L200 280 M550 400 L150 280 M500 400 L100 280 M450 400 L50 280 M400 400 L0 280 M350 400 L-50 280" stroke="#fff" stroke-width="2" opacity="0.5"/>
+                        
+                        <!-- Meuble Apothicaire en Bois Massif -->
+                        <rect x="60" y="40" width="440" height="240" fill="#654321"/>
+                        <rect x="50" y="25" width="460" height="20" fill="#4a3118"/>
+                        
+                        <!-- Colonne décorative gauche -->
+                        <rect x="60" y="45" width="40" height="235" fill="#5c3a1a"/>
+                        <path d="M 60 50 Q 80 40 100 50" fill="none" stroke="#3d2611" stroke-width="3"/>
+                        
+                        <!-- Etagères hautes avec vitres -->
+                        <g fill="#4a3118">
+                            <rect x="110" y="60" width="100" height="110" rx="2"/>
+                            <rect x="220" y="60" width="100" height="110" rx="2"/>
+                            <rect x="330" y="60" width="100" height="110" rx="2"/>
+                        </g>
+                        <!-- Vitres et flacons -->
+                        <g fill="#2a3b4c" opacity="0.8">
+                            <rect x="115" y="65" width="40" height="100"/>
+                            <rect x="165" y="65" width="40" height="100"/>
+                            <rect x="225" y="65" width="90" height="100"/>
+                            <rect x="335" y="65" width="90" height="100"/>
+                        </g>
+                        <g fill="#fff" opacity="0.9">
+                            <!-- Flacons -->
+                            <rect x="230" y="80" width="10" height="15" rx="2"/><rect x="245" y="80" width="10" height="15" rx="2"/><rect x="260" y="80" width="10" height="15" rx="2"/>
+                            <rect x="230" y="110" width="10" height="15" rx="2"/><rect x="245" y="110" width="10" height="15" rx="2"/><rect x="260" y="110" width="10" height="15" rx="2"/>
+                            <rect x="340" y="80" width="10" height="15" rx="2"/><rect x="355" y="80" width="10" height="15" rx="2"/><rect x="370" y="80" width="10" height="15" rx="2"/>
+                        </g>
+
+                        <!-- Comptoir -->
+                        <rect x="50" y="180" width="450" height="10" fill="#333"/>
+                        <rect x="60" y="190" width="440" height="90" fill="#654321"/>
+                        
+                        <!-- Tiroirs du bas (Formes travaillées) -->
+                        <g fill="#4a3118" stroke="#3d2611" stroke-width="2">
+                            <!-- Bloc 1 -->
+                            <rect x="110" y="200" width="90" height="20" rx="2"/>
+                            <rect x="110" y="230" width="90" height="40" rx="10"/>
+                            <circle cx="155" cy="210" r="3" fill="#c5a059" stroke="none"/>
+                            <!-- Bloc 2 -->
+                            <rect x="210" y="200" width="90" height="20" rx="2"/>
+                            <rect x="210" y="230" width="90" height="40" rx="10"/>
+                            <circle cx="255" cy="210" r="3" fill="#c5a059" stroke="none"/>
+                            <!-- Bloc 3 -->
+                            <rect x="310" y="200" width="90" height="20" rx="2"/>
+                            <rect x="310" y="230" width="90" height="40" rx="10"/>
+                            <circle cx="355" cy="210" r="3" fill="#c5a059" stroke="none"/>
+                        </g>
+
+                        <!-- Objets sur le comptoir -->
+                        <g fill="#fff">
+                            <rect x="120" y="160" width="15" height="20" rx="1"/>
+                            <rect x="145" y="155" width="12" height="25" rx="1"/>
+                            <rect x="170" y="160" width="15" height="20" rx="1"/>
+                            <circle cx="250" cy="170" r="8"/>
+                            <circle cx="270" cy="170" r="8"/>
+                            <rect x="350" y="150" width="20" height="30" rx="3"/>
+                            <rect x="380" y="150" width="20" height="30" rx="3"/>
+                        </g>
+
+                        <!-- Porte à gauche -->
+                        <rect x="10" y="80" width="45" height="200" fill="#fff" stroke="#d4c5a9" stroke-width="4"/>
+                        <rect x="15" y="100" width="35" height="60" fill="#e4dec7" stroke="#c5a059" stroke-width="2"/>
+                        <circle cx="32" cy="130" r="10" fill="#fbf8f2"/>
+                        <rect x="15" y="170" width="35" height="60" fill="#e4dec7" stroke="#c5a059" stroke-width="2"/>
                     </svg>
                 </div>
             </div>
@@ -575,207 +310,168 @@
 
         <!-- 2. GROOMING -->
         <section id="grooming" class="tab-content">
-            <h2 class="section-title">Grooming & Maintien des Officiers</h2>
-            <p class="section-desc">Guide pas-à-pas des coiffures réglementaires pour la tenue en boutique.</p>
+            <h2 class="section-title">Grooming & Maintien</h2>
+            <p class="section-desc">Les coiffures réglementaires illustrées pour l'élégance en boutique.</p>
 
-            <div class="tuto-card">
+            <div class="tuto-card" id="card-tuto-1">
                 <h3 class="tuto-title">Le Chignon avec Barrette</h3>
                 <div class="tuto-steps">
                     <div class="step-box">
                         <span class="step-num">1</span>
                         <svg class="step-svg" viewBox="0 0 100 100">
-                            <circle cx="50" cy="35" r="22" fill="#3a2312"/>
-                            <path d="M 38 45 L 62 45 L 56 80 L 44 80 Z" fill="#3a2312"/>
-                            <rect x="42" y="55" width="16" height="8" rx="2" fill="#e2c889"/>
+                            <circle cx="50" cy="35" r="25" fill="#3a2312"/>
+                            <path d="M 35 45 L 65 45 L 56 85 L 44 85 Z" fill="#3a2312"/>
+                            <rect x="42" y="60" width="16" height="8" rx="2" fill="#c5a059"/>
                         </svg>
                         <div class="step-text">Rassemble les cheveux bas sur la nuque</div>
                     </div>
                     <div class="step-box">
                         <span class="step-num">2</span>
                         <svg class="step-svg" viewBox="0 0 100 100">
-                            <circle cx="50" cy="35" r="22" fill="#3a2312"/>
-                            <path d="M 44 45 C 52 55, 40 65, 52 80 L 46 82 C 38 67, 48 57, 40 45 Z" fill="#3a2312"/>
+                            <circle cx="50" cy="35" r="25" fill="#3a2312"/>
+                            <path d="M 44 45 C 55 60, 35 70, 52 85 L 46 87 C 35 70, 55 60, 40 45 Z" fill="#3a2312"/>
                         </svg>
                         <div class="step-text">Torsade-les en gardant la tension</div>
                     </div>
                     <div class="step-box">
                         <span class="step-num">3</span>
                         <svg class="step-svg" viewBox="0 0 100 100">
-                            <circle cx="50" cy="35" r="22" fill="#3a2312"/>
-                            <circle cx="50" cy="60" r="16" fill="#3a2312"/>
-                            <circle cx="50" cy="60" r="8" fill="#2b1a0d"/>
+                            <circle cx="50" cy="35" r="25" fill="#3a2312"/>
+                            <circle cx="50" cy="65" r="18" fill="#3a2312"/>
+                            <circle cx="50" cy="65" r="10" fill="#2b1a0d"/>
                         </svg>
                         <div class="step-text">Enroule la torsade sur elle-même</div>
                     </div>
                     <div class="step-box">
                         <span class="step-num">4</span>
                         <svg class="step-svg" viewBox="0 0 100 100">
-                            <circle cx="50" cy="35" r="22" fill="#3a2312"/>
-                            <circle cx="50" cy="60" r="16" fill="#3a2312"/>
-                            <rect x="25" y="56" width="50" height="8" rx="4" fill="#3a2312" stroke="#e2c889" stroke-width="2"/>
-                            <circle cx="90" cy="20" r="8" fill="#4caf50"/>
-                            <path d="M86 20 L89 23 L94 17" stroke="#fff" stroke-width="2" fill="none"/>
+                            <circle cx="50" cy="35" r="25" fill="#3a2312"/>
+                            <circle cx="50" cy="65" r="18" fill="#3a2312"/>
+                            <rect x="20" y="61" width="60" height="8" rx="4" fill="#15294a" stroke="#c5a059" stroke-width="1.5"/>
+                            <circle cx="85" cy="20" r="10" fill="#4caf50"/>
+                            <path d="M80 20 L83 24 L90 15" stroke="#fff" stroke-width="2" fill="none"/>
                         </svg>
-                        <div class="step-text">Clipse la barrette en travers du chignon</div>
+                        <div class="step-text">Clipse la barrette en travers</div>
                     </div>
                 </div>
-            </div>
-
-            <div class="tuto-card">
-                <h3 class="tuto-title">Le Chignon avec Pic à Cheveux</h3>
-                <div class="tuto-steps">
-                    <div class="step-box">
-                        <span class="step-num">1</span>
-                        <svg class="step-svg" viewBox="0 0 100 100">
-                            <circle cx="50" cy="35" r="22" fill="#3a2312"/>
-                            <path d="M 38 45 L 62 45 L 56 80 L 44 80 Z" fill="#3a2312"/>
-                        </svg>
-                        <div class="step-text">Rassemble les cheveux bas sur la nuque</div>
-                    </div>
-                    <div class="step-box">
-                        <span class="step-num">2</span>
-                        <svg class="step-svg" viewBox="0 0 100 100">
-                            <circle cx="50" cy="35" r="22" fill="#3a2312"/>
-                            <path d="M 44 45 C 52 55, 40 65, 52 80 L 46 82 Z" fill="#3a2312"/>
-                        </svg>
-                        <div class="step-text">Torsade-les en gardant la tension</div>
-                    </div>
-                    <div class="step-box">
-                        <span class="step-num">3</span>
-                        <svg class="step-svg" viewBox="0 0 100 100">
-                            <circle cx="50" cy="35" r="22" fill="#3a2312"/>
-                            <circle cx="50" cy="60" r="16" fill="#3a2312"/>
-                        </svg>
-                        <div class="step-text">Enroule la torsade sur elle-même</div>
-                    </div>
-                    <div class="step-box">
-                        <span class="step-num">4</span>
-                        <svg class="step-svg" viewBox="0 0 100 100">
-                            <circle cx="50" cy="35" r="22" fill="#3a2312"/>
-                            <circle cx="50" cy="60" r="16" fill="#3a2312"/>
-                            <line x1="25" y1="45" x2="75" y2="75" stroke="#e2c889" stroke-width="4" stroke-linecap="round"/>
-                            <circle cx="90" cy="20" r="8" fill="#4caf50"/>
-                            <path d="M86 20 L89 23 L94 17" stroke="#fff" stroke-width="2" fill="none"/>
-                        </svg>
-                        <div class="step-text">Insère le pic en diagonale à travers</div>
-                    </div>
-                </div>
+                <button class="btn-download" onclick="downloadHTML('card-tuto-1', 'Tutoriel_Chignon_Barrette')">
+                    📥 Télécharger ce Tutoriel
+                </button>
             </div>
         </section>
 
         <!-- 3. FICHES PRODUITS -->
         <section id="fiches" class="tab-content">
-            <h2 class="section-title">Fiches Produits & Mémos Téléchargeables</h2>
-            <p class="section-desc">Consultez et téléchargez les fiches mémo officielles de référence à conserver en boutique.</p>
+            <h2 class="section-title">Fiches Produits Mémos</h2>
+            <p class="section-desc">Générez et téléchargez la fiche officielle (avec images et design) à conserver en officine.</p>
 
             <div class="grid-3">
                 <!-- Pommade Concrète -->
-                <div class="product-card">
-                    <div class="product-header pommade">
-                        <svg class="product-svg" viewBox="0 0 100 140">
-                            <rect x="35" y="10" width="30" height="110" rx="4" fill="#1b4298"/>
-                            <rect x="42" y="120" width="16" height="12" fill="#888"/>
-                            <rect x="40" y="30" width="20" height="40" fill="#fff" rx="2"/>
-                            <path d="M 47 40 L 47 55 M 50 37 L 50 55 M 53 40 L 53 55 M 56 43 L 56 55" stroke="#1b4298" stroke-width="2"/>
+                <div class="product-card" id="card-pommade">
+                    <div class="product-header">
+                        <svg class="product-svg" viewBox="0 0 140 240">
+                            <!-- Corps du tube Bleu -->
+                            <polygon points="35,190 105,190 115,40 25,40" fill="#1b4298"/>
+                            <polygon points="35,190 105,190 100,205 40,205" fill="#1b4298"/>
+                            <!-- Rainures du bas -->
+                            <path d="M 25 40 L 115 40 M 27 43 L 113 43 M 29 46 L 111 46" stroke="#0a2a7a" stroke-width="1"/>
+                            <!-- Bouchon argenté -->
+                            <rect x="55" y="205" width="30" height="25" fill="#888" rx="2"/>
+                            <rect x="55" y="205" width="30" height="25" fill="url(#silverGrad)" rx="2" opacity="0.5"/>
+                            <path d="M 60 205 V 230 M 65 205 V 230 M 70 205 V 230 M 75 205 V 230 M 80 205 V 230" stroke="#555" stroke-width="1"/>
+                            <!-- Banderole blanche haut -->
+                            <rect x="30" y="60" width="80" height="15" fill="#fff"/>
+                            <text x="70" y="70" text-anchor="middle" font-family="'Cinzel', serif" font-size="6" fill="#1b4298" font-weight="bold">POMMADE CONCRÈTE</text>
+                            <!-- Illustration Main -->
+                            <g fill="#fbeee8" stroke="#333" stroke-width="0.8">
+                                <path d="M 55 160 L 52 110 C 52 105, 58 105, 58 110 L 60 130 L 62 100 C 62 95, 68 95, 68 100 L 70 130 L 72 102 C 72 97, 78 97, 78 102 L 80 130 L 82 115 C 82 110, 88 110, 88 115 L 85 160 Z"/>
+                                <!-- Manchette de la main -->
+                                <path d="M 53 160 L 87 160 L 89 175 L 51 175 Z" fill="#fff"/>
+                                <path d="M 51 175 L 55 180 L 60 175 L 65 180 L 70 175 L 75 180 L 80 175 L 85 180 L 89 175" fill="none" stroke="#333"/>
+                            </g>
+                            <!-- Logo blason bas -->
+                            <path d="M 55 185 L 85 185 L 70 198 Z" fill="#fff" stroke="#d32f2f" stroke-width="1.5"/>
                         </svg>
                     </div>
                     <div class="product-body">
                         <div>
-                            <h3 class="product-name">La Pommade Concrète</h3>
+                            <h3 class="product-name">Pommade Concrète</h3>
                             <div class="product-sub">Soin protecteur mains et pieds</div>
-
-                            <div class="feature-item">
-                                <span class="feature-label">Formule</span>
-                                Eau de camomille apaisante et beurre de karité d'une grande richesse.
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-label">Atout Clef</span>
-                                Répare les épidermes sollicités et protège efficacement du froid.
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-label">Rituel</span>
-                                Réchauffer une noisette de baume au creux des mains avant application.
-                            </div>
-                            <div class="quote-box">
-                                « Le baume emblématique des mains exigeantes, abrité dans son tube en aluminium à l'empreinte illustrée. »
-                            </div>
+                            <div class="feature-item"><span class="feature-label">Formule</span>Eau de camomille apaisante & beurre de karité.</div>
+                            <div class="feature-item"><span class="feature-label">Atout Clef</span>Répare les épidermes sollicités. Protège du froid.</div>
+                            <div class="quote-box">« Le baume emblématique dans son tube illustré. »</div>
                         </div>
-                        <button class="btn-download" onclick="downloadMemo('La Pommade Concrète', 'LA POMMADE CONCRÈTE\nSoin protecteur mains et pieds\n\n• FORMULE: Eau de camomille apaisante & beurre de karité.\n• ATOUT CLEF: Répare les épidermes sollicités & protège du froid.\n• RITUEL: Réchauffer une noisette au creux des mains.')">
-                            📥 Télécharger la Fiche Mémo
-                        </button>
+                        <button class="btn-download" onclick="downloadHTML('card-pommade', 'Fiche_Pommade_Concrete')">📥 Fiche au format HTML</button>
                     </div>
                 </div>
 
                 <!-- Eau Triple -->
-                <div class="product-card">
-                    <div class="product-header eau">
-                        <svg class="product-svg" viewBox="0 0 100 140">
-                            <path d="M 30 50 L 70 50 L 80 120 L 20 120 Z" fill="#fff" stroke="#c5a059" stroke-width="2"/>
-                            <circle cx="50" cy="30" r="16" fill="#c5a059"/>
-                            <circle cx="50" cy="85" r="18" fill="#e2c889"/>
-                            <text x="50" y="90" text-anchor="middle" font-family="'Cinzel', serif" font-size="14" fill="#15294a" font-weight="bold">B</text>
+                <div class="product-card" id="card-eau">
+                    <div class="product-header">
+                        <svg class="product-svg" viewBox="0 0 140 240">
+                            <!-- Bouchon Or Sphérique -->
+                            <circle cx="70" cy="55" r="22" fill="#d4af37"/>
+                            <path d="M 48 55 A 22 22 0 0 0 92 55" fill="#aa8222" opacity="0.6"/>
+                            <!-- Base du bouchon -->
+                            <rect x="52" y="75" width="36" height="12" fill="#b89020" rx="2"/>
+                            <!-- Flacon Blanc (Forme Octogonale unique) -->
+                            <polygon points="40,87 100,87 115,110 115,190 125,200 125,230 15,230 15,200 25,190 25,110" fill="#fff" stroke="#d4c5a9" stroke-width="2"/>
+                            <!-- Liseré Or -->
+                            <polygon points="43,92 97,92 110,113 110,187 120,195 120,225 20,225 20,195 30,187 30,113" fill="none" stroke="#d4af37" stroke-width="1" stroke-dasharray="2,2"/>
+                            <!-- Médaillon Or central -->
+                            <circle cx="70" cy="145" r="25" fill="#d4af37"/>
+                            <!-- Arbre/Dessin dans le médaillon -->
+                            <path d="M 70 160 L 70 135 M 60 135 Q 70 130 80 135" stroke="#fff" stroke-width="2" fill="none"/>
+                            <!-- Texte Buly -->
+                            <text x="70" y="210" text-anchor="middle" font-family="'Cinzel', serif" font-size="6" fill="#333" font-weight="bold">EAU TRIPLE</text>
                         </svg>
                     </div>
                     <div class="product-body">
                         <div>
                             <h3 class="product-name">L'Eau Triple</h3>
-                            <div class="product-sub">Parfum universel à l'eau (sans alcool)</div>
-
-                            <div class="feature-item">
-                                <span class="feature-label">Formule</span>
-                                Émulsion d'eau et d'huile aromatique unique au monde.
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-label">Atout Clef</span>
-                                Ne dessèche ni la peau ni les cheveux. Ne tache jamais les textiles.
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-label">Rituel</span>
-                                Agiter énergiquement le flacon en céramique avant chaque vaporisation.
-                            </div>
-                            <div class="quote-box">
-                                « Une fragrance d'une grande pureté qui n'agresse pas la peau mais l'enveloppe d'une aura fidèle toute la journée. »
-                            </div>
+                            <div class="product-sub">Parfum universel à l'eau</div>
+                            <div class="feature-item"><span class="feature-label">Formule</span>Émulsion d'eau et d'huile aromatique. Sans alcool.</div>
+                            <div class="feature-item"><span class="feature-label">Atout Clef</span>Ne dessèche pas la peau. Ne tache pas les textiles.</div>
+                            <div class="quote-box">« Agiter énergiquement le flacon avant vaporisation. »</div>
                         </div>
-                        <button class="btn-download" onclick="downloadMemo('L Eau Triple', 'L EAU TRIPLE\nParfum universel à l eau (sans alcool)\n\n• FORMULE: Émulsion d eau et d huile aromatique unique au monde.\n• ATOUT CLEF: Ne dessèche ni la peau ni les cheveux. Ne tache jamais les textiles.\n• RITUEL: Agiter énergiquement le flacon en céramique avant la vaporisation.')">
-                            📥 Télécharger la Fiche Mémo
-                        </button>
+                        <button class="btn-download" onclick="downloadHTML('card-eau', 'Fiche_Eau_Triple')">📥 Fiche au format HTML</button>
                     </div>
                 </div>
 
                 <!-- Huile Antique -->
-                <div class="product-card">
-                    <div class="product-header huile">
-                        <svg class="product-svg" viewBox="0 0 100 140">
-                            <path d="M 25 45 C 25 45, 50 35, 75 45 L 80 120 L 20 120 Z" fill="#fff" stroke="#15294a" stroke-width="2"/>
-                            <circle cx="50" cy="22" r="14" fill="#333"/>
-                            <rect x="35" y="60" width="30" height="45" fill="#fbeee8" stroke="#15294a"/>
+                <div class="product-card" id="card-huile">
+                    <div class="product-header">
+                        <svg class="product-svg" viewBox="0 0 140 240">
+                            <!-- Bouchon rond noir texturé -->
+                            <circle cx="70" cy="50" r="18" fill="#222"/>
+                            <path d="M 52 50 A 18 18 0 0 0 88 50" fill="#444" opacity="0.5"/>
+                            <rect x="56" y="65" width="28" height="10" fill="#333"/>
+                            <!-- Flacon Blanc droit à épaules courbes -->
+                            <path d="M 40 75 C 40 75, 70 65, 100 75 L 110 230 L 30 230 Z" fill="#fff" stroke="#d4c5a9" stroke-width="2"/>
+                            <!-- Cadre intérieur -->
+                            <path d="M 43 82 C 43 82, 70 73, 97 82 L 105 225 L 35 225 Z" fill="none" stroke="#666" stroke-width="1"/>
+                            <!-- Colonnes antiques -->
+                            <rect x="40" y="110" width="6" height="80" fill="#e8e8e8" stroke="#999" stroke-width="0.5"/>
+                            <rect x="94" y="110" width="6" height="80" fill="#e8e8e8" stroke="#999" stroke-width="0.5"/>
+                            <!-- Figures Antiques (Silhouette simplifiée) -->
+                            <!-- Femme en toge rouge -->
+                            <path d="M 75 130 C 80 130, 85 140, 85 160 C 85 180, 90 190, 90 190 L 70 190 C 70 190, 75 180, 75 160 Z" fill="#b53333"/>
+                            <!-- Homme peau nue toge rose -->
+                            <path d="M 55 135 C 60 135, 65 145, 65 165 C 65 185, 70 190, 70 190 L 50 190 C 50 190, 55 185, 55 165 Z" fill="#e0ad9d"/>
+                            <path d="M 55 150 C 65 160, 50 170, 55 180" fill="none" stroke="#d38b93" stroke-width="3"/>
+                            <!-- Titre -->
+                            <text x="70" y="210" text-anchor="middle" font-family="'Cinzel', serif" font-size="6" fill="#15294a" font-weight="bold">HUILE ANTIQUE</text>
                         </svg>
                     </div>
                     <div class="product-body">
                         <div>
                             <h3 class="product-name">L'Huile Antique</h3>
                             <div class="product-sub">Huile sèche embellissante corps</div>
-
-                            <div class="feature-item">
-                                <span class="feature-label">Formule</span>
-                                Triptyque de sésame, d'abricot et de coco hautement nourrissant.
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-label">Atout Clef</span>
-                                Satine la peau immédiatement sans laisser le moindre film gras.
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-label">Rituel</span>
-                                Appliquer généreusement sur peau légèrement humide au sortir du bain.
-                            </div>
-                            <div class="quote-box">
-                                « Un hommage aux macérats cosmétiques de l'Antiquité pour illuminer et parfumer le corps d'un sillage délicat. »
-                            </div>
+                            <div class="feature-item"><span class="feature-label">Formule</span>Sésame, abricot et coco hautement nourrissant.</div>
+                            <div class="feature-item"><span class="feature-label">Atout Clef</span>Satine la peau immédiatement, sans aucun film gras.</div>
+                            <div class="quote-box">« Appliquer sur peau humide au sortir du bain. »</div>
                         </div>
-                        <button class="btn-download" onclick="downloadMemo('L Huile Antique', 'L HUILE ANTIQUE\nHuile sèche embellissante corps\n\n• FORMULE: Triptyque de sésame, d abricot et de coco nourrissant.\n• ATOUT CLEF: Satine la peau immédiatement sans laisser de film gras.\n• RITUEL: Appliquer sur peau légèrement humide au sortir du bain.')">
-                            📥 Télécharger la Fiche Mémo
-                        </button>
+                        <button class="btn-download" onclick="downloadHTML('card-huile', 'Fiche_Huile_Antique')">📥 Fiche au format HTML</button>
                     </div>
                 </div>
             </div>
@@ -783,58 +479,102 @@
 
         <!-- 4. DIRIGEANTS & BOUTIQUES -->
         <section id="dirigeants" class="tab-content">
-            <h2 class="section-title">Souverains & Dirigeants</h2>
-            <p class="section-desc">Gouvernance de la Maison et Responsables des Officines à travers le monde.</p>
+            <h2 class="section-title">Gouvernance & Officiers</h2>
+            <p class="section-desc">Direction de la Maison et Responsables des Officines à travers le monde.</p>
 
-            <div class="grid-3" style="margin-bottom: 40px;">
+            <div class="grid-3" style="margin-bottom: 50px;">
                 <div class="person-card">
                     <div class="person-avatar">
-                        <svg viewBox="0 0 50 50" width="40"><circle cx="25" cy="18" r="10" fill="#15294a"/><path d="M 10 42 C 10 30, 40 30, 40 42 Z" fill="#15294a"/></svg>
+                        <svg viewBox="0 0 100 100" width="100%">
+                            <circle cx="50" cy="50" r="50" fill="#e4d9c8"/>
+                            <!-- Victoire : Cheveux sombres tirés, col blanc pointu, pull marine -->
+                            <path d="M 25 100 C 25 60, 75 60, 75 100 Z" fill="#15294a"/>
+                            <polygon points="50,75 35,65 50,60 65,65" fill="#fff"/>
+                            <circle cx="50" cy="40" r="16" fill="#f4dbca"/>
+                            <path d="M 32 45 C 32 20, 68 20, 68 45 C 68 30, 32 30, 32 45 Z" fill="#2b1b17"/>
+                        </svg>
                     </div>
                     <div class="person-name">Victoire de Taillac</div>
                     <div class="person-role">Co-fondatrice & Directrice de l'Image</div>
                 </div>
                 <div class="person-card">
                     <div class="person-avatar">
-                        <svg viewBox="0 0 50 50" width="40"><circle cx="25" cy="18" r="10" fill="#15294a"/><path d="M 10 42 C 10 30, 40 30, 40 42 Z" fill="#15294a"/></svg>
+                        <svg viewBox="0 0 100 100" width="100%">
+                            <circle cx="50" cy="50" r="50" fill="#d9e0e4"/>
+                            <!-- Ramdane : Lunettes rondes, gilet noir sur chemise blanche -->
+                            <path d="M 20 100 C 20 50, 80 50, 80 100 Z" fill="#222"/>
+                            <polygon points="50,80 40,55 60,55" fill="#fff"/>
+                            <path d="M 50 80 L 50 100" stroke="#111" stroke-width="2"/>
+                            <circle cx="50" cy="38" r="15" fill="#e5c8b5"/>
+                            <!-- Lunettes -->
+                            <circle cx="43" cy="36" r="5" fill="none" stroke="#723a10" stroke-width="2"/>
+                            <circle cx="57" cy="36" r="5" fill="none" stroke="#723a10" stroke-width="2"/>
+                            <path d="M 48 36 L 52 36" stroke="#723a10" stroke-width="2"/>
+                            <!-- Cheveux ras -->
+                            <path d="M 34 38 C 34 15, 66 15, 66 38 C 66 25, 34 25, 34 38 Z" fill="#1a110a"/>
+                        </svg>
                     </div>
                     <div class="person-name">Ramdane Touhami</div>
                     <div class="person-role">Co-fondateur & Directeur Artistique</div>
                 </div>
                 <div class="person-card">
                     <div class="person-avatar">
-                        <svg viewBox="0 0 50 50" width="40"><circle cx="25" cy="18" r="10" fill="#c5a059"/><path d="M 10 42 C 10 30, 40 30, 40 42 Z" fill="#c5a059"/></svg>
+                        <svg viewBox="0 0 100 100" width="100%">
+                            <circle cx="50" cy="50" r="50" fill="#e8e3da"/>
+                            <!-- Nathalie Elbaz : Silhouette élégante CEO blason chic -->
+                            <path d="M 22 100 C 22 65, 78 65, 78 100 Z" fill="#3b424e"/>
+                            <path d="M 40 100 L 50 70 L 60 100 Z" fill="#e4e4e4"/>
+                            <circle cx="50" cy="42" r="16" fill="#f0d5c2"/>
+                            <!-- Coupe structurée -->
+                            <path d="M 30 50 C 30 15, 70 15, 70 50 C 70 65, 60 40, 50 40 C 40 40, 30 65, 30 50 Z" fill="#2a1e17"/>
+                        </svg>
                     </div>
-                    <div class="person-name">Direction Générale</div>
-                    <div class="person-role">CEO & Présidence Exécutive LVMH</div>
+                    <div class="person-name">Nathalie Elbaz</div>
+                    <div class="person-role">Chief Executive Officer (CEO)</div>
                 </div>
             </div>
 
-            <h3 style="font-family:'Cinzel', serif; color:var(--primary); text-align:center; margin-bottom:20px;">Directeurs des Boutiques & Officines</h3>
+            <h3 style="font-family:'Cinzel', serif; color:#15294a; text-align:center; margin-bottom:20px; font-size: 1.8rem;">Directeurs des Officines</h3>
             <div class="boutique-list">
                 <div class="boutique-item">
                     <div class="boutique-city">Paris — Bonaparte</div>
-                    <div>Directeur: Jean-Baptiste M.</div>
+                    <div class="boutique-director">Dir. Nicolas Hénault</div>
                 </div>
                 <div class="boutique-item">
                     <div class="boutique-city">Paris — Saintonge</div>
-                    <div>Directrice: Charlotte L.</div>
+                    <div class="boutique-director">Dir. Caroline George</div>
                 </div>
                 <div class="boutique-item">
-                    <div class="boutique-city">Tokyo — Aoyama</div>
-                    <div>Directeur: Kenji T.</div>
+                    <div class="boutique-city">Paris — Vieille du Temple</div>
+                    <div class="boutique-director">Dir. Johanna Diaby</div>
                 </div>
                 <div class="boutique-item">
-                    <div class="boutique-city">London — Mount St</div>
-                    <div>Directrice: Eleanor R.</div>
+                    <div class="boutique-city">Paris — Le Bon Marché</div>
+                    <div class="boutique-director">Dir. Ivonne Desclozeaux</div>
                 </div>
                 <div class="boutique-item">
-                    <div class="boutique-city">Kyoto — Ninenzaka</div>
-                    <div>Directrice: Yuko S.</div>
+                    <div class="boutique-city">Paris — Galeries Lafayette</div>
+                    <div class="boutique-director">Dir. Marie-Hélène Renard</div>
                 </div>
                 <div class="boutique-item">
-                    <div class="boutique-city">New York — Bergdorf</div>
-                    <div>Directeur: Arthur B.</div>
+                    <div class="boutique-city">Paris — Richelieu</div>
+                    <div class="boutique-director">Dir. Anne Flammand</div>
+                </div>
+                <div class="boutique-item">
+                    <div class="boutique-city">Londres — Mount St</div>
+                    <div class="boutique-director">Dir. David Jareno</div>
+                </div>
+                <div class="boutique-item">
+                    <div class="boutique-city">Milan</div>
+                    <div class="boutique-director">Dir. Caterina Marchetti</div>
+                </div>
+                <div class="boutique-item">
+                    <div class="boutique-city">Munich</div>
+                    <div class="boutique-director">Dir. Driton Islami</div>
+                </div>
+                <div class="boutique-item">
+                    <div class="boutique-city">Hong Kong</div>
+                    <div class="boutique-director">Dir. Vanessa Lo</div>
                 </div>
             </div>
         </section>
@@ -847,84 +587,51 @@
             <div class="calendar-grid">
                 <div class="month-box highlight">
                     <div class="month-name">Janvier</div>
-                    <div class="month-event">L'Art du Présent</div>
+                    <div>
+                        <span class="cal-icon">✉️</span>
+                        <div class="month-event">L'Art du Présent</div>
+                    </div>
                 </div>
                 <div class="month-box highlight">
                     <div class="month-name">Février</div>
-                    <div class="month-event">Saint-Valentin</div>
+                    <div>
+                        <span class="cal-icon">💝</span>
+                        <div class="month-event">Saint-Valentin</div>
+                    </div>
                 </div>
                 <div class="month-box gold-highlight">
                     <div class="month-name">Mars</div>
-                    <div class="month-event">Fashion Week</div>
+                    <div>
+                        <span class="cal-icon">👗</span>
+                        <div class="month-event">Fashion Week</div>
+                    </div>
                 </div>
                 <div class="month-box"><div class="month-name">Avril</div></div>
-                <div class="month-box"><div class="month-name">Mai</div></div>
+                <div class="month-box"><div class="month-name">Mai</div><span class="cal-icon" style="opacity:0.3">🌸</span></div>
                 <div class="month-box"><div class="month-name">Juin</div></div>
-                <div class="month-box"><div class="month-name">Juillet</div></div>
+                <div class="month-box"><div class="month-name">Juillet</div><span class="cal-icon" style="opacity:0.3">☀️️</span></div>
                 <div class="month-box"><div class="month-name">Août</div></div>
                 <div class="month-box gold-highlight">
                     <div class="month-name">Septembre</div>
-                    <div class="month-event">Fashion Week</div>
+                    <div>
+                        <span class="cal-icon">🧥</span>
+                        <div class="month-event">Fashion Week</div>
+                    </div>
                 </div>
                 <div class="month-box"><div class="month-name">Octobre</div></div>
                 <div class="month-box gold-highlight">
                     <div class="month-name">Novembre</div>
-                    <div class="month-event">Le Temps Long<br><span style="font-size:0.8rem; font-style:italic;">(Sans Black Friday)</span></div>
+                    <div>
+                        <span class="cal-icon">🕰️</span>
+                        <div class="month-event">Le Temps Long</div>
+                        <div style="font-size:0.8rem; font-style:italic;">(Anti-Black Friday)</div>
+                    </div>
                 </div>
                 <div class="month-box highlight">
                     <div class="month-name">Décembre</div>
-                    <div class="month-event">Le Grand Temporal de Noël</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. ARBRE A VŒUX -->
-        <section id="arbre" class="tab-content">
-            <h2 class="section-title">L'Arbre à Vœux & Gratitudes</h2>
-            <p class="section-desc">Déposez votre vœu pour la Maison Buly à l'approche du Grand Temporal de Noël.</p>
-
-            <div class="tree-container">
-                <div>
-                    <!-- Vector Christmas Wishing Tree -->
-                    <svg viewBox="0 0 300 380" style="width:100%; height:auto;">
-                        <path d="M 140 350 L 160 350 L 155 300 L 145 300 Z" fill="#15294a"/>
-                        <polygon points="150,50 70,160 110,160 50,240 100,240 30,310 270,310 200,240 250,240 190,160 230,160" fill="#1b2a4a"/>
-                        <polygon points="150,25 155,40 170,40 157,50 162,65 150,55 138,65 143,50 130,40 145,40" fill="#e2c889"/>
-                        <circle cx="100" cy="200" r="10" fill="#c5a059"/>
-                        <circle cx="180" cy="220" r="10" fill="#15294a"/>
-                        <circle cx="130" cy="270" r="10" fill="#e2c889"/>
-                        <circle cx="210" cy="280" r="10" fill="#c5a059"/>
-                    </svg>
-                </div>
-
-                <div class="wish-form">
-                    <form id="formVoeu" onsubmit="ajouterVoeu(event)">
-                        <label>Votre Nom & Prénom</label>
-                        <input type="text" id="wishAuthor" required placeholder="Ex: Grand Officier Marie L.">
-
-                        <label>Votre Officine / Boutique</label>
-                        <select id="wishShop">
-                            <option>Paris — Rue Bonaparte</option>
-                            <option>Paris — Rue de Saintonge</option>
-                            <option>Tokyo — Aoyama</option>
-                            <option>London — Mount Street</option>
-                            <option>Kyoto — Ninenzaka</option>
-                            <option>Autre / Siège</option>
-                        </select>
-
-                        <label>Votre Vœu ou Gratitude</label>
-                        <textarea id="wishText" rows="4" required placeholder="Rédigez votre vœu pour la maison ou vos collègues..."></textarea>
-
-                        <button type="submit" class="btn-download" style="margin-top:15px;">
-                            📜 Accrocher mon Vœu à l'Arbre
-                        </button>
-                    </form>
-
-                    <div class="wish-list" id="wishList">
-                        <div class="wish-item">
-                            <div class="wish-author">Victoire de T. — Siège Paris</div>
-                            « Que cette nouvelle année apporte lumière, création et élégance à l'ensemble de nos équipes ! »
-                        </div>
+                    <div>
+                        <span class="cal-icon">🎁</span>
+                        <div class="month-event">Le Grand Temporal de Noël</div>
                     </div>
                 </div>
             </div>
@@ -933,66 +640,108 @@
     </div>
 
     <footer>
-        &copy; 1803 - 2026 Officine Universelle Buly • Intranet réservé aux Grands Officiers de la Maison
+        &copy; 1803 - 2026 Officine Universelle Buly • Intranet de l'Excellence
     </footer>
 
-    <!-- SCRIPT CORRIGÉ POUR LA NAVIGATION -->
+    <!-- SCRIPT CORRIGÉ POUR LA NAVIGATION ET LE TÉLÉCHARGEMENT -->
     <script>
+        // Navigation des onglets
         function switchTab(evt, tabId) {
-            // Retire la classe 'active' de tous les contenus
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => {
                 content.style.display = 'none';
                 content.classList.remove('active');
             });
 
-            // Retire la classe 'active' de tous les boutons de navigation
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
 
-            // Affiche l'onglet ciblé
             const target = document.getElementById(tabId);
             if (target) {
                 target.style.display = 'block';
                 target.classList.add('active');
             }
 
-            // Met en surbrillance le bouton cliqué
             if (evt && evt.currentTarget) {
                 evt.currentTarget.classList.add('active');
             }
         }
 
-        // Fonction pour télécharger les mémos
-        function downloadMemo(title, text) {
-            const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        // Système de téléchargement HTML natif pour préserver exactement le design et les images vectorisées
+        function downloadHTML(elementId, fileName) {
+            // Cloner l'élément pour ne pas modifier l'affichage en direct
+            const element = document.getElementById(elementId);
+            const clone = element.cloneNode(true);
+            
+            // Retirer le bouton de téléchargement du clone
+            const buttons = clone.querySelectorAll('.btn-download');
+            buttons.forEach(btn => btn.remove());
+
+            // Récupérer le HTML intérieur
+            const content = clone.outerHTML;
+
+            // Créer une page HTML propre avec le style embarqué
+            const htmlString = `
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>${fileName.replace(/_/g, ' ')}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #fbf8f2;
+            color: #221c19;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .product-card, .tuto-card {
+            background: #fff;
+            border: 2px solid #d4c5a9;
+            border-radius: 6px;
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .product-header { padding: 30px 20px; border-bottom: 1px solid #d4c5a9; }
+        .product-svg { height: 280px; margin: 0 auto; display: block; filter: drop-shadow(5px 10px 10px rgba(0,0,0,0.15)); }
+        .product-body { padding: 30px; }
+        h3 { font-family: 'Cinzel', serif; font-size: 1.8rem; color: #15294a; margin-bottom: 5px; }
+        .product-sub { font-style: italic; color: #666; margin-bottom: 25px; font-size: 1.1rem; }
+        .feature-item { margin-bottom: 20px; font-size: 1.1rem; text-align: left; }
+        .feature-label { font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 1px; color: #15294a; text-transform: uppercase; font-weight: bold; display: block; margin-bottom: 5px; }
+        .quote-box { background: #fbf8f2; border-left: 3px solid #c5a059; padding: 15px; font-style: italic; font-size: 1rem; margin-top: 25px; text-align: left; }
+        
+        .tuto-steps { display: flex; gap: 15px; margin-top: 25px; }
+        .step-box { background: #fbf8f2; border: 1px solid #d4c5a9; border-radius: 6px; padding: 15px; flex: 1; text-align: center; }
+        .step-num { display: inline-block; width: 32px; height: 32px; line-height: 32px; background: #15294a; color: #fff; border-radius: 50%; font-family: 'Cinzel', serif; font-size: 1rem; margin-bottom: 15px; }
+        .step-svg { width: 100%; height: 120px; margin-bottom: 15px; }
+        .step-text { font-size: 0.95rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+    ${content}
+    <script>
+        // Propose automatiquement d'imprimer la fiche à l'ouverture
+        window.onload = () => { setTimeout(() => window.print(), 500); };
+    <\/script>
+</body>
+</html>`;
+
+            // Déclenche le téléchargement
+            const blob = new Blob([htmlString], { type: 'text/html;charset=utf-8' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `Fiche_Memo_Buly_${title.replace(/\s+/g, '_')}.txt`;
+            a.download = `${fileName}.html`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-        }
-
-        // Fonction pour l'arbre à vœux
-        function ajouterVoeu(e) {
-            e.preventDefault();
-            const author = document.getElementById('wishAuthor').value;
-            const shop = document.getElementById('wishShop').value;
-            const text = document.getElementById('wishText').value;
-
-            const list = document.getElementById('wishList');
-            const item = document.createElement('div');
-            item.className = 'wish-item';
-            item.innerHTML = `<div class="wish-author">${author} — ${shop}</div>« ${text} »`;
-
-            list.insertBefore(item, list.firstChild);
-
-            document.getElementById('wishAuthor').value = '';
-            document.getElementById('wishText').value = '';
-            alert('Votre vœu a été accroché à l’Arbre avec succès !');
         }
     </script>
 </body>
