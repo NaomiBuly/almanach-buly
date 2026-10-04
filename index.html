@@ -154,7 +154,7 @@
         .step-svg { width: 100%; height: 100px; margin: 10px 0; }
         .step-text { font-size: 0.9rem; color: #333; font-weight: 500; }
 
-        /* ARBRE À SOUHAITS */
+        /* ARBRE À SOUHAITS (SAPIN DE NOËL) */
         .wish-container {
             background: #fff; border: 2px solid #d4c5a9; border-radius: 6px; padding: 40px; text-align: center; max-width: 800px; margin: 0 auto;
         }
@@ -226,10 +226,10 @@
     <nav>
         <button class="nav-btn active" onclick="switchTab(event, 'histoire')">Histoire</button>
         <button class="nav-btn" onclick="switchTab(event, 'grooming')">Grooming</button>
-        <button class="nav-btn" onclick="switchTab(event, 'souhaits')">Arbre à Souhaits</button>
         <button class="nav-btn" onclick="switchTab(event, 'fiches')">Fiches Produits</button>
         <button class="nav-btn" onclick="switchTab(event, 'dirigeants')">Dirigeants & Boutiques</button>
         <button class="nav-btn" onclick="switchTab(event, 'temporal')">Le Temporal</button>
+        <button class="nav-btn" onclick="switchTab(event, 'souhaits')">Arbre à Souhaits</button>
     </nav>
 
     <div class="container">
@@ -427,38 +427,7 @@
             </div>
         </section>
 
-        <!-- 3. ARBRE À SOUHAITS -->
-        <section id="souhaits" class="tab-content">
-            <h2 class="section-title">L'Arbre à Souhaits</h2>
-            <p class="section-desc">Inscrivez vos vœux et pensées pour l'Officine, et suspendez-les à l'arbre virtuel.</p>
-
-            <div class="wish-container">
-                <svg viewBox="0 0 200 150" style="width: 140px; height: auto; margin: 0 auto 15px; display: block;">
-                    <!-- Tronc de l'arbre -->
-                    <rect x="92" y="90" width="16" height="50" fill="#654321"/>
-                    <!-- Branches stylisées -->
-                    <path d="M 100 100 Q 70 60 40 50 M 100 80 Q 130 50 160 45 M 100 60 Q 80 30 60 25 M 100 60 Q 120 30 140 25" stroke="#654321" stroke-width="4" fill="none" stroke-linecap="round"/>
-                    <!-- Feuillage / Souhaits suspendus (cercles dorés) -->
-                    <circle cx="40" cy="50" r="12" fill="#c5a059"/><circle cx="160" cy="45" r="12" fill="#c5a059"/>
-                    <circle cx="60" cy="25" r="10" fill="#15294a"/><circle cx="140" cy="25" r="10" fill="#15294a"/>
-                    <circle cx="100" cy="20" r="14" fill="#c5a059"/>
-                </svg>
-                <h3 style="font-family:'Cinzel', serif; color:#15294a; margin-bottom:10px;">Suspendez votre vœu officinal</h3>
-                <p style="font-size: 0.95rem; color: #555; font-style: italic;">Exprimez une ambition ou un souhait pour votre officine cette année.</p>
-                
-                <div class="wish-form">
-                    <input type="text" id="wishInput" class="wish-input" placeholder="Ex: Que l'année apporte prospérité à notre officine...">
-                    <button class="btn-download" style="max-width: 250px;" onclick="addWish()">Accrocher mon vœu</button>
-                </div>
-
-                <div class="wish-wall" id="wishWall">
-                    <div class="wish-tag">« Que chaque flacon vendu raconte une belle histoire. » — Officine Bonaparte</div>
-                    <div class="wish-tag">« Paix, beauté et prospérité pour toute l'équipe de Saintonge. »</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. FICHES PRODUITS -->
+        <!-- 3. FICHES PRODUITS -->
         <section id="fiches" class="tab-content">
             <h2 class="section-title">Fiches Produits Mémos</h2>
             <p class="section-desc">Générez et téléchargez la fiche officielle (avec images et design) à conserver en officine.</p>
@@ -543,7 +512,7 @@
             </div>
         </section>
 
-        <!-- 5. DIRIGEANTS & BOUTIQUES -->
+        <!-- 4. DIRIGEANTS & BOUTIQUES -->
         <section id="dirigeants" class="tab-content">
             <h2 class="section-title">Gouvernance & Officiers</h2>
             <p class="section-desc">Direction de la Maison et Responsables des Officines à travers le monde.</p>
@@ -607,7 +576,7 @@
             </div>
         </section>
 
-        <!-- 6. TEMPORAL -->
+        <!-- 5. TEMPORAL -->
         <section id="temporal" class="tab-content">
             <h2 class="section-title">Le Temporal Annuel</h2>
             <p class="section-desc">Calendrier des temps forts et événements majeurs de l'année officinale.</p>
@@ -623,8 +592,43 @@
                 <div class="month-box"><div class="month-name">Août</div></div>
                 <div class="month-box gold-highlight"><div class="month-name">Septembre</div><div><span class="cal-icon">🧥</span><div class="month-event">Fashion Week</div></div></div>
                 <div class="month-box"><div class="month-name">Octobre</div></div>
-                <div class="month-box gold-highlight"><div class="month-name">Novembre</div><div><span class="cal-icon">🕰️</span><div class="month-event">Le Temps Long</div><div style="font-size:0.8rem; font-style:italic;">(Anti-Black Friday)</div></div></div>
+                <div class="month-box gold-highlight"><div class="month-name">Novembre</div><div><span class="cal-icon">🕰️️</span><div class="month-event">Le Temps Long</div><div style="font-size:0.8rem; font-style:italic;">(Anti-Black Friday)</div></div></div>
                 <div class="month-box highlight"><div class="month-name">Décembre</div><div><span class="cal-icon">🎁</span><div class="month-event">Le Grand Temporal de Noël</div></div></div>
+            </div>
+        </section>
+
+        <!-- 6. ARBRE À SOUHAITS (SAPIN DE NOËL) -->
+        <section id="souhaits" class="tab-content">
+            <h2 class="section-title">L'Arbre à Souhaits</h2>
+            <p class="section-desc">Inscrivez vos vœux et pensées pour l'Officine, et suspendez-les au sapin de Noël virtuel.</p>
+
+            <div class="wish-container">
+                <!-- Illustration Vectorielle d'un Sapin de Noël -->
+                <svg viewBox="0 0 200 180" style="width: 150px; height: auto; margin: 0 auto 15px; display: block;">
+                    <!-- Étoile au sommet -->
+                    <polygon points="100,10 104,22 116,22 106,30 110,42 100,34 90,42 94,30 84,22 96,22" fill="#c5a059"/>
+                    <!-- Tronc du sapin -->
+                    <rect x="92" y="145" width="16" height="25" fill="#654321"/>
+                    <!-- Niveaux du sapin de Noël (triangles empilés) -->
+                    <polygon points="100,35 60,75 140,75" fill="#1b4332"/>
+                    <polygon points="100,65 50,115 150,115" fill="#2d6a4f"/>
+                    <polygon points="100,100 40,150 160,150" fill="#40916c"/>
+                    <!-- Boules de Noël décoratives -->
+                    <circle cx="100" cy="60" r="4" fill="#c5a059"/><circle cx="85" cy="85" r="4" fill="#e2c889"/><circle cx="115" cy="90" r="4" fill="#c5a059"/>
+                    <circle cx="70" cy="125" r="4" fill="#e2c889"/><circle cx="100" cy="115" r="4" fill="#c5a059"/><circle cx="130" cy="120" r="4" fill="#e2c889"/>
+                </svg>
+                <h3 style="font-family:'Cinzel', serif; color:#15294a; margin-bottom:10px;">Suspendez votre vœu sur le Sapin</h3>
+                <p style="font-size: 0.95rem; color: #555; font-style: italic;">Exprimez une ambition ou un souhait pour votre officine cette saison.</p>
+                
+                <div class="wish-form">
+                    <input type="text" id="wishInput" class="wish-input" placeholder="Ex: Que l'année apporte prospérité à notre officine...">
+                    <button class="btn-download" style="max-width: 250px;" onclick="addWish()">Accrocher mon vœu</button>
+                </div>
+
+                <div class="wish-wall" id="wishWall">
+                    <div class="wish-tag">« Que chaque flacon vendu raconte une belle histoire. » — Officine Bonaparte</div>
+                    <div class="wish-tag">« Paix, beauté et prospérité pour toute l'équipe de Saintonge. »</div>
+                </div>
             </div>
         </section>
 
