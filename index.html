@@ -1,1082 +1,702 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="h-full bg-[#FBF9F5]">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>L'Almanach des Officiers — L'Officine Universelle Buly 1803</title>
-<!-- Polices Typographiques d'Époque -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-<!-- Icons FontAwesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-:root {
---buly-burgundy: #6b1d2f;
---buly-burgundy-dark: #4a101e;
---buly-gold: #c5a059;
---buly-gold-light: #e2c98d;
---buly-cream: #fbf7ee;
---buly-parchment: #f4ece1;
---buly-blue: #2b3a67;
---buly-text: #2c2523;
---buly-border: #d4c5b1;
---buly-green: #2d5a43;
-}
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-}
-body {
-font-family: 'EB Garamond', serif;
-background-color: var(--buly-cream);
-color: var(--buly-text);
-line-height: 1.6;
-background-image: radial-gradient(#ebdcc8 0.75px, transparent 0.75px);
-background-size: 16px 16px;
-}
-h1, h2, h3, h4, h5 {
-font-family: 'Playfair Display', serif;
-color: var(--buly-burgundy);
-letter-spacing: 0.5px;
-}
-.cinzel {
-font-family: 'Cinzel', serif;
-}
-/* HEADER & NAVIGATION */
-header {
-background-color: var(--buly-cream);
-border-bottom: 3px double var(--buly-gold);
-padding: 1.5rem 2rem 1rem;
-text-align: center;
-position: sticky;
-top: 0;
-z-index: 100;
-box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-.header-top {
-display: flex;
-justify-content: space-between;
-align-items: center;
-max-width: 1200px;
-margin: 0 auto 1.2rem;
-padding-bottom: 0.8rem;
-border-bottom: 1px solid var(--buly-border);
-}
-.brand-logo-container {
-display: flex;
-align-items: center;
-gap: 1.5rem;
-text-align: left;
-}
-.buly-svg-logo {
-height: 55px;
-width: auto;
-}
-.user-status {
-display: flex;
-align-items: center;
-gap: 0.8rem;
-font-size: 0.85rem;
-font-family: 'Cinzel', serif;
-background: rgba(197, 160, 89, 0.12);
-padding: 0.6rem 1.4rem;
-border-radius: 20px;
-border: 1px solid var(--buly-gold-light);
-color: var(--buly-burgundy);
-}
-/* MENU DE NAVIGATION */
-.nav-menu {
-display: flex;
-justify-content: center;
-gap: 0.6rem;
-list-style: none;
-flex-wrap: wrap;
-}
-.nav-item button {
-background: none;
-border: 1px solid transparent;
-color: var(--buly-text);
-font-family: 'Cinzel', serif;
-font-size: 0.82rem;
-font-weight: 600;
-letter-spacing: 1px;
-padding: 0.6rem 1.1rem;
-transition: all 0.25s ease;
-display: flex;
-align-items: center;
-gap: 0.5rem;
-cursor: pointer;
-border-radius: 3px;
-}
-.nav-item button:hover, .nav-item button.active {
-color: var(--buly-burgundy);
-border-color: var(--buly-gold);
-background-color: rgba(197, 160, 89, 0.18);
-box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-}
-/* MAIN CONTAINER */
-.container {
-max-width: 1200px;
-margin: 2rem auto;
-padding: 0 1.5rem;
-}
-/* SECTIONS DE PAGE */
-.page-section {
-display: none !important;
-}
-.page-section.active {
-display: block !important;
-animation: fadeIn 0.3s ease-in-out;
-}
-@keyframes fadeIn {
-from { opacity: 0; transform: translateY(6px); }
-to { opacity: 1; transform: translateY(0); }
-}
-.section-header {
-text-align: center;
-margin-bottom: 2.8rem;
-position: relative;
-}
-.section-header h2 {
-font-size: 2.1rem;
-font-family: 'Cinzel', serif;
-letter-spacing: 2px;
-text-transform: uppercase;
-display: inline-block;
-background: var(--buly-cream);
-padding: 0 1.8rem;
-position: relative;
-z-index: 1;
-}
-.section-header::after {
-content: '';
-position: absolute;
-top: 50%;
-left: 8%;
-right: 8%;
-height: 1px;
-background: var(--buly-gold);
-z-index: 0;
-}
-.section-subtitle {
-font-family: 'Playfair Display', serif;
-font-style: italic;
-color: #666;
-margin-top: 0.5rem;
-font-size: 1.1rem;
-}
-/* BANNIERE D'ACCUEIL */
-.hero-banner {
-width: 100%;
-padding: 3.5rem 2rem;
-background: linear-gradient(135deg, var(--buly-burgundy-dark), var(--buly-burgundy));
-border-radius: 6px;
-border: 2px solid var(--buly-gold);
-margin-bottom: 3rem;
-display: flex;
-align-items: center;
-justify-content: center;
-color: var(--buly-cream);
-text-align: center;
-box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-position: relative;
-overflow: hidden;
-}
-.hero-banner::before {
-content: '';
-position: absolute;
-inset: 6px;
-border: 1px dashed var(--buly-gold-light);
-pointer-events: none;
-opacity: 0.6;
-}
-.hero-banner h2 {
-color: var(--buly-gold-light);
-font-family: 'Cinzel', serif;
-font-size: 2.3rem;
-letter-spacing: 3px;
-margin-bottom: 0.6rem;
-}
-/* GRILLES DE CARTES */
-.card-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-gap: 2rem;
-}
-.buly-card {
-background: #fff;
-border: 1px solid var(--buly-border);
-border-radius: 4px;
-overflow: hidden;
-box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-}
-.buly-card:hover {
-transform: translateY(-4px);
-box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-}
-.card-header-bg {
-background: var(--buly-parchment);
-padding: 1.8rem;
-text-align: center;
-border-bottom: 1px solid var(--buly-border);
-}
-.card-body {
-padding: 1.8rem;
-display: flex;
-flex-direction: column;
-flex-grow: 1;
-justify-content: space-between;
-}
-.card-title {
-font-size: 1.35rem;
-margin-bottom: 0.6rem;
-color: var(--buly-burgundy);
-border-bottom: 1px solid var(--buly-gold-light);
-padding-bottom: 0.4rem;
-}
-/* CARTES FICHES PRODUITS VECTORISÉES */
-.product-sheet-card {
-background: #fff;
-border: 2px solid var(--buly-gold);
-border-radius: 6px;
-padding: 2.2rem;
-box-shadow: 0 6px 16px rgba(0,0,0,0.05);
-margin-bottom: 2.5rem;
-display: grid;
-grid-template-columns: 260px 1fr;
-gap: 2.5rem;
-align-items: center;
-}
-@media (max-width: 800px) {
-.product-sheet-card { grid-template-columns: 1fr; }
-}
-.product-visual-box {
-background: var(--buly-parchment);
-border: 1px solid var(--buly-border);
-border-radius: 4px;
-padding: 1.5rem;
-text-align: center;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-min-height: 240px;
-}
-.product-details h3 {
-font-size: 1.9rem;
-margin-bottom: 0.2rem;
-font-family: 'Cinzel', serif;
-}
-.product-subtitle {
-font-family: 'Playfair Display', serif;
-font-style: italic;
-color: var(--buly-gold);
-margin-bottom: 1.2rem;
-font-size: 1.15rem;
-}
-.product-info-list {
-list-style: none;
-margin-bottom: 1.5rem;
-}
-.product-info-list li {
-margin-bottom: 1rem;
-display: flex;
-align-items: flex-start;
-gap: 0.9rem;
-font-size: 1.05rem;
-}
-.product-info-list i {
-color: var(--buly-burgundy);
-font-size: 1.1rem;
-margin-top: 0.2rem;
-}
-.product-quote {
-border-left: 3px solid var(--buly-gold);
-padding: 0.8rem 1.2rem;
-font-style: italic;
-color: #555;
-background: rgba(244, 236, 225, 0.4);
-border-radius: 0 4px 4px 0;
-}
-/* GOUVERNANCE & DIRIGEANTS */
-.leadership-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 2rem;
-}
-.leader-card {
-text-align: center;
-background: #fff;
-border: 1px solid var(--buly-border);
-padding: 2.2rem 1.5rem;
-border-radius: 4px;
-box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-}
-.leader-avatar-box {
-width: 120px;
-height: 120px;
-border-radius: 50%;
-margin: 0 auto 1.2rem;
-border: 3px solid var(--buly-gold);
-background: var(--buly-parchment);
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-.leader-role {
-font-family: 'Cinzel', serif;
-font-size: 0.85rem;
-color: var(--buly-gold);
-letter-spacing: 1.5px;
-margin-bottom: 0.4rem;
-text-transform: uppercase;
-}
-/* TUTORIELS COIFFURE & CHIGNONS */
-.tuto-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-gap: 2rem;
-}
-@media (max-width: 550px) {
-.tuto-grid { grid-template-columns: 1fr; }
-}
-.tuto-card {
-background: #fff;
-border: 1px solid var(--buly-border);
-padding: 1.8rem;
-border-radius: 6px;
-}
-.tuto-steps {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 0.5rem;
-margin: 1.4rem 0;
-background: var(--buly-parchment);
-padding: 1rem;
-border-radius: 4px;
-}
-.step-box {
-text-align: center;
-font-size: 0.8rem;
-}
-.step-num {
-width: 26px;
-height: 26px;
-border-radius: 50%;
-background: var(--buly-burgundy);
-color: #fff;
-display: flex;
-align-items: center;
-justify-content: center;
-margin: 0 auto 0.4rem;
-font-family: 'Cinzel', serif;
-font-size: 0.8rem;
-}
-/* TEMPORAL / CALENDRIER */
-.calendar-grid {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 1.2rem;
-background: #fff;
-padding: 2rem;
-border: 2px solid var(--buly-gold);
-border-radius: 6px;
-}
-@media (max-width: 768px) {
-.calendar-grid { grid-template-columns: repeat(2, 1fr); }
-}
-.month-card {
-border: 1px solid var(--buly-border);
-border-radius: 4px;
-padding: 1.4rem 0.8rem;
-text-align: center;
-min-height: 125px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-background: var(--buly-cream);
-}
-.month-card.highlight {
-border: 2px solid var(--buly-burgundy);
-background: rgba(107, 29, 47, 0.05);
-}
-.month-name {
-font-family: 'Cinzel', serif;
-font-size: 0.9rem;
-color: var(--buly-gold);
-letter-spacing: 1px;
-margin-bottom: 0.5rem;
-}
-.month-event {
-font-family: 'Playfair Display', serif;
-font-size: 1.05rem;
-color: var(--buly-burgundy);
-font-weight: 600;
-}
-/* BOUTONS ET TELECHARGEMENTS */
-.btn-download {
-background: var(--buly-burgundy);
-color: #fff;
-padding: 0.65rem 1.2rem;
-border-radius: 4px;
-text-decoration: none;
-font-size: 0.85rem;
-font-family: 'Cinzel', serif;
-transition: all 0.3s ease;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-gap: 0.5rem;
-cursor: pointer;
-border: none;
-margin-top: 1rem;
-}
-.btn-download:hover {
-background: var(--buly-burgundy-dark);
-color: var(--buly-gold-light);
-box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-.resource-list {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-gap: 1.5rem;
-}
-.resource-item {
-background: #fff;
-border: 1px solid var(--buly-border);
-padding: 1.4rem;
-border-radius: 4px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-transition: all 0.3s ease;
-}
-.resource-item:hover {
-border-color: var(--buly-burgundy);
-box-shadow: 0 4px 12px rgba(107, 29, 47, 0.1);
-}
-/* ARBRE A VOEUX */
-.wish-tree-section {
-background: #fff;
-border: 2px solid var(--buly-gold);
-border-radius: 8px;
-padding: 2.5rem;
-box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-}
-.wish-tree-container {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 2.5rem;
-align-items: center;
-}
-@media (max-width: 850px) {
-.wish-tree-container { grid-template-columns: 1fr; }
-}
-.wish-tree-visual {
-text-align: center;
-background: var(--buly-parchment);
-padding: 2rem;
-border-radius: 6px;
-border: 1px solid var(--buly-border);
-}
-.wish-form {
-background: var(--buly-parchment);
-padding: 2rem;
-border-radius: 6px;
-border: 1px solid var(--buly-border);
-}
-.form-group {
-margin-bottom: 1.2rem;
-}
-.form-group label {
-display: block;
-font-family: 'Cinzel', serif;
-font-size: 0.85rem;
-margin-bottom: 0.4rem;
-color: var(--buly-burgundy);
-}
-.form-control {
-width: 100%;
-padding: 0.8rem;
-border: 1px solid var(--buly-border);
-border-radius: 4px;
-font-family: 'EB Garamond', serif;
-font-size: 1.05rem;
-background: #fff;
-}
-.form-control:focus {
-outline: none;
-border-color: var(--buly-gold);
-box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.2);
-}
-.btn-submit-wish {
-width: 100%;
-background: var(--buly-burgundy);
-color: var(--buly-gold-light);
-border: none;
-padding: 0.9rem;
-font-family: 'Cinzel', serif;
-font-weight: 600;
-letter-spacing: 1.5px;
-font-size: 0.95rem;
-border-radius: 4px;
-cursor: pointer;
-transition: all 0.3s ease;
-}
-.btn-submit-wish:hover {
-background: var(--buly-burgundy-dark);
-}
-.wish-list-display {
-margin-top: 2rem;
-padding-top: 1.5rem;
-border-top: 1px dashed var(--buly-gold);
-max-height: 250px;
-overflow-y: auto;
-}
-.wish-tag {
-background: #fff;
-border: 1px solid var(--buly-gold-light);
-padding: 0.8rem 1.2rem;
-margin-bottom: 0.8rem;
-border-radius: 4px;
-box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-.wish-tag-author {
-font-family: 'Cinzel', serif;
-font-size: 0.8rem;
-color: var(--buly-gold);
-}
-/* FOOTER */
-footer {
-background: var(--buly-burgundy);
-color: var(--buly-cream);
-text-align: center;
-padding: 2.8rem 1rem;
-margin-top: 4rem;
-border-top: 3px solid var(--buly-gold);
-}
-footer p {
-font-size: 0.92rem;
-opacity: 0.9;
-}
-footer .footer-title {
-font-family: 'Cinzel', serif;
-letter-spacing: 2px;
-color: var(--buly-gold-light);
-margin-bottom: 0.5rem;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Officine Universelle Buly 1803 - Guide & Fiches</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            garamond: ['Cormorant Garamond', 'serif'],
+            sans: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            bulyBg: '#FDFBF7',
+            bulyCream: '#F4EFE6',
+            bulyNavy: '#1D3557',
+            bulyGold: '#C59B27',
+            bulyGoldDark: '#9E7719',
+            bulyRed: '#8B2626',
+            bulyBlue: '#2A4BA0',
+            bulyBrown: '#4A3525',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FDFBF7;
+      color: #2C2523;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .active-tab {
+      background-color: #1D3557 !important;
+      color: #FDFBF7 !important;
+      border-color: #1D3557 !important;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .vintage-border {
+      border: 1px solid #D4C5B0;
+      box-shadow: inset 0 0 0 3px #FDFBF7, inset 0 0 0 4px #D4C5B0;
+    }
+    .card-shadow {
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+    }
+  </style>
 </head>
-<body>
-<!-- HEADER & NAVIGATION -->
-<header>
-<div class="header-top">
-<div class="brand-logo-container">
-<!-- LOGO BULY VECTORISÉ (GARANTI SANS ERREUR DE CHARGEMENT) -->
-<svg class="buly-svg-logo" viewBox="0 0 450 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-<!-- Text Calligraphy representation -->
-<text x="225" y="45" font-family="'Playfair Display', serif" font-style="italic" font-weight="bold" font-size="36" fill="#6b1d2f" text-anchor="middle">Officine Universelle Buly</text>
-<text x="225" y="68" font-family="'Cinzel', serif" font-size="12" fill="#555" letter-spacing="4" text-anchor="middle">FONDÉE EN 1803</text>
-<text x="225" y="83" font-family="'Cinzel', serif" font-size="10" font-weight="bold" fill="#2c2523" letter-spacing="6" text-anchor="middle">PARIS</text>
-</svg>
-</div>
-<div class="user-status">
-<i class="fa-solid fa-crown"></i>
-<span>Espace Officiers & Vendeurs</span>
-</div>
-</div>
-<nav>
-<ul class="nav-menu">
-<li class="nav-item"><button class="nav-btn active" data-target="accueil"><i class="fa-solid fa-house"></i> Accueil</button></li>
-<li class="nav-item"><button class="nav-btn" data-target="memos"><i class="fa-solid fa-flask"></i> Compendium des Onguents</button></li>
-<li class="nav-item"><button class="nav-btn" data-target="coiffure"><i class="fa-solid fa-scissors"></i> Coiffures de Vendeurs</button></li>
-<li class="nav-item"><button class="nav-btn" data-target="temporal"><i class="fa-solid fa-calendar-days"></i> Le Temporal</button></li>
-<li class="nav-item"><button class="nav-btn" data-target="direction"><i class="fa-solid fa-users"></i> Souverains & Dirigeants</button></li>
-<li class="nav-item"><button class="nav-btn" data-target="ressources"><i class="fa-solid fa-file-pdf"></i> Centre de Téléchargement</button></li>
-<li class="nav-item"><button class="nav-btn" data-target="arbre-souhaits" style="color: var(--buly-green); font-weight: bold;"><i class="fa-solid fa-tree"></i> Arbre à Vœux</button></li>
-</ul>
-</nav>
-</header>
-<!-- CONTAINER PRINCIPAL -->
-<main class="container">
-<!-- SECTION 1: ACCUEIL -->
-<section id="accueil" class="page-section active">
-<div class="hero-banner">
-<div>
-<h2>L'ALMANACH DES OFFICIERS</h2>
-<p style="font-style: italic; font-size: 1.15rem; color: var(--buly-gold-light);">« Un recueil séculaire dédié aux savoir-faire, formules d'exception et règles du comptoir »</p>
-</div>
-</div>
-<div class="section-header">
-<h2>L'Esprit de l'Officine</h2>
-<div class="section-subtitle">Le guide universel à l'usage des ambassadeurs et vendeurs de la Maison</div>
-</div>
-<div class="card-grid">
-<div class="buly-card">
-<div class="card-header-bg">
-<i class="fa-solid fa-spray-can-sparkles fa-3x" style="color: var(--buly-burgundy);"></i>
-</div>
-<div class="card-body">
-<div>
-<h3 class="card-title">Compendium des Onguents</h3>
-<p>Découvrez les formules emblématiques, rituels d'application et secrets d'apothicaire des parfums et baumes Buly.</p>
-</div>
-<button onclick="switchTab('memos')" class="btn-download"><i class="fa-solid fa-arrow-right"></i> Consulter le Compendium</button>
-</div>
-</div>
-<div class="buly-card">
-<div class="card-header-bg">
-<i class="fa-solid fa-gem fa-3x" style="color: var(--buly-burgundy);"></i>
-</div>
-<div class="card-body">
-<div>
-<h3 class="card-title">Coiffures & Maintien</h3>
-<p>Guide illustré des chignons réglementaires à la barrette ou au pic pour la tenue irréprochable au comptoir.</p>
-</div>
-<button onclick="switchTab('coiffure')" class="btn-download"><i class="fa-solid fa-arrow-right"></i> Découvrir les Gestes</button>
-</div>
-</div>
-<div class="buly-card">
-<div class="card-header-bg">
-<i class="fa-solid fa-tree fa-3x" style="color: var(--buly-green);"></i>
-</div>
-<div class="card-body">
-<div>
-<h3 class="card-title">Arbre à Vœux</h3>
-<p>Accrochez vos pensées et souhaits de fin d'année sur l'arbre virtuel réunissant tous les comptoirs du monde.</p>
-</div>
-<button onclick="switchTab('arbre-souhaits')" class="btn-download" style="background: var(--buly-green);"><i class="fa-solid fa-pen-nib"></i> Écrire un Vœu</button>
-</div>
-</div>
-</div>
-</section>
-<!-- SECTION 2: COMPENDIUM DES ONGUENTS (FICHES PRODUITS) -->
-<section id="memos" class="page-section">
-<div class="section-header">
-<h2>Compendium des Onguentations & Beaumes</h2>
-<div class="section-subtitle">Secrets d'élaboration et vertus des créations de l'Officine</div>
-</div>
-<!-- EAU TRIPLE -->
-<div class="product-sheet-card">
-<div class="product-visual-box">
-<!-- SVG L'EAU TRIPLE -->
-<svg width="120" height="180" viewBox="0 0 100 160" fill="none">
-<rect x="35" y="10" width="30" height="20" rx="3" fill="#c5a059" stroke="#6b1d2f" stroke-width="2"/>
-<path d="M25 30 H75 L85 50 V145 C85 150 80 155 75 155 H25 C20 155 15 150 15 145 V50 L25 30 Z" fill="#fbf7ee" stroke="#6b1d2f" stroke-width="3"/>
-<rect x="25" y="60" width="50" height="70" fill="#fff" stroke="#c5a059" stroke-width="1.5"/>
-<text x="50" y="85" font-family="'Cinzel', serif" font-size="7" fill="#6b1d2f" text-anchor="middle" font-weight="bold">L'EAU TRIPLE</text>
-<text x="50" y="100" font-family="'Playfair Display', serif" font-style="italic" font-size="5" fill="#555" text-anchor="middle">Officine Buly</text>
-<circle cx="50" cy="115" r="5" fill="none" stroke="#c5a059"/>
-</svg>
-<button onclick="downloadDocument('Fiche_Eau_Triple')" class="btn-download"><i class="fa-solid fa-download"></i> Fiche Imprimable</button>
-</div>
-<div class="product-details">
-<h3>L'Eau Triple</h3>
-<div class="product-subtitle">Parfum universel à l'eau aqueuse (sans alcool)</div>
-<ul class="product-info-list">
-<li><i class="fa-solid fa-flask"></i> <div><strong>Composition :</strong> Émulsion d'eau pure et de concentré aromatique d'une extrême finesse.</div></li>
-<li><i class="fa-solid fa-feather"></i> <div><strong>Vertu Royale :</strong> N'assèche jamais l'épiderme ni la chevelure. Préserve l'éclat des étoffes.</div></li>
-<li><i class="fa-solid fa-hand-sparkles"></i> <div><strong>Le Geste :</strong> Agiter doucement la céramique pour réveiller les effluves avant vaporisation.</div></li>
-</ul>
-<div class="product-quote">
-« Une fragrance pure comme une eau de source, enveloppant le corps d'une aura fidèle et majestueuse. »
-</div>
-</div>
-</div>
-<!-- HUILE ANTIQUE -->
-<div class="product-sheet-card">
-<div class="product-visual-box">
-<!-- SVG L'HUILE ANTIQUE -->
-<svg width="120" height="180" viewBox="0 0 100 160" fill="none">
-<circle cx="50" cy="15" r="12" fill="#c5a059"/>
-<rect x="42" y="27" width="16" height="15" fill="#4a101e"/>
-<path d="M20 42 H80 L90 70 V145 C90 152 83 158 75 158 H25 C17 158 10 152 10 145 V70 L20 42 Z" fill="#6b1d2f"/>
-<rect x="22" y="65" width="56" height="75" fill="#f4ece1" stroke="#c5a059" stroke-width="2"/>
-<text x="50" y="90" font-family="'Cinzel', serif" font-size="7" fill="#6b1d2f" text-anchor="middle" font-weight="bold">HUILE ANTIQUE</text>
-<text x="50" y="105" font-family="'Playfair Display', serif" font-style="italic" font-size="5" fill="#2c2523" text-anchor="middle">Sésame & Abricot</text>
-</svg>
-<button onclick="downloadDocument('Fiche_Huile_Antique')" class="btn-download"><i class="fa-solid fa-download"></i> Fiche Imprimable</button>
-</div>
-<div class="product-details">
-<h3 style="color: var(--buly-burgundy);">L'Huile Antique</h3>
-<div class="product-subtitle">Huile sèche embellissante pour le corps</div>
-<ul class="product-info-list">
-<li><i class="fa-solid fa-seedling"></i> <div><strong>Composition :</strong> Triptyque végétal bénéfique de sésame, d'abricot et de coco.</div></li>
-<li><i class="fa-solid fa-wand-magic-sparkles"></i> <div><strong>Vertu Royale :</strong> Satine et adoucit la peau immédiatement sans laisser la moindre sensation grasse.</div></li>
-<li><i class="fa-solid fa-droplet"></i> <div><strong>Le Geste :</strong> Masser sur peau encore moite au sortir de la baignoire ou de la douche.</div></li>
-</ul>
-<div class="product-quote">
-« Un hommage aux précieux macérats de l'Antiquité pour magnifier le grain de peau et diffuser un sillage délicat. »
-</div>
-</div>
-</div>
-<!-- POMMADE CONCRÈTE -->
-<div class="product-sheet-card">
-<div class="product-visual-box">
-<!-- SVG LA POMMADE CONCRÈTE -->
-<svg width="140" height="150" viewBox="0 0 140 120" fill="none">
-<path d="M15 40 L110 20 C120 18 128 25 128 35 L120 85 C119 95 110 100 100 98 L10 80 C5 79 0 70 2 60 L8 45 C10 41 12 40 15 40 Z" fill="#2b3a67" stroke="#c5a059" stroke-width="2"/>
-<rect x="118" y="45" width="18" height="25" rx="3" fill="#c5a059"/>
-<path d="M25 48 L95 35 L90 80 L20 93 Z" fill="#fbf7ee"/>
-<text x="58" y="65" font-family="'Cinzel', serif" font-size="6" fill="#6b1d2f" font-weight="bold" transform="rotate(-10 58 65)">POMMADE CONCRÈTE</text>
-<text x="58" y="75" font-family="'EB Garamond', serif" font-size="5" fill="#333" transform="rotate(-10 58 75)">Mains & Pieds</text>
-</svg>
-<button onclick="downloadDocument('Fiche_Pommade_Concrete')" class="btn-download"><i class="fa-solid fa-download"></i> Fiche Imprimable</button>
-</div>
-<div class="product-details">
-<h3 style="color: var(--buly-blue);">La Pommade Concrète</h3>
-<div class="product-subtitle">Beaume protecteur pour les mains et les pieds</div>
-<ul class="product-info-list">
-<li><i class="fa-solid fa-mortar-pestle"></i> <div><strong>Composition :</strong> Eau d'hydrolat de camomille adoucissante et beurre de karité d'une grande richesse.</div></li>
-<li><i class="fa-solid fa-shield-halved"></i> <div><strong>Vertu Royale :</strong> Réconforte les peaux sollicitées et forme un rempart contre les rigueurs de l'air.</div></li>
-<li><i class="fa-solid fa-hands-holding"></i> <div><strong>Le Geste :</strong> Chauffer une noix de pommade entre les paumes avant d'envelopper la peau.</div></li>
-</ul>
-<div class="product-quote">
-« Le baume mythique de l'Officine, conservé dans son tube gravé à la main pour le soin précieux des mains. »
-</div>
-</div>
-</div>
-</section>
-<!-- SECTION 3: TUTORIELS COIFFURE DE VENDEURS -->
-<section id="coiffure" class="page-section">
-<div class="section-header">
-<h2>Coiffures de Vendeurs & Rituels</h2>
-<div class="section-subtitle">Exigence du maintien et élégance au comptoir</div>
-</div>
-<div class="tuto-grid">
-<div class="tuto-card">
-<h3 class="card-title"><i class="fa-solid fa-ribbon"></i> Le Chignon Bas à la Barrette</h3>
-<div class="tuto-steps">
-<div class="step-box">
-<div class="step-num">I</div>
-Rassemblez la chevelure en nuque
-</div>
-<div class="step-box">
-<div class="step-num">II</div>
-Torsadez avec fermeté
-</div>
-<div class="step-box">
-<div class="step-num">III</div>
-Enroulez délicatement
-</div>
-<div class="step-box">
-<div class="step-num">IV</div>
-Fixez avec la barrette Buly
-</div>
-</div>
-<p style="font-size: 0.98rem; color: #444;">Ce chignon assure une présentation distinguée au comptoir. Aucune mèche vagabonde ne doit altérer la ligne du cou.</p>
-</div>
-<div class="tuto-card">
-<h3 class="card-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Le Chignon au Pic à Cheveux</h3>
-<div class="tuto-steps">
-<div class="step-box">
-<div class="step-num">I</div>
-Réunissez la masse
-</div>
-<div class="step-box">
-<div class="step-num">II</div>
-Torsadez en spirale
-</div>
-<div class="step-box">
-<div class="step-num">III</div>
-Formez un escargot
-</div>
-<div class="step-box">
-<div class="step-num">IV</div>
-Ancrez le pic de travers
-</div>
-</div>
-<p style="font-size: 0.98rem; color: #444;">Insérez le pic sculpté en attrapant une mèche extérieure puis traversez le cœur du chignon vers la base opposée.</p>
-</div>
-</div>
-</section>
-<!-- SECTION 4: LE TEMPORAL -->
-<section id="temporal" class="page-section">
-<div class="section-header">
-<h2>Le Temporal des Saisonnières & Fêtes</h2>
-<div class="section-subtitle">Les temps forts et célébrations qui rythment l'année de la Maison</div>
-</div>
-<div class="calendar-grid">
-<div class="month-card">
-<div class="month-name">Janvier</div>
-<div class="month-event">L'Art du Présent</div>
-</div>
-<div class="month-card">
-<div class="month-name">Février</div>
-<div class="month-event">Célébration des Amoureux</div>
-</div>
-<div class="month-card">
-<div class="month-name">Mars</div>
-<div class="month-event">Semaine de la Mode</div>
-</div>
-<div class="month-card">
-<div class="month-name">Avril</div>
-<div class="month-event">Renaissance des Fleurs</div>
-</div>
-<div class="month-card">
-<div class="month-name">Mai</div>
-<div class="month-event">Hommage aux Mères</div>
-</div>
-<div class="month-card">
-<div class="month-name">Juin</div>
-<div class="month-event">Les Jardins de l'Officine</div>
-</div>
-<div class="month-card">
-<div class="month-name">Juillet / Août</div>
-<div class="month-event">L'Escale Estivale</div>
-</div>
-<div class="month-card">
-<div class="month-name">Septembre</div>
-<div class="month-event">Rentrée Parisienne</div>
-</div>
-<div class="month-card">
-<div class="month-name">Octobre</div>
-<div class="month-event">Les Rareteys Cosmétiques</div>
-</div>
-<div class="month-card highlight">
-<div class="month-name">Novembre</div>
-<div class="month-event">Le Temps Long (Période Noble)</div>
-</div>
-<div class="month-card highlight">
-<div class="month-name">Décembre</div>
-<div class="month-event">Le Grand Temporal de Noël</div>
-</div>
-</div>
-</section>
-<!-- SECTION 5: SOUVERAINS & DIRIGEANTS -->
-<section id="direction" class="page-section">
-<div class="section-header">
-<h2>Souverains & Dirigeants</h2>
-<div class="section-subtitle">Les figures fondatrices et la gouvernance de la Maison Buly</div>
-</div>
-<div class="leadership-grid">
-<div class="leader-card">
-<div class="leader-avatar-box">
-<svg width="70" height="70" viewBox="0 0 100 100" fill="none">
-<circle cx="50" cy="50" r="48" fill="#f4ece1" stroke="#c5a059" stroke-width="2"/>
-<circle cx="50" cy="38" r="18" fill="#6b1d2f"/>
-<path d="M20 85 C20 65 33 58 50 58 C67 58 80 65 80 85 Z" fill="#6b1d2f"/>
-</svg>
-</div>
-<div class="leader-role">Fondatrice & Direction d'Image</div>
-<h3>Victoire de Taillac</h3>
-<p style="font-size: 0.95rem; color: #555; margin-top: 0.6rem;">Pionnière de la cosmétique séculaire réinventée, gardienne passionnée de l'esthétique et des secrets de beauté authentiques.</p>
-</div>
-<div class="leader-card">
-<div class="leader-avatar-box">
-<svg width="70" height="70" viewBox="0 0 100 100" fill="none">
-<circle cx="50" cy="50" r="48" fill="#f4ece1" stroke="#c5a059" stroke-width="2"/>
-<circle cx="50" cy="38" r="18" fill="#2b3a67"/>
-<path d="M20 85 C20 65 33 58 50 58 C67 58 80 65 80 85 Z" fill="#2b3a67"/>
-</svg>
-</div>
-<div class="leader-role">Fondateur & Directeur Créatif</div>
-<h3>Ramdane Touhami</h3>
-<p style="font-size: 0.95rem; color: #555; margin-top: 0.6rem;">Visionnaire, designer et architecte à l'origine du concept visuel unique et du raffinement de chaque Officine.</p>
-</div>
-<div class="leader-card">
-<div class="leader-avatar-box">
-<svg width="70" height="70" viewBox="0 0 100 100" fill="none">
-<circle cx="50" cy="50" r="48" fill="#f4ece1" stroke="#c5a059" stroke-width="2"/>
-<circle cx="50" cy="38" r="18" fill="#2d5a43"/>
-<path d="M20 85 C20 65 33 58 50 58 C67 58 80 65 80 85 Z" fill="#2d5a43"/>
-</svg>
-</div>
-<div class="leader-role">Chief Executive Officer</div>
-<h3>Nathalie Elbaz</h3>
-<p style="font-size: 0.95rem; color: #555; margin-top: 0.6rem;">Présidente Générale, orchestrant avec brio l'expansion internationale et la renommée mondiale de l'Officine Universelle Buly.</p>
-</div>
-</div>
-</section>
-<!-- SECTION 6: RESSOURCES EN TÉLÉCHARGEMENT -->
-<section id="ressources" class="page-section">
-<div class="section-header">
-<h2>Centre de Téléchargement</h2>
-<div class="section-subtitle">Ouvrages, fiches et chartes officinales prêts à imprimer</div>
-</div>
-<div class="resource-list">
-<div class="resource-item">
-<div class="resource-info">
-<i class="fa-solid fa-file-pdf" style="font-size: 1.8rem; color: var(--buly-burgundy);"></i>
-<div>
-<strong>Fiche L'Eau Triple</strong>
-<div style="font-size:0.8rem; color:#666;">Document Officiel · Format PDF</div>
-</div>
-</div>
-<button onclick="downloadDocument('Eau_Triple')" class="btn-download"><i class="fa-solid fa-download"></i> Télécharger</button>
-</div>
-<div class="resource-item">
-<div class="resource-info">
-<i class="fa-solid fa-file-pdf" style="font-size: 1.8rem; color: var(--buly-burgundy);"></i>
-<div>
-<strong>Fiche L'Huile Antique</strong>
-<div style="font-size:0.8rem; color:#666;">Document Officiel · Format PDF</div>
-</div>
-</div>
-<button onclick="downloadDocument('Huile_Antique')" class="btn-download"><i class="fa-solid fa-download"></i> Télécharger</button>
-</div>
-<div class="resource-item">
-<div class="resource-info">
-<i class="fa-solid fa-file-pdf" style="font-size: 1.8rem; color: var(--buly-burgundy);"></i>
-<div>
-<strong>Fiche Pommade Concrète</strong>
-<div style="font-size:0.8rem; color:#666;">Document Officiel · Format PDF</div>
-</div>
-</div>
-<button onclick="downloadDocument('Pommade_Concrete')" class="btn-download"><i class="fa-solid fa-download"></i> Télécharger</button>
-</div>
-<div class="resource-item">
-<div class="resource-info">
-<i class="fa-solid fa-file-pdf" style="font-size: 1.8rem; color: var(--buly-burgundy);"></i>
-<div>
-<strong>Guide des Coiffures de Vendeurs</strong>
-<div style="font-size:0.8rem; color:#666;">Protocole Officinal · Format PDF</div>
-</div>
-</div>
-<button onclick="downloadDocument('Guide_Coiffures')" class="btn-download"><i class="fa-solid fa-download"></i> Télécharger</button>
-</div>
-</div>
-</section>
-<!-- SECTION 7: ARBRE A VOEUX -->
-<section id="arbre-souhaits" class="page-section">
-<div class="section-header">
-<h2>L'Arbre à Vœux & Gratitudes</h2>
-<div class="section-subtitle">Inscrivez votre souhait et accrochez-le à l'arbre des festivités</div>
-</div>
-<div class="wish-tree-section">
-<div class="wish-tree-container">
-<div class="wish-tree-visual">
-<svg width="230" height="290" viewBox="0 0 200 260" fill="none">
-<polygon points="100,20 130,70 70,70" fill="#2d5a43"/>
-<polygon points="100,50 145,110 55,110" fill="#244936"/>
-<polygon points="100,90 160,160 40,160" fill="#1b3829"/>
-<polygon points="100,130 175,210 25,210" fill="#13281d"/>
-<rect x="88" y="210" width="24" height="30" fill="#5c3a21"/>
-<polygon points="100,5 104,16 115,16 106,23 109,34 100,27 91,34 94,23 85,16 96,16" fill="#c5a059"/>
-<rect x="80" y="80" width="12" height="18" rx="2" fill="#f4ece1" stroke="#c5a059"/>
-<rect x="110" y="120" width="12" height="18" rx="2" fill="#6b1d2f"/>
-<rect x="70" y="160" width="12" height="18" rx="2" fill="#2b3a67"/>
-</svg>
-</div>
-<div class="wish-form">
-<h3 class="cinzel" style="margin-bottom: 1rem; color: var(--buly-burgundy);">Déposer une Gratitude</h3>
-<form id="wishForm" onsubmit="submitWish(event)">
-<div class="form-group">
-<label for="author">Officier & Comptoir :</label>
-<input type="text" id="author" class="form-control" placeholder="Ex: Octave — Comptoir Bonaparte" required>
-</div>
-<div class="form-group">
-<label for="wishMessage">Votre Souhait ou Gratitude :</label>
-<textarea id="wishMessage" class="form-control" rows="3" placeholder="Rédigez votre vœu avec élégance..." required></textarea>
-</div>
-<button type="submit" class="btn-submit-wish"><i class="fa-solid fa-feather"></i> Confier à l'Arbre</button>
-</form>
-<div class="wish-list-display">
-<h4 class="cinzel" style="margin-bottom: 0.8rem; font-size:0.9rem; color: var(--buly-burgundy);">Pensées des Officiers :</h4>
-<div id="wishesContainer">
-<div class="wish-tag">
-<span>« Que cette nouvelle année illumine l'ensemble de nos maisons dans le monde. »</span>
-<span class="wish-tag-author">— L'Officine Saintonge</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- FOOTER -->
-<footer>
-<div class="footer-title">L'OFFICINE UNIVERSELLE BULY · PARIS 1803</div>
-<p>L'Almanach des Officiers — Compendium confidentiel réservé aux ambassadeurs de la Maison.</p>
-</footer>
-<!-- LOGIQUE JAVASCRIPT ULTRA-ROBUSTE POUR LA NAVIGATION ET INTERACTION -->
-<script>
-// NAVIGATION BLINDÉE
-function switchTab(targetId) {
-if (!targetId) return;
-// 1. Masquer toutes les sections
-const allSections = document.querySelectorAll('.page-section');
-allSections.forEach(function(sec) {
-sec.classList.remove('active');
-});
-// 2. Afficher la section cible
-const activeSection = document.getElementById(targetId);
-if (activeSection) {
-activeSection.classList.add('active');
-}
-// 3. Mettre à jour les boutons du menu principal
-const allNavBtns = document.querySelectorAll('.nav-btn');
-allNavBtns.forEach(function(btn) {
-btn.classList.remove('active');
-if (btn.getAttribute('data-target') === targetId) {
-btn.classList.add('active');
-}
-});
-// 4. Remonter en haut de page
-window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-// ATTACHEMENT DES ÉVÉNEMENTS AU CHARGEMENT DE LA PAGE
-document.addEventListener('DOMContentLoaded', function() {
-// Écouteur sur tous les boutons de navigation
-const navButtons = document.querySelectorAll('.nav-btn');
-navButtons.forEach(function(btn) {
-btn.addEventListener('click', function(e) {
-e.preventDefault();
-const target = this.getAttribute('data-target');
-if (target) {
-switchTab(target);
-}
-});
-});
-// S'assurer que la section d'accueil est bien affichée au départ
-switchTab('accueil');
-});
-// SOUMISSION D'UN VŒU
-function submitWish(event) {
-event.preventDefault();
-const authorInput = document.getElementById('author');
-const messageInput = document.getElementById('wishMessage');
-const author = authorInput.value.trim();
-const message = messageInput.value.trim();
-if (!author || !message) return;
-const wishesContainer = document.getElementById('wishesContainer');
-const newWish = document.createElement('div');
-newWish.className = 'wish-tag';
-newWish.innerHTML = '<span>« ' + escapeHtml(message) + ' »</span> <span class="wish-tag-author">— ' + escapeHtml(author) + '</span>';
-wishesContainer.prepend(newWish);
-document.getElementById('wishForm').reset();
-alert("Votre vœu a été accroché avec succès à l'Arbre de l'Officine.");
-}
-// TÉLÉCHARGEMENT DE DOCUMENTS
-function downloadDocument(docName) {
-const content = "OFFICINE UNIVERSELLE BULY 1803\nDocument Officiel : " + docName + "\n\nTéléchargé depuis L'Almanach des Officiers.";
-const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-const link = document.createElement('a');
-link.href = URL.createObjectURL(blob);
-link.download = docName + "_Buly1803.txt";
-document.body.appendChild(link);
-link.click();
-document.body.removeChild(link);
-}
-// SÉCURISATION HTML
-function escapeHtml(str) {
-return str.replace(/&/g, "&")
-.replace(/</g, "<")
-.replace(/>/g, ">")
-.replace(/"/g, """)
-.replace(/'/g, "'");
-}
-</script>
+<body class="min-h-screen flex flex-col justify-between selection:bg-amber-100">
+
+  <!-- TOP HEADER / BRANDING -->
+  <header class="bg-[#F8F4EE] border-b border-[#E5DCD0] pt-6 pb-5 px-4 text-center relative shadow-sm">
+    <div class="max-w-6xl mx-auto flex flex-col items-center">
+      <div class="text-xs tracking-[0.3em] uppercase font-sans text-[#7A6B5D] mb-1">Fondée en 1803 — Paris</div>
+      <h1 class="font-cinzel text-3xl md:text-5xl tracking-widest text-[#1D3557] font-bold my-1">
+        OFFICINE UNIVERSELLE BULY
+      </h1>
+      <div class="w-24 h-[2px] bg-[#C59B27] my-2"></div>
+      <p class="font-garamond italic text-lg text-[#5A4A3E]">Compendium Officiel de l'Équipage & Guide Général</p>
+    </div>
+  </header>
+
+  <!-- NAVIGATION TABS -->
+  <nav class="sticky top-0 z-50 bg-[#FDFBF7]/95 backdrop-blur border-b border-[#E5DCD0] py-3 px-2 shadow-xs">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-2 md:gap-4 font-sans text-xs md:text-sm tracking-wider uppercase font-medium">
+      <button onclick="openTab('histoire')" id="tab-btn-histoire" class="nav-tab active-tab px-5 py-2.5 rounded-sm border border-[#D4C5B0] text-[#4A3525] transition-all duration-200 hover:border-[#1D3557]">
+        Histoire
+      </button>
+      <button onclick="openTab('grooming')" id="tab-btn-grooming" class="nav-tab px-5 py-2.5 rounded-sm border border-[#D4C5B0] text-[#4A3525] transition-all duration-200 hover:border-[#1D3557]">
+        Grooming
+      </button>
+      <button onclick="openTab('fiches')" id="tab-btn-fiches" class="nav-tab px-5 py-2.5 rounded-sm border border-[#D4C5B0] text-[#4A3525] transition-all duration-200 hover:border-[#1D3557]">
+        Fiches Produits
+      </button>
+      <button onclick="openTab('temporal')" id="tab-btn-temporal" class="nav-tab px-5 py-2.5 rounded-sm border border-[#D4C5B0] text-[#4A3525] transition-all duration-200 hover:border-[#1D3557]">
+        Temporal
+      </button>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT AREA -->
+  <main class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full">
+
+    <!-- ==================== TAB 1: HISTOIRE ==================== -->
+    <section id="content-histoire" class="tab-content block space-y-8 animate-fadeIn">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="font-cinzel text-2xl md:text-3xl text-[#1D3557] uppercase tracking-wide">L'Histoire de l'Officine</h2>
+        <p class="font-garamond italic text-lg text-[#7A6B5D] mt-1">Un héritage d'excellence esthétique et de savoir-faire depuis 1803</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#F8F4EE] p-6 md:p-8 rounded-lg border border-[#E5DCD0] vintage-border">
+        <!-- Text Column -->
+        <div class="lg:col-span-7 space-y-4 font-garamond text-lg leading-relaxed text-[#2C2523]">
+          <p class="first-letter:text-4xl first-letter:font-cinzel first-letter:text-[#1D3557] first-letter:font-bold first-letter:float-left first-letter:mr-2">
+            L'Officine Universelle Buly fut initialement créée au XIXᵉ siècle par Jean-Vincent Bully, maître parfumeur et distillateur renommé de la rue Saint-Honoré à Paris. Célèbre pour ses soins cosmétiques visionnaires et ses formulations aromatiques sans alcool, il inspira Honoré de Balzac pour son roman <em>César Birotteau</em>.
+          </p>
+          <p>
+            Ressuscitée au cœur du Quartier Latin au <strong>6, rue Bonaparte</strong>, la maison perpétue le goût du beau, le respect des traditions botaniques séculaires et l'art de la haute parfumerie. Chaque comptoir, instrument et officine célèbre la rencontre unique de la science cosmétique antique et du raffinement esthétique français.
+          </p>
+          <div class="pt-2 border-t border-[#D4C5B0]/60 flex items-center justify-between font-sans text-xs uppercase tracking-widest text-[#7A6B5D]">
+            <span>6, Rue Bonaparte, 75006 Paris</span>
+            <span>• Parfumeur & Apothicaire •</span>
+          </div>
+        </div>
+
+        <!-- Vector Illustration: Rue Bonaparte Storefront -->
+        <div class="lg:col-span-5 flex flex-col items-center">
+          <div class="w-full bg-[#1D3557] p-4 rounded shadow-md border border-[#C59B27]">
+            <svg viewBox="0 0 500 400" class="w-full h-auto rounded bg-[#FAF6F0]" xmlns="http://www.w3.org/2000/svg">
+              <!-- Background / Shop Wall -->
+              <rect x="0" y="0" width="500" height="400" fill="#2B1B17"/>
+              
+              <!-- Wood Mouldings / Facade -->
+              <rect x="20" y="20" width="460" height="360" fill="#3D261D" stroke="#1D120E" stroke-width="3"/>
+              <rect x="30" y="30" width="440" height="60" fill="#1D3557" stroke="#C59B27" stroke-width="2"/>
+              
+              <!-- Fascia Gold Sign Title -->
+              <text x="250" y="55" font-family="Cinzel, serif" font-size="16" font-weight="bold" fill="#C59B27" text-anchor="middle" letter-spacing="3">OFFICINE UNIVERSELLE BULY</text>
+              <text x="250" y="75" font-family="Cinzel, serif" font-size="10" fill="#E5DCD0" text-anchor="middle" letter-spacing="4">FONDÉE EN 1803 • RUE BONAPARTE</text>
+
+              <!-- Main Entrance & Windows Grid -->
+              <!-- Left Window -->
+              <rect x="50" y="110" width="120" height="230" fill="#8B9EB5" opacity="0.2" stroke="#C59B27" stroke-width="2"/>
+              <rect x="55" y="115" width="110" height="220" fill="none" stroke="#3D261D" stroke-width="3"/>
+              <line x1="110" y1="115" x2="110" y2="335" stroke="#3D261D" stroke-width="2"/>
+              <line x1="55" y1="180" x2="165" y2="180" stroke="#3D261D" stroke-width="2"/>
+              <line x1="55" y1="250" x2="165" y2="250" stroke="#3D261D" stroke-width="2"/>
+              <!-- Perfume Vases in window -->
+              <ellipse cx="82" cy="235" rx="12" ry="14" fill="#C59B27" opacity="0.8"/>
+              <ellipse cx="138" cy="235" rx="12" ry="14" fill="#C59B27" opacity="0.8"/>
+
+              <!-- Central Door -->
+              <rect x="190" y="110" width="120" height="250" fill="#2B1B17" stroke="#C59B27" stroke-width="2"/>
+              <rect x="200" y="120" width="100" height="130" fill="#1D3557" stroke="#C59B27" stroke-width="1"/>
+              <circle cx="250" cy="185" r="25" fill="none" stroke="#C59B27" stroke-width="2"/>
+              <text x="250" y="190" font-family="Cinzel, serif" font-size="20" font-weight="bold" fill="#C59B27" text-anchor="middle">B</text>
+              <circle cx="280" cy="270" r="4" fill="#C59B27"/>
+
+              <!-- Right Window -->
+              <rect x="330" y="110" width="120" height="230" fill="#8B9EB5" opacity="0.2" stroke="#C59B27" stroke-width="2"/>
+              <rect x="335" y="115" width="110" height="220" fill="none" stroke="#3D261D" stroke-width="3"/>
+              <line x1="390" y1="115" x2="390" y2="335" stroke="#3D261D" stroke-width="2"/>
+              <line x1="335" y1="180" x2="445" y2="180" stroke="#3D261D" stroke-width="2"/>
+              <line x1="335" y1="250" x2="445" y2="250" stroke="#3D261D" stroke-width="2"/>
+              <!-- Apothecary Jars -->
+              <rect x="355" y="220" width="15" height="30" fill="#8B2626" opacity="0.8" rx="2"/>
+              <rect x="410" y="220" width="15" height="30" fill="#1D3557" opacity="0.8" rx="2"/>
+
+              <!-- Lantern -->
+              <polygon points="250,88 240,105 260,105" fill="#C59B27"/>
+              <rect x="244" y="98" width="12" height="12" fill="#FFF5CC" opacity="0.9" stroke="#9E7719"/>
+            </svg>
+          </div>
+          <span class="font-garamond italic text-xs text-[#7A6B5D] mt-2">La Boutique Historique du 6 Rue Bonaparte, Paris VIᵉ</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 2: GROOMING ==================== -->
+    <section id="content-grooming" class="tab-content hidden space-y-10 animate-fadeIn">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="font-cinzel text-2xl md:text-3xl text-[#1D3557] uppercase tracking-wide">Standard Grooming & Coiffures</h2>
+        <p class="font-garamond italic text-lg text-[#7A6B5D] mt-1">Instructions illustrées pour le maintien irréprochable des équipes en officine</p>
+      </div>
+
+      <!-- Guide 1: Chignon Barrette -->
+      <div class="bg-[#F8F4EE] p-6 rounded-lg border border-[#E5DCD0] vintage-border space-y-4">
+        <div class="border-b border-[#D4C5B0] pb-2 flex items-center justify-between">
+          <h3 class="font-cinzel text-lg md:text-xl text-[#1D3557] font-semibold">1. Le Chignon Bas avec Barrette</h3>
+          <span class="font-sans text-xs bg-[#1D3557] text-[#FDFBF7] px-2.5 py-1 rounded-full uppercase tracking-wider">Style Officiel</span>
+        </div>
+
+        <!-- 4 Step Vector Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Step 1 -->
+          <div class="bg-[#FDFBF7] p-4 rounded border border-[#E5DCD0] flex flex-col items-center text-center shadow-xs">
+            <div class="relative w-full aspect-4/3 mb-3">
+              <svg viewBox="0 0 200 160" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="160" rx="8" fill="#FAF6F0"/>
+                <!-- Number badge -->
+                <circle cx="24" cy="24" r="12" fill="#E5DCD0" stroke="#B8A898"/>
+                <text x="24" y="28" font-family="Montserrat" font-size="11" text-anchor="middle" font-weight="bold" fill="#4A3525">1</text>
+                <!-- Head/Neck Silhouette -->
+                <path d="M 70 160 C 70 110, 130 110, 130 160 Z" fill="#788696"/>
+                <rect x="90" y="90" width="20" height="35" fill="#E0C2AA"/>
+                <!-- Hair ponytail -->
+                <ellipse cx="100" cy="55" rx="35" ry="40" fill="#36251B"/>
+                <path d="M 92 90 L 108 90 L 105 130 L 95 130 Z" fill="#261912"/>
+                <!-- Elastic band -->
+                <rect x="90" y="92" width="20" height="10" rx="3" fill="#C59B27"/>
+              </svg>
+            </div>
+            <p class="font-sans text-xs font-medium text-[#4A3525] leading-snug">Rassemble les cheveux bas sur la nuque</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bg-[#FDFBF7] p-4 rounded border border-[#E5DCD0] flex flex-col items-center text-center shadow-xs">
+            <div class="relative w-full aspect-4/3 mb-3">
+              <svg viewBox="0 0 200 160" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="160" rx="8" fill="#FAF6F0"/>
+                <circle cx="24" cy="24" r="12" fill="#E5DCD0" stroke="#B8A898"/>
+                <text x="24" y="28" font-family="Montserrat" font-size="11" text-anchor="middle" font-weight="bold" fill="#4A3525">2</text>
+                <path d="M 70 160 C 70 110, 130 110, 130 160 Z" fill="#788696"/>
+                <rect x="90" y="90" width="20" height="35" fill="#E0C2AA"/>
+                <ellipse cx="100" cy="55" rx="35" ry="40" fill="#36251B"/>
+                <!-- Twisted tail -->
+                <path d="M 94 90 Q 106 110 95 135" stroke="#261912" stroke-width="12" stroke-linecap="round" fill="none"/>
+                <!-- Spiral twist overlay -->
+                <path d="M 92 95 Q 108 105 93 115 Q 107 125 95 135" stroke="#C59B27" stroke-width="2" fill="none"/>
+                <!-- Tension arrow -->
+                <path d="M 130 100 Q 140 120 130 135" stroke="#7A6B5D" stroke-width="1.5" fill="none" stroke-dasharray="3,3"/>
+              </svg>
+            </div>
+            <p class="font-sans text-xs font-medium text-[#4A3525] leading-snug">Torsade-les en gardant la tension</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bg-[#FDFBF7] p-4 rounded border border-[#E5DCD0] flex flex-col items-center text-center shadow-xs">
+            <div class="relative w-full aspect-4/3 mb-3">
+              <svg viewBox="0 0 200 160" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="160" rx="8" fill="#FAF6F0"/>
+                <circle cx="24" cy="24" r="12" fill="#E5DCD0" stroke="#B8A898"/>
+                <text x="24" y="28" font-family="Montserrat" font-size="11" text-anchor="middle" font-weight="bold" fill="#4A3525">3</text>
+                <path d="M 70 160 C 70 110, 130 110, 130 160 Z" fill="#788696"/>
+                <rect x="90" y="90" width="20" height="35" fill="#E0C2AA"/>
+                <ellipse cx="100" cy="55" rx="35" ry="40" fill="#36251B"/>
+                <!-- Bun roll -->
+                <circle cx="100" cy="100" r="22" fill="#261912"/>
+                <circle cx="100" cy="100" r="14" fill="none" stroke="#4A3525" stroke-width="2"/>
+                <circle cx="100" cy="100" r="6" fill="none" stroke="#7A6B5D" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <p class="font-sans text-xs font-medium text-[#4A3525] leading-snug">Enroule la torsade sur elle-même</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="bg-[#FDFBF7] p-4 rounded border border-[#E5DCD0] flex flex-col items-center text-center shadow-xs border-amber-300">
+            <div class="relative w-full aspect-4/3 mb-3">
+              <svg viewBox="0 0 200 160" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="160" rx="8" fill="#FAF6F0"/>
+                <!-- Green checkmark badge -->
+                <circle cx="176" cy="24" r="12" fill="#4285F4"/>
+                <path d="M 170 24 L 174 28 L 182 20" stroke="white" stroke-width="2.5" fill="none"/>
+                <circle cx="24" cy="24" r="12" fill="#E5DCD0" stroke="#B8A898"/>
+                <text x="24" y="28" font-family="Montserrat" font-size="11" text-anchor="middle" font-weight="bold" fill="#4A3525">4</text>
+                <path d="M 70 160 C 70 110, 130 110, 130 160 Z" fill="#788696"/>
+                <rect x="90" y="90" width="20" height="35" fill="#E0C2AA"/>
+                <ellipse cx="100" cy="55" rx="35" ry="40" fill="#36251B"/>
+                <circle cx="100" cy="100" r="22" fill="#261912"/>
+                <!-- Tortoiseshell Barrette across -->
+                <rect x="65" y="94" width="70" height="14" rx="7" fill="#3B2314" stroke="#C59B27" stroke-width="1.5"/>
+                <circle cx="78" cy="101" r="2" fill="#C59B27"/>
+                <circle cx="100" cy="101" r="2" fill="#C59B27"/>
+                <circle cx="122" cy="101" r="2" fill="#C59B27"/>
+              </svg>
+            </div>
+            <p class="font-sans text-xs font-medium text-[#4A3525] leading-snug">Clipse la barrette en travers du chignon</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guide 2: Chignon Pic -->
+      <div class="bg-[#F8F4EE] p-6 rounded-lg border border-[#E5DCD0] vintage-border space-y-4">
+        <div class="border-b border-[#D4C5B0] pb-2 flex items-center justify-between">
+          <h3 class="font-cinzel text-lg md:text-xl text-[#1D3557] font-semibold">2. Le Chignon avec Pic à Chignon</h3>
+          <span class="font-sans text-xs bg-[#8B2626] text-[#FDFBF7] px-2.5 py-1 rounded-full uppercase tracking-wider">Variante Élégante</span>
+        </div>
+
+        <!-- 4 Step Vector Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Step 1 -->
+          <div class="bg-[#FDFBF7] p-4 rounded border border-[#E5DCD0] flex flex-col items-center text-center shadow-xs">
+            <div class="relative w-full aspect-4/3 mb-3">
+              <svg viewBox="0 0 200 160" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="160" rx="8" fill="#FAF6F0"/>
+                <circle cx="24" cy="24" r="12" fill="#E5DCD0" stroke="#B8A898"/>
+                <text x="24" y="28" font-family="Montserrat" font-size="11" text-anchor="middle" font-weight="bold" fill="#4A3525">1</text>
+                <path d="M 70 160 C 70 110, 130 110, 130 160 Z" fill="#788696"/>
+                <rect x="90" y="90" width="20" height="35" fill="#E0C2AA"/>
+                <ellipse cx="100" cy="55" rx="35" ry="40" fill="#36251B"/>
+                <path d="M 92 90 L 108 90 L 105 130 L 95 130 Z" fill="#261912"/>
+                <rect x="90" y="92" width="20" height="10" rx="3" fill="#C59B27"/>
+              </svg>
+            </div>
+            <p class="font-sans text-xs font-medium text-[#4A3525] leading-snug">Rassemble les cheveux bas sur la nuque</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bg-[#FDFBF7] p-4 rounded border border-[#E5DCD0] flex flex-col items-center text-center shadow-xs">
+            <div class="relative w-full aspect-4/3 mb-3">
+              <svg viewBox="0 0 200 160" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="160" rx="8" fill="#FAF6F0"/>
+                <circle cx="24" cy="24" r="12" fill="#E5DCD0" stroke="#B8A898"/>
+                <text x="24" y="28" font-family="Montserrat" font-size="11" text-anchor="middle" font-weight="bold" fill="#4A3525">2</text>
+                <path d="M 70 160 C 70 110, 130 110, 130 160 Z" fill="#788696"/>
+                <rect x="90" y="90" width="20" height="35" fill="#E0C2AA"/>
+                <ellipse cx="100" cy="55" rx="35" ry="40" fill="#36251B"/>
+                <path d="M 94 90 Q 106 110 95 135" stroke="#261912" stroke-width="12" stroke-linecap="round" fill="none"/>
+                <path d="M 92 95 Q 108 105 93 115 Q 107 125 95 135" stroke="#C59B27" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <p class="font-sans text-xs font-medium text-[#4A3525] leading-snug">Torsade-les en gardant la tension</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bg-[#FDFBF7] p-4 rounded border border-[#E5DCD0] flex flex-col items-center text-center shadow-xs">
+            <div class="relative w-full aspect-4/3 mb-3">
+              <svg viewBox="0 0 200 160" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="160" rx="8" fill="#FAF6F0"/>
+                <circle cx="24" cy="24" r="12" fill="#E5DCD0" stroke="#B8A898"/>
+                <text x="24" y="28" font-family="Montserrat" font-size="11" text-anchor="middle" font-weight="bold" fill="#4A3525">3</text>
+                <path d="M 70 160 C 70 110, 130 110, 130 160 Z" fill="#788696"/>
+                <rect x="90" y="90" width="20" height="35" fill="#E0C2AA"/>
+                <ellipse cx="100" cy="55" rx="35" ry="40" fill="#36251B"/>
+                <circle cx="100" cy="100" r="22" fill="#261912"/>
+                <circle cx="100" cy="100" r="14" fill="none" stroke="#4A3525" stroke-width="2"/>
+              </svg>
+            </div>
+            <p class="font-sans text-xs font-medium text-[#4A3525] leading-snug">Enroule la torsade sur elle-même</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="bg-[#FDFBF7] p-4 rounded border border-[#E5DCD0] flex flex-col items-center text-center shadow-xs border-amber-300">
+            <div class="relative w-full aspect-4/3 mb-3">
+              <svg viewBox="0 0 200 160" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <rect width="200" height="160" rx="8" fill="#FAF6F0"/>
+                <circle cx="176" cy="24" r="12" fill="#4285F4"/>
+                <path d="M 170 24 L 174 28 L 182 20" stroke="white" stroke-width="2.5" fill="none"/>
+                <circle cx="24" cy="24" r="12" fill="#E5DCD0" stroke="#B8A898"/>
+                <text x="24" y="28" font-family="Montserrat" font-size="11" text-anchor="middle" font-weight="bold" fill="#4A3525">4</text>
+                <path d="M 70 160 C 70 110, 130 110, 130 160 Z" fill="#788696"/>
+                <rect x="90" y="90" width="20" height="35" fill="#E0C2AA"/>
+                <ellipse cx="100" cy="55" rx="35" ry="40" fill="#36251B"/>
+                <circle cx="100" cy="100" r="22" fill="#261912"/>
+                <!-- Hair pin/pic in diagonal -->
+                <polygon points="135,55 155,70 95,135 85,125" fill="#F4E3C1" stroke="#9E7719" stroke-width="1.5"/>
+                <rect x="135" y="60" width="10" height="10" transform="rotate(25 135 60)" fill="#C59B27"/>
+              </svg>
+            </div>
+            <p class="font-sans text-xs font-medium text-[#4A3525] leading-snug">Insère le pic en diagonale à travers</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 3: FICHES PRODUITS ==================== -->
+    <section id="content-fiches" class="tab-content hidden space-y-12 animate-fadeIn">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="font-cinzel text-2xl md:text-3xl text-[#1D3557] uppercase tracking-wide">Fiches Produits & Rituels</h2>
+        <p class="font-garamond italic text-lg text-[#7A6B5D] mt-1">Savoir-faire, vertus botaniques et rituels d'application des emblèmes Buly</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- CARD 1: LA POMMADE CONCRÈTE -->
+        <div class="bg-[#FDFBF7] border-2 border-[#2A4BA0] rounded-lg overflow-hidden flex flex-col card-shadow">
+          <!-- Header Banner -->
+          <div class="bg-[#EBF1FA] p-6 text-center border-b border-[#2A4BA0]/30 flex flex-col items-center justify-center min-h-[220px]">
+            <!-- Vector Tube Graphic -->
+            <svg viewBox="0 0 120 180" class="h-40 drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+              <!-- Blue tube body -->
+              <path d="M 30 20 L 90 20 L 82 140 L 38 140 Z" fill="#2A4BA0"/>
+              <!-- Top fold -->
+              <rect x="28" y="15" width="64" height="8" rx="2" fill="#1D3557"/>
+              <!-- Cap -->
+              <rect x="48" y="140" width="24" height="20" fill="#8B9EB5" stroke="#4A5B6D" stroke-width="1"/>
+              <!-- White Framed Hand Graphic on Tube -->
+              <rect x="42" y="45" width="36" height="55" fill="#FDFBF7" rx="2" stroke="#1D3557" stroke-width="1"/>
+              <!-- Hand icon -->
+              <path d="M 60 55 C 55 55, 52 62, 52 70 L 52 82 Q 60 88 68 82 L 68 70 C 68 62, 65 55, 60 55 Z" fill="#E8D5C4" stroke="#2A4BA0" stroke-width="1"/>
+              <!-- Red accent on tube -->
+              <rect x="42" y="105" width="36" height="12" fill="#8B2626"/>
+            </svg>
+          </div>
+
+          <!-- Content Body -->
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-6">
+            <div>
+              <h3 class="font-cinzel text-2xl text-[#2A4BA0] font-bold">La Pommade concrète</h3>
+              <p class="font-garamond italic text-[#5A4A3E] text-base mb-4">Soin protecteur mains et pieds</p>
+
+              <div class="space-y-4 font-sans text-xs">
+                <!-- Formule -->
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-full bg-[#EBF1FA] text-[#2A4BA0] flex items-center justify-center shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                  </div>
+                  <div>
+                    <span class="font-bold text-[#2A4BA0] uppercase tracking-wider block text-[10px]">Formule</span>
+                    <p class="font-garamond text-sm text-[#2C2523]">Eau de camomille apaisante et beurre de karité d'une grande richesse.</p>
+                  </div>
+                </div>
+
+                <!-- Atout Clef -->
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-full bg-[#EBF1FA] text-[#2A4BA0] flex items-center justify-center shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+                  </div>
+                  <div>
+                    <span class="font-bold text-[#2A4BA0] uppercase tracking-wider block text-[10px]">Atout Clef</span>
+                    <p class="font-garamond text-sm text-[#2C2523]">Répare les épidermes sollicités et protège du froid.</p>
+                  </div>
+                </div>
+
+                <!-- Rituel -->
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-full bg-[#EBF1FA] text-[#2A4BA0] flex items-center justify-center shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/></svg>
+                  </div>
+                  <div>
+                    <span class="font-bold text-[#2A4BA0] uppercase tracking-wider block text-[10px]">Rituel</span>
+                    <p class="font-garamond text-sm text-[#2C2523]">Réchauffer une noisette de baume au creux des mains avant application.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-l-2 border-[#2A4BA0] pl-3 italic font-garamond text-xs text-[#5A4A3E]">
+              « Le baume emblématique des mains exigeantes, abrité dans son tube en aluminium à l’empreinte illustrée. »
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: L'EAU TRIPLE -->
+        <div class="bg-[#FDFBF7] border-2 border-[#C59B27] rounded-lg overflow-hidden flex flex-col card-shadow">
+          <!-- Header Banner -->
+          <div class="bg-[#FAF5E8] p-6 text-center border-b border-[#C59B27]/30 flex flex-col items-center justify-center min-h-[220px]">
+            <!-- Vector Perfume Bottle -->
+            <svg viewBox="0 0 120 180" class="h-40 drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+              <!-- Ceramic Body -->
+              <path d="M 40 60 L 80 60 L 95 85 L 95 140 L 25 140 L 25 85 Z" fill="#FFFFFF" stroke="#D4C5B0" stroke-width="2"/>
+              <rect x="35" y="135" width="50" height="15" fill="#FFFFFF" stroke="#D4C5B0" stroke-width="2"/>
+              <!-- Neck -->
+              <rect x="52" y="45" width="16" height="15" fill="#C59B27"/>
+              <!-- Dome Brass Cap -->
+              <circle cx="60" cy="32" r="20" fill="#C59B27" stroke="#9E7719" stroke-width="1.5"/>
+              <!-- Gold Crest / Seal on bottle -->
+              <circle cx="60" cy="100" r="18" fill="#C59B27"/>
+              <circle cx="60" cy="100" r="14" fill="#FFFFFF"/>
+              <text x="60" y="105" font-family="Cinzel" font-size="14" font-weight="bold" fill="#C59B27" text-anchor="middle">T</text>
+            </svg>
+          </div>
+
+          <!-- Content Body -->
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-6">
+            <div>
+              <h3 class="font-cinzel text-2xl text-[#C59B27] font-bold">L’Eau Triple</h3>
+              <p class="font-garamond italic text-[#5A4A3E] text-base mb-4">Parfum universel à l’eau (sans alcool)</p>
+
+              <div class="space-y-4 font-sans text-xs">
+                <!-- Formule -->
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-full bg-[#FAF5E8] text-[#C59B27] flex items-center justify-center shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                  </div>
+                  <div>
+                    <span class="font-bold text-[#C59B27] uppercase tracking-wider block text-[10px]">Formule</span>
+                    <p class="font-garamond text-sm text-[#2C2523]">Émulsion d’eau et d’huile aromatique unique au monde.</p>
+                  </div>
+                </div>
+
+                <!-- Atout Clef -->
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-full bg-[#FAF5E8] text-[#C59B27] flex items-center justify-center shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+                  </div>
+                  <div>
+                    <span class="font-bold text-[#C59B27] uppercase tracking-wider block text-[10px]">Atout Clef</span>
+                    <p class="font-garamond text-sm text-[#2C2523]">Ne dessèche ni la peau ni les cheveux. Ne tache jamais les textiles.</p>
+                  </div>
+                </div>
+
+                <!-- Rituel -->
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-full bg-[#FAF5E8] text-[#C59B27] flex items-center justify-center shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/></svg>
+                  </div>
+                  <div>
+                    <span class="font-bold text-[#C59B27] uppercase tracking-wider block text-[10px]">Rituel</span>
+                    <p class="font-garamond text-sm text-[#2C2523]">Agiter le flacon en céramique avant la vaporisation.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-l-2 border-[#C59B27] pl-3 italic font-garamond text-xs text-[#5A4A3E]">
+              « Une fragrance d’une grande pureté qui n’agresse pas la peau mais l’enveloppe d’une aura fidèle toute la journée. »
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: L'HUILE ANTIQUE -->
+        <div class="bg-[#FDFBF7] border-2 border-[#8B2626] rounded-lg overflow-hidden flex flex-col card-shadow">
+          <!-- Header Banner -->
+          <div class="bg-[#F9ECEC] p-6 text-center border-b border-[#8B2626]/30 flex flex-col items-center justify-center min-h-[220px]">
+            <!-- Vector Oil Bottle -->
+            <svg viewBox="0 0 120 180" class="h-40 drop-shadow-md" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 35 60 C 35 60, 25 80, 25 140 L 95 140 C 95 80, 85 60, 85 60 Z" fill="#FFFFFF" stroke="#8B2626" stroke-width="1.5"/>
+              <rect x="50" y="45" width="20" height="15" fill="#3D261D"/>
+              <circle cx="60" cy="32" r="18" fill="#2C2523"/>
+              <!-- Vintage Roman Graphic Frame on Bottle -->
+              <rect x="40" y="75" width="40" height="50" fill="none" stroke="#8B2626" stroke-width="1.5"/>
+              <circle cx="48" cy="95" r="4" fill="#8B2626"/>
+              <path d="M 65 110 L 72 90 L 78 110 Z" fill="#8B2626"/>
+            </svg>
+          </div>
+
+          <!-- Content Body -->
+          <div class="p-6 flex-grow flex flex-col justify-between space-y-6">
+            <div>
+              <h3 class="font-cinzel text-2xl text-[#8B2626] font-bold">L’Huile antique</h3>
+              <p class="font-garamond italic text-[#5A4A3E] text-base mb-4">Huile sèche embellissante corps</p>
+
+              <div class="space-y-4 font-sans text-xs">
+                <!-- Formule -->
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-full bg-[#F9ECEC] text-[#8B2626] flex items-center justify-center shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                  </div>
+                  <div>
+                    <span class="font-bold text-[#8B2626] uppercase tracking-wider block text-[10px]">Formule</span>
+                    <p class="font-garamond text-sm text-[#2C2523]">Triptyque de sésame, d’abricot et de coco nourrissant.</p>
+                  </div>
+                </div>
+
+                <!-- Atout Clef -->
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-full bg-[#F9ECEC] text-[#8B2626] flex items-center justify-center shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+                  </div>
+                  <div>
+                    <span class="font-bold text-[#8B2626] uppercase tracking-wider block text-[10px]">Atout Clef</span>
+                    <p class="font-garamond text-sm text-[#2C2523]">Satine la peau immédiatement sans laisser de film gras.</p>
+                  </div>
+                </div>
+
+                <!-- Rituel -->
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-full bg-[#F9ECEC] text-[#8B2626] flex items-center justify-center shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/></svg>
+                  </div>
+                  <div>
+                    <span class="font-bold text-[#8B2626] uppercase tracking-wider block text-[10px]">Rituel</span>
+                    <p class="font-garamond text-sm text-[#2C2523]">Appliquer sur peau légèrement humide au sortir du bain.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-l-2 border-[#8B2626] pl-3 italic font-garamond text-xs text-[#5A4A3E]">
+              « Un hommage aux macérats cosmétiques de l’Antiquité pour illuminer et parfumer le corps d’un sillage délicat. »
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== TAB 4: TEMPORAL ==================== -->
+    <section id="content-temporal" class="tab-content hidden space-y-8 animate-fadeIn">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="font-cinzel text-2xl md:text-3xl text-[#1D3557] uppercase tracking-wide">Le Temporal & Les temps forts de l’année</h2>
+        <p class="font-garamond italic text-lg text-[#7A6B5D] mt-1">Calendrier annuel des animations et célébrations de la Maison</p>
+      </div>
+
+      <!-- Vectorized 12-Month Grid -->
+      <div class="bg-[#F8F4EE] p-6 md:p-8 rounded-lg border border-[#E5DCD0] vintage-border">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          
+          <!-- Janvier -->
+          <div class="bg-[#F9ECEC] border-2 border-[#B85C65] p-5 rounded flex flex-col items-center justify-center text-center min-h-[140px] shadow-xs">
+            <span class="font-sans text-[10px] uppercase tracking-widest text-[#B85C65] font-bold mb-2">Janvier</span>
+            <div class="w-10 h-10 rounded-full border border-[#B85C65] flex items-center justify-center font-cinzel font-bold text-[#B85C65] mb-2">B</div>
+            <span class="font-garamond text-base text-[#2C2523]">L'Art du Présent</span>
+          </div>
+
+          <!-- Février -->
+          <div class="bg-[#F9ECEC] border-2 border-[#B85C65] p-5 rounded flex flex-col items-center justify-center text-center min-h-[140px] shadow-xs">
+            <span class="font-sans text-[10px] uppercase tracking-widest text-[#B85C65] font-bold mb-2">Février</span>
+            <svg class="w-8 h-8 text-[#B85C65] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            <span class="font-garamond text-base text-[#2C2523]">Saint-Valentin</span>
+          </div>
+
+          <!-- Mars -->
+          <div class="bg-[#EBF1FA] border-2 border-[#2A4BA0] p-5 rounded flex flex-col items-center justify-center text-center min-h-[140px] shadow-xs">
+            <span class="font-sans text-[10px] uppercase tracking-widest text-[#2A4BA0] font-bold mb-2">Mars</span>
+            <svg class="w-8 h-8 text-[#2A4BA0] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4a3 3 0 00-3 3v1H5l1.5 12h11L19 8h-4V7a3 3 0 00-3-3z"/></svg>
+            <span class="font-garamond text-base text-[#2C2523]">Fashion Week</span>
+          </div>
+
+          <!-- Avril (Empty) -->
+          <div class="bg-transparent border-2 border-dashed border-[#D4C5B0] p-5 rounded flex flex-col items-center justify-center text-center min-h-[140px]">
+            <span class="font-sans text-[10px] uppercase tracking-widest text-[#A09080]">Avril</span>
+          </div>
+
+          <!-- Mai (Empty) -->
+          <div class="bg-transparent border-2 border-dashed border-[#D4C5B0] p-5 rounded flex flex-col items-center justify-center text-center min-h-[140px]">
+            <span class="font-sans text-[10px] uppercase tracking-widest text-[#A09080]">Mai</span>
+          </div>
+
+          <!-- Juin (Empty) -->
+          <div class="bg-transparent border-2 border-dashed border-[#D4C5B0] p-5 rounded flex flex-col items-center justify-center text-center min-h-[140px]">
+            <span class="font-sans text-[10px] uppercase tracking-widest text-[#A09080]">Juin</span>
+          </div>
+
+          <!-- Juillet (Empty) -->
+          <div class="bg-transparent border-2 border-dashed border-[#D4C5B0] p-5 rounded flex flex-col items-center justify-center text-center min-h-[140px]">
+            <span class="font-sans text-[10px] uppercase tracking-widest text-[#A09080]">Juillet</span>
+          </div>
+
+          <!-- Août (Empty) -->
+          <div class="bg-transparent border-2 border-dashed border-[#D4C5B0] p-5 rounded flex flex-col items-center justify-center text-center min-h-[140px]">
+            <span class="font-sans text-[10px] uppercase tracking-widest text-[#A09080]">Août</span>
+          </div>
+
+          <!-- Septembre -->
+          <div class="bg-[#EBF1FA] border-2 border-[#2A4BA0] p-5 rounded flex flex-col items-center justify-center text-center min-h-[140px] shadow-xs">
+            <span class="font-sans text-[10px] uppercase tracking-widest text-[#2A4BA0] font-bold mb-2">Septembre</span>
+            <svg class="w-8 h-8 text-[#2A4BA0] mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4a3 3 0 00-3 3v1H5l1.5 12h11L19 8h-4V7a3 3 0 00-3-3z"/></svg>
+            <span class="font-garamond text-base text-[#2C2523]">Fashion Week</span>
+          </div>
+
+          <!-- Octobre (Empty) -->
+          <div class="bg-transparent border-2 border-dashed border-[#D4C5B0] p-5 rounded flex flex-col items-center justify-center text-center min-h-[140px]">
+            <span class="font-sans text-[10px] uppercase tracking-widest text-[#A09080]">Octobre</span>
+          </div>
+
+          <!-- Novembre -->
+          <div class="bg-[#FAF5E8] border-2 border-[#C59B27] p-5 rounded flex flex-col items-center justify-center text-center min-h-[140px] shadow-xs">
+            <span class="font-sans text-[10px] uppercase tracking-widest text-[#9E7719] font-bold mb-1">Novembre</span>
+            <svg class="w-8 h-8 text-[#9E7719] mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span class="font-garamond text-base text-[#2C2523] leading-tight">Le Temps Long</span>
+            <span class="font-sans text-[9px] text-[#7A6B5D] mt-0.5">sans Black Friday</span>
+          </div>
+
+          <!-- Décembre -->
+          <div class="bg-[#F9ECEC] border-2 border-[#8B2626] p-5 rounded flex flex-col items-center justify-center text-center min-h-[140px] shadow-xs">
+            <span class="font-sans text-[10px] uppercase tracking-widest text-[#8B2626] font-bold mb-1">Décembre</span>
+            <svg class="w-8 h-8 text-[#8B2626] mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V6a2 2 0 10-2 2h2zm0 13C10.832 21 2 17 2 12V8h20v4c0 5-8.832 9-10 9z"/></svg>
+            <span class="font-garamond text-base text-[#2C2523] leading-tight">Le Grand Temporal</span>
+            <span class="font-sans text-[9px] text-[#8B2626] mt-0.5">de Noël</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#1D3557] text-[#E5DCD0] py-6 px-4 text-center font-garamond border-t border-[#C59B27] mt-12">
+    <p class="text-base tracking-wide">Officine Universelle Buly 1803 — Parfumeur & Apothicaire</p>
+    <p class="font-sans text-xs text-[#A0B0C0] mt-1 uppercase tracking-widest">Guide Officiel & Rituels d'Officine</p>
+  </footer>
+
+  <!-- INTERACTIVE TAB JAVASCRIPT -->
+  <script>
+    function openTab(tabId) {
+      // 1. Hide all tab content sections
+      const allContents = document.querySelectorAll('.tab-content');
+      allContents.forEach(content => {
+        content.classList.add('hidden');
+        content.classList.remove('block');
+      });
+
+      // 2. Remove active state from all buttons
+      const allButtons = document.querySelectorAll('.nav-tab');
+      allButtons.forEach(btn => {
+        btn.classList.remove('active-tab');
+      });
+
+      // 3. Display target section
+      const targetContent = document.getElementById('content-' + tabId);
+      if (targetContent) {
+        targetContent.classList.remove('hidden');
+        targetContent.classList.add('block');
+      }
+
+      // 4. Activate current button
+      const targetBtn = document.getElementById('tab-btn-' + tabId);
+      if (targetBtn) {
+        targetBtn.classList.add('active-tab');
+      }
+    }
+
+    // Ensure default active tab on initial load
+    document.addEventListener('DOMContentLoaded', () => {
+      openTab('histoire');
+    });
+  </script>
 </body>
 </html>
