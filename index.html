@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>L'Almanach des Grands Officiers - Officine Universelle Buly 1803</title>
-<!-- Polices typographiques d'époque -->
+<title>L'Almanach des Officiers — L'Officine Universelle Buly 1803</title>
+<!-- Polices Typographiques d'Époque -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@ font-family: 'Playfair Display', serif;
 color: var(--buly-burgundy);
 letter-spacing: 0.5px;
 }
-.cinzel-font {
+.cinzel {
 font-family: 'Cinzel', serif;
 }
 /* HEADER & NAVIGATION */
@@ -60,7 +60,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 max-width: 1200px;
-margin: 0 auto 1rem;
+margin: 0 auto 1.2rem;
 padding-bottom: 0.8rem;
 border-bottom: 1px solid var(--buly-border);
 }
@@ -70,33 +70,10 @@ align-items: center;
 gap: 1.5rem;
 text-align: left;
 }
-.logo-emblem {
-width: 75px;
-height: 75px;
-border-radius: 50%;
-border: 2px solid var(--buly-gold);
-padding: 2px;
-background: #fff;
-box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-display: flex;
-align-items: center;
-justify-content: center;
-}
-.brand-title h1 {
-font-family: 'Cinzel', serif;
-font-size: 1.4rem;
-font-weight: 700;
-color: var(--buly-burgundy);
-letter-spacing: 2px;
-text-transform: uppercase;
-line-height: 1.1;
-}
-.brand-title span {
-font-size: 0.85rem;
-font-family: 'Playfair Display', serif;
-font-style: italic;
-color: var(--buly-gold);
-letter-spacing: 1px;
+.logo-img {
+max-height: 60px;
+width: auto;
+object-fit: contain;
 }
 .user-status {
 display: flex;
@@ -105,37 +82,39 @@ gap: 0.8rem;
 font-size: 0.85rem;
 font-family: 'Cinzel', serif;
 background: rgba(197, 160, 89, 0.12);
-padding: 0.5rem 1.2rem;
+padding: 0.6rem 1.4rem;
 border-radius: 20px;
 border: 1px solid var(--buly-gold-light);
 color: var(--buly-burgundy);
 }
+/* MENU DE NAVIGATION */
 .nav-menu {
 display: flex;
 justify-content: center;
-gap: 1.2rem;
+gap: 0.8rem;
 list-style: none;
 flex-wrap: wrap;
 }
-.nav-item a {
-text-decoration: none;
+.nav-item button {
+background: none;
+border: 1px solid transparent;
 color: var(--buly-text);
 font-family: 'Cinzel', serif;
 font-size: 0.82rem;
 font-weight: 600;
 letter-spacing: 1px;
-padding: 0.5rem 0.9rem;
-border-bottom: 2px solid transparent;
+padding: 0.6rem 1.1rem;
 transition: all 0.3s ease;
 display: flex;
 align-items: center;
-gap: 0.4rem;
+gap: 0.5rem;
+cursor: pointer;
+border-radius: 3px;
 }
-.nav-item a:hover, .nav-item a.active {
+.nav-item button:hover, .nav-item button.active {
 color: var(--buly-burgundy);
-border-bottom-color: var(--buly-gold);
+border-color: var(--buly-gold);
 background-color: rgba(197, 160, 89, 0.15);
-border-radius: 4px;
 }
 /* MAIN CONTAINER */
 .container {
@@ -143,10 +122,10 @@ max-width: 1200px;
 margin: 2rem auto;
 padding: 0 1.5rem;
 }
-/* SECTION STYLING */
+/* SECTIONS */
 .page-section {
 display: none;
-animation: fadeIn 0.4s ease-in-out;
+animation: fadeIn 0.35s ease-in-out;
 }
 .page-section.active {
 display: block;
@@ -157,17 +136,17 @@ to { opacity: 1; transform: translateY(0); }
 }
 .section-header {
 text-align: center;
-margin-bottom: 2.5rem;
+margin-bottom: 2.8rem;
 position: relative;
 }
 .section-header h2 {
-font-size: 2.2rem;
+font-size: 2.1rem;
 font-family: 'Cinzel', serif;
 letter-spacing: 2px;
 text-transform: uppercase;
 display: inline-block;
 background: var(--buly-cream);
-padding: 0 1.5rem;
+padding: 0 1.8rem;
 position: relative;
 z-index: 1;
 }
@@ -175,8 +154,8 @@ z-index: 1;
 content: '';
 position: absolute;
 top: 50%;
-left: 10%;
-right: 10%;
+left: 8%;
+right: 8%;
 height: 1px;
 background: var(--buly-gold);
 z-index: 0;
@@ -186,11 +165,36 @@ font-family: 'Playfair Display', serif;
 font-style: italic;
 color: #666;
 margin-top: 0.5rem;
+font-size: 1.1rem;
 }
-/* CARDS & GRID */
+/* BANNIERE D'ACCUEIL */
+.hero-banner {
+width: 100%;
+height: 260px;
+background: linear-gradient(rgba(107, 29, 47, 0.85), rgba(74, 16, 30, 0.85)),
+url('https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?auto=format&fit=crop&w=1200&q=80') center/cover;
+border-radius: 6px;
+border: 1px solid var(--buly-gold);
+margin-bottom: 3rem;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--buly-cream);
+text-align: center;
+padding: 2rem;
+box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.hero-banner h2 {
+color: var(--buly-gold-light);
+font-family: 'Cinzel', serif;
+font-size: 2.2rem;
+letter-spacing: 3px;
+margin-bottom: 0.5rem;
+}
+/* GRILLES DE CARTES */
 .card-grid {
 display: grid;
-grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
 gap: 2rem;
 }
 .buly-card {
@@ -200,42 +204,41 @@ border-radius: 4px;
 overflow: hidden;
 box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 transition: transform 0.3s ease, box-shadow 0.3s ease;
-position: relative;
 }
 .buly-card:hover {
 transform: translateY(-4px);
-box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+box-shadow: 0 8px 22px rgba(0,0,0,0.08);
 }
 .card-header-bg {
 background: var(--buly-parchment);
-padding: 1.5rem;
+padding: 1.8rem;
 text-align: center;
 border-bottom: 1px solid var(--buly-border);
 }
 .card-body {
-padding: 1.5rem;
+padding: 1.8rem;
 }
 .card-title {
-font-size: 1.3rem;
-margin-bottom: 0.5rem;
+font-size: 1.35rem;
+margin-bottom: 0.6rem;
 color: var(--buly-burgundy);
 border-bottom: 1px solid var(--buly-gold-light);
 padding-bottom: 0.4rem;
 }
-/* VECTOR & IMAGE CONTAINERS */
+/* CARTES MEMOS PRODUITS */
 .product-sheet-card {
 background: #fff;
 border: 2px solid var(--buly-gold);
 border-radius: 6px;
-padding: 2rem;
-box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+padding: 2.2rem;
+box-shadow: 0 6px 16px rgba(0,0,0,0.05);
 margin-bottom: 2.5rem;
 display: grid;
 grid-template-columns: 280px 1fr;
-gap: 2rem;
+gap: 2.5rem;
 align-items: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 800px) {
 .product-sheet-card { grid-template-columns: 1fr; }
 }
 .product-visual-box {
@@ -244,17 +247,29 @@ border: 1px solid var(--buly-border);
 border-radius: 4px;
 padding: 1.5rem;
 text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.product-img {
+max-width: 100%;
+height: 180px;
+object-fit: contain;
+filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+margin-bottom: 1rem;
 }
 .product-details h3 {
-font-size: 1.8rem;
-margin-bottom: 0.3rem;
+font-size: 1.9rem;
+margin-bottom: 0.2rem;
+font-family: 'Cinzel', serif;
 }
 .product-subtitle {
 font-family: 'Playfair Display', serif;
 font-style: italic;
 color: var(--buly-gold);
 margin-bottom: 1.2rem;
-font-size: 1.1rem;
+font-size: 1.15rem;
 }
 .product-info-list {
 list-style: none;
@@ -264,7 +279,8 @@ margin-bottom: 1.5rem;
 margin-bottom: 1rem;
 display: flex;
 align-items: flex-start;
-gap: 0.8rem;
+gap: 0.9rem;
+font-size: 1.05rem;
 }
 .product-info-list i {
 color: var(--buly-burgundy);
@@ -273,14 +289,13 @@ margin-top: 0.2rem;
 }
 .product-quote {
 border-left: 3px solid var(--buly-gold);
-padding-left: 1rem;
+padding: 0.8rem 1.2rem;
 font-style: italic;
 color: #555;
 background: rgba(244, 236, 225, 0.4);
-padding: 0.8rem 1rem;
 border-radius: 0 4px 4px 0;
 }
-/* DIRECTION & FOUNDERS */
+/* GOUVERNANCE & DIRIGEANTS */
 .leadership-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -290,7 +305,7 @@ gap: 2rem;
 text-align: center;
 background: #fff;
 border: 1px solid var(--buly-border);
-padding: 2rem 1.5rem;
+padding: 2.2rem 1.5rem;
 border-radius: 4px;
 box-shadow: 0 4px 10px rgba(0,0,0,0.03);
 }
@@ -300,23 +315,18 @@ height: 130px;
 border-radius: 50%;
 margin: 0 auto 1.2rem;
 border: 3px solid var(--buly-gold);
-background: var(--buly-parchment);
-display: flex;
-align-items: center;
-justify-content: center;
-color: var(--buly-burgundy);
-font-size: 2.8rem;
-box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+object-fit: cover;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 .leader-role {
 font-family: 'Cinzel', serif;
 font-size: 0.85rem;
 color: var(--buly-gold);
-letter-spacing: 1px;
+letter-spacing: 1.5px;
 margin-bottom: 0.4rem;
 text-transform: uppercase;
 }
-/* TUTORIALS / CHIGNONS */
+/* TUTORIELS COIFFURE & CHIGNONS */
 .tuto-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
@@ -328,25 +338,25 @@ gap: 2rem;
 .tuto-card {
 background: #fff;
 border: 1px solid var(--buly-border);
-padding: 1.5rem;
+padding: 1.8rem;
 border-radius: 6px;
 }
 .tuto-steps {
 display: grid;
 grid-template-columns: repeat(4, 1fr);
 gap: 0.5rem;
-margin: 1.2rem 0;
+margin: 1.4rem 0;
 background: var(--buly-parchment);
 padding: 1rem;
 border-radius: 4px;
 }
 .step-box {
 text-align: center;
-font-size: 0.75rem;
+font-size: 0.8rem;
 }
 .step-num {
-width: 24px;
-height: 24px;
+width: 26px;
+height: 26px;
 border-radius: 50%;
 background: var(--buly-burgundy);
 color: #fff;
@@ -355,13 +365,13 @@ align-items: center;
 justify-content: center;
 margin: 0 auto 0.4rem;
 font-family: 'Cinzel', serif;
-font-size: 0.75rem;
+font-size: 0.8rem;
 }
-/* CALENDAR / TEMPORAL */
+/* TEMPORAL / CALENDRIER */
 .calendar-grid {
 display: grid;
 grid-template-columns: repeat(4, 1fr);
-gap: 1rem;
+gap: 1.2rem;
 background: #fff;
 padding: 2rem;
 border: 2px solid var(--buly-gold);
@@ -373,9 +383,9 @@ border-radius: 6px;
 .month-card {
 border: 1px solid var(--buly-border);
 border-radius: 4px;
-padding: 1.2rem 0.8rem;
+padding: 1.4rem 0.8rem;
 text-align: center;
-min-height: 120px;
+min-height: 125px;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -387,18 +397,38 @@ background: rgba(107, 29, 47, 0.04);
 }
 .month-name {
 font-family: 'Cinzel', serif;
-font-size: 0.85rem;
+font-size: 0.9rem;
 color: var(--buly-gold);
 letter-spacing: 1px;
 margin-bottom: 0.5rem;
 }
 .month-event {
 font-family: 'Playfair Display', serif;
-font-size: 1rem;
+font-size: 1.05rem;
 color: var(--buly-burgundy);
 font-weight: 600;
 }
-/* DOWNLOAD RESOURCES */
+/* BOUTONS ET TELECHARGEMENTS */
+.btn-download {
+background: var(--buly-burgundy);
+color: #fff;
+padding: 0.6rem 1.2rem;
+border-radius: 4px;
+text-decoration: none;
+font-size: 0.85rem;
+font-family: 'Cinzel', serif;
+transition: all 0.3s ease;
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+cursor: pointer;
+border: none;
+}
+.btn-download:hover {
+background: var(--buly-burgundy-dark);
+color: var(--buly-gold-light);
+box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
 .resource-list {
 display: grid;
 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -407,7 +437,7 @@ gap: 1.5rem;
 .resource-item {
 background: #fff;
 border: 1px solid var(--buly-border);
-padding: 1.2rem;
+padding: 1.4rem;
 border-radius: 4px;
 display: flex;
 align-items: center;
@@ -418,42 +448,13 @@ transition: all 0.3s ease;
 border-color: var(--buly-burgundy);
 box-shadow: 0 4px 12px rgba(107, 29, 47, 0.1);
 }
-.resource-info {
-display: flex;
-align-items: center;
-gap: 1rem;
-}
-.resource-icon {
-font-size: 1.8rem;
-color: var(--buly-burgundy);
-}
-.btn-download {
-background: var(--buly-burgundy);
-color: #fff;
-padding: 0.5rem 1rem;
-border-radius: 4px;
-text-decoration: none;
-font-size: 0.82rem;
-font-family: 'Cinzel', serif;
-transition: background 0.3s ease;
-display: inline-flex;
-align-items: center;
-gap: 0.4rem;
-cursor: pointer;
-border: none;
-}
-.btn-download:hover {
-background: var(--buly-burgundy-dark);
-color: var(--buly-gold-light);
-}
-/* ARBRE A SOUHAITS (WISH TREE) */
+/* ARBRE A VOEUX */
 .wish-tree-section {
 background: #fff;
 border: 2px solid var(--buly-gold);
 border-radius: 8px;
 padding: 2.5rem;
-position: relative;
-box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+box-shadow: 0 8px 24px rgba(0,0,0,0.05);
 }
 .wish-tree-container {
 display: grid;
@@ -466,7 +467,6 @@ align-items: center;
 }
 .wish-tree-visual {
 text-align: center;
-position: relative;
 background: var(--buly-parchment);
 padding: 2rem;
 border-radius: 6px;
@@ -494,7 +494,7 @@ padding: 0.8rem;
 border: 1px solid var(--buly-border);
 border-radius: 4px;
 font-family: 'EB Garamond', serif;
-font-size: 1rem;
+font-size: 1.05rem;
 background: #fff;
 }
 .form-control:focus {
@@ -518,7 +518,6 @@ transition: all 0.3s ease;
 }
 .btn-submit-wish:hover {
 background: var(--buly-burgundy-dark);
-box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 .wish-list-display {
 margin-top: 2rem;
@@ -543,45 +542,23 @@ font-family: 'Cinzel', serif;
 font-size: 0.8rem;
 color: var(--buly-gold);
 }
-/* BANNER */
-.ambiance-banner {
-width: 100%;
-height: 220px;
-background: linear-gradient(rgba(107, 29, 47, 0.85), rgba(74, 16, 30, 0.85)),
-url('https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?auto=format&fit=crop&w=1200&q=80') center/cover;
-border-radius: 6px;
-border: 1px solid var(--buly-gold);
-margin-bottom: 2.5rem;
-display: flex;
-align-items: center;
-justify-content: center;
-color: var(--buly-cream);
-text-align: center;
-padding: 2rem;
-}
-.ambiance-banner h2 {
-color: var(--buly-gold-light);
-font-family: 'Cinzel', serif;
-font-size: 2rem;
-letter-spacing: 3px;
-}
 /* FOOTER */
 footer {
 background: var(--buly-burgundy);
 color: var(--buly-cream);
 text-align: center;
-padding: 2.5rem 1rem;
+padding: 2.8rem 1rem;
 margin-top: 4rem;
 border-top: 3px solid var(--buly-gold);
 }
 footer p {
-font-size: 0.9rem;
+font-size: 0.92rem;
 opacity: 0.9;
 }
 footer .footer-title {
 font-family: 'Cinzel', serif;
 letter-spacing: 2px;
-color: var(--buly-gold);
+color: var(--buly-gold-light);
 margin-bottom: 0.5rem;
 }
 </style>
@@ -591,51 +568,39 @@ margin-bottom: 0.5rem;
 <header>
 <div class="header-top">
 <div class="brand-logo-container">
-<div class="logo-emblem">
-<!-- Sceau Officiel Octogonal SVG -->
-<svg width="60" height="60" viewBox="0 0 100 100" fill="none">
-<polygon points="30,5 70,5 95,30 95,70 70,95 30,95 5,70 5,30" stroke="#c5a059" stroke-width="3" fill="#fbf7ee"/>
-<polygon points="32,9 68,9 91,32 91,68 68,91 32,91 9,68 9,32" stroke="#c5a059" stroke-width="1" fill="none"/>
-<text x="50" y="42" font-family="Cinzel" font-size="10" font-weight="bold" fill="#6b1d2f" text-anchor="middle">BULY</text>
-<text x="50" y="55" font-family="Cinzel" font-size="7" fill="#c5a059" text-anchor="middle">1803</text>
-<path d="M 35 68 Q 50 62 65 68" stroke="#6b1d2f" stroke-width="1.5" fill="none"/>
-</svg>
-</div>
-<div class="brand-title">
-<h1>L'Almanach des Grands Officiers</h1>
-<span>Officine Universelle Buly · Intranet Corporate</span>
-</div>
+<!-- LOGO OFFICIELE BULY IMAGE -->
+<img src="image_27.png" alt="Officine Universelle Buly 1803 Paris" class="logo-img">
 </div>
 <div class="user-status">
 <i class="fa-solid fa-crown"></i>
-<span>Espace Officier & Vendeur</span>
+<span>Espace Officiers & Vendeurs</span>
 </div>
 </div>
 <nav>
 <ul class="nav-menu">
-<li class="nav-item"><a href="#" class="active" onclick="showSection('accueil', this)"><i class="fa-solid fa-house"></i> Accueil</a></li>
-<li class="nav-item"><a href="#" onclick="showSection('memos', this)"><i class="fa-solid fa-flask"></i> Fiches Produits</a></li>
-<li class="nav-item"><a href="#" onclick="showSection('coiffure', this)"><i class="fa-solid fa-scissors"></i> Tutos Coiffure</a></li>
-<li class="nav-item"><a href="#" onclick="showSection('temporal', this)"><i class="fa-solid fa-calendar-days"></i> Le Temporal</a></li>
-<li class="nav-item"><a href="#" onclick="showSection('direction', this)"><i class="fa-solid fa-users"></i> Direction</a></li>
-<li class="nav-item"><a href="#" onclick="showSection('ressources', this)"><i class="fa-solid fa-file-pdf"></i> Téléchargements</a></li>
-<li class="nav-item"><a href="#" onclick="showSection('arbre-souhaits', this)" style="color: var(--buly-green); font-weight: bold;"><i class="fa-solid fa-tree"></i> Arbre à Souhaits</a></li>
+<li class="nav-item"><button class="nav-btn active" onclick="switchTab('accueil', event)"><i class="fa-solid fa-house"></i> Accueil</button></li>
+<li class="nav-item"><button class="nav-btn" onclick="switchTab('memos', event)"><i class="fa-solid fa-flask"></i> Compendium des Onguents</button></li>
+<li class="nav-item"><button class="nav-btn" onclick="switchTab('coiffure', event)"><i class="fa-solid fa-scissors"></i> Coiffures de Vendeurs</button></li>
+<li class="nav-item"><button class="nav-btn" onclick="switchTab('temporal', event)"><i class="fa-solid fa-calendar-days"></i> Le Temporal</button></li>
+<li class="nav-item"><button class="nav-btn" onclick="switchTab('direction', event)"><i class="fa-solid fa-users"></i> Souverains & Dirigeants</button></li>
+<li class="nav-item"><button class="nav-btn" onclick="switchTab('ressources', event)"><i class="fa-solid fa-file-pdf"></i> Centre de Téléchargement</button></li>
+<li class="nav-item"><button class="nav-btn" onclick="switchTab('arbre-souhaits', event)" style="color: var(--buly-green); font-weight: bold;"><i class="fa-solid fa-tree"></i> Arbre à Vœux</button></li>
 </ul>
 </nav>
 </header>
-<!-- MAIN CONTENT AREA -->
+<!-- CONTAINER PRINCIPAL -->
 <main class="container">
-<!-- SECTION: ACCUEIL -->
+<!-- SECTION 1: ACCUEIL -->
 <section id="accueil" class="page-section active">
-<div class="ambiance-banner">
+<div class="hero-banner">
 <div>
-<h2>OFFICINE UNIVERSELLE BULY</h2>
-<p style="font-style: italic; font-size: 1.1rem; color: var(--buly-gold-light);">« L'art de la cosmétique pure et du savoir-faire séculaire »</p>
+<h2>L'ALMANACH DES OFFICIERS</h2>
+<p style="font-style: italic; font-size: 1.15rem; color: var(--buly-gold-light);">« Un recueil séculaire dédié aux savoir-faire, formules d'exception et règles du comptoir »</p>
 </div>
 </div>
 <div class="section-header">
-<h2>Bienvenue dans l'Almanach</h2>
-<div class="section-subtitle">Le guide de référence pour les équipes et ambassadeurs de la Maison Buly</div>
+<h2>L'Esprit de l'Officine</h2>
+<div class="section-subtitle">Le guide universel à l'usage des ambassadeurs et vendeurs de la Maison</div>
 </div>
 <div class="card-grid">
 <div class="buly-card">
@@ -643,11 +608,11 @@ margin-bottom: 0.5rem;
 <i class="fa-solid fa-spray-can-sparkles fa-3x" style="color: var(--buly-burgundy);"></i>
 </div>
 <div class="card-body">
-<h3 class="card-title">Fiches Produits</h3>
-<p>Consultez les secrets de formulation et les rituels de vente : Eau Triple, Huile Antique, Pommade Concrète...</p>
+<h3 class="card-title">Compendium des Onguents</h3>
+<p>Découvrez les formules emblématiques, rituels d'application et secrets d'apothicaire des parfums et baumes Buly.</p>
 
 
-<button onclick="showSection('memos')" class="btn-download"><i class="fa-solid fa-arrow-right"></i> Consulter</button>
+<button onclick="switchTab('memos', event)" class="btn-download"><i class="fa-solid fa-arrow-right"></i> Consulter le Compendium</button>
 </div>
 </div>
 <div class="buly-card">
@@ -655,11 +620,11 @@ margin-bottom: 0.5rem;
 <i class="fa-solid fa-gem fa-3x" style="color: var(--buly-burgundy);"></i>
 </div>
 <div class="card-body">
-<h3 class="card-title">Savoir-Faire Coiffure</h3>
-<p>Apprenez la réalisation exacte des chignons réglementaires à la barrette ou au pic pour la tenue en boutique.</p>
+<h3 class="card-title">Coiffures & Maintien</h3>
+<p>Guide illustré des chignons réglementaires à la barrette ou au pic pour la tenue irréprochable au comptoir.</p>
 
 
-<button onclick="showSection('coiffure')" class="btn-download"><i class="fa-solid fa-arrow-right"></i> Voir les Tutos</button>
+<button onclick="switchTab('coiffure', event)" class="btn-download"><i class="fa-solid fa-arrow-right"></i> Découvrir les Gestes</button>
 </div>
 </div>
 <div class="buly-card">
@@ -667,159 +632,137 @@ margin-bottom: 0.5rem;
 <i class="fa-solid fa-tree fa-3x" style="color: var(--buly-green);"></i>
 </div>
 <div class="card-body">
-<h3 class="card-title">Actu : Arbre à Souhaits</h3>
-<p>Célébrez les fêtes de fin d'année en accrochant votre vœu sur le sapin virtuel de l'Officine.</p>
+<h3 class="card-title">Arbre à Vœux</h3>
+<p>Accrochez vos pensées et souhaits de fin d'année sur l'arbre virtuel réunissant tous les comptoirs du monde.</p>
 
 
-<button onclick="showSection('arbre-souhaits')" class="btn-download" style="background: var(--buly-green);"><i class="fa-solid fa-pen-nib"></i> Écrire un vœu</button>
+<button onclick="switchTab('arbre-souhaits', event)" class="btn-download" style="background: var(--buly-green);"><i class="fa-solid fa-pen-nib"></i> Écrire un Vœu</button>
 </div>
 </div>
 </div>
 </section>
-<!-- SECTION: FICHES PRODUITS (MEMOS) -->
+<!-- SECTION 2: COMPENDIUM DES ONGUENTS (FICHES PRODUITS) -->
 <section id="memos" class="page-section">
 <div class="section-header">
-<h2>Fiches Mémos Produits</h2>
-<div class="section-subtitle">Les incontournables du comptoir de l'Officine</div>
+<h2>Compendium des Onguentations & Beaumes</h2>
+<div class="section-subtitle">Secrets d'élaboration et vertus des créations de l'Officine</div>
 </div>
-<!-- PRODUIT 1 : L'EAU TRIPLE -->
+<!-- EAU TRIPLE -->
 <div class="product-sheet-card">
 <div class="product-visual-box">
-<svg width="140" height="180" viewBox="0 0 100 140" fill="none">
-<rect x="25" y="45" width="50" height="75" rx="6" fill="#ffffff" stroke="#c5a059" stroke-width="2"/>
-<circle x="50" fill="#c5a059" cx="50" cy="70" r="14"/>
-<text x="50" y="74" font-family="Cinzel" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="bold">B</text>
-<rect x="38" y="25" width="24" height="20" fill="#c5a059" rx="2"/>
-<circle cx="50" cy="20" r="10" fill="#8c6d31"/>
-</svg>
-<div style="margin-top: 1rem;">
-<button onclick="downloadProductSheet('Eau_Triple')" class="btn-download"><i class="fa-solid fa-download"></i> Fiche PDF</button>
-</div>
+<img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=500&q=80" alt="L'Eau Triple" class="product-img">
+<button onclick="downloadDocument('Fiche_Eau_Triple')" class="btn-download"><i class="fa-solid fa-download"></i> Fiche Imprimable</button>
 </div>
 <div class="product-details">
 <h3>L'Eau Triple</h3>
-<div class="product-subtitle">Parfum universel à l'eau (sans alcool)</div>
+<div class="product-subtitle">Parfum universel à l'eau aqueuse (sans alcool)</div>
 <ul class="product-info-list">
-<li><i class="fa-solid fa-flask"></i> <div><strong>Formule :</strong> Émulsion d'eau et d'huile aromatique unique au monde.</div></li>
-<li><i class="fa-solid fa-key"></i> <div><strong>Atout Clef :</strong> Ne dessèche ni la peau ni les cheveux. Ne tache jamais les textiles.</div></li>
-<li><i class="fa-solid fa-hand-holding-droplet"></i> <div><strong>Rituel :</strong> Agiter vigoureusement le flacon en céramique avant chaque vaporisation.</div></li>
+<li><i class="fa-solid fa-flask"></i> <div><strong>Composition :</strong> Émulsion d'eau pure et de concentré aromatique d'une extrême finesse.</div></li>
+<li><i class="fa-solid fa-feather"></i> <div><strong>Vertu Royale :</strong> N'assèche jamais l'épiderme ni la chevelure. Préserve l'éclat des étoffes.</div></li>
+<li><i class="fa-solid fa-hand-sparkles"></i> <div><strong>Le Geste :</strong> Agiter doucement la céramique pour réveiller les effluves avant vaporisation.</div></li>
 </ul>
 <div class="product-quote">
-« Une fragrance d'une grande pureté qui n'agresse pas la peau mais l'enveloppe d'une aura fidèle toute la journée. »
+« Une fragrance pure comme une eau de source, enveloppant le corps d'une aura fidèle et majestueuse. »
 </div>
 </div>
 </div>
-<!-- PRODUIT 2 : L'HUILE ANTIQUE -->
+<!-- HUILE ANTIQUE -->
 <div class="product-sheet-card">
 <div class="product-visual-box">
-<svg width="140" height="180" viewBox="0 0 100 140" fill="none">
-<rect x="28" y="45" width="44" height="80" rx="4" fill="#fff" stroke="#6b1d2f" stroke-width="2"/>
-<rect x="34" y="55" width="32" height="40" fill="#f4ece1" stroke="#6b1d2f" stroke-width="1"/>
-<circle cx="50" cy="75" r="8" fill="#6b1d2f"/>
-<circle cx="50" cy="25" r="12" fill="#2c2523"/>
-</svg>
-<div style="margin-top: 1rem;">
-<button onclick="downloadProductSheet('Huile_Antique')" class="btn-download"><i class="fa-solid fa-download"></i> Fiche PDF</button>
-</div>
+<img src="https://images.unsplash.com/photo-1608248597379-e07443233855?auto=format&fit=crop&w=500&q=80" alt="L'Huile Antique" class="product-img">
+<button onclick="downloadDocument('Fiche_Huile_Antique')" class="btn-download"><i class="fa-solid fa-download"></i> Fiche Imprimable</button>
 </div>
 <div class="product-details">
 <h3 style="color: var(--buly-burgundy);">L'Huile Antique</h3>
-<div class="product-subtitle">Huile sèche embellissante corps</div>
+<div class="product-subtitle">Huile sèche embellissante pour le corps</div>
 <ul class="product-info-list">
-<li><i class="fa-solid fa-seedling"></i> <div><strong>Formule :</strong> Triptyque de sésame, d'abricot et de coco nourrissant.</div></li>
-<li><i class="fa-solid fa-wand-magic-sparkles"></i> <div><strong>Atout Clef :</strong> Satine la peau immédiatement sans laisser de film gras.</div></li>
-<li><i class="fa-solid fa-shower"></i> <div><strong>Rituel :</strong> Appliquer sur peau légèrement humide au sortir du bain ou de la douche.</div></li>
+<li><i class="fa-solid fa-seedling"></i> <div><strong>Composition :</strong> Triptyque végétal bénéfique de sésame, d'abricot et de coco.</div></li>
+<li><i class="fa-solid fa-wand-magic-sparkles"></i> <div><strong>Vertu Royale :</strong> Satine et adoucit la peau immédiatement sans laisser la moindre sensation grasse.</div></li>
+<li><i class="fa-solid fa-droplet"></i> <div><strong>Le Geste :</strong> Masser sur peau encore moite au sortir de la baignoire ou de la douche.</div></li>
 </ul>
 <div class="product-quote">
-« Un hommage aux macérats cosmétiques de l'Antiquité pour illuminer et parfumer le corps d'un sillage délicat. »
+« Un hommage aux précieux macérats de l'Antiquité pour magnifier le grain de peau et diffuser un sillage délicat. »
 </div>
 </div>
 </div>
-<!-- PRODUIT 3 : LA POMMADE CONCRÈTE -->
+<!-- POMMADE CONCRÈTE -->
 <div class="product-sheet-card">
 <div class="product-visual-box">
-<svg width="140" height="180" viewBox="0 0 100 140" fill="none">
-<polygon points="30,30 70,30 65,110 35,110" fill="#2b3a67" stroke="#2b3a67" stroke-width="2"/>
-<rect x="40" y="110" width="20" height="15" fill="#888"/>
-<rect x="38" y="45" width="24" height="35" fill="#ffffff"/>
-<path d="M 45 55 L 55 55 M 50 50 L 50 65" stroke="#2b3a67" stroke-width="2"/>
-</svg>
-<div style="margin-top: 1rem;">
-<button onclick="downloadProductSheet('Pommade_Concrete')" class="btn-download"><i class="fa-solid fa-download"></i> Fiche PDF</button>
-</div>
+<img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=500&q=80" alt="La Pommade Concrète" class="product-img">
+<button onclick="downloadDocument('Fiche_Pommade_Concrete')" class="btn-download"><i class="fa-solid fa-download"></i> Fiche Imprimable</button>
 </div>
 <div class="product-details">
 <h3 style="color: var(--buly-blue);">La Pommade Concrète</h3>
-<div class="product-subtitle">Soin protecteur mains et pieds</div>
+<div class="product-subtitle">Beaume protecteur pour les mains et les pieds</div>
 <ul class="product-info-list">
-<li><i class="fa-solid fa-mortar-pestle"></i> <div><strong>Formule :</strong> Eau de camomille apaisante et beurre de karité d'une grande richesse.</div></li>
-<li><i class="fa-solid fa-shield-halved"></i> <div><strong>Atout Clef :</strong> Répare les épidermes sollicités et protège activement du froid.</div></li>
-<li><i class="fa-solid fa-hands-holding"></i> <div><strong>Rituel :</strong> Réchauffer une noisette de baume au creux des mains avant l'application.</div></li>
+<li><i class="fa-solid fa-mortar-pestle"></i> <div><strong>Composition :</strong> Eau d'hydrolat de camomille adoucissante et beurre de karité d'une grande richesse.</div></li>
+<li><i class="fa-solid fa-shield-halved"></i> <div><strong>Vertu Royale :</strong> Réconforte les peaux sollicitées et forme un rempart contre les rigueurs de l'air.</div></li>
+<li><i class="fa-solid fa-hands-holding"></i> <div><strong>Le Geste :</strong> Chauffer une noix de pommade entre les paumes avant d'envelopper la peau.</div></li>
 </ul>
 <div class="product-quote">
-« Le baume emblématique des mains exigeantes, abrité dans son tube en aluminium à l'empreinte illustrée. »
+« Le baume mythique de l'Officine, conservé dans son tube gravé à la main pour le soin précieux des mains. »
 </div>
 </div>
 </div>
 </section>
-<!-- SECTION: TUTOS COIFFURE -->
+<!-- SECTION 3: TUTORIELS COIFFURE DE VENDEURS -->
 <section id="coiffure" class="page-section">
 <div class="section-header">
-<h2>Protocole & Coiffure Réglementaire</h2>
-<div class="section-subtitle">Maintien et rigueur au comptoir</div>
+<h2>Coiffures de Vendeurs & Rituels</h2>
+<div class="section-subtitle">Exigence du maintien et élégance au comptoir</div>
 </div>
 <div class="tuto-grid">
 <div class="tuto-card">
-<h3 class="card-title"><i class="fa-solid fa-circle-check"></i> Chignon Bas à la Barrette</h3>
+<h3 class="card-title"><i class="fa-solid fa-ribbon"></i> Le Chignon Bas à la Barrette</h3>
 <div class="tuto-steps">
 <div class="step-box">
-<div class="step-num">1</div>
-Rassemblez bas sur la nuque
+<div class="step-num">I</div>
+Rassemblez la chevelure en bas de nuque
 </div>
 <div class="step-box">
-<div class="step-num">2</div>
-Torsadez avec tension
+<div class="step-num">II</div>
+Torsadez avec fermeté
 </div>
 <div class="step-box">
-<div class="step-num">3</div>
-Enroulez la torsade
+<div class="step-num">III</div>
+Enroulez délicatement
 </div>
 <div class="step-box">
-<div class="step-num">4</div>
-Clipsez la barrette
+<div class="step-num">IV</div>
+Fixez avec la barrette Buly
 </div>
 </div>
-<p style="font-size: 0.95rem; color: #444;">Le chignon à la barrette apporte un maintien impeccable tout au long du service. Assurez-vous qu'aucune mèche ne s'échappe de la nuque.</p>
+<p style="font-size: 0.98rem; color: #444;">Ce chignon assure une présentation distinguée au comptoir. Aucune mèche vagabonde ne doit altérer la ligne du cou.</p>
 </div>
 <div class="tuto-card">
-<h3 class="card-title"><i class="fa-solid fa-circle-check"></i> Chignon au Pic à Cheveux</h3>
+<h3 class="card-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Le Chignon au Pic à Cheveux</h3>
 <div class="tuto-steps">
 <div class="step-box">
-<div class="step-num">1</div>
-Rassemblez la chevelure
+<div class="step-num">I</div>
+Réunissez la masse capillaire
 </div>
 <div class="step-box">
-<div class="step-num">2</div>
-Torsadez fermement
+<div class="step-num">II</div>
+Torsadez en spirale
 </div>
 <div class="step-box">
-<div class="step-num">3</div>
-Enroulez en escargot
+<div class="step-num">III</div>
+Formez un escargot parfait
 </div>
 <div class="step-box">
-<div class="step-num">4</div>
-Insérez le pic en diagonale
+<div class="step-num">IV</div>
+Piquez en travers en ancrant la base
 </div>
 </div>
-<p style="font-size: 0.95rem; color: #444;">Insérez le pic en attrapant une partie de la masse extérieure, puis piquez à travers le cœur du chignon vers la base opposée.</p>
+<p style="font-size: 0.98rem; color: #444;">Insérez le pic sculpté en attrapant une mèche extérieure puis traversez le cœur du chignon vers la base opposée.</p>
 </div>
 </div>
 </section>
-<!-- SECTION: LE TEMPORAL -->
+<!-- SECTION 4: LE TEMPORAL -->
 <section id="temporal" class="page-section">
 <div class="section-header">
-<h2>Le Temporal</h2>
-<div class="section-subtitle">Calendrier annuel des temps forts de la Maison</div>
+<h2>Le Temporal des Saisonnières & Fêtes</h2>
+<div class="section-subtitle">Les temps forts et célébrations qui rythment l'année de la Maison</div>
 </div>
 <div class="calendar-grid">
 <div class="month-card">
@@ -828,19 +771,19 @@ Insérez le pic en diagonale
 </div>
 <div class="month-card">
 <div class="month-name">Février</div>
-<div class="month-event">Saint-Valentin</div>
+<div class="month-event">Célébration des Amoureux</div>
 </div>
 <div class="month-card">
 <div class="month-name">Mars</div>
-<div class="month-event">Fashion Week</div>
+<div class="month-event">Semaine de la Mode</div>
 </div>
 <div class="month-card">
 <div class="month-name">Avril</div>
-<div class="month-event">Senteurs du Printemps</div>
+<div class="month-event">Renaissance des Fleurs</div>
 </div>
 <div class="month-card">
 <div class="month-name">Mai</div>
-<div class="month-event">Fête des Mères</div>
+<div class="month-event">Hommage aux Mères</div>
 </div>
 <div class="month-card">
 <div class="month-name">Juin</div>
@@ -852,15 +795,15 @@ Insérez le pic en diagonale
 </div>
 <div class="month-card">
 <div class="month-name">Septembre</div>
-<div class="month-event">Fashion Week</div>
+<div class="month-event">Rentrée Parisienne</div>
 </div>
 <div class="month-card">
 <div class="month-name">Octobre</div>
-<div class="month-event">Nouveautés Officine</div>
+<div class="month-event">Les Rareteys Cosmétiques</div>
 </div>
 <div class="month-card highlight">
 <div class="month-name">Novembre</div>
-<div class="month-event">Le Temps Long (Sans Black Friday)</div>
+<div class="month-event">Le Temps Long (Période Noble)</div>
 </div>
 <div class="month-card highlight">
 <div class="month-name">Décembre</div>
@@ -868,131 +811,122 @@ Insérez le pic en diagonale
 </div>
 </div>
 </section>
-<!-- SECTION: DIRECTION -->
+<!-- SECTION 5: SOUVERAINS & DIRIGEANTS -->
 <section id="direction" class="page-section">
 <div class="section-header">
-<h2>Direction & Fondateurs</h2>
-<div class="section-subtitle">Les figures emblématiques et la gouvernance de la Maison</div>
+<h2>Souverains & Dirigeants</h2>
+<div class="section-subtitle">Les figures fondatrices et la gouvernance de la Maison Buly</div>
 </div>
 <div class="leadership-grid">
 <div class="leader-card">
-<div class="leader-avatar">
-<i class="fa-solid fa-feather-pointed"></i>
-</div>
-<div class="leader-role">Cofondatrice & Direction Image</div>
+<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Victoire de Taillac" class="leader-avatar">
+<div class="leader-role">Fondatrice & Direction de l'Image</div>
 <h3>Victoire de Taillac</h3>
-<p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;">Pionnière de la cosmétique ancienne réinventée, gardienne des rituels et de l'élégance de la marque.</p>
+<p style="font-size: 0.95rem; color: #555; margin-top: 0.6rem;">Pionnière de la cosmétique séculaire réinventée, gardienne passionnée de l'esthétique et des secrets de beauté authentiques.</p>
 </div>
 <div class="leader-card">
-<div class="leader-avatar">
-<i class="fa-solid fa-compass-drafting"></i>
-</div>
-<div class="leader-role">Cofondateur & Directeur Créatif</div>
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Ramdane Touhami" class="leader-avatar">
+<div class="leader-role">Fondateur & Directeur Créatif</div>
 <h3>Ramdane Touhami</h3>
-<p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;">Visionnaire, designer du concept architectural unique de chaque Officine dans le monde.</p>
+<p style="font-size: 0.95rem; color: #555; margin-top: 0.6rem;">Visionnaire, designer et architecte à l'origine du concept visuel unique et du raffinement de chaque Officine.</p>
 </div>
 <div class="leader-card">
-<div class="leader-avatar">
-<i class="fa-solid fa-user-tie"></i>
-</div>
+<img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="Nathalie Elbaz" class="leader-avatar">
 <div class="leader-role">Chief Executive Officer</div>
-<h3>Anabel Maldonado</h3>
-<p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;">Directrice Générale, orchestrant l'expansion mondiale et le rayonnement international des boutiques Buly.</p>
+<h3>Nathalie Elbaz</h3>
+<p style="font-size: 0.95rem; color: #555; margin-top: 0.6rem;">Présidente Générale, orchestrant avec brio l'expansion internationale et la renommée mondiale de l'Officine Universelle Buly.</p>
 </div>
 </div>
 </section>
-<!-- SECTION: RESSOURCES EN TÉLÉCHARGEMENT -->
+<!-- SECTION 6: RESSOURCES EN TÉLÉCHARGEMENT -->
 <section id="ressources" class="page-section">
 <div class="section-header">
 <h2>Centre de Téléchargement</h2>
-<div class="section-subtitle">Documents et fiches ressources prêts à l'impression</div>
+<div class="section-subtitle">Ouvrages, fiches et chartes officinales prêts à imprimer</div>
 </div>
 <div class="resource-list">
 <div class="resource-item">
 <div class="resource-info">
-<i class="fa-solid fa-file-pdf resource-icon"></i>
+<i class="fa-solid fa-file-pdf" style="font-size: 1.8rem; color: var(--buly-burgundy);"></i>
 <div>
 <strong>Fiche L'Eau Triple</strong>
-<div style="font-size:0.8rem; color:#666;">Document Officiel · PDF</div>
+<div style="font-size:0.8rem; color:#666;">Document Officiel · Format PDF</div>
 </div>
 </div>
-<button onclick="downloadProductSheet('Eau_Triple')" class="btn-download"><i class="fa-solid fa-download"></i> Obtenir</button>
+<button onclick="downloadDocument('Eau_Triple')" class="btn-download"><i class="fa-solid fa-download"></i> Télécharger</button>
 </div>
 <div class="resource-item">
 <div class="resource-info">
-<i class="fa-solid fa-file-pdf resource-icon"></i>
+<i class="fa-solid fa-file-pdf" style="font-size: 1.8rem; color: var(--buly-burgundy);"></i>
 <div>
 <strong>Fiche L'Huile Antique</strong>
-<div style="font-size:0.8rem; color:#666;">Document Officiel · PDF</div>
+<div style="font-size:0.8rem; color:#666;">Document Officiel · Format PDF</div>
 </div>
 </div>
-<button onclick="downloadProductSheet('Huile_Antique')" class="btn-download"><i class="fa-solid fa-download"></i> Obtenir</button>
+<button onclick="downloadDocument('Huile_Antique')" class="btn-download"><i class="fa-solid fa-download"></i> Télécharger</button>
 </div>
 <div class="resource-item">
 <div class="resource-info">
-<i class="fa-solid fa-file-pdf resource-icon"></i>
+<i class="fa-solid fa-file-pdf" style="font-size: 1.8rem; color: var(--buly-burgundy);"></i>
 <div>
 <strong>Fiche Pommade Concrète</strong>
-<div style="font-size:0.8rem; color:#666;">Document Officiel · PDF</div>
+<div style="font-size:0.8rem; color:#666;">Document Officiel · Format PDF</div>
 </div>
 </div>
-<button onclick="downloadProductSheet('Pommade_Concrete')" class="btn-download"><i class="fa-solid fa-download"></i> Obtenir</button>
+<button onclick="downloadDocument('Pommade_Concrete')" class="btn-download"><i class="fa-solid fa-download"></i> Télécharger</button>
 </div>
 <div class="resource-item">
 <div class="resource-info">
-<i class="fa-solid fa-file-pdf resource-icon"></i>
+<i class="fa-solid fa-file-pdf" style="font-size: 1.8rem; color: var(--buly-burgundy);"></i>
 <div>
-<strong>Guide des Coiffures</strong>
-<div style="font-size:0.8rem; color:#666;">Protocole Vendeur · PDF</div>
+<strong>Guide des Coiffures de Vendeurs</strong>
+<div style="font-size:0.8rem; color:#666;">Protocole Officinal · Format PDF</div>
 </div>
 </div>
-<button onclick="downloadProductSheet('Guide_Coiffures')" class="btn-download"><i class="fa-solid fa-download"></i> Obtenir</button>
+<button onclick="downloadDocument('Guide_Coiffures')" class="btn-download"><i class="fa-solid fa-download"></i> Télécharger</button>
 </div>
 </div>
 </section>
-<!-- SECTION: ARBRE A SOUHAITS (ACTU) -->
+<!-- SECTION 7: ARBRE A VOEUX -->
 <section id="arbre-souhaits" class="page-section">
 <div class="section-header">
-<h2>L'Arbre à Souhaits</h2>
-<div class="section-subtitle">Écrivez votre vœu et accrochez-le au sapin de l'Officine</div>
+<h2>L'Arbre à Vœux & Gratitudes</h2>
+<div class="section-subtitle">Inscrivez votre souhait et accrochez-le à l'arbre des festivités</div>
 </div>
 <div class="wish-tree-section">
 <div class="wish-tree-container">
 <div class="wish-tree-visual">
-<!-- Arbre de Noël vectoriel avec étiquettes -->
-<svg width="240" height="300" viewBox="0 0 200 260" fill="none">
+<svg width="230" height="290" viewBox="0 0 200 260" fill="none">
 <polygon points="100,20 130,70 70,70" fill="#2d5a43"/>
 <polygon points="100,50 145,110 55,110" fill="#244936"/>
 <polygon points="100,90 160,160 40,160" fill="#1b3829"/>
 <polygon points="100,130 175,210 25,210" fill="#13281d"/>
 <rect x="88" y="210" width="24" height="30" fill="#5c3a21"/>
-<!-- Étoile dorée -->
 <polygon points="100,5 104,16 115,16 106,23 109,34 100,27 91,34 94,23 85,16 96,16" fill="#c5a059"/>
-<!-- Étiquettes accrochées -->
 <rect x="80" y="80" width="12" height="18" rx="2" fill="#f4ece1" stroke="#c5a059"/>
 <rect x="110" y="120" width="12" height="18" rx="2" fill="#6b1d2f"/>
 <rect x="70" y="160" width="12" height="18" rx="2" fill="#2b3a67"/>
 </svg>
 </div>
 <div class="wish-form">
-<h3 class="cinzel-font" style="margin-bottom: 1rem; color: var(--buly-burgundy);">Déposer un Vœu</h3>
-<form id="wishForm" onsubmit="addWish(event)">
+<h3 class="cinzel" style="margin-bottom: 1rem; color: var(--buly-burgundy);">Déposer une Gratitude</h3>
+<form id="wishForm" onsubmit="submitWish(event)">
 <div class="form-group">
-<label for="author">Nom & Boutique :</label>
-<input type="text" id="author" class="form-control" placeholder="Ex: Marie - Boutique Bonaparte" required>
+<label for="author">Officier & Comptoir :</label>
+<input type="text" id="author" class="form-control" placeholder="Ex: Octave — Comptoir Bonaparte" required>
 </div>
 <div class="form-group">
-<label for="wishMessage">Votre Souhait :</label>
-<textarea id="wishMessage" class="form-control" rows="3" placeholder="Rédigez votre vœu..." required></textarea>
+<label for="wishMessage">Votre Souhait ou Gratitude :</label>
+<textarea id="wishMessage" class="form-control" rows="3" placeholder="Rédigez votre vœu avec élégance..." required></textarea>
 </div>
-<button type="submit" class="btn-submit-wish"><i class="fa-solid fa-feather"></i> Accrocher au Sapin</button>
+<button type="submit" class="btn-submit-wish"><i class="fa-solid fa-feather"></i> Confier à l'Arbre</button>
 </form>
 <div class="wish-list-display">
-<h4 class="cinzel-font" style="margin-bottom: 0.8rem; font-size:0.9rem;">Vœux déposés par les équipes :</h4>
+<h4 class="cinzel" style="margin-bottom: 0.8rem; font-size:0.9rem; color: var(--buly-burgundy);">Pensées des Officiers :</h4>
 <div id="wishesContainer">
 <div class="wish-tag">
-<span>« Belle année florissante à toutes les équipes ! »</span>
-<span class="wish-tag-author">— Équipe Saintonge</span>
+<span>« Que cette nouvelle année illumine l'ensemble de nos maisons dans le monde. »</span>
+<span class="wish-tag-author">— L'Officine Saintonge</span>
 </div>
 </div>
 </div>
@@ -1003,26 +937,41 @@ Insérez le pic en diagonale
 </main>
 <!-- FOOTER -->
 <footer>
-<div class="footer-title">OFFICINE UNIVERSELLE BULY · PARIS 1803</div>
-<p>L'Almanach des Grands Officiers — Document confidentiel à usage interne.</p>
+<div class="footer-title">L'OFFICINE UNIVERSELLE BULY · PARIS 1803</div>
+<p>L'Almanach des Officiers — Compendium confidentiel réservé aux ambassadeurs de la Maison.</p>
 </footer>
-<!-- LOGIQUE JAVASCRIPT -->
+<!-- LOGIQUE JAVASCRIPT CORRIGÉE -->
 <script>
-function showSection(sectionId, element) {
+function switchTab(sectionId, event) {
+if (event) {
+event.preventDefault();
+event.stopPropagation();
+}
+// Masquer l'ensemble des sections
 const sections = document.querySelectorAll('.page-section');
-sections.forEach(sec => sec.classList.remove('active'));
+sections.forEach(sec => {
+sec.classList.remove('active');
+});
+// Activer la section demandée
 const target = document.getElementById(sectionId);
-if(target) {
+if (target) {
 target.classList.add('active');
 }
-if(element) {
-const navLinks = document.querySelectorAll('.nav-item a');
-navLinks.forEach(link => link.classList.remove('active'));
-element.classList.add('active');
+// Mettre à jour l'état actif des boutons du menu principal
+const navButtons = document.querySelectorAll('.nav-btn');
+navButtons.forEach(btn => btn.classList.remove('active'));
+if (event && event.currentTarget && event.currentTarget.classList.contains('nav-btn')) {
+event.currentTarget.classList.add('active');
+} else {
+navButtons.forEach(btn => {
+if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(sectionId)) {
+btn.classList.add('active');
+}
+});
 }
 window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-function addWish(event) {
+function submitWish(event) {
 event.preventDefault();
 const author = document.getElementById('author').value;
 const message = document.getElementById('wishMessage').value;
@@ -1033,18 +982,18 @@ newWish.className = 'wish-tag';
 newWish.innerHTML = ⁠<span>« ${escapeHtml(message)} »</span> <span class="wish-tag-author">— ${escapeHtml(author)}</span>⁠;
 wishesContainer.prepend(newWish);
 document.getElementById('wishForm').reset();
-alert("Votre vœu a été accroché sur l'Arbre de l'Officine !");
+alert("Votre pensée a été liée avec succès à l'Arbre de l'Officine.");
 }
-function downloadProductSheet(filename) {
-const content = ⁠OFFICINE UNIVERSELLE BULY 1803\nFiche Mémo Officielle : ${filename}\n\nDocument téléchargé depuis L'Almanach des Grands Officiers.⁠;
+function downloadDocument(docName) {
+const content = ⁠OFFICINE UNIVERSELLE BULY 1803\nDocument Officiel : ${docName}\n\nTéléchargé depuis L'Almanach des Officiers.⁠;
 const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
 const link = document.createElement('a');
 link.href = URL.createObjectURL(blob);
-link.download = ⁠${filename}_Buly1803.txt⁠;
+link.download = ⁠${docName}_Buly1803.txt⁠;
 link.click();
 }
-function escapeHtml(text) {
-return text.replace(/&/g, "&")
+function escapeHtml(str) {
+return str.replace(/&/g, "&")
 .replace(/</g, "<")
 .replace(/>/g, ">")
 .replace(/"/g, """)
