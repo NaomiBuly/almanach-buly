@@ -7,14 +7,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            var(--primary): #15294a; 
-            var(--primary-light): #223f6e;
-            var(--gold): #c5a059;
-            var(--gold-light): #e2c889;
-            var(--parchment): #fbf8f2;
-            var(--parchment-dark): #f2ebd9;
-            var(--ink): #221c19;
-            var(--border-color): #d4c5a9;
+            --primary: #15294a; 
+            --primary-light: #223f6e;
+            --gold: #c5a059;
+            --gold-light: #e2c889;
+            --parchment: #fbf8f2;
+            --parchment-dark: #f2ebd9;
+            --ink: #221c19;
+            --border-color: #d4c5a9;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -154,6 +154,22 @@
         .step-svg { width: 100%; height: 100px; margin: 10px 0; }
         .step-text { font-size: 0.9rem; color: #333; font-weight: 500; }
 
+        /* ARBRE À SOUHAITS */
+        .wish-container {
+            background: #fff; border: 2px solid #d4c5a9; border-radius: 6px; padding: 40px; text-align: center; max-width: 800px; margin: 0 auto;
+        }
+        .wish-form { margin-top: 25px; display: flex; flex-direction: column; gap: 15px; align-items: center; }
+        .wish-input {
+            width: 100%; max-width: 500px; padding: 12px 15px; border: 1px solid #d4c5a9; border-radius: 4px;
+            font-family: 'Playfair Display', serif; font-size: 1rem; background: #fbf8f2;
+        }
+        .wish-wall { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 30px; }
+        .wish-tag {
+            background: #fdfbf3; border: 1px solid #c5a059; border-left: 4px solid #c5a059; padding: 15px 20px;
+            border-radius: 4px; max-width: 250px; font-style: italic; font-size: 0.95rem; box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            position: relative; animation: fadeIn 0.5s ease;
+        }
+
         /* FICHES PRODUITS */
         .product-card {
             background: #fff; border: 2px solid #d4c5a9; border-radius: 6px; overflow: hidden;
@@ -210,6 +226,7 @@
     <nav>
         <button class="nav-btn active" onclick="switchTab(event, 'histoire')">Histoire</button>
         <button class="nav-btn" onclick="switchTab(event, 'grooming')">Grooming</button>
+        <button class="nav-btn" onclick="switchTab(event, 'souhaits')">Arbre à Souhaits</button>
         <button class="nav-btn" onclick="switchTab(event, 'fiches')">Fiches Produits</button>
         <button class="nav-btn" onclick="switchTab(event, 'dirigeants')">Dirigeants & Boutiques</button>
         <button class="nav-btn" onclick="switchTab(event, 'temporal')">Le Temporal</button>
@@ -313,6 +330,7 @@
             <h2 class="section-title">Grooming & Maintien</h2>
             <p class="section-desc">Les coiffures réglementaires illustrées pour l'élégance en boutique.</p>
 
+            <!-- Tuto 1 : Barrette -->
             <div class="tuto-card" id="card-tuto-1">
                 <h3 class="tuto-title">Le Chignon avec Barrette</h3>
                 <div class="tuto-steps">
@@ -355,12 +373,92 @@
                     </div>
                 </div>
                 <button class="btn-download" onclick="downloadHTML('card-tuto-1', 'Tutoriel_Chignon_Barrette')">
-                    📥 Télécharger ce Tutoriel
+                    📥 Télécharger ce Tutoriel (Barrette)
+                </button>
+            </div>
+
+            <!-- Tuto 2 : Pic -->
+            <div class="tuto-card" id="card-tuto-2">
+                <h3 class="tuto-title">Le Chignon avec Pic</h3>
+                <div class="tuto-steps">
+                    <div class="step-box">
+                        <span class="step-num">1</span>
+                        <svg class="step-svg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="35" r="25" fill="#3a2312"/>
+                            <path d="M 35 45 L 65 45 L 56 85 L 44 85 Z" fill="#3a2312"/>
+                            <rect x="42" y="60" width="16" height="8" rx="2" fill="#c5a059"/>
+                        </svg>
+                        <div class="step-text">Rassemble les cheveux bas sur la nuque</div>
+                    </div>
+                    <div class="step-box">
+                        <span class="step-num">2</span>
+                        <svg class="step-svg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="35" r="25" fill="#3a2312"/>
+                            <path d="M 44 45 C 55 60, 35 70, 52 85 L 46 87 C 35 70, 55 60, 40 45 Z" fill="#3a2312"/>
+                        </svg>
+                        <div class="step-text">Torsade-les en gardant la tension</div>
+                    </div>
+                    <div class="step-box">
+                        <span class="step-num">3</span>
+                        <svg class="step-svg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="35" r="25" fill="#3a2312"/>
+                            <circle cx="50" cy="65" r="18" fill="#3a2312"/>
+                            <circle cx="50" cy="65" r="10" fill="#2b1a0d"/>
+                        </svg>
+                        <div class="step-text">Enroule la torsade sur elle-même</div>
+                    </div>
+                    <div class="step-box">
+                        <span class="step-num">4</span>
+                        <svg class="step-svg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="35" r="25" fill="#3a2312"/>
+                            <circle cx="50" cy="65" r="18" fill="#3a2312"/>
+                            <!-- Pic à chignon en diagonale -->
+                            <polygon points="65,30 90,40 75,65 55,50" fill="#f4ebd9" stroke="#c5a059" stroke-width="1.5"/>
+                            <rect x="68" y="42" width="12" height="12" fill="#d4af37" transform="rotate(25 74 48)"/>
+                            <circle cx="85" cy="20" r="10" fill="#4caf50"/>
+                            <path d="M80 20 L83 24 L90 15" stroke="#fff" stroke-width="2" fill="none"/>
+                        </svg>
+                        <div class="step-text">Insère le pic en diagonale à travers</div>
+                    </div>
+                </div>
+                <button class="btn-download" onclick="downloadHTML('card-tuto-2', 'Tutoriel_Chignon_Pic')">
+                    📥 Télécharger ce Tutoriel (Pic)
                 </button>
             </div>
         </section>
 
-        <!-- 3. FICHES PRODUITS -->
+        <!-- 3. ARBRE À SOUHAITS -->
+        <section id="souhaits" class="tab-content">
+            <h2 class="section-title">L'Arbre à Souhaits</h2>
+            <p class="section-desc">Inscrivez vos vœux et pensées pour l'Officine, et suspendez-les à l'arbre virtuel.</p>
+
+            <div class="wish-container">
+                <svg viewBox="0 0 200 150" style="width: 140px; height: auto; margin: 0 auto 15px; display: block;">
+                    <!-- Tronc de l'arbre -->
+                    <rect x="92" y="90" width="16" height="50" fill="#654321"/>
+                    <!-- Branches stylisées -->
+                    <path d="M 100 100 Q 70 60 40 50 M 100 80 Q 130 50 160 45 M 100 60 Q 80 30 60 25 M 100 60 Q 120 30 140 25" stroke="#654321" stroke-width="4" fill="none" stroke-linecap="round"/>
+                    <!-- Feuillage / Souhaits suspendus (cercles dorés) -->
+                    <circle cx="40" cy="50" r="12" fill="#c5a059"/><circle cx="160" cy="45" r="12" fill="#c5a059"/>
+                    <circle cx="60" cy="25" r="10" fill="#15294a"/><circle cx="140" cy="25" r="10" fill="#15294a"/>
+                    <circle cx="100" cy="20" r="14" fill="#c5a059"/>
+                </svg>
+                <h3 style="font-family:'Cinzel', serif; color:#15294a; margin-bottom:10px;">Suspendez votre vœu officinal</h3>
+                <p style="font-size: 0.95rem; color: #555; font-style: italic;">Exprimez une ambition ou un souhait pour votre officine cette année.</p>
+                
+                <div class="wish-form">
+                    <input type="text" id="wishInput" class="wish-input" placeholder="Ex: Que l'année apporte prospérité à notre officine...">
+                    <button class="btn-download" style="max-width: 250px;" onclick="addWish()">Accrocher mon vœu</button>
+                </div>
+
+                <div class="wish-wall" id="wishWall">
+                    <div class="wish-tag">« Que chaque flacon vendu raconte une belle histoire. » — Officine Bonaparte</div>
+                    <div class="wish-tag">« Paix, beauté et prospérité pour toute l'équipe de Saintonge. »</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FICHES PRODUITS -->
         <section id="fiches" class="tab-content">
             <h2 class="section-title">Fiches Produits Mémos</h2>
             <p class="section-desc">Générez et téléchargez la fiche officielle (avec images et design) à conserver en officine.</p>
@@ -370,26 +468,16 @@
                 <div class="product-card" id="card-pommade">
                     <div class="product-header">
                         <svg class="product-svg" viewBox="0 0 140 240">
-                            <!-- Corps du tube Bleu -->
                             <polygon points="35,190 105,190 115,40 25,40" fill="#1b4298"/>
                             <polygon points="35,190 105,190 100,205 40,205" fill="#1b4298"/>
-                            <!-- Rainures du bas -->
                             <path d="M 25 40 L 115 40 M 27 43 L 113 43 M 29 46 L 111 46" stroke="#0a2a7a" stroke-width="1"/>
-                            <!-- Bouchon argenté -->
                             <rect x="55" y="205" width="30" height="25" fill="#888" rx="2"/>
-                            <rect x="55" y="205" width="30" height="25" fill="url(#silverGrad)" rx="2" opacity="0.5"/>
-                            <path d="M 60 205 V 230 M 65 205 V 230 M 70 205 V 230 M 75 205 V 230 M 80 205 V 230" stroke="#555" stroke-width="1"/>
-                            <!-- Banderole blanche haut -->
                             <rect x="30" y="60" width="80" height="15" fill="#fff"/>
                             <text x="70" y="70" text-anchor="middle" font-family="'Cinzel', serif" font-size="6" fill="#1b4298" font-weight="bold">POMMADE CONCRÈTE</text>
-                            <!-- Illustration Main -->
                             <g fill="#fbeee8" stroke="#333" stroke-width="0.8">
                                 <path d="M 55 160 L 52 110 C 52 105, 58 105, 58 110 L 60 130 L 62 100 C 62 95, 68 95, 68 100 L 70 130 L 72 102 C 72 97, 78 97, 78 102 L 80 130 L 82 115 C 82 110, 88 110, 88 115 L 85 160 Z"/>
-                                <!-- Manchette de la main -->
                                 <path d="M 53 160 L 87 160 L 89 175 L 51 175 Z" fill="#fff"/>
-                                <path d="M 51 175 L 55 180 L 60 175 L 65 180 L 70 175 L 75 180 L 80 175 L 85 180 L 89 175" fill="none" stroke="#333"/>
                             </g>
-                            <!-- Logo blason bas -->
                             <path d="M 55 185 L 85 185 L 70 198 Z" fill="#fff" stroke="#d32f2f" stroke-width="1.5"/>
                         </svg>
                     </div>
@@ -409,20 +497,11 @@
                 <div class="product-card" id="card-eau">
                     <div class="product-header">
                         <svg class="product-svg" viewBox="0 0 140 240">
-                            <!-- Bouchon Or Sphérique -->
                             <circle cx="70" cy="55" r="22" fill="#d4af37"/>
-                            <path d="M 48 55 A 22 22 0 0 0 92 55" fill="#aa8222" opacity="0.6"/>
-                            <!-- Base du bouchon -->
                             <rect x="52" y="75" width="36" height="12" fill="#b89020" rx="2"/>
-                            <!-- Flacon Blanc (Forme Octogonale unique) -->
                             <polygon points="40,87 100,87 115,110 115,190 125,200 125,230 15,230 15,200 25,190 25,110" fill="#fff" stroke="#d4c5a9" stroke-width="2"/>
-                            <!-- Liseré Or -->
-                            <polygon points="43,92 97,92 110,113 110,187 120,195 120,225 20,225 20,195 30,187 30,113" fill="none" stroke="#d4af37" stroke-width="1" stroke-dasharray="2,2"/>
-                            <!-- Médaillon Or central -->
                             <circle cx="70" cy="145" r="25" fill="#d4af37"/>
-                            <!-- Arbre/Dessin dans le médaillon -->
                             <path d="M 70 160 L 70 135 M 60 135 Q 70 130 80 135" stroke="#fff" stroke-width="2" fill="none"/>
-                            <!-- Texte Buly -->
                             <text x="70" y="210" text-anchor="middle" font-family="'Cinzel', serif" font-size="6" fill="#333" font-weight="bold">EAU TRIPLE</text>
                         </svg>
                     </div>
@@ -442,24 +521,11 @@
                 <div class="product-card" id="card-huile">
                     <div class="product-header">
                         <svg class="product-svg" viewBox="0 0 140 240">
-                            <!-- Bouchon rond noir texturé -->
                             <circle cx="70" cy="50" r="18" fill="#222"/>
-                            <path d="M 52 50 A 18 18 0 0 0 88 50" fill="#444" opacity="0.5"/>
                             <rect x="56" y="65" width="28" height="10" fill="#333"/>
-                            <!-- Flacon Blanc droit à épaules courbes -->
                             <path d="M 40 75 C 40 75, 70 65, 100 75 L 110 230 L 30 230 Z" fill="#fff" stroke="#d4c5a9" stroke-width="2"/>
-                            <!-- Cadre intérieur -->
-                            <path d="M 43 82 C 43 82, 70 73, 97 82 L 105 225 L 35 225 Z" fill="none" stroke="#666" stroke-width="1"/>
-                            <!-- Colonnes antiques -->
-                            <rect x="40" y="110" width="6" height="80" fill="#e8e8e8" stroke="#999" stroke-width="0.5"/>
-                            <rect x="94" y="110" width="6" height="80" fill="#e8e8e8" stroke="#999" stroke-width="0.5"/>
-                            <!-- Figures Antiques (Silhouette simplifiée) -->
-                            <!-- Femme en toge rouge -->
                             <path d="M 75 130 C 80 130, 85 140, 85 160 C 85 180, 90 190, 90 190 L 70 190 C 70 190, 75 180, 75 160 Z" fill="#b53333"/>
-                            <!-- Homme peau nue toge rose -->
                             <path d="M 55 135 C 60 135, 65 145, 65 165 C 65 185, 70 190, 70 190 L 50 190 C 50 190, 55 185, 55 165 Z" fill="#e0ad9d"/>
-                            <path d="M 55 150 C 65 160, 50 170, 55 180" fill="none" stroke="#d38b93" stroke-width="3"/>
-                            <!-- Titre -->
                             <text x="70" y="210" text-anchor="middle" font-family="'Cinzel', serif" font-size="6" fill="#15294a" font-weight="bold">HUILE ANTIQUE</text>
                         </svg>
                     </div>
@@ -477,7 +543,7 @@
             </div>
         </section>
 
-        <!-- 4. DIRIGEANTS & BOUTIQUES -->
+        <!-- 5. DIRIGEANTS & BOUTIQUES -->
         <section id="dirigeants" class="tab-content">
             <h2 class="section-title">Gouvernance & Officiers</h2>
             <p class="section-desc">Direction de la Maison et Responsables des Officines à travers le monde.</p>
@@ -487,7 +553,6 @@
                     <div class="person-avatar">
                         <svg viewBox="0 0 100 100" width="100%">
                             <circle cx="50" cy="50" r="50" fill="#e4d9c8"/>
-                            <!-- Victoire : Cheveux sombres tirés, col blanc pointu, pull marine -->
                             <path d="M 25 100 C 25 60, 75 60, 75 100 Z" fill="#15294a"/>
                             <polygon points="50,75 35,65 50,60 65,65" fill="#fff"/>
                             <circle cx="50" cy="40" r="16" fill="#f4dbca"/>
@@ -501,16 +566,11 @@
                     <div class="person-avatar">
                         <svg viewBox="0 0 100 100" width="100%">
                             <circle cx="50" cy="50" r="50" fill="#d9e0e4"/>
-                            <!-- Ramdane : Lunettes rondes, gilet noir sur chemise blanche -->
                             <path d="M 20 100 C 20 50, 80 50, 80 100 Z" fill="#222"/>
                             <polygon points="50,80 40,55 60,55" fill="#fff"/>
-                            <path d="M 50 80 L 50 100" stroke="#111" stroke-width="2"/>
                             <circle cx="50" cy="38" r="15" fill="#e5c8b5"/>
-                            <!-- Lunettes -->
                             <circle cx="43" cy="36" r="5" fill="none" stroke="#723a10" stroke-width="2"/>
                             <circle cx="57" cy="36" r="5" fill="none" stroke="#723a10" stroke-width="2"/>
-                            <path d="M 48 36 L 52 36" stroke="#723a10" stroke-width="2"/>
-                            <!-- Cheveux ras -->
                             <path d="M 34 38 C 34 15, 66 15, 66 38 C 66 25, 34 25, 34 38 Z" fill="#1a110a"/>
                         </svg>
                     </div>
@@ -521,11 +581,9 @@
                     <div class="person-avatar">
                         <svg viewBox="0 0 100 100" width="100%">
                             <circle cx="50" cy="50" r="50" fill="#e8e3da"/>
-                            <!-- Nathalie Elbaz : Silhouette élégante CEO blason chic -->
                             <path d="M 22 100 C 22 65, 78 65, 78 100 Z" fill="#3b424e"/>
-                            <path d="M 40 100 L 50 70 L 60 100 Z" fill="#e4e4e4"/>
+                            <polygon points="50,75 38,62 62,62" fill="#fff"/>
                             <circle cx="50" cy="42" r="16" fill="#f0d5c2"/>
-                            <!-- Coupe structurée -->
                             <path d="M 30 50 C 30 15, 70 15, 70 50 C 70 65, 60 40, 50 40 C 40 40, 30 65, 30 50 Z" fill="#2a1e17"/>
                         </svg>
                     </div>
@@ -536,104 +594,37 @@
 
             <h3 style="font-family:'Cinzel', serif; color:#15294a; text-align:center; margin-bottom:20px; font-size: 1.8rem;">Directeurs des Officines</h3>
             <div class="boutique-list">
-                <div class="boutique-item">
-                    <div class="boutique-city">Paris — Bonaparte</div>
-                    <div class="boutique-director">Dir. Nicolas Hénault</div>
-                </div>
-                <div class="boutique-item">
-                    <div class="boutique-city">Paris — Saintonge</div>
-                    <div class="boutique-director">Dir. Caroline George</div>
-                </div>
-                <div class="boutique-item">
-                    <div class="boutique-city">Paris — Vieille du Temple</div>
-                    <div class="boutique-director">Dir. Johanna Diaby</div>
-                </div>
-                <div class="boutique-item">
-                    <div class="boutique-city">Paris — Le Bon Marché</div>
-                    <div class="boutique-director">Dir. Ivonne Desclozeaux</div>
-                </div>
-                <div class="boutique-item">
-                    <div class="boutique-city">Paris — Galeries Lafayette</div>
-                    <div class="boutique-director">Dir. Marie-Hélène Renard</div>
-                </div>
-                <div class="boutique-item">
-                    <div class="boutique-city">Paris — Richelieu</div>
-                    <div class="boutique-director">Dir. Anne Flammand</div>
-                </div>
-                <div class="boutique-item">
-                    <div class="boutique-city">Londres — Mount St</div>
-                    <div class="boutique-director">Dir. David Jareno</div>
-                </div>
-                <div class="boutique-item">
-                    <div class="boutique-city">Milan</div>
-                    <div class="boutique-director">Dir. Caterina Marchetti</div>
-                </div>
-                <div class="boutique-item">
-                    <div class="boutique-city">Munich</div>
-                    <div class="boutique-director">Dir. Driton Islami</div>
-                </div>
-                <div class="boutique-item">
-                    <div class="boutique-city">Hong Kong</div>
-                    <div class="boutique-director">Dir. Vanessa Lo</div>
-                </div>
+                <div class="boutique-item"><div class="boutique-city">Paris — Bonaparte</div><div class="boutique-director">Dir. Nicolas Hénault</div></div>
+                <div class="boutique-item"><div class="boutique-city">Paris — Saintonge</div><div class="boutique-director">Dir. Caroline George</div></div>
+                <div class="boutique-item"><div class="boutique-city">Paris — Vieille du Temple</div><div class="boutique-director">Dir. Johanna Diaby</div></div>
+                <div class="boutique-item"><div class="boutique-city">Paris — Le Bon Marché</div><div class="boutique-director">Dir. Ivonne Desclozeaux</div></div>
+                <div class="boutique-item"><div class="boutique-city">Paris — Galeries Lafayette</div><div class="boutique-director">Dir. Marie-Hélène Renard</div></div>
+                <div class="boutique-item"><div class="boutique-city">Paris — Richelieu</div><div class="boutique-director">Dir. Anne Flammand</div></div>
+                <div class="boutique-item"><div class="boutique-city">Londres — Mount St</div><div class="boutique-director">Dir. David Jareno</div></div>
+                <div class="boutique-item"><div class="boutique-city">Milan</div><div class="boutique-director">Dir. Caterina Marchetti</div></div>
+                <div class="boutique-item"><div class="boutique-city">Munich</div><div class="boutique-director">Dir. Driton Islami</div></div>
+                <div class="boutique-item"><div class="boutique-city">Hong Kong</div><div class="boutique-director">Dir. Vanessa Lo</div></div>
             </div>
         </section>
 
-        <!-- 5. TEMPORAL -->
+        <!-- 6. TEMPORAL -->
         <section id="temporal" class="tab-content">
             <h2 class="section-title">Le Temporal Annuel</h2>
             <p class="section-desc">Calendrier des temps forts et événements majeurs de l'année officinale.</p>
 
             <div class="calendar-grid">
-                <div class="month-box highlight">
-                    <div class="month-name">Janvier</div>
-                    <div>
-                        <span class="cal-icon">✉️</span>
-                        <div class="month-event">L'Art du Présent</div>
-                    </div>
-                </div>
-                <div class="month-box highlight">
-                    <div class="month-name">Février</div>
-                    <div>
-                        <span class="cal-icon">💝</span>
-                        <div class="month-event">Saint-Valentin</div>
-                    </div>
-                </div>
-                <div class="month-box gold-highlight">
-                    <div class="month-name">Mars</div>
-                    <div>
-                        <span class="cal-icon">👗</span>
-                        <div class="month-event">Fashion Week</div>
-                    </div>
-                </div>
+                <div class="month-box highlight"><div class="month-name">Janvier</div><div><span class="cal-icon">✉️</span><div class="month-event">L'Art du Présent</div></div></div>
+                <div class="month-box highlight"><div class="month-name">Février</div><div><span class="cal-icon">💝</span><div class="month-event">Saint-Valentin</div></div></div>
+                <div class="month-box gold-highlight"><div class="month-name">Mars</div><div><span class="cal-icon">👗</span><div class="month-event">Fashion Week</div></div></div>
                 <div class="month-box"><div class="month-name">Avril</div></div>
                 <div class="month-box"><div class="month-name">Mai</div><span class="cal-icon" style="opacity:0.3">🌸</span></div>
                 <div class="month-box"><div class="month-name">Juin</div></div>
-                <div class="month-box"><div class="month-name">Juillet</div><span class="cal-icon" style="opacity:0.3">☀️️</span></div>
+                <div class="month-box"><div class="month-name">Juillet</div><span class="cal-icon" style="opacity:0.3">☀</span></div>
                 <div class="month-box"><div class="month-name">Août</div></div>
-                <div class="month-box gold-highlight">
-                    <div class="month-name">Septembre</div>
-                    <div>
-                        <span class="cal-icon">🧥</span>
-                        <div class="month-event">Fashion Week</div>
-                    </div>
-                </div>
+                <div class="month-box gold-highlight"><div class="month-name">Septembre</div><div><span class="cal-icon">🧥</span><div class="month-event">Fashion Week</div></div></div>
                 <div class="month-box"><div class="month-name">Octobre</div></div>
-                <div class="month-box gold-highlight">
-                    <div class="month-name">Novembre</div>
-                    <div>
-                        <span class="cal-icon">🕰️</span>
-                        <div class="month-event">Le Temps Long</div>
-                        <div style="font-size:0.8rem; font-style:italic;">(Anti-Black Friday)</div>
-                    </div>
-                </div>
-                <div class="month-box highlight">
-                    <div class="month-name">Décembre</div>
-                    <div>
-                        <span class="cal-icon">🎁</span>
-                        <div class="month-event">Le Grand Temporal de Noël</div>
-                    </div>
-                </div>
+                <div class="month-box gold-highlight"><div class="month-name">Novembre</div><div><span class="cal-icon">🕰️</span><div class="month-event">Le Temps Long</div><div style="font-size:0.8rem; font-style:italic;">(Anti-Black Friday)</div></div></div>
+                <div class="month-box highlight"><div class="month-name">Décembre</div><div><span class="cal-icon">🎁</span><div class="month-event">Le Grand Temporal de Noël</div></div></div>
             </div>
         </section>
 
@@ -643,9 +634,7 @@
         &copy; 1803 - 2026 Officine Universelle Buly • Intranet de l'Excellence
     </footer>
 
-    <!-- SCRIPT CORRIGÉ POUR LA NAVIGATION ET LE TÉLÉCHARGEMENT -->
     <script>
-        // Navigation des onglets
         function switchTab(evt, tabId) {
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => {
@@ -667,20 +656,25 @@
             }
         }
 
-        // Système de téléchargement HTML natif pour préserver exactement le design et les images vectorisées
+        function addWish() {
+            const input = document.getElementById('wishInput');
+            const wall = document.getElementById('wishWall');
+            if (input.value.trim() !== '') {
+                const tag = document.createElement('div');
+                tag.className = 'wish-tag';
+                tag.textContent = `« ${input.value.trim()} »`;
+                wall.prepend(tag);
+                input.value = '';
+            }
+        }
+
         function downloadHTML(elementId, fileName) {
-            // Cloner l'élément pour ne pas modifier l'affichage en direct
             const element = document.getElementById(elementId);
             const clone = element.cloneNode(true);
-            
-            // Retirer le bouton de téléchargement du clone
             const buttons = clone.querySelectorAll('.btn-download');
             buttons.forEach(btn => btn.remove());
-
-            // Récupérer le HTML intérieur
             const content = clone.outerHTML;
 
-            // Créer une page HTML propre avec le style embarqué
             const htmlString = `
 <!DOCTYPE html>
 <html lang="fr">
@@ -689,24 +683,8 @@
     <title>${fileName.replace(/_/g, ' ')}</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Playfair Display', serif;
-            background-color: #fbf8f2;
-            color: #221c19;
-            padding: 40px;
-            display: flex;
-            justify-content: center;
-        }
-        .product-card, .tuto-card {
-            background: #fff;
-            border: 2px solid #d4c5a9;
-            border-radius: 6px;
-            padding: 20px;
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
+        body { font-family: 'Playfair Display', serif; background-color: #fbf8f2; color: #221c19; padding: 40px; display: flex; justify-content: center; }
+        .product-card, .tuto-card { background: #fff; border: 2px solid #d4c5a9; border-radius: 6px; padding: 20px; max-width: 600px; width: 100%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .product-header { padding: 30px 20px; border-bottom: 1px solid #d4c5a9; }
         .product-svg { height: 280px; margin: 0 auto; display: block; filter: drop-shadow(5px 10px 10px rgba(0,0,0,0.15)); }
         .product-body { padding: 30px; }
@@ -715,7 +693,6 @@
         .feature-item { margin-bottom: 20px; font-size: 1.1rem; text-align: left; }
         .feature-label { font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 1px; color: #15294a; text-transform: uppercase; font-weight: bold; display: block; margin-bottom: 5px; }
         .quote-box { background: #fbf8f2; border-left: 3px solid #c5a059; padding: 15px; font-style: italic; font-size: 1rem; margin-top: 25px; text-align: left; }
-        
         .tuto-steps { display: flex; gap: 15px; margin-top: 25px; }
         .step-box { background: #fbf8f2; border: 1px solid #d4c5a9; border-radius: 6px; padding: 15px; flex: 1; text-align: center; }
         .step-num { display: inline-block; width: 32px; height: 32px; line-height: 32px; background: #15294a; color: #fff; border-radius: 50%; font-family: 'Cinzel', serif; font-size: 1rem; margin-bottom: 15px; }
@@ -725,14 +702,10 @@
 </head>
 <body>
     ${content}
-    <script>
-        // Propose automatiquement d'imprimer la fiche à l'ouverture
-        window.onload = () => { setTimeout(() => window.print(), 500); };
-    <\/script>
+    <script>window.onload = () => { setTimeout(() => window.print(), 500); };<\/script>
 </body>
 </html>`;
 
-            // Déclenche le téléchargement
             const blob = new Blob([htmlString], { type: 'text/html;charset=utf-8' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
