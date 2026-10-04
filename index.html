@@ -1,667 +1,1055 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L’Almanach des Grands Officiers — Officine Universelle Buly 1803</title>
-  
-  <!-- Typographies Classiques & Calligraphiques -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
-
-  <style>
-    /* ==========================================================================
-       CHARTE GRAPHIQUE & PALETTE OFFICIELLE BULY 1803
-       ========================================================================== */
-    :root {
-      --bg-parchment: #FBF9F3;      /* Fond Parchemin / Papier vélin */
-      --bg-card: #FAF6ED;           /* Fond de carte / Encadré */
-      --burgundy: #7A1C1E;          /* Rouge Buly / Bordeaux d'Officine */
-      --gold: #C5A059;              /* Or vieilli / Laiton */
-      --gold-light: #E2C98A;        /* Dorure lumineuse */
-      --forest-green: #1C3B2B;      /* Vert Empereur / Ébénisterie */
-      --walnut-brown: #3D2314;      /* Bois de Noyer / Loupe d'Orme */
-      --ink-black: #111111;         /* Encre de Chine */
-      --border-line: #D8CEB9;       /* Filet ornemental clair */
-      --shadow-soft: 0 4px 15px rgba(61, 35, 20, 0.06);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--bg-parchment);
-      color: var(--ink-black);
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 18px;
-      line-height: 1.6;
-      background-image: radial-gradient(rgba(197, 160, 89, 0.08) 1px, transparent 0);
-      background-size: 24px 24px;
-      padding-bottom: 60px;
-    }
-
-    /* ==========================================================================
-       ENTÊTE / HEADER SOUVERAIN
-       ========================================================================== */
-    header {
-      text-align: center;
-      padding: 50px 20px 30px;
-      background-color: var(--bg-parchment);
-      border-bottom: 3px double var(--gold);
-      position: relative;
-    }
-
-    header::after {
-      content: "🕮";
-      display: block;
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--bg-parchment);
-      padding: 0 15px;
-      color: var(--burgundy);
-      font-size: 20px;
-    }
-
-    .brand-calligraphy {
-      font-family: 'Monsieur La Doulaise', cursive;
-      color: var(--burgundy);
-      font-size: 3.2rem;
-      margin-bottom: -10px;
-      text-shadow: 1px 1px 0px rgba(197, 160, 89, 0.3);
-    }
-
-    h1.site-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.8rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--walnut-brown);
-      margin-top: 10px;
-      font-weight: 700;
-    }
-
-    .subtitle {
-      font-style: italic;
-      color: var(--burgundy);
-      font-size: 1.15rem;
-      margin-top: 5px;
-    }
-
-    .motto {
-      font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-top: 15px;
-    }
-
-    /* ==========================================================================
-       NAVIGATION UNIVERSELLE
-       ========================================================================== */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background-color: var(--forest-green);
-      border-top: 1px solid var(--gold);
-      border-bottom: 2px solid var(--gold);
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      padding: 12px 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-
-    nav a {
-      color: var(--bg-parchment);
-      text-decoration: none;
-      font-family: 'Cinzel', serif;
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 5px 12px;
-      transition: all 0.3s ease;
-      border: 1px solid transparent;
-    }
-
-    nav a:hover {
-      color: var(--gold-light);
-      border-color: var(--gold);
-      background-color: rgba(255,255,255,0.05);
-    }
-
-    /* ==========================================================================
-       CONTENU PRINCIPAL ET SECTIONS
-       ========================================================================== */
-    main {
-      max-width: 1050px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .section-card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-line);
-      outline: 4px solid var(--bg-card);
-      box-shadow: var(--shadow-soft);
-      padding: 40px;
-      margin-bottom: 50px;
-      position: relative;
-    }
-
-    .section-card::before {
-      content: "";
-      position: absolute;
-      top: 6px; left: 6px; right: 6px; bottom: 6px;
-      border: 1px solid var(--gold);
-      pointer-events: none;
-      opacity: 0.6;
-    }
-
-    h2.section-header {
-      font-family: 'Cinzel', serif;
-      color: var(--burgundy);
-      font-size: 1.6rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-align: center;
-      margin-bottom: 25px;
-      padding-bottom: 10px;
-      border-bottom: 1px dashed var(--gold);
-    }
-
-    p.intro-text {
-      text-align: center;
-      font-style: italic;
-      margin-bottom: 30px;
-      color: var(--walnut-brown);
-      font-size: 1.1rem;
-    }
-
-    /* ==========================================================================
-       GALLERIES ET IMAGES
-       ========================================================================== */
-    .img-frame {
-      border: 1px solid var(--gold);
-      padding: 6px;
-      background: #FFFFFF;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      display: block;
-      margin: 20px auto;
-      max-width: 100%;
-    }
-
-    .img-frame img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .caption {
-      text-align: center;
-      font-size: 0.85rem;
-      font-style: italic;
-      color: var(--walnut-brown);
-      margin-top: 6px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: center;
-    }
-
-    @media (max-width: 768px) {
-      .grid-2 { grid-template-columns: 1fr; }
-    }
-
-    /* ==========================================================================
-       TABLEAU L'ORGANIGRAMME DES OFFICINES
-       ========================================================================== */
-    table.buly-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      font-size: 0.95rem;
-    }
-
-    table.buly-table th {
-      background-color: var(--forest-green);
-      color: var(--gold-light);
-      font-family: 'Cinzel', serif;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 12px 15px;
-      border: 1px solid var(--gold);
-      font-size: 0.85rem;
-    }
-
-    table.buly-table td {
-      padding: 12px 15px;
-      border: 1px solid var(--border-line);
-      background-color: #FFFDF9;
-    }
-
-    table.buly-table tr:nth-child(even) td {
-      background-color: #F6F1E5;
-    }
-
-    .city-badge {
-      font-weight: 700;
-      color: var(--burgundy);
-      font-family: 'Cinzel', serif;
-    }
-
-    /* ==========================================================================
-       CARTE FICHES MÉMO PRODUITS
-       ========================================================================== */
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    .product-card {
-      border: 1px solid var(--gold);
-      background: #FFFFFF;
-      padding: 20px;
-      text-align: center;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .product-card h3 {
-      font-family: 'Cinzel', serif;
-      color: var(--burgundy);
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-    }
-
-    .product-type {
-      font-style: italic;
-      font-size: 0.85rem;
-      color: var(--walnut-brown);
-      margin-bottom: 15px;
-    }
-
-    .product-bullets {
-      text-align: left;
-      font-size: 0.9rem;
-      margin-bottom: 15px;
-      padding-left: 20px;
-    }
-
-    .product-bullets li {
-      margin-bottom: 6px;
-    }
-
-    .pitch-quote {
-      background-color: var(--bg-parchment);
-      border-left: 3px solid var(--gold);
-      padding: 10px;
-      font-style: italic;
-      font-size: 0.85rem;
-      color: var(--walnut-brown);
-      margin-bottom: 15px;
-      text-align: left;
-    }
-
-    .btn-download {
-      display: inline-block;
-      background-color: var(--forest-green);
-      color: var(--gold-light);
-      font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 10px 15px;
-      text-decoration: none;
-      border: 1px solid var(--gold);
-      transition: all 0.3s ease;
-    }
-
-    .btn-download:hover {
-      background-color: var(--burgundy);
-      color: #FFFFFF;
-    }
-
-    /* ==========================================================================
-       GUIDE DE MAQUILLAGE / GUIDE CHIGNON
-       ========================================================================== */
-    .step-box {
-      border-left: 3px solid var(--burgundy);
-      padding-left: 15px;
-      margin-bottom: 20px;
-    }
-
-    .step-box h4 {
-      font-family: 'Cinzel', serif;
-      color: var(--walnut-brown);
-      font-size: 1rem;
-    }
-
-    /* ==========================================================================
-       INSTRUCTIONS GITHUB
-       ========================================================================== */
-    .github-guide {
-      background-color: #2D3748;
-      color: #EDF2F7;
-      padding: 25px;
-      border-radius: 4px;
-      font-family: monospace;
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    .github-guide h3 {
-      color: var(--gold-light);
-      font-family: 'Cinzel', serif;
-      margin-bottom: 15px;
-    }
-
-    .github-guide ol {
-      padding-left: 20px;
-    }
-
-    .github-guide li {
-      margin-bottom: 10px;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--walnut-brown);
-      margin-top: 50px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border-line);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Almanach des Grands Officiers - Officine Universelle Buly 1803</title>
+<!-- Polices typographiques d'époque -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<!-- Icons FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+--buly-burgundy: #6b1d2f;
+--buly-burgundy-dark: #4a101e;
+--buly-gold: #c5a059;
+--buly-gold-light: #e2c98d;
+--buly-cream: #fbf7ee;
+--buly-parchment: #f4ece1;
+--buly-blue: #2b3a67;
+--buly-text: #2c2523;
+--buly-border: #d4c5b1;
+--buly-green: #2d5a43;
+}
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+body {
+font-family: 'EB Garamond', serif;
+background-color: var(--buly-cream);
+color: var(--buly-text);
+line-height: 1.6;
+background-image: radial-gradient(#ebdcc8 0.75px, transparent 0.75px);
+background-size: 16px 16px;
+}
+h1, h2, h3, h4, h5 {
+font-family: 'Playfair Display', serif;
+color: var(--buly-burgundy);
+letter-spacing: 0.5px;
+}
+.cinzel-font {
+font-family: 'Cinzel', serif;
+}
+/* HEADER & NAVIGATION */
+header {
+background-color: var(--buly-cream);
+border-bottom: 3px double var(--buly-gold);
+padding: 1.5rem 2rem 1rem;
+text-align: center;
+position: sticky;
+top: 0;
+z-index: 100;
+box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.header-top {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto 1rem;
+padding-bottom: 0.8rem;
+border-bottom: 1px solid var(--buly-border);
+}
+.brand-logo-container {
+display: flex;
+align-items: center;
+gap: 1.5rem;
+text-align: left;
+}
+.logo-emblem {
+width: 75px;
+height: 75px;
+border-radius: 50%;
+border: 2px solid var(--buly-gold);
+padding: 2px;
+background: #fff;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.brand-title h1 {
+font-family: 'Cinzel', serif;
+font-size: 1.4rem;
+font-weight: 700;
+color: var(--buly-burgundy);
+letter-spacing: 2px;
+text-transform: uppercase;
+line-height: 1.1;
+}
+.brand-title span {
+font-size: 0.85rem;
+font-family: 'Playfair Display', serif;
+font-style: italic;
+color: var(--buly-gold);
+letter-spacing: 1px;
+}
+.user-status {
+display: flex;
+align-items: center;
+gap: 0.8rem;
+font-size: 0.85rem;
+font-family: 'Cinzel', serif;
+background: rgba(197, 160, 89, 0.12);
+padding: 0.5rem 1.2rem;
+border-radius: 20px;
+border: 1px solid var(--buly-gold-light);
+color: var(--buly-burgundy);
+}
+.nav-menu {
+display: flex;
+justify-content: center;
+gap: 1.2rem;
+list-style: none;
+flex-wrap: wrap;
+}
+.nav-item a {
+text-decoration: none;
+color: var(--buly-text);
+font-family: 'Cinzel', serif;
+font-size: 0.82rem;
+font-weight: 600;
+letter-spacing: 1px;
+padding: 0.5rem 0.9rem;
+border-bottom: 2px solid transparent;
+transition: all 0.3s ease;
+display: flex;
+align-items: center;
+gap: 0.4rem;
+}
+.nav-item a:hover, .nav-item a.active {
+color: var(--buly-burgundy);
+border-bottom-color: var(--buly-gold);
+background-color: rgba(197, 160, 89, 0.15);
+border-radius: 4px;
+}
+/* MAIN CONTAINER */
+.container {
+max-width: 1200px;
+margin: 2rem auto;
+padding: 0 1.5rem;
+}
+/* SECTION STYLING */
+.page-section {
+display: none;
+animation: fadeIn 0.4s ease-in-out;
+}
+.page-section.active {
+display: block;
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(8px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.section-header {
+text-align: center;
+margin-bottom: 2.5rem;
+position: relative;
+}
+.section-header h2 {
+font-size: 2.2rem;
+font-family: 'Cinzel', serif;
+letter-spacing: 2px;
+text-transform: uppercase;
+display: inline-block;
+background: var(--buly-cream);
+padding: 0 1.5rem;
+position: relative;
+z-index: 1;
+}
+.section-header::after {
+content: '';
+position: absolute;
+top: 50%;
+left: 10%;
+right: 10%;
+height: 1px;
+background: var(--buly-gold);
+z-index: 0;
+}
+.section-subtitle {
+font-family: 'Playfair Display', serif;
+font-style: italic;
+color: #666;
+margin-top: 0.5rem;
+}
+/* CARDS & GRID */
+.card-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+gap: 2rem;
+}
+.buly-card {
+background: #fff;
+border: 1px solid var(--buly-border);
+border-radius: 4px;
+overflow: hidden;
+box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+position: relative;
+}
+.buly-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.card-header-bg {
+background: var(--buly-parchment);
+padding: 1.5rem;
+text-align: center;
+border-bottom: 1px solid var(--buly-border);
+}
+.card-body {
+padding: 1.5rem;
+}
+.card-title {
+font-size: 1.3rem;
+margin-bottom: 0.5rem;
+color: var(--buly-burgundy);
+border-bottom: 1px solid var(--buly-gold-light);
+padding-bottom: 0.4rem;
+}
+/* VECTOR & IMAGE CONTAINERS */
+.product-sheet-card {
+background: #fff;
+border: 2px solid var(--buly-gold);
+border-radius: 6px;
+padding: 2rem;
+box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+margin-bottom: 2.5rem;
+display: grid;
+grid-template-columns: 280px 1fr;
+gap: 2rem;
+align-items: center;
+}
+@media (max-width: 768px) {
+.product-sheet-card { grid-template-columns: 1fr; }
+}
+.product-visual-box {
+background: var(--buly-parchment);
+border: 1px solid var(--buly-border);
+border-radius: 4px;
+padding: 1.5rem;
+text-align: center;
+}
+.product-details h3 {
+font-size: 1.8rem;
+margin-bottom: 0.3rem;
+}
+.product-subtitle {
+font-family: 'Playfair Display', serif;
+font-style: italic;
+color: var(--buly-gold);
+margin-bottom: 1.2rem;
+font-size: 1.1rem;
+}
+.product-info-list {
+list-style: none;
+margin-bottom: 1.5rem;
+}
+.product-info-list li {
+margin-bottom: 1rem;
+display: flex;
+align-items: flex-start;
+gap: 0.8rem;
+}
+.product-info-list i {
+color: var(--buly-burgundy);
+font-size: 1.1rem;
+margin-top: 0.2rem;
+}
+.product-quote {
+border-left: 3px solid var(--buly-gold);
+padding-left: 1rem;
+font-style: italic;
+color: #555;
+background: rgba(244, 236, 225, 0.4);
+padding: 0.8rem 1rem;
+border-radius: 0 4px 4px 0;
+}
+/* DIRECTION & FOUNDERS */
+.leadership-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 2rem;
+}
+.leader-card {
+text-align: center;
+background: #fff;
+border: 1px solid var(--buly-border);
+padding: 2rem 1.5rem;
+border-radius: 4px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+.leader-avatar {
+width: 130px;
+height: 130px;
+border-radius: 50%;
+margin: 0 auto 1.2rem;
+border: 3px solid var(--buly-gold);
+background: var(--buly-parchment);
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--buly-burgundy);
+font-size: 2.8rem;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.leader-role {
+font-family: 'Cinzel', serif;
+font-size: 0.85rem;
+color: var(--buly-gold);
+letter-spacing: 1px;
+margin-bottom: 0.4rem;
+text-transform: uppercase;
+}
+/* TUTORIALS / CHIGNONS */
+.tuto-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+gap: 2rem;
+}
+@media (max-width: 550px) {
+.tuto-grid { grid-template-columns: 1fr; }
+}
+.tuto-card {
+background: #fff;
+border: 1px solid var(--buly-border);
+padding: 1.5rem;
+border-radius: 6px;
+}
+.tuto-steps {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 0.5rem;
+margin: 1.2rem 0;
+background: var(--buly-parchment);
+padding: 1rem;
+border-radius: 4px;
+}
+.step-box {
+text-align: center;
+font-size: 0.75rem;
+}
+.step-num {
+width: 24px;
+height: 24px;
+border-radius: 50%;
+background: var(--buly-burgundy);
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto 0.4rem;
+font-family: 'Cinzel', serif;
+font-size: 0.75rem;
+}
+/* CALENDAR / TEMPORAL */
+.calendar-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 1rem;
+background: #fff;
+padding: 2rem;
+border: 2px solid var(--buly-gold);
+border-radius: 6px;
+}
+@media (max-width: 768px) {
+.calendar-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.month-card {
+border: 1px solid var(--buly-border);
+border-radius: 4px;
+padding: 1.2rem 0.8rem;
+text-align: center;
+min-height: 120px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+background: var(--buly-cream);
+}
+.month-card.highlight {
+border: 2px solid var(--buly-burgundy);
+background: rgba(107, 29, 47, 0.04);
+}
+.month-name {
+font-family: 'Cinzel', serif;
+font-size: 0.85rem;
+color: var(--buly-gold);
+letter-spacing: 1px;
+margin-bottom: 0.5rem;
+}
+.month-event {
+font-family: 'Playfair Display', serif;
+font-size: 1rem;
+color: var(--buly-burgundy);
+font-weight: 600;
+}
+/* DOWNLOAD RESOURCES */
+.resource-list {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 1.5rem;
+}
+.resource-item {
+background: #fff;
+border: 1px solid var(--buly-border);
+padding: 1.2rem;
+border-radius: 4px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+transition: all 0.3s ease;
+}
+.resource-item:hover {
+border-color: var(--buly-burgundy);
+box-shadow: 0 4px 12px rgba(107, 29, 47, 0.1);
+}
+.resource-info {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+.resource-icon {
+font-size: 1.8rem;
+color: var(--buly-burgundy);
+}
+.btn-download {
+background: var(--buly-burgundy);
+color: #fff;
+padding: 0.5rem 1rem;
+border-radius: 4px;
+text-decoration: none;
+font-size: 0.82rem;
+font-family: 'Cinzel', serif;
+transition: background 0.3s ease;
+display: inline-flex;
+align-items: center;
+gap: 0.4rem;
+cursor: pointer;
+border: none;
+}
+.btn-download:hover {
+background: var(--buly-burgundy-dark);
+color: var(--buly-gold-light);
+}
+/* ARBRE A SOUHAITS (WISH TREE) */
+.wish-tree-section {
+background: #fff;
+border: 2px solid var(--buly-gold);
+border-radius: 8px;
+padding: 2.5rem;
+position: relative;
+box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+.wish-tree-container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2.5rem;
+align-items: center;
+}
+@media (max-width: 850px) {
+.wish-tree-container { grid-template-columns: 1fr; }
+}
+.wish-tree-visual {
+text-align: center;
+position: relative;
+background: var(--buly-parchment);
+padding: 2rem;
+border-radius: 6px;
+border: 1px solid var(--buly-border);
+}
+.wish-form {
+background: var(--buly-parchment);
+padding: 2rem;
+border-radius: 6px;
+border: 1px solid var(--buly-border);
+}
+.form-group {
+margin-bottom: 1.2rem;
+}
+.form-group label {
+display: block;
+font-family: 'Cinzel', serif;
+font-size: 0.85rem;
+margin-bottom: 0.4rem;
+color: var(--buly-burgundy);
+}
+.form-control {
+width: 100%;
+padding: 0.8rem;
+border: 1px solid var(--buly-border);
+border-radius: 4px;
+font-family: 'EB Garamond', serif;
+font-size: 1rem;
+background: #fff;
+}
+.form-control:focus {
+outline: none;
+border-color: var(--buly-gold);
+box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.2);
+}
+.btn-submit-wish {
+width: 100%;
+background: var(--buly-burgundy);
+color: var(--buly-gold-light);
+border: none;
+padding: 0.9rem;
+font-family: 'Cinzel', serif;
+font-weight: 600;
+letter-spacing: 1.5px;
+font-size: 0.95rem;
+border-radius: 4px;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+.btn-submit-wish:hover {
+background: var(--buly-burgundy-dark);
+box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.wish-list-display {
+margin-top: 2rem;
+padding-top: 1.5rem;
+border-top: 1px dashed var(--buly-gold);
+max-height: 250px;
+overflow-y: auto;
+}
+.wish-tag {
+background: #fff;
+border: 1px solid var(--buly-gold-light);
+padding: 0.8rem 1.2rem;
+margin-bottom: 0.8rem;
+border-radius: 4px;
+box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.wish-tag-author {
+font-family: 'Cinzel', serif;
+font-size: 0.8rem;
+color: var(--buly-gold);
+}
+/* BANNER */
+.ambiance-banner {
+width: 100%;
+height: 220px;
+background: linear-gradient(rgba(107, 29, 47, 0.85), rgba(74, 16, 30, 0.85)),
+url('https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?auto=format&fit=crop&w=1200&q=80') center/cover;
+border-radius: 6px;
+border: 1px solid var(--buly-gold);
+margin-bottom: 2.5rem;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(--buly-cream);
+text-align: center;
+padding: 2rem;
+}
+.ambiance-banner h2 {
+color: var(--buly-gold-light);
+font-family: 'Cinzel', serif;
+font-size: 2rem;
+letter-spacing: 3px;
+}
+/* FOOTER */
+footer {
+background: var(--buly-burgundy);
+color: var(--buly-cream);
+text-align: center;
+padding: 2.5rem 1rem;
+margin-top: 4rem;
+border-top: 3px solid var(--buly-gold);
+}
+footer p {
+font-size: 0.9rem;
+opacity: 0.9;
+}
+footer .footer-title {
+font-family: 'Cinzel', serif;
+letter-spacing: 2px;
+color: var(--buly-gold);
+margin-bottom: 0.5rem;
+}
+</style>
 </head>
 <body>
+<!-- HEADER & NAVIGATION -->
+<header>
+<div class="header-top">
+<div class="brand-logo-container">
+<div class="logo-emblem">
+<!-- Sceau Officiel Octogonal SVG -->
+<svg width="60" height="60" viewBox="0 0 100 100" fill="none">
+<polygon points="30,5 70,5 95,30 95,70 70,95 30,95 5,70 5,30" stroke="#c5a059" stroke-width="3" fill="#fbf7ee"/>
+<polygon points="32,9 68,9 91,32 91,68 68,91 32,91 9,68 9,32" stroke="#c5a059" stroke-width="1" fill="none"/>
+<text x="50" y="42" font-family="Cinzel" font-size="10" font-weight="bold" fill="#6b1d2f" text-anchor="middle">BULY</text>
+<text x="50" y="55" font-family="Cinzel" font-size="7" fill="#c5a059" text-anchor="middle">1803</text>
+<path d="M 35 68 Q 50 62 65 68" stroke="#6b1d2f" stroke-width="1.5" fill="none"/>
+</svg>
+</div>
+<div class="brand-title">
+<h1>L'Almanach des Grands Officiers</h1>
+<span>Officine Universelle Buly · Intranet Corporate</span>
+</div>
+</div>
+<div class="user-status">
+<i class="fa-solid fa-crown"></i>
+<span>Espace Officier & Vendeur</span>
+</div>
+</div>
+<nav>
+<ul class="nav-menu">
+<li class="nav-item"><a href="#" class="active" onclick="showSection('accueil', this)"><i class="fa-solid fa-house"></i> Accueil</a></li>
+<li class="nav-item"><a href="#" onclick="showSection('memos', this)"><i class="fa-solid fa-flask"></i> Fiches Produits</a></li>
+<li class="nav-item"><a href="#" onclick="showSection('coiffure', this)"><i class="fa-solid fa-scissors"></i> Tutos Coiffure</a></li>
+<li class="nav-item"><a href="#" onclick="showSection('temporal', this)"><i class="fa-solid fa-calendar-days"></i> Le Temporal</a></li>
+<li class="nav-item"><a href="#" onclick="showSection('direction', this)"><i class="fa-solid fa-users"></i> Direction</a></li>
+<li class="nav-item"><a href="#" onclick="showSection('ressources', this)"><i class="fa-solid fa-file-pdf"></i> Téléchargements</a></li>
+<li class="nav-item"><a href="#" onclick="showSection('arbre-souhaits', this)" style="color: var(--buly-green); font-weight: bold;"><i class="fa-solid fa-tree"></i> Arbre à Souhaits</a></li>
+</ul>
+</nav>
+</header>
+<!-- MAIN CONTENT AREA -->
+<main class="container">
+<!-- SECTION: ACCUEIL -->
+<section id="accueil" class="page-section active">
+<div class="ambiance-banner">
+<div>
+<h2>OFFICINE UNIVERSELLE BULY</h2>
+<p style="font-style: italic; font-size: 1.1rem; color: var(--buly-gold-light);">« L'art de la cosmétique pure et du savoir-faire séculaire »</p>
+</div>
+</div>
+<div class="section-header">
+<h2>Bienvenue dans l'Almanach</h2>
+<div class="section-subtitle">Le guide de référence pour les équipes et ambassadeurs de la Maison Buly</div>
+</div>
+<div class="card-grid">
+<div class="buly-card">
+<div class="card-header-bg">
+<i class="fa-solid fa-spray-can-sparkles fa-3x" style="color: var(--buly-burgundy);"></i>
+</div>
+<div class="card-body">
+<h3 class="card-title">Fiches Produits</h3>
+<p>Consultez les secrets de formulation et les rituels de vente : Eau Triple, Huile Antique, Pommade Concrète...</p>
 
-  <!-- ENTÊTE -->
-  <header>
-    <div class="brand-calligraphy">Officine Universelle Buly</div>
-    <h1 class="site-title">L’Almanach des Grands Officiers</h1>
-    <div class="subtitle">Manuel d'Élégance, d'Histoire & de Savoir-Vendre à l'usage des Officines du Monde</div>
-    <div class="motto">Fondé à Paris en 1803 • Réinventé pour la Postérité</div>
-  </header>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="#histoire">L'Héritage</a>
-    <a href="#grooming">Grooming & Chignon</a>
-    <a href="#organigramme">Capitaines d'Officine</a>
-    <a href="#calendrier">Le Temporal</a>
-    <a href="#memorandies">Mémorandies Produits</a>
-    <a href="#github-instructions">Mettre à Jour sur GitHub</a>
-  </nav>
+<button onclick="showSection('memos')" class="btn-download"><i class="fa-solid fa-arrow-right"></i> Consulter</button>
+</div>
+</div>
+<div class="buly-card">
+<div class="card-header-bg">
+<i class="fa-solid fa-gem fa-3x" style="color: var(--buly-burgundy);"></i>
+</div>
+<div class="card-body">
+<h3 class="card-title">Savoir-Faire Coiffure</h3>
+<p>Apprenez la réalisation exacte des chignons réglementaires à la barrette ou au pic pour la tenue en boutique.</p>
 
-  <main>
 
-    <!-- SECTION I : L'HISTOIRE -->
-    <section id="histoire" class="section-card">
-      <h2 class="section-header">I. L’Héritage & La Philosophie</h2>
-      <p class="intro-text">« Transmettre et faire évoluer chaque jour le patrimoine de la beauté, s'inspirant de l'excellence du passé et offrant le meilleur du présent. »</p>
-      
-      <div class="grid-2">
-        <div>
-          <p>L’Histoire de la Maison prend sa source au tout début du XIXe siècle sous le génie de <strong>Jean-Vincent Bully</strong>, parfumeur et distillateur visionnaire de la rue Saint-Honoré à Paris. Connu pour ses innovations cosmétiques sans égales, il marqua son temps par le brevet du célèbre <em>Vinaigre Aromatique et Antiméphitique</em> en 1809, célébré dans toute l’Europe aux Expositions Universelles.</p>
-          <br>
-          <p>Aujourd'hui, l'Officine Universelle Buly perpétue cette quête d'excellence. Chaque boutique à travers le monde est conçue comme un apothicaire théâtral d'exception, conjuguant doucines, loupes d'orme et merisier pour offrir un voyage hors du temps où la beauté devient rituel.</p>
-        </div>
-        <div class="img-frame">
-          <img src="image_5.png" alt="Officine Universelle Buly Saint-Germain-des-Prés">
-          <div class="caption">L'Officine de Saint-Germain-des-Prés — Ébénisterie et patrimoine cosmétique français.</div>
-        </div>
-      </div>
-    </section>
+<button onclick="showSection('coiffure')" class="btn-download"><i class="fa-solid fa-arrow-right"></i> Voir les Tutos</button>
+</div>
+</div>
+<div class="buly-card">
+<div class="card-header-bg">
+<i class="fa-solid fa-tree fa-3x" style="color: var(--buly-green);"></i>
+</div>
+<div class="card-body">
+<h3 class="card-title">Actu : Arbre à Souhaits</h3>
+<p>Célébrez les fêtes de fin d'année en accrochant votre vœu sur le sapin virtuel de l'Officine.</p>
 
-    <!-- SECTION II : GROOMING & CHIGNON -->
-    <section id="grooming" class="section-card">
-      <h2 class="section-header">II. L’Art de la Tenue & du Chignon d'Officière</h2>
-      <p class="intro-text">« L’apparence de l'Officier est le miroir de l’exigence de notre Maison. Rigueur, distinction et délicatesse du geste. »</p>
 
-      <div class="grid-2">
-        <div>
-          <div class="step-box">
-            <h4>1. Lissage & Démêlage Préalable</h4>
-            <p>S'emparer du <em>Peigne Le Sans-Souci</em> ou du peigne en buis. Démêler la chevelure vers l'arrière avec fluidité afin d'harmoniser les volumes sans plaquer excessivement le cuir chevelu.</p>
-          </div>
-
-          <div class="step-box">
-            <h4>2. Enroulement & Torsade Basse</h4>
-            <p>Rassembler la masse capillaire au niveau de la nuque. Exécuter une torsion ferme sur elle-même pour composer un chignon bas, sobre et élégant.</p>
-          </div>
-
-          <div class="step-box">
-            <h4>3. Ancrage avec les Créations d'Acétate Buly</h4>
-            <p>Piquer la barrette (<em>La Courtoise</em>, <em>L'Ingénue</em>) ou le pic à chignon (<em>La Vaillante</em>) de biais pour fixer le chignon avec fermeté. Aucun cheveu rebelle ne doit altérer le regard lors du conseil au client.</p>
-          </div>
-        </div>
-
-        <div>
-          <div class="img-frame">
-            <img src="image_3.png" alt="Chignon d'Officière Buly avec Barrette">
-            <div class="caption">Attache basse exécutée avec la Barrette Oblongue Buly.</div>
-          </div>
-        </div>
-      </div>
-
-      <div style="margin-top:30px;">
-        <h3 style="font-family:'Cinzel', serif; color:var(--burgundy); text-align:center; margin-bottom:15px;">Les Instruments de Coiffure Recommandés</h3>
-        <div class="product-grid">
-          <div class="product-card">
-            <h3>LA COURTOISE</h3>
-            <div class="product-type">Barrette oblongue en acétate avec fermoir</div>
-            <p style="font-size:0.85rem;">Maintient le chignon bas avec élégance et simplicité. Idéale pour graver un monogramme calligraphié.</p>
-          </div>
-          <div class="product-card">
-            <h3>L’INGÉNUE</h3>
-            <div class="product-type">Barrette élancée motif écaille de tortue</div>
-            <p style="font-size:0.85rem;">Maintient les mèches de côté ou sécurise une attache fine pour cheveux mi-longs.</p>
-          </div>
-          <div class="product-card">
-            <h3>LA VAILLANTE</h3>
-            <div class="product-type">Pic à chignon en acétate teinté</div>
-            <p style="font-size:0.85rem;">L'accessoire traditionnel par excellence. S'insère d'un geste précis au cœur de la torsade.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION III : ORGANIGRAMME -->
-    <section id="organigramme" class="section-card">
-      <h2 class="section-header">III. La Carte des Officines & Capitaines</h2>
-      <p class="intro-text">Répertoire des directeurs et directrices de boutiques à travers nos marchés du monde.</p>
-
-      <table class="buly-table">
-        <thead>
-          <tr>
-            <th>Marché / Ville</th>
-            <th>Officine</th>
-            <th>Capitaine de Boutique (Directeur / trice)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="city-badge">PARIS (6e)</span></td>
-            <td>Rue Bonaparte</td>
-            <td>Nicolas Hénault</td>
-          </tr>
-          <tr>
-            <td><span class="city-badge">PARIS (3e)</span></td>
-            <td>Rue de Saintonge</td>
-            <td>Caroline George</td>
-          </tr>
-          <tr>
-            <td><span class="city-badge">PARIS (4e)</span></td>
-            <td>Vieille du Temple</td>
-            <td>Johanna Diaby</td>
-          </tr>
-          <tr>
-            <td><span class="city-badge">PARIS (7e)</span></td>
-            <td>Le Bon Marché Rive Gauche</td>
-            <td>Ivonne Descolzeaux</td>
-          </tr>
-          <tr>
-            <td><span class="city-badge">PARIS (9e)</span></td>
-            <td>Galeries Lafayette Haussmann</td>
-            <td>Marie-Hélène Renard</td>
-          </tr>
-          <tr>
-            <td><span class="city-badge">PARIS (1er)</span></td>
-            <td>Rue de Richelieu</td>
-            <td>Anne Flammand</td>
-          </tr>
-          <tr>
-            <td><span class="city-badge">LONDRES</span></td>
-            <td>Executive Boutique London</td>
-            <td>David Jareno</td>
-          </tr>
-          <tr>
-            <td><span class="city-badge">MUNICH</span></td>
-            <td>Officine de Munich</td>
-            <td>Driton Islami</td>
-          </tr>
-          <tr>
-            <td><span class="city-badge">MILAN</span></td>
-            <td>Officine Milano</td>
-            <td>Caterina Marchetti</td>
-          </tr>
-          <tr>
-            <td><span class="city-badge">HONG KONG</span></td>
-            <td>Central Hong Kong</td>
-            <td>Vanessa Lo</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- SECTION IV : CALENDRIER -->
-    <section id="calendrier" class="section-card">
-      <h2 class="section-header">IV. Le Temporal & Les Temps Forts de l’Année</h2>
-      <p class="intro-text">Les rendez-vous d'exception qui rythment la vie de nos comptoirs d'officines.</p>
-
-      <div class="step-box">
-        <h4>JANVIER & FÉVRIER — L'Art du Présent & Saint-Valentin</h4>
-        <p>Mise en valeur de la personnalisation ultime : dorure à la feuille, gravure sur baumes (Baume des Muses) et initiales calligraphiées à l'encre de Chine.</p>
-      </div>
-
-      <div class="step-box">
-        <h4>MARS & SEPTEMBRE — Les Semaines de la Mode (Fashion Weeks)</h4>
-        <p>Flux international intense à Paris, Milan et Londres. Rigueur absolue sur la tenue du groom, la perfection du chignon et la maîtrise du discours olfactif.</p>
-      </div>
-
-      <div class="step-box">
-        <h4>NOVEMBRE — Le Temps Long (Alternative Buly au Black Friday)</h4>
-        <p>Chez Buly, nous refusons les rabais éphémères qui déprécient l'artisanat. Nous célébrons la transmission, la noblesse des matières et l'écoute attentive de chaque visiteur.</p>
-      </div>
-
-      <div class="step-box">
-        <h4>DÉCEMBRE — Le Grand Temporal de Noël</h4>
-        <p>L'apogée de l'année. Préparation des coffrets octogonaux sur-mesure, cirage des emballages précieux et orchestration des rituels de vente.</p>
-      </div>
-    </section>
-
-    <!-- SECTION V : MÉMORANDIES PRODUITS -->
-    <section id="memorandies" class="section-card">
-      <h2 class="section-header">V. La Mémorandie des Produits (Fiches Vente)</h2>
-      <p class="intro-text">Les arguments clés pour transmettre avec passion la noblesse de nos créations.</p>
-
-      <div class="product-grid">
-
-        <!-- FICHE 1 -->
-        <div class="product-card">
-          <div>
-            <h3>L’EAU TRIPLE</h3>
-            <div class="product-type">Parfum Universel à l'Eau (Sans Alcool)</div>
-            <ul class="product-bullets">
-              <li><strong>Formule :</strong> Émulsion d'eau et d'huile aromatique unique au monde.</li>
-              <li><strong>Atout Clef :</strong> Ne dessèche ni la peau ni les cheveux. Ne tache jamais les textiles.</li>
-              <li><strong>Rituel :</strong> Agiter le flacon en céramique avant la vaporisation.</li>
-            </ul>
-            <div class="pitch-quote">
-              « Une fragrance d'une grande pureté qui n'agresse pas la peau mais l'enveloppe d'une aura fidèle toute la journée. »
-            </div>
-          </div>
-          <a href="#" class="btn-download">📄 Télécharger la Fiche Mémo (PDF)</a>
-        </div>
-
-        <!-- FICHE 2 -->
-        <div class="product-card">
-          <div>
-            <h3>LA POMMADE CONCRÈTE</h3>
-            <div class="product-type">Soin Protecteur Mains & Pieds</div>
-            <ul class="product-bullets">
-              <li><strong>Formule :</strong> Eau de camomille apaisante & beurre de karité d'une grande richesse.</li>
-              <li><strong>Atout Clef :</strong> Répare les épidermes sollicités et protège du froid.</li>
-              <li><strong>Rituel :</strong> Réchauffer une noisette de baume au creux des mains avant application.</li>
-            </ul>
-            <div class="pitch-quote">
-              « Le baume emblématique des mains exigeantes, abrité dans son tube en aluminium à l'empreinte illustrée. »
-            </div>
-          </div>
-          <a href="#" class="btn-download">📄 Télécharger la Fiche Mémo (PDF)</a>
-        </div>
-
-        <!-- FICHE 3 -->
-        <div class="product-card">
-          <div>
-            <h3>L’HUILE ANTIQUE</h3>
-            <div class="product-type">Huile Sèche Embellissante Corps</div>
-            <ul class="product-bullets">
-              <li><strong>Formule :</strong> Triptyque de sésame, d'abricot et de coco nourrissant.</li>
-              <li><strong>Atout Clef :</strong> Satine la peau immédiatement sans laisser de film gras.</li>
-              <li><strong>Rituel :</strong> Appliquer sur peau légèrement humide au sortir du bain.</li>
-            </ul>
-            <div class="pitch-quote">
-              « Un hommage aux macérats cosmétiques de l’Antiquité pour illuminer et parfumer le corps d’un sillage délicat. »
-            </div>
-          </div>
-          <a href="#" class="btn-download">📄 Télécharger la Fiche Mémo (PDF)</a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION VI : INSTRUCTIONS GITHUB -->
-    <section id="github-instructions" class="section-card">
-      <h2 class="section-header">📌 Comment appliquer ces changements sur GitHub ?</h2>
-      
-      <div class="github-guide">
-        <h3>Étapes simples pour mettre à jour votre site en direct :</h3>
-        <ol>
-          <li>Copiez l'intégralité du code contenu dans ce cadre HTML.</li>
-          <li>Rendez-vous sur votre navigateur mobile ou ordinateur sur <strong>GitHub.com</strong> dans votre dépôt <code>almanach-buly</code>.</li>
-          <li>Appuyez sur le fichier <strong><code>index.html</code></strong> pour l'ouvrir.</li>
-          <li>Appuyez sur l'icône de crayon ✏️ (en haut à droite de la fenêtre de code) pour passer en mode édition.</li>
-          <li>Sélectionnez TOUT l'ancien texte présent dans le fichier et supprimez-le.</li>
-          <li>Collez ce nouveau code à la place.</li>
-          <li>Descendez en bas de la page et cliquez sur le bouton vert <strong>Commit changes...</strong></li>
-        </ol>
-        <p style="color:var(--gold-light); margin-top:10px;"><em>Attendez 1 à 2 minutes puis rafraîchissez votre lien GitHub Pages (`https://naomibuly.github.io/almanach-buly/`) pour contempler votre nouvel intranet !</em></p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>L’Almanach des Grands Officiers — Document Interne Réseaux & Officines Buly 1803</p>
-    <p style="font-size:0.75rem; margin-top:5px; color:var(--gold);">« La beauté est dans l'exactitude du détail et la noblesse du geste. »</p>
-  </footer>
-
+<button onclick="showSection('arbre-souhaits')" class="btn-download" style="background: var(--buly-green);"><i class="fa-solid fa-pen-nib"></i> Écrire un vœu</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: FICHES PRODUITS (MEMOS) -->
+<section id="memos" class="page-section">
+<div class="section-header">
+<h2>Fiches Mémos Produits</h2>
+<div class="section-subtitle">Les incontournables du comptoir de l'Officine</div>
+</div>
+<!-- PRODUIT 1 : L'EAU TRIPLE -->
+<div class="product-sheet-card">
+<div class="product-visual-box">
+<svg width="140" height="180" viewBox="0 0 100 140" fill="none">
+<rect x="25" y="45" width="50" height="75" rx="6" fill="#ffffff" stroke="#c5a059" stroke-width="2"/>
+<circle x="50" fill="#c5a059" cx="50" cy="70" r="14"/>
+<text x="50" y="74" font-family="Cinzel" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="bold">B</text>
+<rect x="38" y="25" width="24" height="20" fill="#c5a059" rx="2"/>
+<circle cx="50" cy="20" r="10" fill="#8c6d31"/>
+</svg>
+<div style="margin-top: 1rem;">
+<button onclick="downloadProductSheet('Eau_Triple')" class="btn-download"><i class="fa-solid fa-download"></i> Fiche PDF</button>
+</div>
+</div>
+<div class="product-details">
+<h3>L'Eau Triple</h3>
+<div class="product-subtitle">Parfum universel à l'eau (sans alcool)</div>
+<ul class="product-info-list">
+<li><i class="fa-solid fa-flask"></i> <div><strong>Formule :</strong> Émulsion d'eau et d'huile aromatique unique au monde.</div></li>
+<li><i class="fa-solid fa-key"></i> <div><strong>Atout Clef :</strong> Ne dessèche ni la peau ni les cheveux. Ne tache jamais les textiles.</div></li>
+<li><i class="fa-solid fa-hand-holding-droplet"></i> <div><strong>Rituel :</strong> Agiter vigoureusement le flacon en céramique avant chaque vaporisation.</div></li>
+</ul>
+<div class="product-quote">
+« Une fragrance d'une grande pureté qui n'agresse pas la peau mais l'enveloppe d'une aura fidèle toute la journée. »
+</div>
+</div>
+</div>
+<!-- PRODUIT 2 : L'HUILE ANTIQUE -->
+<div class="product-sheet-card">
+<div class="product-visual-box">
+<svg width="140" height="180" viewBox="0 0 100 140" fill="none">
+<rect x="28" y="45" width="44" height="80" rx="4" fill="#fff" stroke="#6b1d2f" stroke-width="2"/>
+<rect x="34" y="55" width="32" height="40" fill="#f4ece1" stroke="#6b1d2f" stroke-width="1"/>
+<circle cx="50" cy="75" r="8" fill="#6b1d2f"/>
+<circle cx="50" cy="25" r="12" fill="#2c2523"/>
+</svg>
+<div style="margin-top: 1rem;">
+<button onclick="downloadProductSheet('Huile_Antique')" class="btn-download"><i class="fa-solid fa-download"></i> Fiche PDF</button>
+</div>
+</div>
+<div class="product-details">
+<h3 style="color: var(--buly-burgundy);">L'Huile Antique</h3>
+<div class="product-subtitle">Huile sèche embellissante corps</div>
+<ul class="product-info-list">
+<li><i class="fa-solid fa-seedling"></i> <div><strong>Formule :</strong> Triptyque de sésame, d'abricot et de coco nourrissant.</div></li>
+<li><i class="fa-solid fa-wand-magic-sparkles"></i> <div><strong>Atout Clef :</strong> Satine la peau immédiatement sans laisser de film gras.</div></li>
+<li><i class="fa-solid fa-shower"></i> <div><strong>Rituel :</strong> Appliquer sur peau légèrement humide au sortir du bain ou de la douche.</div></li>
+</ul>
+<div class="product-quote">
+« Un hommage aux macérats cosmétiques de l'Antiquité pour illuminer et parfumer le corps d'un sillage délicat. »
+</div>
+</div>
+</div>
+<!-- PRODUIT 3 : LA POMMADE CONCRÈTE -->
+<div class="product-sheet-card">
+<div class="product-visual-box">
+<svg width="140" height="180" viewBox="0 0 100 140" fill="none">
+<polygon points="30,30 70,30 65,110 35,110" fill="#2b3a67" stroke="#2b3a67" stroke-width="2"/>
+<rect x="40" y="110" width="20" height="15" fill="#888"/>
+<rect x="38" y="45" width="24" height="35" fill="#ffffff"/>
+<path d="M 45 55 L 55 55 M 50 50 L 50 65" stroke="#2b3a67" stroke-width="2"/>
+</svg>
+<div style="margin-top: 1rem;">
+<button onclick="downloadProductSheet('Pommade_Concrete')" class="btn-download"><i class="fa-solid fa-download"></i> Fiche PDF</button>
+</div>
+</div>
+<div class="product-details">
+<h3 style="color: var(--buly-blue);">La Pommade Concrète</h3>
+<div class="product-subtitle">Soin protecteur mains et pieds</div>
+<ul class="product-info-list">
+<li><i class="fa-solid fa-mortar-pestle"></i> <div><strong>Formule :</strong> Eau de camomille apaisante et beurre de karité d'une grande richesse.</div></li>
+<li><i class="fa-solid fa-shield-halved"></i> <div><strong>Atout Clef :</strong> Répare les épidermes sollicités et protège activement du froid.</div></li>
+<li><i class="fa-solid fa-hands-holding"></i> <div><strong>Rituel :</strong> Réchauffer une noisette de baume au creux des mains avant l'application.</div></li>
+</ul>
+<div class="product-quote">
+« Le baume emblématique des mains exigeantes, abrité dans son tube en aluminium à l'empreinte illustrée. »
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION: TUTOS COIFFURE -->
+<section id="coiffure" class="page-section">
+<div class="section-header">
+<h2>Protocole & Coiffure Réglementaire</h2>
+<div class="section-subtitle">Maintien et rigueur au comptoir</div>
+</div>
+<div class="tuto-grid">
+<div class="tuto-card">
+<h3 class="card-title"><i class="fa-solid fa-circle-check"></i> Chignon Bas à la Barrette</h3>
+<div class="tuto-steps">
+<div class="step-box">
+<div class="step-num">1</div>
+Rassemblez bas sur la nuque
+</div>
+<div class="step-box">
+<div class="step-num">2</div>
+Torsadez avec tension
+</div>
+<div class="step-box">
+<div class="step-num">3</div>
+Enroulez la torsade
+</div>
+<div class="step-box">
+<div class="step-num">4</div>
+Clipsez la barrette
+</div>
+</div>
+<p style="font-size: 0.95rem; color: #444;">Le chignon à la barrette apporte un maintien impeccable tout au long du service. Assurez-vous qu'aucune mèche ne s'échappe de la nuque.</p>
+</div>
+<div class="tuto-card">
+<h3 class="card-title"><i class="fa-solid fa-circle-check"></i> Chignon au Pic à Cheveux</h3>
+<div class="tuto-steps">
+<div class="step-box">
+<div class="step-num">1</div>
+Rassemblez la chevelure
+</div>
+<div class="step-box">
+<div class="step-num">2</div>
+Torsadez fermement
+</div>
+<div class="step-box">
+<div class="step-num">3</div>
+Enroulez en escargot
+</div>
+<div class="step-box">
+<div class="step-num">4</div>
+Insérez le pic en diagonale
+</div>
+</div>
+<p style="font-size: 0.95rem; color: #444;">Insérez le pic en attrapant une partie de la masse extérieure, puis piquez à travers le cœur du chignon vers la base opposée.</p>
+</div>
+</div>
+</section>
+<!-- SECTION: LE TEMPORAL -->
+<section id="temporal" class="page-section">
+<div class="section-header">
+<h2>Le Temporal</h2>
+<div class="section-subtitle">Calendrier annuel des temps forts de la Maison</div>
+</div>
+<div class="calendar-grid">
+<div class="month-card">
+<div class="month-name">Janvier</div>
+<div class="month-event">L'Art du Présent</div>
+</div>
+<div class="month-card">
+<div class="month-name">Février</div>
+<div class="month-event">Saint-Valentin</div>
+</div>
+<div class="month-card">
+<div class="month-name">Mars</div>
+<div class="month-event">Fashion Week</div>
+</div>
+<div class="month-card">
+<div class="month-name">Avril</div>
+<div class="month-event">Senteurs du Printemps</div>
+</div>
+<div class="month-card">
+<div class="month-name">Mai</div>
+<div class="month-event">Fête des Mères</div>
+</div>
+<div class="month-card">
+<div class="month-name">Juin</div>
+<div class="month-event">Les Jardins de l'Officine</div>
+</div>
+<div class="month-card">
+<div class="month-name">Juillet / Août</div>
+<div class="month-event">L'Escale Estivale</div>
+</div>
+<div class="month-card">
+<div class="month-name">Septembre</div>
+<div class="month-event">Fashion Week</div>
+</div>
+<div class="month-card">
+<div class="month-name">Octobre</div>
+<div class="month-event">Nouveautés Officine</div>
+</div>
+<div class="month-card highlight">
+<div class="month-name">Novembre</div>
+<div class="month-event">Le Temps Long (Sans Black Friday)</div>
+</div>
+<div class="month-card highlight">
+<div class="month-name">Décembre</div>
+<div class="month-event">Le Grand Temporal de Noël</div>
+</div>
+</div>
+</section>
+<!-- SECTION: DIRECTION -->
+<section id="direction" class="page-section">
+<div class="section-header">
+<h2>Direction & Fondateurs</h2>
+<div class="section-subtitle">Les figures emblématiques et la gouvernance de la Maison</div>
+</div>
+<div class="leadership-grid">
+<div class="leader-card">
+<div class="leader-avatar">
+<i class="fa-solid fa-feather-pointed"></i>
+</div>
+<div class="leader-role">Cofondatrice & Direction Image</div>
+<h3>Victoire de Taillac</h3>
+<p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;">Pionnière de la cosmétique ancienne réinventée, gardienne des rituels et de l'élégance de la marque.</p>
+</div>
+<div class="leader-card">
+<div class="leader-avatar">
+<i class="fa-solid fa-compass-drafting"></i>
+</div>
+<div class="leader-role">Cofondateur & Directeur Créatif</div>
+<h3>Ramdane Touhami</h3>
+<p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;">Visionnaire, designer du concept architectural unique de chaque Officine dans le monde.</p>
+</div>
+<div class="leader-card">
+<div class="leader-avatar">
+<i class="fa-solid fa-user-tie"></i>
+</div>
+<div class="leader-role">Chief Executive Officer</div>
+<h3>Anabel Maldonado</h3>
+<p style="font-size: 0.9rem; color: #555; margin-top: 0.5rem;">Directrice Générale, orchestrant l'expansion mondiale et le rayonnement international des boutiques Buly.</p>
+</div>
+</div>
+</section>
+<!-- SECTION: RESSOURCES EN TÉLÉCHARGEMENT -->
+<section id="ressources" class="page-section">
+<div class="section-header">
+<h2>Centre de Téléchargement</h2>
+<div class="section-subtitle">Documents et fiches ressources prêts à l'impression</div>
+</div>
+<div class="resource-list">
+<div class="resource-item">
+<div class="resource-info">
+<i class="fa-solid fa-file-pdf resource-icon"></i>
+<div>
+<strong>Fiche L'Eau Triple</strong>
+<div style="font-size:0.8rem; color:#666;">Document Officiel · PDF</div>
+</div>
+</div>
+<button onclick="downloadProductSheet('Eau_Triple')" class="btn-download"><i class="fa-solid fa-download"></i> Obtenir</button>
+</div>
+<div class="resource-item">
+<div class="resource-info">
+<i class="fa-solid fa-file-pdf resource-icon"></i>
+<div>
+<strong>Fiche L'Huile Antique</strong>
+<div style="font-size:0.8rem; color:#666;">Document Officiel · PDF</div>
+</div>
+</div>
+<button onclick="downloadProductSheet('Huile_Antique')" class="btn-download"><i class="fa-solid fa-download"></i> Obtenir</button>
+</div>
+<div class="resource-item">
+<div class="resource-info">
+<i class="fa-solid fa-file-pdf resource-icon"></i>
+<div>
+<strong>Fiche Pommade Concrète</strong>
+<div style="font-size:0.8rem; color:#666;">Document Officiel · PDF</div>
+</div>
+</div>
+<button onclick="downloadProductSheet('Pommade_Concrete')" class="btn-download"><i class="fa-solid fa-download"></i> Obtenir</button>
+</div>
+<div class="resource-item">
+<div class="resource-info">
+<i class="fa-solid fa-file-pdf resource-icon"></i>
+<div>
+<strong>Guide des Coiffures</strong>
+<div style="font-size:0.8rem; color:#666;">Protocole Vendeur · PDF</div>
+</div>
+</div>
+<button onclick="downloadProductSheet('Guide_Coiffures')" class="btn-download"><i class="fa-solid fa-download"></i> Obtenir</button>
+</div>
+</div>
+</section>
+<!-- SECTION: ARBRE A SOUHAITS (ACTU) -->
+<section id="arbre-souhaits" class="page-section">
+<div class="section-header">
+<h2>L'Arbre à Souhaits</h2>
+<div class="section-subtitle">Écrivez votre vœu et accrochez-le au sapin de l'Officine</div>
+</div>
+<div class="wish-tree-section">
+<div class="wish-tree-container">
+<div class="wish-tree-visual">
+<!-- Arbre de Noël vectoriel avec étiquettes -->
+<svg width="240" height="300" viewBox="0 0 200 260" fill="none">
+<polygon points="100,20 130,70 70,70" fill="#2d5a43"/>
+<polygon points="100,50 145,110 55,110" fill="#244936"/>
+<polygon points="100,90 160,160 40,160" fill="#1b3829"/>
+<polygon points="100,130 175,210 25,210" fill="#13281d"/>
+<rect x="88" y="210" width="24" height="30" fill="#5c3a21"/>
+<!-- Étoile dorée -->
+<polygon points="100,5 104,16 115,16 106,23 109,34 100,27 91,34 94,23 85,16 96,16" fill="#c5a059"/>
+<!-- Étiquettes accrochées -->
+<rect x="80" y="80" width="12" height="18" rx="2" fill="#f4ece1" stroke="#c5a059"/>
+<rect x="110" y="120" width="12" height="18" rx="2" fill="#6b1d2f"/>
+<rect x="70" y="160" width="12" height="18" rx="2" fill="#2b3a67"/>
+</svg>
+</div>
+<div class="wish-form">
+<h3 class="cinzel-font" style="margin-bottom: 1rem; color: var(--buly-burgundy);">Déposer un Vœu</h3>
+<form id="wishForm" onsubmit="addWish(event)">
+<div class="form-group">
+<label for="author">Nom & Boutique :</label>
+<input type="text" id="author" class="form-control" placeholder="Ex: Marie - Boutique Bonaparte" required>
+</div>
+<div class="form-group">
+<label for="wishMessage">Votre Souhait :</label>
+<textarea id="wishMessage" class="form-control" rows="3" placeholder="Rédigez votre vœu..." required></textarea>
+</div>
+<button type="submit" class="btn-submit-wish"><i class="fa-solid fa-feather"></i> Accrocher au Sapin</button>
+</form>
+<div class="wish-list-display">
+<h4 class="cinzel-font" style="margin-bottom: 0.8rem; font-size:0.9rem;">Vœux déposés par les équipes :</h4>
+<div id="wishesContainer">
+<div class="wish-tag">
+<span>« Belle année florissante à toutes les équipes ! »</span>
+<span class="wish-tag-author">— Équipe Saintonge</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer>
+<div class="footer-title">OFFICINE UNIVERSELLE BULY · PARIS 1803</div>
+<p>L'Almanach des Grands Officiers — Document confidentiel à usage interne.</p>
+</footer>
+<!-- LOGIQUE JAVASCRIPT -->
+<script>
+function showSection(sectionId, element) {
+const sections = document.querySelectorAll('.page-section');
+sections.forEach(sec => sec.classList.remove('active'));
+const target = document.getElementById(sectionId);
+if(target) {
+target.classList.add('active');
+}
+if(element) {
+const navLinks = document.querySelectorAll('.nav-item a');
+navLinks.forEach(link => link.classList.remove('active'));
+element.classList.add('active');
+}
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function addWish(event) {
+event.preventDefault();
+const author = document.getElementById('author').value;
+const message = document.getElementById('wishMessage').value;
+if(!author || !message) return;
+const wishesContainer = document.getElementById('wishesContainer');
+const newWish = document.createElement('div');
+newWish.className = 'wish-tag';
+newWish.innerHTML = ⁠<span>« ${escapeHtml(message)} »</span> <span class="wish-tag-author">— ${escapeHtml(author)}</span>⁠;
+wishesContainer.prepend(newWish);
+document.getElementById('wishForm').reset();
+alert("Votre vœu a été accroché sur l'Arbre de l'Officine !");
+}
+function downloadProductSheet(filename) {
+const content = ⁠OFFICINE UNIVERSELLE BULY 1803\nFiche Mémo Officielle : ${filename}\n\nDocument téléchargé depuis L'Almanach des Grands Officiers.⁠;
+const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+const link = document.createElement('a');
+link.href = URL.createObjectURL(blob);
+link.download = ⁠${filename}_Buly1803.txt⁠;
+link.click();
+}
+function escapeHtml(text) {
+return text.replace(/&/g, "&")
+.replace(/</g, "<")
+.replace(/>/g, ">")
+.replace(/"/g, """)
+.replace(/'/g, "'");
+}
+</script>
 </body>
 </html>
