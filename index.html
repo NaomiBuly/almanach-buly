@@ -68,12 +68,7 @@
         }
         
         .header-title::before, .header-title::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 40px;
-            height: 1px;
-            background: var(--gold);
+            content: ''; position: absolute; top: 50%; width: 40px; height: 1px; background: var(--gold);
         }
         .header-title::before { left: -55px; }
         .header-title::after { right: -55px; }
@@ -107,16 +102,8 @@
             border-radius: 20px;
         }
 
-        .nav-btn:hover {
-            background-color: rgba(193, 39, 45, 0.08);
-            color: var(--buly-red);
-        }
-
-        .nav-btn.active {
-            border: 1px solid var(--buly-red);
-            color: var(--buly-red);
-            font-weight: 700;
-        }
+        .nav-btn:hover { background-color: rgba(193, 39, 45, 0.08); color: var(--buly-red); }
+        .nav-btn.active { border: 1px solid var(--buly-red); color: var(--buly-red); font-weight: 700; }
 
         /* CONTAINER */
         .container { max-width: 1150px; margin: 30px auto; padding: 0 20px; }
@@ -135,7 +122,7 @@
             content: ''; display: block; width: 80px; height: 2px; background: var(--gold); margin: 12px auto 25px;
         }
         .section-desc { text-align: center; font-style: italic; max-width: 750px; margin: 0 auto 35px; color: #555; font-size: 1.1rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
 
         /* CARDS & COMMON */
         .card-box { background: #fff; border: 1px solid var(--border-color); padding: 30px; border-radius: 4px; margin-bottom: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.03); }
@@ -143,36 +130,23 @@
         .card-box p { margin-bottom: 15px; text-align: justify; font-size: 0.98rem; }
 
         /* HISTOIRE ET PHILOSOPHIE */
-        .history-wrapper {
-            display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center;
-        }
-        @media (max-width: 800px) { .history-wrapper { grid-template-columns: 1fr; } }
+        .history-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; }
+        @media (max-width: 850px) { .history-wrapper { grid-template-columns: 1fr; } }
         
-        .ceremonial-steps {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin-top: 25px;
-        }
-        .ceremonial-step {
-            background: var(--parchment); border: 1px solid var(--border-color); border-top: 3px solid var(--gold); padding: 20px; border-radius: 4px; text-align: center;
-        }
+        .ceremonial-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin-top: 25px; }
+        .ceremonial-step { background: var(--parchment); border: 1px solid var(--border-color); border-top: 3px solid var(--gold); padding: 20px; border-radius: 4px; text-align: center; }
         .ceremonial-icon { font-size: 2.2rem; margin-bottom: 10px; display: block; color: var(--buly-red); }
         .ceremonial-step h4 { font-family: 'Cinzel', serif; color: var(--primary); font-size: 1rem; margin-bottom: 8px; }
         .ceremonial-step p { font-size: 0.9rem; color: #444; margin-bottom: 0; text-align: center; }
 
         /* GROOMING & UNIFORMS */
-        .uniform-illustration-card {
-            background: #fff; border: 1px solid var(--border-color); padding: 25px; border-radius: 4px; text-align: center; margin-bottom: 30px;
-        }
-        .uniform-img-container {
-            max-width: 480px; margin: 20px auto; border: 1px solid var(--border-color); padding: 15px; background: var(--parchment); border-radius: 4px;
-        }
-        .uniform-img-container img { width: 100%; height: auto; display: block; border-radius: 2px; }
+        .uniform-illustration-card { background: #fff; border: 1px solid var(--border-color); padding: 25px; border-radius: 4px; text-align: center; margin-bottom: 30px; }
+        .uniform-grid-svg { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 20px; }
+        .uniform-svg-box { background: var(--parchment); border: 1px solid var(--border-color); padding: 20px; border-radius: 6px; width: 340px; }
+        .uniform-svg-box h4 { font-family: 'Cinzel', serif; color: var(--buly-red); margin-bottom: 15px; text-align: center; }
 
-        .commandments-list {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px;
-        }
-        .commandment-item {
-            background: #fdfbf3; border: 1px solid var(--gold); padding: 20px; border-radius: 4px; position: relative;
-        }
+        .commandments-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        .commandment-item { background: #fdfbf3; border: 1px solid var(--gold); padding: 20px; border-radius: 4px; position: relative; }
         .commandment-icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
         .commandment-item h4 { font-family: 'Cinzel', serif; color: var(--primary); font-size: 1rem; margin-bottom: 8px; }
         .commandment-item p { font-size: 0.9rem; color: #333; margin: 0; }
@@ -193,17 +167,15 @@
 
         /* CATALOGUE */
         .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 25px; }
-        .catalog-category-card { background: #fff; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden; transition: transform 0.3s ease; }
+        .catalog-category-card { background: #fff; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden; transition: transform 0.3s ease; text-align: center; }
         .catalog-category-card:hover { transform: translateY(-3px); }
         .catalog-category-header { background: var(--parchment-dark); padding: 15px; border-bottom: 1px solid var(--border-color); text-align: center; }
         .catalog-category-title { font-family: 'Cinzel', serif; color: var(--buly-red); font-size: 1.15rem; font-weight: bold; }
         .catalog-category-body { padding: 20px; font-size: 0.9rem; color: #444; }
+        .catalog-svg-icon { width: 90px; height: 90px; margin: 0 auto 10px; }
 
         /* FICHES PRODUITS MEMOS */
-        .product-card {
-            background: #fff; border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden;
-            display: flex; flex-direction: column; position: relative;
-        }
+        .product-card { background: #fff; border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; position: relative; }
         .product-header { padding: 25px 20px; text-align: center; border-bottom: 1px solid var(--border-color); background: #fff; }
         .product-svg { height: 180px; margin: 0 auto; display: block; filter: drop-shadow(3px 6px 8px rgba(0,0,0,0.1)); }
         .product-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
@@ -211,12 +183,8 @@
         .product-sub { font-style: italic; color: #666; margin-bottom: 15px; font-size: 0.9rem; }
         .feature-item { margin-bottom: 10px; font-size: 0.88rem; }
         .feature-label { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 1px; color: var(--primary); text-transform: uppercase; font-weight: bold; display: block; margin-bottom: 2px; }
-        .quote-box { background: var(--parchment); border-left: 3px solid var(--gold); padding: 10px; font-style: italic; font-size: 0.85rem; margin: 10px 0 15px; color: #444; }
         
-        .btn-download {
-            background: var(--primary); color: #fff; border: none; padding: 10px 18px; font-family: 'Cinzel', serif; font-size: 0.8rem;
-            letter-spacing: 1px; cursor: pointer; width: 100%; border-radius: 3px; transition: background 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 10px;
-        }
+        .btn-download { background: var(--primary); color: #fff; border: none; padding: 10px 18px; font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 1px; cursor: pointer; width: 100%; border-radius: 3px; transition: background 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 10px; }
         .btn-download:hover { background: var(--buly-red); color: #fff; }
 
         /* LEADERS & BOUTIQUES */
@@ -230,20 +198,28 @@
         .boutique-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; }
         .boutique-card { background: #fff; border: 1px solid var(--border-color); border-left: 4px solid var(--primary); padding: 15px; border-radius: 4px; }
         .boutique-city { font-family: 'Cinzel', serif; color: var(--primary); font-weight: bold; font-size: 0.98rem; }
+        .boutique-director { font-style: italic; color: var(--buly-red); font-size: 0.85rem; margin-top: 2px; }
         .boutique-emblem { font-style: italic; color: var(--gold); font-size: 0.85rem; margin: 4px 0; display: flex; align-items: center; gap: 6px; }
 
-        /* THE TEMPORAL CALENDAR 2026 */
-        .calendar-month-container {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;
-        }
-        .calendar-box { background: #fff; border: 2px solid var(--border-color); border-radius: 6px; padding: 20px; position: relative; }
-        .calendar-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-bottom: 15px; }
-        .calendar-month { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--buly-red); font-weight: bold; }
-        .calendar-year { font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--gold); font-weight: bold; }
-        .calendar-event { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--primary); font-weight: 600; margin-bottom: 10px; }
-        .training-docs-box { background: var(--parchment); padding: 10px 12px; border-radius: 4px; font-size: 0.85rem; margin-top: 12px; border: 1px dashed var(--border-color); }
-        .questionnaire-box { background: #fff8e1; border: 1px solid #ffe082; padding: 10px; border-radius: 4px; margin-top: 10px; font-size: 0.85rem; text-align: center; }
-        .questionnaire-box a { color: var(--buly-red); font-weight: bold; text-decoration: underline; }
+        /* VINTAGE PAPER CALENDAR (THE TEMPORAL) */
+        .paper-calendar-wrapper { max-width: 900px; margin: 0 auto; }
+        .paper-calendar { background: #fcf9f2; border: 2px solid var(--gold); border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); padding: 30px; position: relative; }
+        .calendar-rings { display: flex; justify-content: space-around; position: absolute; top: -15px; left: 0; right: 0; }
+        .ring { width: 16px; height: 30px; background: linear-gradient(90deg, #666, #ccc, #444); border-radius: 8px; border: 1px solid #222; }
+        .calendar-paper-header { text-align: center; border-bottom: 2px double var(--buly-red); padding-bottom: 15px; margin-bottom: 20px; }
+        .calendar-paper-month { font-family: 'Cinzel', serif; font-size: 2.2rem; color: var(--buly-red); letter-spacing: 3px; font-weight: bold; }
+        .calendar-paper-year { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 2px; }
+        
+        .paper-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center; }
+        .day-header { font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: bold; color: var(--primary); padding: 5px; background: var(--parchment-dark); border-radius: 3px; }
+        .day-cell { background: #fff; border: 1px solid var(--border-color); min-height: 85px; padding: 5px; border-radius: 4px; text-align: left; position: relative; font-size: 0.8rem; }
+        .day-num { font-family: 'Cinzel', serif; font-weight: bold; color: #888; font-size: 0.85rem; }
+        .day-cell.event-cell { background: #fdfaf2; border-color: var(--gold); }
+        .day-cell.highlight-event { background: #fcf0f0; border-color: var(--buly-red); }
+        .event-tag { font-size: 0.7rem; font-weight: bold; color: var(--buly-red); display: block; margin-top: 4px; border-left: 2px solid var(--buly-red); padding-left: 3px; }
+        .event-tag.gold-tag { color: #8a6d2f; border-color: var(--gold); }
+
+        .calendar-download-block { margin-top: 25px; background: var(--parchment-dark); padding: 15px; border-radius: 6px; border: 1px dashed var(--gold); text-align: center; }
 
         /* ACTU & RITUALS FEED */
         .news-container { background: #fff; border: 2px solid var(--border-color); border-radius: 6px; padding: 30px; max-width: 850px; margin: 0 auto; }
@@ -286,32 +262,66 @@
             <div class="card-box history-wrapper">
                 <div>
                     <h3>The Legacy of Jean-Vincent Bully</h3>
-                    <p>Founded in 1803 by master perfumer Jean-Vincent Bully, the Officine established its reputation across Europe with patented cosmetic formulations, including the iconic Vinaigre de Toilette.</p>
-                    <p>Immortalesed by Honoré de Balzac in <em>César Birotteau</em>, the House was revived in 2014 by Victoire de Taillac and Ramdane Touhami, upholding 19th-century luxury, bespoke calligraphy, and officinal wisdom.</p>
+                    <p>Founded in 1803 by master perfumer Jean-Vincent Bully, the Officine established its reputation across Europe with patented cosmetic formulations, including the iconic Vinaigre de Toilette[cite: 1].</p>
+                    <p>Immortalesed by Honoré de Balzac in <em>César Birotteau</em>[cite: 1], the House was revived in 2014 by Victoire de Taillac and Ramdane Touhami[cite: 1], upholding 19th-century luxury, bespoke calligraphy, and officinal wisdom.</p>
                 </div>
                 <div>
-                    <!-- Faithful Sketch based on Boutique Architecture -->
-                    <svg viewBox="0 0 500 380" style="width:100%; height:auto; border:2px solid var(--gold); border-radius:4px; background:#f9f6ef;">
-                        <!-- Wooden Coffered Ceiling & Arch Shelves Sketch -->
-                        <path d="M 10 10 L 490 10 M 10 30 L 490 30 M 10 50 L 490 50" stroke="#8d5524" stroke-width="1.5"/>
-                        <!-- Arched Apothecary Shelves -->
-                        <g fill="none" stroke="#654321" stroke-width="2">
-                            <path d="M 20 60 Q 40 45 60 60 Q 80 45 100 60 Q 120 45 140 60 Q 160 45 180 60 Q 200 45 220 60"/>
-                            <path d="M 20 110 Q 40 95 60 110 Q 80 95 100 110 Q 120 95 140 110 Q 160 95 180 110 Q 200 95 220 110"/>
-                            <path d="M 20 160 Q 40 145 60 160 Q 80 145 100 160 Q 120 145 140 160 Q 160 145 180 160 Q 200 145 220 160"/>
+                    <!-- Highly Precise Architectural Sketch of Rue Bonaparte Boutique -->
+                    <svg viewBox="0 0 500 380" style="width:100%; height:auto; border:2px solid var(--gold); border-radius:4px; background:#f5f0e1;">
+                        <!-- Wooden Coffered Ceiling with Decorative Beams -->
+                        <rect x="0" y="0" width="500" height="40" fill="#4a2e16"/>
+                        <path d="M 0 10 L 500 10 M 0 20 L 500 20 M 0 30 L 500 30" stroke="#7a4e27" stroke-width="2"/>
+                        
+                        <!-- Back Wall Arched Apothecary Shelves (Alcoves) -->
+                        <rect x="10" y="40" width="480" height="180" fill="#603b1d"/>
+                        <!-- Row 1 Alcoves -->
+                        <g fill="#2b1707" stroke="#8c5828" stroke-width="2">
+                            <path d="M 20 80 C 20 55, 50 55, 50 80 L 50 100 L 20 100 Z"/>
+                            <path d="M 60 80 C 60 55, 90 55, 90 80 L 90 100 L 60 100 Z"/>
+                            <path d="M 100 80 C 100 55, 130 55, 130 80 L 130 100 L 100 100 Z"/>
+                            <path d="M 140 80 C 140 55, 170 55, 170 80 L 170 100 L 140 100 Z"/>
+                            <path d="M 180 80 C 180 55, 210 55, 210 80 L 210 100 L 180 100 Z"/>
+                            <path d="M 220 80 C 220 55, 250 55, 250 80 L 250 100 L 220 100 Z"/>
+                            <path d="M 260 80 C 260 55, 290 55, 290 80 L 290 100 L 260 100 Z"/>
+                            <path d="M 300 80 C 300 55, 330 55, 330 80 L 330 100 L 300 100 Z"/>
+                            <path d="M 340 80 C 340 55, 370 55, 370 80 L 370 100 L 340 100 Z"/>
+                            <path d="M 380 80 C 380 55, 410 55, 410 80 L 410 100 L 380 100 Z"/>
                         </g>
-                        <!-- Apothecary Jars & Bottles Sketches -->
-                        <g fill="#c1272d" opacity="0.7">
-                            <rect x="30" y="70" width="12" height="20" rx="2"/><rect x="70" y="70" width="12" height="20" rx="2"/><rect x="110" y="70" width="12" height="20" rx="2"/>
-                            <rect x="30" y="120" width="12" height="20" rx="2"/><rect x="70" y="120" width="12" height="20" rx="2"/><rect x="110" y="120" width="12" height="20" rx="2"/>
+
+                        <!-- Glass Jars inside Alcoves -->
+                        <g fill="#c1272d" opacity="0.85">
+                            <rect x="28" y="70" width="14" height="22" rx="2"/><rect x="68" y="70" width="14" height="22" rx="2"/>
+                            <rect x="108" y="70" width="14" height="22" rx="2"/><rect x="148" y="70" width="14" height="22" rx="2"/>
+                            <rect x="188" y="70" width="14" height="22" rx="2"/><rect x="228" y="70" width="14" height="22" rx="2"/>
                         </g>
-                        <!-- Marble L-Shaped Counter -->
-                        <polygon points="40,210 460,210 440,320 20,320" fill="#d4c5a9" stroke="#654321" stroke-width="2"/>
-                        <path d="M 200 210 L 180 320" stroke="#654321" stroke-width="2"/>
-                        <!-- Tiled Floor Sketch -->
-                        <g stroke="#8d7d62" stroke-width="1" opacity="0.5">
-                            <path d="M 0 330 L 500 330 M 0 355 L 500 355 M 0 380 L 500 380"/>
-                            <path d="M 30 320 L 0 380 M 100 320 L 70 380 M 170 320 L 140 380 M 240 320 L 210 380 M 310 320 L 280 380 M 380 320 L 350 380 M 450 320 L 420 380"/>
+                        
+                        <!-- Row 2 Alcoves -->
+                        <g fill="#2b1707" stroke="#8c5828" stroke-width="2">
+                            <path d="M 20 140 C 20 115, 50 115, 50 140 L 50 160 L 20 160 Z"/>
+                            <path d="M 60 140 C 60 115, 90 115, 90 140 L 90 160 L 60 160 Z"/>
+                            <path d="M 100 140 C 100 115, 130 115, 130 140 L 130 160 L 100 160 Z"/>
+                            <path d="M 140 140 C 140 115, 170 115, 170 140 L 170 160 L 140 160 Z"/>
+                            <path d="M 180 140 C 180 115, 210 115, 210 140 L 210 160 L 180 160 Z"/>
+                        </g>
+
+                        <!-- Signature Corner Marble Counter with Glass Cabinets -->
+                        <polygon points="30,210 470,210 440,310 10,310" fill="#a39275" stroke="#4a2e16" stroke-width="3"/>
+                        <path d="M 190 210 L 160 310" stroke="#4a2e16" stroke-width="3"/>
+                        
+                        <!-- Counter Glass Doors Panels -->
+                        <rect x="35" y="225" width="60" height="70" fill="#586f75" opacity="0.6" rx="3"/>
+                        <rect x="105" y="225" width="60" height="70" fill="#586f75" opacity="0.6" rx="3"/>
+                        <rect x="210" y="225" width="90" height="70" fill="#586f75" opacity="0.6" rx="3"/>
+                        <rect x="315" y="225" width="90" height="70" fill="#586f75" opacity="0.6" rx="3"/>
+
+                        <!-- Central Oval Counter Mirror & Flasks -->
+                        <ellipse cx="140" cy="180" rx="14" ry="22" fill="#fff" stroke="#c5a059" stroke-width="3"/>
+                        <polygon points="260,210 250,180 270,180" fill="#fff" opacity="0.7" stroke="#333"/>
+
+                        <!-- Tiled Floor Pattern (Blue Green Tiles) -->
+                        <g stroke="#3b6960" stroke-width="1.5" fill="none">
+                            <path d="M 0 320 L 500 320 M 0 345 L 500 345 M 0 370 L 500 370"/>
+                            <path d="M 40 310 L 10 380 M 120 310 L 90 380 M 200 310 L 170 380 M 280 310 L 250 380 M 360 310 L 330 380 M 440 310 L 410 380"/>
                         </g>
                     </svg>
                 </div>
@@ -324,7 +334,7 @@
                     <div class="ceremonial-step">
                         <span class="ceremonial-icon">🏛️</span>
                         <h4>1. The Welcome & Threshold</h4>
-                        <p>Greet every guest with a warm smile or nod. Ask if it is their first discovery of the Officine.</p>
+                        <p>Greet every guest with a warm smile or nod[cite: 1]. Ask if it is their first discovery of the Officine[cite: 1].</p>
                     </div>
                     <div class="ceremonial-step">
                         <span class="ceremonial-icon">🌿</span>
@@ -334,12 +344,12 @@
                     <div class="ceremonial-step">
                         <span class="ceremonial-icon">✒️</span>
                         <h4>3. Bespoke Artistry</h4>
-                        <p>Offer customized calligraphy on labels, embossing, and artistic gift packaging.</p>
+                        <p>Offer customized calligraphy on labels, embossing, and artistic gift packaging[cite: 1].</p>
                     </div>
                     <div class="ceremonial-step">
                         <span class="ceremonial-icon">🧤</span>
                         <h4>4. The Sovereign Farewell</h4>
-                        <p>Hand over the purchase with both hands, using white gloves and a tailored parting intention.</p>
+                        <p>Hand over the purchase with both hands, using white gloves and a tailored parting intention[cite: 1].</p>
                     </div>
                 </div>
             </div>
@@ -350,17 +360,107 @@
             <h2 class="section-title">Grooming & Uniform Standards</h2>
             <p class="section-desc">Detailed guidelines for our Officières and Officiers. Elegance in demeanor is our first conversation.</p>
 
-            <!-- Displaying Official Uniform Sketches -->
+            <!-- Vectorized Uniform Diagrams (Ladies & Gentlemen) -->
             <div class="uniform-illustration-card">
-                <h3>Official Uniform Diagrams</h3>
-                <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:15px;">
-                    <div class="uniform-img-container">
-                        <h4 style="font-family:'Cinzel',serif; color:var(--buly-red); margin-bottom:10px;">L'Uniforme pour Mesdames (Officières)</h4>
-                        <img src="image_6cd416.png" alt="L'Uniforme pour Mesdames">
+                <h3>Official Vectorized Uniform Diagrams</h3>
+                <div class="uniform-grid-svg">
+                    <!-- Vector Uniform Ladies (Officières) -->
+                    <div class="uniform-svg-box">
+                        <h4>L'Uniforme pour Mesdames (Officières)</h4>
+                        <svg viewBox="0 0 200 380" style="width:100%; height:auto;">
+                            <!-- Hair / Chignon -->
+                            <circle cx="100" cy="35" r="22" fill="#3a2312"/>
+                            <ellipse cx="100" cy="20" rx="12" ry="8" fill="#23140a"/>
+                            <text x="145" y="30" font-size="8" fill="#c1272d" font-family="'Cinzel', serif">Le chignon serré</text>
+                            <line x1="108" y1="28" x2="140" y2="28" stroke="#c1272d" stroke-dasharray="2,2"/>
+
+                            <!-- Face & Smile -->
+                            <circle cx="100" cy="50" r="14" fill="#f5d6ba"/>
+                            <path d="M 95 55 Q 100 58 105 55" stroke="#b85b43" stroke-width="1.5" fill="none"/>
+                            <text x="145" y="55" font-size="8" fill="#c1272d" font-family="'Cinzel', serif">Le sourire</text>
+                            <line x1="108" y1="54" x2="140" y2="54" stroke="#c1272d" stroke-dasharray="2,2"/>
+
+                            <!-- White Collar -->
+                            <path d="M 88 64 Q 100 72 112 64 L 115 70 Q 100 78 85 70 Z" fill="#fff" stroke="#ccc"/>
+                            <text x="30" y="68" font-size="8" fill="#c1272d" font-family="'Cinzel', serif">Le col blanc</text>
+                            <line x1="86" y1="68" x2="65" y2="68" stroke="#c1272d" stroke-dasharray="2,2"/>
+
+                            <!-- Navy Blue Jumper -->
+                            <path d="M 75 70 L 125 70 L 130 160 L 70 160 Z" fill="#15294a"/>
+                            <text x="145" y="110" font-size="8" fill="#c1272d" font-family="'Cinzel', serif">Le pull bleu marine</text>
+                            <line x1="125" y1="110" x2="140" y2="110" stroke="#c1272d" stroke-dasharray="2,2"/>
+
+                            <!-- Pleated Skirt -->
+                            <path d="M 70 160 L 130 160 L 145 290 L 55 290 Z" fill="#1b3660"/>
+                            <!-- Pleat lines -->
+                            <g stroke="#10203b" stroke-width="1">
+                                <line x1="75" y1="160" x2="65" y2="290"/>
+                                <line x1="85" y1="160" x2="80" y2="290"/>
+                                <line x1="100" y1="160" x2="100" y2="290"/>
+                                <line x1="115" y1="160" x2="120" y2="290"/>
+                                <line x1="125" y1="160" x2="135" y2="290"/>
+                            </g>
+                            <text x="15" y="210" font-size="8" fill="#c1272d" font-family="'Cinzel', serif">La jupe plissée</text>
+                            <line x1="68" y1="210" x2="50" y2="210" stroke="#c1272d" stroke-dasharray="2,2"/>
+
+                            <!-- White Glove tucked -->
+                            <rect x="122" y="165" width="12" height="20" rx="3" fill="#fff" stroke="#ccc"/>
+                            <text x="145" y="175" font-size="8" fill="#c1272d" font-family="'Cinzel', serif">Le gant blanc</text>
+                            <line x1="132" y1="175" x2="140" y2="175" stroke="#c1272d" stroke-dasharray="2,2"/>
+
+                            <!-- Colored Tights & Black Shoes -->
+                            <rect x="80" y="290" width="12" height="40" fill="#c1272d"/>
+                            <rect x="108" y="290" width="12" height="40" fill="#c1272d"/>
+                            <ellipse cx="84" cy="335" rx="10" ry="5" fill="#111"/>
+                            <ellipse cx="114" cy="335" rx="10" ry="5" fill="#111"/>
+                            <text x="135" y="310" font-size="8" fill="#c1272d" font-family="'Cinzel', serif">Les collants colorés</text>
+                            <line x1="118" y1="310" x2="130" y2="310" stroke="#c1272d" stroke-dasharray="2,2"/>
+                            <text x="15" y="335" font-size="8" fill="#c1272d" font-family="'Cinzel', serif">Les chaussures de ville</text>
+                            <line x1="75" y1="335" x2="60" y2="335" stroke="#c1272d" stroke-dasharray="2,2"/>
+                        </svg>
                     </div>
-                    <div class="uniform-img-container">
-                        <h4 style="font-family:'Cinzel',serif; color:var(--primary); margin-bottom:10px;">L'Uniforme pour Messieurs (Officiers)</h4>
-                        <img src="image_6cd53.png" alt="L'Uniforme pour Messieurs">
+
+                    <!-- Vector Uniform Gentlemen (Officiers) -->
+                    <div class="uniform-svg-box">
+                        <h4>L'Uniforme pour Messieurs (Officiers)</h4>
+                        <svg viewBox="0 0 200 380" style="width:100%; height:auto;">
+                            <!-- Neat Hair -->
+                            <path d="M 80 35 C 80 15, 120 15, 120 35 Z" fill="#2b1a0d"/>
+                            <text x="135" y="25" font-size="8" fill="#15294a" font-family="'Cinzel', serif">Le cheveux peigné</text>
+                            <line x1="108" y1="25" x2="130" y2="25" stroke="#15294a" stroke-dasharray="2,2"/>
+
+                            <!-- Face & Smile -->
+                            <circle cx="100" cy="45" r="14" fill="#f5d6ba"/>
+                            <path d="M 95 50 Q 100 53 105 50" stroke="#b85b43" stroke-width="1.5" fill="none"/>
+                            <text x="135" y="48" font-size="8" fill="#15294a" font-family="'Cinzel', serif">Le sourire</text>
+                            <line x1="108" y1="48" x2="130" y2="48" stroke="#15294a" stroke-dasharray="2,2"/>
+
+                            <!-- Collar -->
+                            <polygon points="90,60 110,60 105,66 95,66" fill="#fff" stroke="#ccc"/>
+                            <text x="30" y="62" font-size="8" fill="#15294a" font-family="'Cinzel', serif">Le col blanc</text>
+                            <line x1="90" y1="62" x2="65" y2="62" stroke="#15294a" stroke-dasharray="2,2"/>
+
+                            <!-- Jumper -->
+                            <rect x="70" y="66" width="60" height="100" fill="#15294a" rx="4"/>
+                            <text x="135" y="105" font-size="8" fill="#15294a" font-family="'Cinzel', serif">Le pull bleu marine</text>
+                            <line x1="128" y1="105" x2="132" y2="105" stroke="#15294a" stroke-dasharray="2,2"/>
+
+                            <!-- White Glove -->
+                            <rect x="62" y="140" width="12" height="22" rx="3" fill="#fff" stroke="#ccc"/>
+                            <text x="15" y="150" font-size="8" fill="#15294a" font-family="'Cinzel', serif">Le gant blanc</text>
+                            <line x1="62" y1="150" x2="45" y2="150" stroke="#15294a" stroke-dasharray="2,2"/>
+
+                            <!-- Trousers & Shoes -->
+                            <rect x="72" y="166" width="24" height="150" fill="#223f6e"/>
+                            <rect x="104" y="166" width="24" height="150" fill="#223f6e"/>
+                            <text x="135" y="230" font-size="8" fill="#15294a" font-family="'Cinzel', serif">Le pantalon coupe droite</text>
+                            <line x1="125" y1="230" x2="132" y2="230" stroke="#15294a" stroke-dasharray="2,2"/>
+
+                            <ellipse cx="84" cy="322" rx="14" ry="6" fill="#111"/>
+                            <ellipse cx="116" cy="322" rx="14" ry="6" fill="#111"/>
+                            <text x="15" y="322" font-size="8" fill="#15294a" font-family="'Cinzel', serif">Les chaussures de ville</text>
+                            <line x1="72" y1="322" x2="60" y2="322" stroke="#15294a" stroke-dasharray="2,2"/>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -373,61 +473,61 @@
                         <span class="dont-badge">Don't</span>
                         <span class="commandment-icon">👟</span>
                         <h4>1. No Sneakers or Trainers</h4>
-                        <p>Footwear must strictly consist of clean, polished black leather town shoes or ankle boots.</p>
+                        <p>Footwear must strictly consist of clean, polished black leather town shoes or ankle boots[cite: 2].</p>
                     </div>
                     <div class="commandment-item">
                         <span class="dont-badge">Don't</span>
                         <span class="commandment-icon">🎨</span>
                         <h4>2. No Flamboyant Tights</h4>
-                        <p>Avoid fluorescent or clashing tights. Harmonious solid tones (navy, burgundy, white) or bare legs in summer.</p>
+                        <p>Avoid fluorescent or clashing tights[cite: 2]. Harmonious solid tones (navy, burgundy, white) or bare legs in summer.</p>
                     </div>
                     <div class="commandment-item">
                         <span class="do-badge">Do</span>
                         <span class="commandment-icon">👔</span>
                         <h4>3. Spotless White Collars</h4>
-                        <p>White collars and shirts must remain immaculate. Wash with bicarbonate or percarbonate to preserve brightness.</p>
+                        <p>White collars and shirts must remain immaculate[cite: 2]. Wash with bicarbonate or percarbonate to preserve brightness.</p>
                     </div>
                     <div class="commandment-item">
                         <span class="do-badge">Do</span>
                         <span class="commandment-icon">👗</span>
                         <h4>4. Steam-Refreshed Skirts</h4>
-                        <p>The pleated navy-blue skirt of the Officière must retain its crisp pleats, free from creases or fraying.</p>
+                        <p>The pleated navy-blue skirt of the Officière must retain its crisp pleats, free from creases or fraying[cite: 2].</p>
                     </div>
                     <div class="commandment-item">
                         <span class="do-badge">Do</span>
                         <span class="commandment-icon">🧤</span>
                         <h4>5. The Visible White Glove</h4>
-                        <p>Tucked subtly into the skirt or trousers waistband, the white glove remains ready for presenting items.</p>
+                        <p>Tucked subtly into the skirt or trousers waistband, the white glove remains ready for presenting items[cite: 2].</p>
                     </div>
                     <div class="commandment-item">
                         <span class="dont-badge">Don't</span>
                         <span class="commandment-icon">💇‍♀️</span>
                         <h4>6. No Loose Hair Strands</h4>
-                        <p>Foreheads must remain clear. Hair must be secured smoothly back without falling forward.</p>
+                        <p>Foreheads must remain clear. Hair must be secured smoothly back without falling forward[cite: 2].</p>
                     </div>
                     <div class="commandment-item">
                         <span class="do-badge">Do</span>
                         <span class="commandment-icon">🌸</span>
                         <h4>7. Natural Makeup & Nails</h4>
-                        <p>Makeup must highlight natural features delicately. No false eyelashes. Subtle single-color or sheer nail polish.</p>
+                        <p>Makeup must highlight natural features delicately[cite: 2]. No false eyelashes[cite: 2]. Subtle single-color or sheer nail polish[cite: 2].</p>
                     </div>
                     <div class="commandment-item">
                         <span class="do-badge">Do</span>
                         <span class="commandment-icon">🐢</span>
                         <h4>8. Buly Tortoiseshell Accessories</h4>
-                        <p>Only official Buly tortoiseshell barrettes and hair pins are authorized for securing hairstyles.</p>
+                        <p>Only official Buly tortoiseshell barrettes and hair pins are authorized for securing hairstyles[cite: 2].</p>
                     </div>
                     <div class="commandment-item">
                         <span class="dont-badge">Don't</span>
                         <span class="commandment-icon">🎽</span>
                         <h4>9. No Visible Undershirts</h4>
-                        <p>When wearing the navy jumper, only the white collar should protrude. No visible shirt hemlines below.</p>
+                        <p>When wearing the navy jumper, only the white collar should protrude. No visible shirt hemlines below[cite: 2].</p>
                     </div>
                     <div class="commandment-item">
                         <span class="do-badge">Do</span>
                         <span class="commandment-icon">✨</span>
                         <h4>10. Detail is You</h4>
-                        <p>“Detail is you and you are the detail.” Approach every interaction with genuine poise and quiet courtesy.</p>
+                        <p>“Detail is you and you are the detail.” Approach every interaction with genuine poise and quiet courtesy[cite: 2].</p>
                     </div>
                 </div>
             </div>
@@ -507,85 +607,128 @@
             </div>
         </section>
 
-        <!-- 3. PRODUCT CATALOG -->
+        <!-- 3. PRODUCT CATALOG WITH VECTORIZED CATEGORY ICONS -->
         <section id="catalogue" class="tab-content">
             <h2 class="section-title">The Buly Product Catalog</h2>
-            <p class="section-desc">Explore our full range of official product categories as structured in our boutique displays.</p>
+            <p class="section-desc">Explore our full range of official product categories as structured in our boutique displays[cite: 10, 11].</p>
 
             <div class="catalog-grid">
+                <!-- Se Parfumer -->
                 <div class="catalog-category-card">
                     <div class="catalog-category-header">
                         <div class="catalog-category-title">1. Se Parfumer</div>
                     </div>
                     <div class="catalog-category-body">
+                        <svg class="catalog-svg-icon" viewBox="0 0 100 100">
+                            <circle cx="50" cy="30" r="12" fill="#d4af37"/>
+                            <polygon points="30,48 70,48 80,90 20,90" fill="#fff" stroke="#c1272d" stroke-width="2"/>
+                            <text x="50" y="72" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" fill="#c1272d">BULY</text>
+                        </svg>
                         <p><strong>Eaux Triples:</strong> Alcohol-free water-based perfumes. Micro-emulsions that respect the skin and fabrics.</p>
                     </div>
                 </div>
 
+                <!-- Parfumer son Atmosphère -->
                 <div class="catalog-category-card">
                     <div class="catalog-category-header">
                         <div class="catalog-category-title">2. Parfumer son Atmosphère</div>
                     </div>
                     <div class="catalog-category-body">
+                        <svg class="catalog-svg-icon" viewBox="0 0 100 100">
+                            <rect x="30" y="40" width="40" height="50" fill="#15294a" rx="3"/>
+                            <path d="M 45 25 Q 50 10 55 25" stroke="#d4af37" stroke-width="3" fill="none"/>
+                            <circle cx="50" cy="20" r="4" fill="#c1272d"/>
+                        </svg>
                         <p><strong>Home Fragrances:</strong> Alabasters, scented candles, perfumed matches, and room sprays.</p>
                     </div>
                 </div>
 
+                <!-- Le Visage -->
                 <div class="catalog-category-card">
                     <div class="catalog-category-header">
                         <div class="catalog-category-title">3. Le Visage</div>
                     </div>
                     <div class="catalog-category-body">
+                        <svg class="catalog-svg-icon" viewBox="0 0 100 100">
+                            <rect x="32" y="30" width="36" height="55" fill="#8d5524" rx="4"/>
+                            <circle cx="50" cy="20" r="8" fill="#333"/>
+                            <text x="50" y="60" text-anchor="middle" font-family="'Cinzel', serif" font-size="6" fill="#fff">VISAGE</text>
+                        </svg>
                         <p><strong>Facial Care:</strong> Pommade Virginale, Ionized Waters, Botanical Plant Oils, and cleansing balms.</p>
                     </div>
                 </div>
 
+                <!-- La Bouche -->
                 <div class="catalog-category-card">
                     <div class="catalog-category-header">
                         <div class="catalog-category-title">4. La Bouche</div>
                     </div>
                     <div class="catalog-category-body">
+                        <svg class="catalog-svg-icon" viewBox="0 0 100 100">
+                            <polygon points="25,85 75,85 82,30 18,30" fill="#1b4298"/>
+                            <rect x="40" y="15" width="20" height="15" fill="#888" rx="2"/>
+                        </svg>
                         <p><strong>Oral Care:</strong> Opiat Dentaire toothpastes, scented silk dental floss, and mouthwashes.</p>
                     </div>
                 </div>
 
+                <!-- Les Cheveux -->
                 <div class="catalog-category-card">
                     <div class="catalog-category-header">
                         <div class="catalog-category-title">5. Les Cheveux</div>
                     </div>
                     <div class="catalog-category-body">
+                        <svg class="catalog-svg-icon" viewBox="0 0 100 100">
+                            <rect x="20" y="40" width="60" height="20" fill="#c5a059" rx="3"/>
+                            <line x1="25" y1="60" x2="25" y2="80" stroke="#c5a059" stroke-width="3"/>
+                            <line x1="35" y1="60" x2="35" y2="80" stroke="#c5a059" stroke-width="3"/>
+                            <line x1="45" y1="60" x2="45" y2="80" stroke="#c5a059" stroke-width="3"/>
+                            <line x1="55" y1="60" x2="55" y2="80" stroke="#c5a059" stroke-width="3"/>
+                            <line x1="65" y1="60" x2="65" y2="80" stroke="#c5a059" stroke-width="3"/>
+                            <line x1="75" y1="60" x2="75" y2="80" stroke="#c5a059" stroke-width="3"/>
+                        </svg>
                         <p><strong>Hair Care:</strong> Handmade acetate combs, hair oils, solid shampoos, and tortoiseshell clips.</p>
                     </div>
                 </div>
 
+                <!-- La Barbe -->
                 <div class="catalog-category-card">
                     <div class="catalog-category-header">
                         <div class="catalog-category-title">6. La Barbe</div>
                     </div>
                     <div class="catalog-category-body">
+                        <svg class="catalog-svg-icon" viewBox="0 0 100 100">
+                            <path d="M 30 30 Q 50 10 70 30 L 70 45 Q 50 85 30 45 Z" fill="#2b1a0d"/>
+                            <rect x="42" y="70" width="16" height="25" fill="#c5a059" rx="2"/>
+                        </svg>
                         <p><strong>Grooming for Gentlemen:</strong> Shaving creams, beard oils, and fine badger hair brushes.</p>
                     </div>
                 </div>
 
+                <!-- Mains & Corps -->
                 <div class="catalog-category-card">
                     <div class="catalog-category-header">
                         <div class="catalog-category-title">7. Mains & Corps</div>
                     </div>
                     <div class="catalog-category-body">
+                        <svg class="catalog-svg-icon" viewBox="0 0 100 100">
+                            <polygon points="20,85 80,85 90,35 10,35" fill="#1b4298"/>
+                            <path d="M 50 45 L 50 75 M 35 60 L 65 60" stroke="#fff" stroke-width="4"/>
+                        </svg>
                         <p><strong>Body & Hand Care:</strong> Pommade Concrète, Lait Virginal, Huile Antique, and Superfine Soaps.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. PRODUCT MEMOS -->
+        <!-- 4. EXTENDED PRODUCT MEMO SHEETS (6 CARDS) -->
         <section id="fiches" class="tab-content">
-            <h2 class="section-title">Product Memo Sheets</h2>
-            <p class="section-desc">Key officinal knowledge for quick reference and download.</p>
+            <h2 class="section-title">Product Memo Sheets (6 Master Sheets)</h2>
+            <p class="section-desc">Key officinal knowledge for quick reference and individual download[cite: 8, 9].</p>
 
             <div class="grid-3">
-                <!-- Pommade Concrète -->
-                <div class="product-card" id="card-pommade">
+                <!-- 1. Pommade Concrète -->
+                <div class="product-card">
                     <div class="product-header">
                         <svg class="product-svg" viewBox="0 0 140 200">
                             <polygon points="35,160 105,160 115,30 25,30" fill="#1b4298"/>
@@ -605,8 +748,8 @@
                     </div>
                 </div>
 
-                <!-- L'Eau Triple -->
-                <div class="product-card" id="card-eau">
+                <!-- 2. L'Eau Triple -->
+                <div class="product-card">
                     <div class="product-header">
                         <svg class="product-svg" viewBox="0 0 140 200">
                             <circle cx="70" cy="45" r="18" fill="#d4af37"/>
@@ -625,8 +768,8 @@
                     </div>
                 </div>
 
-                <!-- Lait Virginal -->
-                <div class="product-card" id="card-lait">
+                <!-- 3. Lait Virginal -->
+                <div class="product-card">
                     <div class="product-header">
                         <svg class="product-svg" viewBox="0 0 140 200">
                             <rect x="40" y="40" width="60" height="130" rx="5" fill="#fff" stroke="#c1272d" stroke-width="2"/>
@@ -643,13 +786,72 @@
                         <button class="btn-download" onclick="downloadCompactTuto('Memo: Lait Virginal', 'Scented body lotion. Softens and perfumes.')">📥 Download Memo</button>
                     </div>
                 </div>
+
+                <!-- 4. Eau Ionisée Rectifiée -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <svg class="product-svg" viewBox="0 0 140 200">
+                            <rect x="45" y="35" width="50" height="25" rx="4" fill="#333"/>
+                            <rect x="35" y="60" width="70" height="115" rx="8" fill="#8d5524"/>
+                            <text x="70" y="120" text-anchor="middle" font-family="'Cinzel', serif" font-size="5" fill="#fff" font-weight="bold">EAU IONISÉE</text>
+                        </svg>
+                    </div>
+                    <div class="product-body">
+                        <div>
+                            <h3 class="product-name">Eau Ionisée Rectifiée</h3>
+                            <div class="product-sub">Cleansing Lotion</div>
+                            <div class="feature-item"><span class="feature-label">Formula</span>Colloidal silver & magnesium water.</div>
+                            <div class="feature-item"><span class="feature-label">Benefit</span>Purifies complexion without irritation.</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadCompactTuto('Memo: Eau Ionisee', 'Purifying colloidal silver cleansing water.')">📥 Download Memo</button>
+                    </div>
+                </div>
+
+                <!-- 5. Huile Antique -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <svg class="product-svg" viewBox="0 0 140 200">
+                            <path d="M 50 30 L 90 30 L 100 60 L 100 160 L 40 160 L 40 60 Z" fill="#d4af37"/>
+                            <text x="70" y="110" text-anchor="middle" font-family="'Cinzel', serif" font-size="5" fill="#fff" font-weight="bold">HUILE ANTIQUE</text>
+                        </svg>
+                    </div>
+                    <div class="product-body">
+                        <div>
+                            <h3 class="product-name">Huile Antique</h3>
+                            <div class="product-sub">Botanical Body Oil</div>
+                            <div class="feature-item"><span class="feature-label">Formula</span>Sesame, apricot seed, and plant extracts.</div>
+                            <div class="feature-item"><span class="feature-label">Benefit</span>Deep nourishment and glowing body skin.</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadCompactTuto('Memo: Huile Antique', 'Botanical body oil for intense skin nourishment.')">📥 Download Memo</button>
+                    </div>
+                </div>
+
+                <!-- 6. Opiat Dentaire -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <svg class="product-svg" viewBox="0 0 140 200">
+                            <polygon points="30,150 110,150 120,40 20,40" fill="#c1272d"/>
+                            <rect x="50" y="155" width="40" height="20" fill="#333" rx="2"/>
+                            <text x="70" y="80" text-anchor="middle" font-family="'Cinzel', serif" font-size="5" fill="#fff" font-weight="bold">OPIAT DENTAIRE</text>
+                        </svg>
+                    </div>
+                    <div class="product-body">
+                        <div>
+                            <h3 class="product-name">Opiat Dentaire</h3>
+                            <div class="product-sub">Officinal Toothpaste</div>
+                            <div class="feature-item"><span class="feature-label">Formula</span>Thermal water from Castéra-Verduzan.</div>
+                            <div class="feature-item"><span class="feature-label">Benefit</span>Cleanses teeth and respects oral flora.</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadCompactTuto('Memo: Opiat Dentaire', 'Thermal water toothpaste in illustrated tube.')">📥 Download Memo</button>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- 5. LEADERS & WORLDWIDE BOUTIQUES -->
+        <!-- 5. LEADERS & COMPLETE WORLDWIDE BOUTIQUES -->
         <section id="dirigeants" class="tab-content">
             <h2 class="section-title">Leaders & Worldwide Boutiques</h2>
-            <p class="section-desc">Our founders and our global network of emporiums around the world.</p>
+            <p class="section-desc">Our founders and our global network of emporiums around the world[cite: 13].</p>
 
             <div class="founders-grid">
                 <div class="founder-card">
@@ -672,165 +874,146 @@
                 </div>
             </div>
 
-            <!-- Full Boutique List with Emblems -->
+            <!-- Full Boutique List with Directors & Emblems -->
             <div class="card-box">
-                <h3 style="text-align:center;">Worldwide Buly Network & Official Emblems</h3>
+                <h3 style="text-align:center;">Worldwide Buly Network & Directors</h3>
 
                 <div class="boutique-region-title">🇫🇷 France (Paris)</div>
                 <div class="boutique-grid">
                     <div class="boutique-card">
-                        <div class="boutique-city">Rue de Richelieu</div>
-                        <div class="boutique-emblem">🌿 Emblem: Lichen of Scotland</div>
-                        <p style="font-size:0.85rem; color:#555;">29 rue de Richelieu, 75001 Paris</p>
-                    </div>
-                    <div class="boutique-card">
-                        <div class="boutique-city">Saint-Germain-des-Prés</div>
+                        <div class="boutique-city">Paris — Bonaparte</div>
+                        <div class="boutique-director">Director: Nicolas Hénault</div>
                         <div class="boutique-emblem">🌹 Emblem: Damask Rose</div>
-                        <p style="font-size:0.85rem; color:#555;">6 rue Bonaparte, 75006 Paris</p>
+                        <p style="font-size:0.82rem; color:#666; margin-top:4px;">6 rue Bonaparte, 75006 Paris</p>
                     </div>
                     <div class="boutique-card">
-                        <div class="boutique-city">Haut-Marais (Grand Café Tortoni)</div>
-                        <div class="boutique-emblem">☕ Emblem: Bergamot & Coffee</div>
-                        <p style="font-size:0.85rem; color:#555;">45 rue de Saintonge, 75003 Paris</p>
+                        <div class="boutique-city">Paris — Saintonge</div>
+                        <div class="boutique-director">Director: Caroline George</div>
+                        <div class="boutique-emblem">☕ Emblem: Grand Café Tortoni</div>
+                        <p style="font-size:0.82rem; color:#666; margin-top:4px;">45 rue de Saintonge, 75003 Paris</p>
                     </div>
-                </div>
-
-                <div class="boutique-region-title">🇯🇵 Japan</div>
-                <div class="boutique-grid">
                     <div class="boutique-card">
-                        <div class="boutique-city">Tokyo (Daikanyama, Shibuya)</div>
+                        <div class="boutique-city">Paris — Vieille du Temple</div>
+                        <div class="boutique-director">Director: Johanna Diaby</div>
+                        <div class="boutique-emblem">🌿 Emblem: Lichen of Scotland</div>
+                    </div>
+                    <div class="boutique-card">
+                        <div class="boutique-city">Paris — Le Bon Marché</div>
+                        <div class="boutique-director">Director: Ivonne Desclozeaux</div>
+                        <div class="boutique-emblem">✨ Emblem: Peruvian Heliotrope</div>
+                    </div>
+                    <div class="boutique-card">
+                        <div class="boutique-city">Paris — Galeries Lafayette</div>
+                        <div class="boutique-director">Director: Marie-Hélène Renard</div>
                         <div class="boutique-emblem">🌺 Emblem: Tuberose of Mexico</div>
                     </div>
                     <div class="boutique-card">
-                        <div class="boutique-city">Kyoto</div>
-                        <div class="boutique-emblem">🍊 Emblem: Yuzu of Kiso</div>
-                    </div>
-                    <div class="boutique-card">
-                        <div class="boutique-city">Osaka (Hankyu Umeda, Namba)</div>
-                        <div class="boutique-emblem">🪵 Emblem: Hinoki Wood</div>
-                    </div>
-                    <div class="boutique-card">
-                        <div class="boutique-city">Nagoya, Fukuoka, Hokkaido, Kobe, Hiroshima</div>
-                        <div class="boutique-emblem">🌸 Emblem: Japanese Camellia</div>
-                    </div>
-                </div>
-
-                <div class="boutique-region-title">🇰🇷 South Korea</div>
-                <div class="boutique-grid">
-                    <div class="boutique-card">
-                        <div class="boutique-city">Seoul (Shinsegae Gangnam, Dosan, Seongsu)</div>
+                        <div class="boutique-city">Paris — Richelieu</div>
+                        <div class="boutique-director">Director: Anne Flammand</div>
                         <div class="boutique-emblem">🪔 Emblem: Myrrh of Erythrea</div>
-                    </div>
-                    <div class="boutique-card">
-                        <div class="boutique-city">Daegu, Busan, Gyeonggi</div>
-                        <div class="boutique-emblem">🌾 Emblem: White Iris</div>
+                        <p style="font-size:0.82rem; color:#666; margin-top:4px;">29 rue de Richelieu, 75001 Paris</p>
                     </div>
                 </div>
 
-                <div class="boutique-region-title">🇹🇼 Taïwan & 🇭🇰 Hong Kong & 🇲🇴 Macao</div>
+                <div class="boutique-region-title">🇪🇺 Europe</div>
                 <div class="boutique-grid">
                     <div class="boutique-card">
-                        <div class="boutique-city">Taipei, Hong Kong, Macao</div>
-                        <div class="boutique-emblem">🪷 Emblem: Peruvian Heliotrope</div>
-                    </div>
-                </div>
-
-                <div class="boutique-region-title">🇵🇭 Philippines & 🇹🇭 Thailand</div>
-                <div class="boutique-grid">
-                    <div class="boutique-card">
-                        <div class="boutique-city">Manila (Makati City) & Bangkok</div>
-                        <div class="boutique-emblem">🍃 Emblem: Andes Verbena</div>
-                    </div>
-                </div>
-
-                <div class="boutique-region-title">🇪🇺 Europe (UK, Italy, Germany, Luxembourg)</div>
-                <div class="boutique-grid">
-                    <div class="boutique-card">
-                        <div class="boutique-city">London, Milan, Munich, Luxembourg</div>
+                        <div class="boutique-city">Londres — Mount St</div>
+                        <div class="boutique-director">Director: David Jareno</div>
                         <div class="boutique-emblem">👑 Emblem: Amber of Madagascar</div>
+                    </div>
+                    <div class="boutique-card">
+                        <div class="boutique-city">Milan</div>
+                        <div class="boutique-director">Director: Caterina Marchetti</div>
+                        <div class="boutique-emblem">🍊 Emblem: Bergamot of Calabria</div>
+                    </div>
+                    <div class="boutique-card">
+                        <div class="boutique-city">Munich</div>
+                        <div class="boutique-director">Director: Driton Islami</div>
+                        <div class="boutique-emblem">🌲 Emblem: Bavarian Forest Pine</div>
+                    </div>
+                </div>
+
+                <div class="boutique-region-title">🌏 Asia & International</div>
+                <div class="boutique-grid">
+                    <div class="boutique-card">
+                        <div class="boutique-city">Hong Kong</div>
+                        <div class="boutique-director">Director: Vanessa Lo</div>
+                        <div class="boutique-emblem">🪷 Emblem: White Iris</div>
+                    </div>
+                    <div class="boutique-card">
+                        <div class="boutique-city">Japon (Tokyo, Kyoto, Osaka, Kobe, Fukuoka)</div>
+                        <div class="boutique-emblem">🪵 Emblem: Kiso Hinoki Wood</div>
+                    </div>
+                    <div class="boutique-card">
+                        <div class="boutique-city">Corée du Sud (Séoul Shinsegae, Daegu, Busan)</div>
+                        <div class="boutique-emblem">🌾 Emblem: Wild Camellia</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. THE TEMPORAL CALENDAR 2026 -->
+        <!-- 6. THE TEMPORAL VINTAGE PAPER CALENDAR 2026 -->
         <section id="temporal" class="tab-content">
             <h2 class="section-title">The Temporal — 2026 Training Calendar</h2>
-            <p class="section-desc">Official schedule of training sessions, weekly focus modules, and assessment reminders.</p>
+            <p class="section-desc">Authentic paper calendar interface for tracking masterclasses, modules, and weekly quizzes.</p>
 
-            <div class="calendar-month-container">
-                <div class="calendar-box">
-                    <div class="calendar-header">
-                        <span class="calendar-month">January</span>
-                        <span class="calendar-year">2026</span>
+            <div class="paper-calendar-wrapper">
+                <div class="paper-calendar">
+                    <!-- Ring Binding -->
+                    <div class="calendar-rings">
+                        <div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div>
                     </div>
-                    <div class="calendar-event">Integration & Natural Beauty</div>
-                    <p style="font-size:0.85rem; color:#555;">Skin anatomy and natural botanical oil routines.</p>
-                    <div class="training-docs-box">
-                        📄 <a href="#" onclick="alert('Downloading January Training Module')">Download Weekly Focus Pack (PDF)</a>
-                    </div>
-                    <div class="questionnaire-box">
-                        ❓ Reminder: <a href="#" onclick="alert('Opening Questionnaire')">Complete Module Quiz</a>
-                    </div>
-                </div>
 
-                <div class="calendar-box">
-                    <div class="calendar-header">
-                        <span class="calendar-month">April</span>
-                        <span class="calendar-year">2026</span>
+                    <div class="calendar-paper-header">
+                        <div class="calendar-paper-month">OCTOBER</div>
+                        <div class="calendar-paper-year">OFFICINAL YEAR 2026</div>
                     </div>
-                    <div class="calendar-event">Perfumes & Scent Artistry</div>
-                    <p style="font-size:0.85rem; color:#555;">Eaux Triples formulation and olfactory consultations.</p>
-                    <div class="training-docs-box">
-                        📄 <a href="#" onclick="alert('Downloading April Focus Pack')">Download Weekly Focus Pack (PDF)</a>
-                    </div>
-                    <div class="questionnaire-box">
-                        ❓ Reminder: <a href="#" onclick="alert('Opening Questionnaire')">Complete Module Quiz</a>
-                    </div>
-                </div>
 
-                <div class="calendar-box">
-                    <div class="calendar-header">
-                        <span class="calendar-month">June</span>
-                        <span class="calendar-year">2026</span>
-                    </div>
-                    <div class="calendar-event">Hygienism & Savoir-Être</div>
-                    <p style="font-size:0.85rem; color:#555;">Hand-washing choreography and etiquette in boutique.</p>
-                    <div class="training-docs-box">
-                        📄 <a href="#" onclick="alert('Downloading June Focus Pack')">Download Weekly Focus Pack (PDF)</a>
-                    </div>
-                    <div class="questionnaire-box">
-                        ❓ Reminder: <a href="#" onclick="alert('Opening Questionnaire')">Complete Module Quiz</a>
-                    </div>
-                </div>
+                    <div class="paper-grid">
+                        <!-- Day Headers -->
+                        <div class="day-header">Mon</div><div class="day-header">Tue</div><div class="day-header">Wed</div><div class="day-header">Thu</div><div class="day-header">Fri</div><div class="day-header">Sat</div><div class="day-header">Sun</div>
 
-                <div class="calendar-box">
-                    <div class="calendar-header">
-                        <span class="calendar-month">September</span>
-                        <span class="calendar-year">2026</span>
-                    </div>
-                    <div class="calendar-event">Scented House & Cross-Selling</div>
-                    <p style="font-size:0.85rem; color:#555;">Alabasters, candles, and bridging product universes.</p>
-                    <div class="training-docs-box">
-                        📄 <a href="#" onclick="alert('Downloading September Focus Pack')">Download Weekly Focus Pack (PDF)</a>
-                    </div>
-                    <div class="questionnaire-box">
-                        ❓ Reminder: <a href="#" onclick="alert('Opening Questionnaire')">Complete Module Quiz</a>
-                    </div>
-                </div>
+                        <!-- Week 1 -->
+                        <div class="day-cell"><span class="day-num">28</span></div>
+                        <div class="day-cell"><span class="day-num">29</span></div>
+                        <div class="day-cell"><span class="day-num">30</span></div>
+                        <div class="day-cell"><span class="day-num">1</span></div>
+                        <div class="day-cell event-cell"><span class="day-num">2</span><span class="event-tag gold-tag">Facial Skincare Brief</span></div>
+                        <div class="day-cell"><span class="day-num">3</span></div>
+                        <div class="day-cell"><span class="day-num">4</span></div>
 
-                <div class="calendar-box">
-                    <div class="calendar-header">
-                        <span class="calendar-month">November</span>
-                        <span class="calendar-year">2026</span>
+                        <!-- Week 2 -->
+                        <div class="day-cell"><span class="day-num">5</span></div>
+                        <div class="day-cell"><span class="day-num">6</span></div>
+                        <div class="day-cell"><span class="day-num">7</span></div>
+                        <div class="day-cell"><span class="day-num">8</span></div>
+                        <div class="day-cell highlight-event"><span class="day-num">9</span><span class="event-tag">Eaux Triples Quiz</span></div>
+                        <div class="day-cell"><span class="day-num">10</span></div>
+                        <div class="day-cell"><span class="day-num">11</span></div>
+
+                        <!-- Week 3 -->
+                        <div class="day-cell highlight-event"><span class="day-num">12</span><span class="event-tag">Grooming & Hair Check</span></div>
+                        <div class="day-cell"><span class="day-num">13</span></div>
+                        <div class="day-cell"><span class="day-num">14</span></div>
+                        <div class="day-cell"><span class="day-num">15</span></div>
+                        <div class="day-cell event-cell"><span class="day-num">16</span><span class="event-tag gold-tag">Calligraphy Practice</span></div>
+                        <div class="day-cell"><span class="day-num">17</span></div>
+                        <div class="day-cell"><span class="day-num">18</span></div>
+
+                        <!-- Week 4 -->
+                        <div class="day-cell"><span class="day-num">19</span></div>
+                        <div class="day-cell"><span class="day-num">20</span></div>
+                        <div class="day-cell"><span class="day-num">21</span></div>
+                        <div class="day-cell"><span class="day-num">22</span></div>
+                        <div class="day-cell highlight-event"><span class="day-num">23</span><span class="event-tag">Christmas Brief Prep</span></div>
+                        <div class="day-cell"><span class="day-num">24</span></div>
+                        <div class="day-cell"><span class="day-num">25</span></div>
                     </div>
-                    <div class="calendar-event">Christmas Brief & Festive Art</div>
-                    <p style="font-size:0.85rem; color:#555;">Holiday wrapping techniques and gift masterclasses.</p>
-                    <div class="training-docs-box">
-                        📄 <a href="#" onclick="alert('Downloading November Focus Pack')">Download Weekly Focus Pack (PDF)</a>
-                    </div>
-                    <div class="questionnaire-box">
-                        ❓ Reminder: <a href="#" onclick="alert('Opening Questionnaire')">Complete Module Quiz</a>
+
+                    <div class="calendar-download-block">
+                        <p style="font-family:'Cinzel',serif; font-weight:bold; color:var(--primary); margin-bottom:5px;">📄 Monthly Training Module & Assessment Pack</p>
+                        <button class="btn-download" style="max-width:300px; margin:0 auto;" onclick="alert('Downloading October 2026 Training & Assessment Pack')">Download Monthly Calendar Pack (PDF)</button>
                     </div>
                 </div>
             </div>
@@ -845,7 +1028,7 @@
                 <h3>Publish a Local Secret or Sales Tip</h3>
                 <form class="news-form" onsubmit="publishNews(event)">
                     <input type="text" id="news-title" class="news-input" placeholder="Title (e.g., Japanese Rice Powder & Camellia Glow Ritual)" required>
-                    <input type="text" id="news-author" class="news-input" placeholder="Your Name & Boutique (e.g., Officière K., Kyoto Boutique)" required>
+                    <input type="text" id="news-author" class="news-input" placeholder="Your Name & Boutique (e.g., Officière Y., Kyoto Boutique)" required>
                     <textarea id="news-content" class="news-textarea" rows="4" placeholder="Describe the natural recipe or your best tip for cross-selling..." required></textarea>
                     <button type="submit" class="btn-download">Publish to Worldwide Feed</button>
                 </form>
