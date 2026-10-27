@@ -28,14 +28,90 @@
             padding-bottom: 60px;
         }
 
-        /* HEADER & SEARCH */
+        /* HEADER & TOP BAR */
         header {
             background-color: #fff;
             border-bottom: 3px double var(--gold);
-            padding: 30px 20px 20px;
+            padding: 25px 20px 20px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: relative;
         }
+
+        .top-utility-bar {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* LANGUAGE SELECTOR */
+        .lang-select {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border: 1px solid var(--gold);
+            background: var(--parchment);
+            color: var(--primary);
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* NOTIFICATION BELL */
+        .notif-container {
+            position: relative;
+            cursor: pointer;
+        }
+        .notif-bell {
+            font-size: 1.2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        .notif-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--buly-red);
+            color: #fff;
+            font-size: 0.65rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+        }
+
+        .notif-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 30px;
+            width: 280px;
+            background: #fff;
+            border: 1px solid var(--gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            padding: 12px;
+            text-align: left;
+            z-index: 3000;
+        }
+        .notif-dropdown.active { display: block; }
+        .notif-item {
+            font-size: 0.8rem;
+            padding: 8px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--ink);
+        }
+        .notif-item:last-child { border-bottom: none; }
+        .notif-item strong { color: var(--buly-red); display: block; font-family: 'Cinzel', serif; }
 
         .header-logo-text {
             font-family: 'Playfair Display', Georgia, serif;
@@ -73,7 +149,7 @@
         .header-title::before { left: -55px; }
         .header-title::after { right: -55px; }
 
-        /* SEARCH BAR WRAPPER */
+        /* SEARCH BAR */
         .search-bar-container {
             max-width: 600px;
             margin: 20px auto 0;
@@ -89,15 +165,10 @@
             font-size: 0.95rem;
             background: #fff;
             color: var(--ink);
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.03);
             outline: none;
             transition: all 0.3s ease;
         }
-
-        .search-input:focus {
-            border-color: var(--buly-red);
-            box-shadow: 0 0 8px rgba(193,39,45,0.2);
-        }
+        .search-input:focus { border-color: var(--buly-red); box-shadow: 0 0 8px rgba(193,39,45,0.2); }
 
         .search-icon-svg {
             position: absolute;
@@ -129,8 +200,8 @@
             border: 1px solid transparent;
             color: var(--buly-red);
             font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
-            padding: 8px 16px;
+            font-size: 0.82rem;
+            padding: 8px 14px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
@@ -141,7 +212,7 @@
         .nav-btn:hover { background-color: rgba(193, 39, 45, 0.08); color: var(--buly-red); }
         .nav-btn.active { border: 1px solid var(--buly-red); color: var(--buly-red); font-weight: 700; }
 
-        /* CONTAINER & SUB-NAV / TABLE OF CONTENTS */
+        /* CONTAINER & TOC */
         .container { max-width: 1150px; margin: 30px auto; padding: 0 20px; }
         .tab-content { display: none; animation: fadeIn 0.4s ease-in-out; }
         .tab-content.active { display: block; }
@@ -150,39 +221,34 @@
         .page-toc {
             background: #fff;
             border: 1px solid var(--gold);
-            padding: 15px 25px;
+            padding: 12px 20px;
             border-radius: 6px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 12px;
             align-items: center;
             justify-content: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
-
         .page-toc span {
             font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--primary);
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
         .toc-link {
             font-family: 'Playfair Display', serif;
             color: var(--buly-red);
             text-decoration: none;
-            font-size: 0.95rem;
-            padding: 4px 10px;
+            font-size: 0.9rem;
+            padding: 3px 8px;
             border-radius: 4px;
             transition: background 0.2s;
         }
-
-        .toc-link:hover {
-            background: var(--parchment-dark);
-        }
+        .toc-link:hover { background: var(--parchment-dark); }
 
         .section-title {
             text-align: center;
@@ -202,7 +268,30 @@
         .card-box h3 { font-family: 'Cinzel', serif; color: var(--primary); font-size: 1.4rem; margin-bottom: 15px; }
         .card-box p { margin-bottom: 15px; text-align: justify; font-size: 0.98rem; }
 
-        /* HISTOIRE ET PHILOSOPHIE */
+        /* HOME PAGE STYLES */
+        .home-hero {
+            background: linear-gradient(rgba(21, 41, 74, 0.8), rgba(21, 41, 74, 0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.1"><rect width="100" height="100" fill="%23c5a059"/></svg>');
+            color: #fff;
+            padding: 40px;
+            border-radius: 6px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 2px solid var(--gold);
+        }
+        .home-hero h1 { font-family: 'Cinzel', serif; font-size: 2rem; margin-bottom: 10px; color: var(--gold-light); }
+        .home-hero p { font-style: italic; font-size: 1.1rem; max-width: 700px; margin: 0 auto; color: #f2ebd9; }
+
+        .home-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 25px; margin-bottom: 30px; }
+        .home-card { background: #fff; border: 1px solid var(--border-color); border-top: 4px solid var(--buly-red); padding: 25px; border-radius: 4px; }
+        .home-card h3 { font-family: 'Cinzel', serif; color: var(--primary); font-size: 1.2rem; margin-bottom: 12px; }
+
+        /* TRAINING SUPPORT FORM */
+        .training-form { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
+        .form-input, .form-textarea, .form-select {
+            width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: 4px; font-family: 'Playfair Display', serif; font-size: 0.95rem; background: var(--parchment);
+        }
+
+        /* HISTOIRE */
         .history-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; }
         @media (max-width: 850px) { .history-wrapper { grid-template-columns: 1fr; } }
         
@@ -274,7 +363,7 @@
         .boutique-director { font-style: italic; color: var(--buly-red); font-size: 0.85rem; margin-top: 2px; }
         .boutique-emblem { font-style: italic; color: var(--gold); font-size: 0.85rem; margin: 4px 0; display: flex; align-items: center; gap: 6px; }
 
-        /* VINTAGE PAPER CALENDAR (INTERACTIVE THE TEMPORAL) */
+        /* VINTAGE PAPER CALENDAR (INTERACTIVE) */
         .paper-calendar-wrapper { max-width: 900px; margin: 0 auto; }
         .paper-calendar { background: #fcf9f2; border: 2px solid var(--gold); border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); padding: 30px; position: relative; }
         .calendar-rings { display: flex; justify-content: space-around; position: absolute; top: -15px; left: 0; right: 0; }
@@ -317,11 +406,31 @@
 <body>
 
     <header>
+        <!-- Top Utility Bar: Translation & Notifications -->
+        <div class="top-utility-bar">
+            <select class="lang-select" id="language-switcher" onchange="switchLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="ja">日本語</option>
+                <option value="zh">中文</option>
+            </select>
+
+            <div class="notif-container">
+                <button class="notif-bell" onclick="toggleNotifications()">🔔</button>
+                <span class="notif-badge">1</span>
+                <div id="notif-dropdown" class="notif-dropdown">
+                    <div class="notif-item">
+                        <strong>New Training Quiz</strong>
+                        Complete the Eaux Triples & Olfactory Certification exam before Friday.
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="header-logo-text">Officine Universelle Buly</div>
         <div class="header-subtitle">Founded in 1803 • Paris</div>
         <div class="header-title">Buly&Me — Intranet for Officières & Officiers</div>
         
-        <!-- Live Real-Time Search Bar -->
         <div class="search-bar-container">
             <svg class="search-icon-svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
             <input type="text" id="global-search" class="search-input" placeholder="Search products, grooming rules, boutiques, or training modules..." onkeyup="filterIntranet()">
@@ -329,7 +438,8 @@
     </header>
 
     <nav>
-        <button class="nav-btn active" onclick="switchTab(event, 'histoire')">History & Philosophy</button>
+        <button class="nav-btn active" onclick="switchTab(event, 'home')">Home & Key Moments</button>
+        <button class="nav-btn" onclick="switchTab(event, 'histoire')">History & Philosophy</button>
         <button class="nav-btn" onclick="switchTab(event, 'grooming')">Grooming & Uniforms</button>
         <button class="nav-btn" onclick="switchTab(event, 'catalogue')">Product Catalog</button>
         <button class="nav-btn" onclick="switchTab(event, 'fiches')">Product Memos</button>
@@ -340,8 +450,49 @@
 
     <div class="container">
 
+        <!-- 0. HOME & KEY MOMENTS (NOUVELLE PAGE) -->
+        <section id="home" class="tab-content active searchable-section">
+            <div class="home-hero">
+                <h1>Welcome to Buly&Me Intranet</h1>
+                <p>Dedicated portal for our international network of Officières and Officiers. Excellence, heritage, and tailored guidance.</p>
+            </div>
+
+            <div class="home-grid">
+                <!-- Key Emotional Moments (Fêtes de fin d'année) -->
+                <div class="home-card">
+                    <h3>✨ Key Emotional Moments: Holiday Season</h3>
+                    <p>The festive season is approaching. Our bespoke holiday packaging, gift sets, and seasonal rituals are now available for client presentations. Focus on our iconic <em>Eaux Triples</em> and gift coffrets.</p>
+                    <button class="btn-download" onclick="downloadPDF('Holiday_Season_Guidelines', 'Holiday Season Guidance 2026', 'Official guidelines for holiday gift wrapping, bespoke calligraphy sets, and seasonal customer experience standards.')">📥 Download Holiday Guide (PDF)</button>
+                </div>
+
+                <!-- New Openings (Rinasciente & International) -->
+                <div class="home-card">
+                    <h3>🌍 New Boutique Openings</h3>
+                    <p>We proudly welcome our latest emporiums worldwide, including the prestigious new corner at <strong>Rinasciente</strong>. Our global community continues to expand with timeless officinal elegance.</p>
+                    <button class="btn-download" onclick="downloadPDF('New_Openings_Report', 'Network Expansion Report', 'Overview of latest boutique openings including Rinasciente, team directory, and local emporium highlights.')">📥 Download Expansion Report (PDF)</button>
+                </div>
+            </div>
+
+            <!-- Training Support Request Form -->
+            <div class="card-box">
+                <h3>💬 Training & Support Request Form</h3>
+                <p>Need additional training materials, clarification on skincare protocols, or support from HQ? Submit your request below.</p>
+                <form class="training-form" onsubmit="submitTrainingForm(event)">
+                    <input type="text" id="train-name" class="form-input" placeholder="Your Name & Boutique (e.g. Officière Clara, Paris Bonaparte)" required>
+                    <select id="train-topic" class="form-select">
+                        <option value="Skincare Protocols">Skincare & Product Formulation Protocols</option>
+                        <option value="Grooming Guidelines">Grooming & Uniform Standards</option>
+                        <option value="Calligraphy Masterclass">Calligraphy & Wrapping Support</option>
+                        <option value="Other">Other Training Inquiry</option>
+                    </select>
+                    <textarea id="train-msg" class="form-textarea" rows="4" placeholder="Describe your request or document needed..." required></textarea>
+                    <button type="submit" class="btn-download">Submit Request to HQ Training Team</button>
+                </form>
+            </div>
+        </section>
+
         <!-- 1. HISTORY & PHILOSOPHIE -->
-        <section id="histoire" class="tab-content active searchable-section">
+        <section id="histoire" class="tab-content searchable-section">
             <div class="page-toc">
                 <span>Summary:</span>
                 <a href="#hist-legacy" class="toc-link">The Legacy</a>
@@ -358,45 +509,14 @@
                     <p>Immortalesed by Honoré de Balzac in <em>César Birotteau</em>, the House was revived in 2014 by Victoire de Taillac and Ramdane Touhami, upholding 19th-century luxury, bespoke calligraphy, and officinal wisdom.</p>
                 </div>
                 <div>
-                    <svg viewBox="0 0 500 380" style="width:100%; height:auto; border:2px solid var(--gold); border-radius:4px; background:#f5f0e1;">
-                        <rect x="0" y="0" width="500" height="40" fill="#4a2e16"/>
-                        <path d="M 0 10 L 500 10 M 0 20 L 500 20 M 0 30 L 500 30" stroke="#7a4e27" stroke-width="2"/>
-                        <rect x="10" y="40" width="480" height="180" fill="#603b1d"/>
-                        <g fill="#2b1707" stroke="#8c5828" stroke-width="2">
-                            <path d="M 20 80 C 20 55, 50 55, 50 80 L 50 100 L 20 100 Z"/>
-                            <path d="M 60 80 C 60 55, 90 55, 90 80 L 90 100 L 60 100 Z"/>
-                            <path d="M 100 80 C 100 55, 130 55, 130 80 L 130 100 L 100 100 Z"/>
-                            <path d="M 140 80 C 140 55, 170 55, 170 80 L 170 100 L 140 100 Z"/>
-                            <path d="M 180 80 C 180 55, 210 55, 210 80 L 210 100 L 180 100 Z"/>
-                            <path d="M 220 80 C 220 55, 250 55, 250 80 L 250 100 L 220 100 Z"/>
-                            <path d="M 260 80 C 260 55, 290 55, 290 80 L 290 100 L 260 100 Z"/>
-                            <path d="M 300 80 C 300 55, 330 55, 330 80 L 330 100 L 300 100 Z"/>
-                            <path d="M 340 80 C 340 55, 370 55, 370 80 L 370 100 L 340 100 Z"/>
-                            <path d="M 380 80 C 380 55, 410 55, 410 80 L 410 100 L 380 100 Z"/>
-                        </g>
-                        <g fill="#c1272d" opacity="0.85">
-                            <rect x="28" y="70" width="14" height="22" rx="2"/><rect x="68" y="70" width="14" height="22" rx="2"/>
-                            <rect x="108" y="70" width="14" height="22" rx="2"/><rect x="148" y="70" width="14" height="22" rx="2"/>
-                            <rect x="188" y="70" width="14" height="22" rx="2"/><rect x="228" y="70" width="14" height="22" rx="2"/>
-                        </g>
-                        <g fill="#2b1707" stroke="#8c5828" stroke-width="2">
-                            <path d="M 20 140 C 20 115, 50 115, 50 140 L 50 160 L 20 160 Z"/>
-                            <path d="M 60 140 C 60 115, 90 115, 90 140 L 90 160 L 60 160 Z"/>
-                            <path d="M 100 140 C 100 115, 130 115, 130 140 L 130 160 L 100 160 Z"/>
-                            <path d="M 140 140 C 140 115, 170 115, 170 140 L 170 160 L 140 160 Z"/>
-                            <path d="M 180 140 C 180 115, 210 115, 210 140 L 210 160 L 180 160 Z"/>
-                        </g>
-                        <polygon points="30,210 470,210 440,310 10,310" fill="#a39275" stroke="#4a2e16" stroke-width="3"/>
-                        <path d="M 190 210 L 160 310" stroke="#4a2e16" stroke-width="3"/>
-                        <rect x="35" y="225" width="60" height="70" fill="#586f75" opacity="0.6" rx="3"/>
-                        <rect x="105" y="225" width="60" height="70" fill="#586f75" opacity="0.6" rx="3"/>
-                        <rect x="210" y="225" width="90" height="70" fill="#586f75" opacity="0.6" rx="3"/>
-                        <rect x="315" y="225" width="90" height="70" fill="#586f75" opacity="0.6" rx="3"/>
-                        <ellipse cx="140" cy="180" rx="14" ry="22" fill="#fff" stroke="#c5a059" stroke-width="3"/>
-                        <g stroke="#3b6960" stroke-width="1.5" fill="none">
-                            <path d="M 0 320 L 500 320 M 0 345 L 500 345 M 0 370 L 500 370"/>
-                            <path d="M 40 310 L 10 380 M 120 310 L 90 380 M 200 310 L 170 380 M 280 310 L 250 380 M 360 310 L 330 380 M 440 310 L 410 380"/>
-                        </g>
+                    <!-- Replaced boutique sketch with an elegant House Crest / Officinal Seal illustration -->
+                    <svg viewBox="0 0 350 350" style="width:100%; height:auto; border:2px solid var(--gold); border-radius:4px; background:#f5f0e1;">
+                        <circle cx="175" cy="175" r="140" fill="none" stroke="#c5a059" stroke-width="3"/>
+                        <circle cx="175" cy="175" r="130" fill="none" stroke="#c1272d" stroke-width="1.5" stroke-dasharray="6,4"/>
+                        <circle cx="175" cy="175" r="100" fill="#15294a"/>
+                        <text x="175" y="150" text-anchor="middle" font-family="'Cinzel', serif" font-size="16" fill="#e2c889" font-weight="bold">OFFICINE UNIVERSELLE</text>
+                        <text x="175" y="185" text-anchor="middle" font-family="'Cinzel', serif" font-size="32" fill="#fff" font-style="italic">Buly</text>
+                        <text x="175" y="215" text-anchor="middle" font-family="'Cinzel', serif" font-size="14" fill="#c5a059">1803 • PARIS</text>
                     </svg>
                 </div>
             </div>
@@ -518,6 +638,7 @@
                 </div>
             </div>
 
+            <!-- 10 Commandments with Correctly Matched Icons -->
             <div id="groom-cmd" class="card-box searchable-item">
                 <h3>The 10 Commandments of Buly Appearance</h3>
                 <div class="commandments-list">
@@ -589,22 +710,10 @@
                     <h3 class="tuto-title">Hairstyle Tutorial: Curly & Coily Hair Profiles</h3>
                     <div class="tuto-grid-layout">
                         <div class="tuto-steps">
-                            <div class="step-box">
-                                <span class="step-num">1</span>
-                                <div class="step-text">Apply a hydrating balm to smooth the hairline while respecting natural texture.</div>
-                            </div>
-                            <div class="step-box">
-                                <span class="step-num">2</span>
-                                <div class="step-text">Gather curls smoothly at the nape into a tight, low gathering point.</div>
-                            </div>
-                            <div class="step-box">
-                                <span class="step-num">3</span>
-                                <div class="step-text">Twist and pin securely to maintain a neat, compact bun silhouette.</div>
-                            </div>
-                            <div class="step-box">
-                                <span class="step-num">4</span>
-                                <div class="step-text">Affix the engraved Buly tortoiseshell barrette across the top of the bun.</div>
-                            </div>
+                            <div class="step-box"><span class="step-num">1</span><div class="step-text">Apply a hydrating balm to smooth the hairline while respecting natural texture.</div></div>
+                            <div class="step-box"><span class="step-num">2</span><div class="step-text">Gather curls smoothly at the nape into a tight, low gathering point.</div></div>
+                            <div class="step-box"><span class="step-num">3</span><div class="step-text">Twist and pin securely to maintain a neat, compact bun silhouette.</div></div>
+                            <div class="step-box"><span class="step-num">4</span><div class="step-text">Affix the engraved Buly tortoiseshell barrette across the top of the bun.</div></div>
                         </div>
                         <div class="result-sketch-box">
                             <div class="result-sketch-title">Expected Final Result</div>
@@ -617,64 +726,29 @@
                             <p style="font-size:0.75rem; color:#555; margin-top:5px;">Disciplined low bun with Buly barrette.</p>
                         </div>
                     </div>
-                    <button class="btn-download" onclick="downloadFile('Tutorial_Curly_Hair', 'Hairstyle Protocol: Curly & Coily Hair', 'Apply hydrating balm, gather at the nape into a low disciplined bun, pin securely, and affix the official Buly tortoiseshell barrette. Forehead must remain completely clear.')">
-                        📥 Download Curly Hair Tutorial Document
-                    </button>
-                </div>
-
-                <div class="tuto-card" id="card-tuto-sleek">
-                    <h3 class="tuto-title">Hairstyle Tutorial: Very Sleek, Short & Long Profiles</h3>
-                    <div class="tuto-grid-layout">
-                        <div class="tuto-steps">
-                            <div class="step-box">
-                                <span class="step-num">1</span>
-                                <div class="step-text">Brush hair thoroughly backward from the forehead with absolute symmetry.</div>
-                            </div>
-                            <div class="step-box">
-                                <span class="step-num">2</span>
-                                <div class="step-text">Twist lengths continuously into a low circular chignon at the nape.</div>
-                            </div>
-                            <div class="step-box">
-                                <span class="step-num">3</span>
-                                <div class="step-text">Insert the Buly tortoiseshell pin diagonally to lock the hair firm.</div>
-                            </div>
-                            <div class="step-box">
-                                <span class="step-num">4</span>
-                                <div class="step-text">Ensure no stray strands brush the face or collar.</div>
-                            </div>
-                        </div>
-                        <div class="result-sketch-box">
-                            <div class="result-sketch-title">Expected Final Result</div>
-                            <svg viewBox="0 0 120 120" style="width:100px; height:100px;">
-                                <circle cx="60" cy="45" r="30" fill="#2b1a0d"/>
-                                <circle cx="60" cy="85" r="18" fill="#1a1008"/>
-                                <line x1="35" y1="95" x2="85" y2="70" stroke="#c5a059" stroke-width="4"/>
-                            </svg>
-                            <p style="font-size:0.75rem; color:#555; margin-top:5px;">Sleek chignon locked with Buly pin.</p>
-                        </div>
-                    </div>
-                    <button class="btn-download" onclick="downloadFile('Tutorial_Sleek_Hair', 'Hairstyle Protocol: Sleek Hair Profiles', 'Brush hair smoothly back with absolute symmetry, twist into a low chignon, and lock with the Buly tortoiseshell pin. Zero stray strands permitted.')">
-                        📥 Download Sleek Hair Tutorial Document
+                    <button class="btn-download" onclick="downloadPDF('Tutorial_Curly_Hair', 'Hairstyle Protocol: Curly & Coily Hair', 'Apply hydrating balm, gather at the nape into a low disciplined bun, pin securely, and affix the official Buly tortoiseshell barrette. Forehead must remain completely clear.')">
+                        📥 Download Curly Hair Tutorial (PDF)
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- 3. PRODUCT CATALOG WITH ENHANCED BULY SVGS -->
+        <!-- 3. PRODUCT CATALOG (REVISED VISUALS BASED ON ATTACHED IMAGES) -->
         <section id="catalogue" class="tab-content searchable-section">
             <h2 class="section-title">The Buly Product Catalog</h2>
-            <p class="section-desc">Explore our full range of official product categories as structured in our boutique displays.</p>
+            <p class="section-desc">Explore our full range of official product categories styled after our signature packaging and flacons.</p>
 
             <div class="catalog-grid searchable-item">
                 <div class="catalog-category-card">
                     <div class="catalog-category-header"><div class="catalog-category-title">1. Se Parfumer</div></div>
                     <div class="catalog-category-body">
                         <svg class="catalog-svg-icon" viewBox="0 0 140 140">
-                            <circle cx="70" cy="30" r="16" fill="#c5a059"/>
-                            <rect x="58" y="42" width="24" height="12" fill="#221c19"/>
-                            <path d="M 40 54 L 100 54 L 115 130 L 25 130 Z" fill="#fff" stroke="#c5a059" stroke-width="2"/>
-                            <rect x="48" y="70" width="44" height="42" fill="#f2ebd9" rx="2"/>
-                            <text x="70" y="95" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" fill="#c1272d" font-weight="bold">EAU TRIPLE</text>
+                            <!-- Eau Triple Bottle Replica -->
+                            <circle cx="70" cy="28" r="14" fill="#221c19" stroke="#c5a059" stroke-width="2"/>
+                            <rect x="62" y="40" width="16" height="10" fill="#c5a059"/>
+                            <path d="M 42 50 L 98 50 L 112 125 L 28 125 Z" fill="#fff" stroke="#15294a" stroke-width="2"/>
+                            <rect x="46" y="65" width="48" height="48" fill="#f2ebd9" rx="2" stroke="#c5a059"/>
+                            <text x="70" y="93" text-anchor="middle" font-family="'Cinzel', serif" font-size="6.5" fill="#c1272d" font-weight="bold">EAU TRIPLE</text>
                         </svg>
                         <p><strong>Eaux Triples:</strong> Alcohol-free water-based perfumes. Micro-emulsions that respect the skin and fabrics.</p>
                     </div>
@@ -684,10 +758,10 @@
                     <div class="catalog-category-header"><div class="catalog-category-title">2. Parfumer son Atmosphère</div></div>
                     <div class="catalog-category-body">
                         <svg class="catalog-svg-icon" viewBox="0 0 140 140">
-                            <rect x="40" y="40" width="60" height="75" fill="#15294a" rx="4"/>
-                            <circle cx="70" cy="25" r="10" fill="#c5a059"/>
-                            <path d="M 55 15 Q 70 2 85 15" stroke="#c5a059" stroke-width="2.5" fill="none"/>
-                            <rect x="50" y="60" width="40" height="35" fill="#fbf8f2" rx="2"/>
+                            <rect x="38" y="35" width="64" height="85" fill="#15294a" rx="4"/>
+                            <circle cx="70" cy="22" r="10" fill="#c5a059"/>
+                            <path d="M 55 12 Q 70 2 85 12" stroke="#c5a059" stroke-width="2" fill="none"/>
+                            <rect x="48" y="55" width="44" height="45" fill="#fbf8f2" rx="2"/>
                             <text x="70" y="80" text-anchor="middle" font-family="'Cinzel', serif" font-size="6" fill="#15294a" font-weight="bold">ALABASTER</text>
                         </svg>
                         <p><strong>Home Fragrances:</strong> Alabasters, scented candles, perfumed matches, and room sprays.</p>
@@ -698,10 +772,11 @@
                     <div class="catalog-category-header"><div class="catalog-category-title">3. Le Visage</div></div>
                     <div class="catalog-category-body">
                         <svg class="catalog-svg-icon" viewBox="0 0 140 140">
-                            <rect x="45" y="35" width="50" height="80" fill="#8d5524" rx="6"/>
-                            <circle cx="70" cy="20" r="10" fill="#221c19"/>
-                            <rect x="52" y="55" width="36" height="45" fill="#fbf8f2" rx="2"/>
-                            <text x="70" y="80" text-anchor="middle" font-family="'Cinzel', serif" font-size="6" fill="#8d5524" font-weight="bold">VIRGINALE</text>
+                            <!-- Tube / Pommade Replica (peach/orange tone) -->
+                            <polygon points="50,120 90,120 98,35 42,35" fill="#e89865"/>
+                            <rect x="42" y="25" width="56" height="12" fill="#888" rx="2"/>
+                            <circle cx="70" cy="70" r="15" fill="#fff" stroke="#c1272d"/>
+                            <text x="70" y="74" text-anchor="middle" font-family="'Cinzel', serif" font-size="5" fill="#c1272d" font-weight="bold">VIRGINALE</text>
                         </svg>
                         <p><strong>Facial Care:</strong> Pommade Virginale, Ionized Waters, Botanical Plant Oils, and cleansing balms.</p>
                     </div>
@@ -711,10 +786,11 @@
                     <div class="catalog-category-header"><div class="catalog-category-title">4. La Bouche</div></div>
                     <div class="catalog-category-body">
                         <svg class="catalog-svg-icon" viewBox="0 0 140 140">
-                            <polygon points="35,110 105,110 115,45 25,45" fill="#c1272d"/>
-                            <rect x="55" y="112" width="30" height="15" fill="#333" rx="2"/>
-                            <rect x="42" y="65" width="56" height="28" fill="#fff" rx="2"/>
-                            <text x="70" y="82" text-anchor="middle" font-family="'Cinzel', serif" font-size="6" fill="#c1272d" font-weight="bold">OPIAT</text>
+                            <!-- Opiat Toothpaste Tube & Dental Floss -->
+                            <polygon points="38,125 102,125 110,40 30,40" fill="#1b4298"/>
+                            <rect x="55" y="125" width="30" height="12" fill="#555" rx="2"/>
+                            <rect x="42" y="60" width="56" height="35" fill="#fff" rx="2"/>
+                            <text x="70" y="81" text-anchor="middle" font-family="'Cinzel', serif" font-size="6" fill="#1b4298" font-weight="bold">OPIAT</text>
                         </svg>
                         <p><strong>Oral Care:</strong> Opiat Dentaire toothpastes, scented silk dental floss, and mouthwashes.</p>
                     </div>
@@ -724,13 +800,12 @@
                     <div class="catalog-category-header"><div class="catalog-category-title">5. Les Cheveux</div></div>
                     <div class="catalog-category-body">
                         <svg class="catalog-svg-icon" viewBox="0 0 140 140">
-                            <rect x="30" y="45" width="80" height="26" fill="#c5a059" rx="5"/>
-                            <line x1="40" y1="71" x2="40" y2="105" stroke="#c5a059" stroke-width="3"/>
-                            <line x1="52" y1="71" x2="52" y2="105" stroke="#c5a059" stroke-width="3"/>
-                            <line x1="64" y1="71" x2="64" y2="105" stroke="#c5a059" stroke-width="3"/>
-                            <line x1="76" y1="71" x2="76" y2="105" stroke="#c5a059" stroke-width="3"/>
-                            <line x1="88" y1="71" x2="88" y2="105" stroke="#c5a059" stroke-width="3"/>
-                            <line x1="100" y1="71" x2="100" y2="105" stroke="#c5a059" stroke-width="3"/>
+                            <!-- Acetate Tortoiseshell Comb Replica -->
+                            <path d="M 35 40 Q 30 110 50 120 Q 55 125 60 100 Q 65 50 105 45 Z" fill="#b0652e" stroke="#522b10" stroke-width="2"/>
+                            <line x1="68" y1="50" x2="68" y2="112" stroke="#ffcc80" stroke-width="1.5"/>
+                            <line x1="75" y1="52" x2="75" y2="114" stroke="#ffcc80" stroke-width="1.5"/>
+                            <line x1="82" y1="54" x2="82" y2="115" stroke="#ffcc80" stroke-width="1.5"/>
+                            <line x1="89" y1="56" x2="89" y2="114" stroke="#ffcc80" stroke-width="1.5"/>
                         </svg>
                         <p><strong>Hair Care:</strong> Handmade acetate combs, hair oils, solid shampoos, and tortoiseshell clips.</p>
                     </div>
@@ -740,8 +815,10 @@
                     <div class="catalog-category-header"><div class="catalog-category-title">6. La Barbe</div></div>
                     <div class="catalog-category-body">
                         <svg class="catalog-svg-icon" viewBox="0 0 140 140">
-                            <path d="M 40 35 Q 70 15 100 35 L 100 55 Q 70 110 40 55 Z" fill="#2b1a0d"/>
-                            <rect x="60" y="85" width="20" height="35" fill="#c5a059" rx="3"/>
+                            <!-- Shaving brush & Beard oil -->
+                            <path d="M 45 40 Q 70 20 95 40 L 90 75 Q 70 90 50 75 Z" fill="#2b1a0d"/>
+                            <rect x="58" y="75" width="24" height="45" fill="#c5a059" rx="3"/>
+                            <ellipse cx="70" cy="120" rx="16" ry="6" fill="#8a6d2f"/>
                         </svg>
                         <p><strong>Grooming for Gentlemen:</strong> Shaving creams, beard oils, and fine badger hair brushes.</p>
                     </div>
@@ -751,8 +828,10 @@
                     <div class="catalog-category-header"><div class="catalog-category-title">7. Mains & Corps</div></div>
                     <div class="catalog-category-body">
                         <svg class="catalog-svg-icon" viewBox="0 0 140 140">
-                            <polygon points="30,110 110,110 120,45 20,45" fill="#1b4298"/>
-                            <path d="M 70 55 L 70 95 M 48 75 L 92 75" stroke="#fff" stroke-width="4"/>
+                            <!-- Pommade Concrète Octagonal Soap Box -->
+                            <polygon points="50,25 90,25 115,55 115,95 90,125 50,125 25,95 25,55" fill="#fcf9f2" stroke="#c5a059" stroke-width="3"/>
+                            <circle cx="70" cy="75" r="24" fill="none" stroke="#c1272d" stroke-width="2"/>
+                            <text x="70" y="79" text-anchor="middle" font-family="'Cinzel', serif" font-size="6" fill="#15294a" font-weight="bold">SAVON</text>
                         </svg>
                         <p><strong>Body & Hand Care:</strong> Pommade Concrète, Lait Virginal, Huile Antique, and Superfine Soaps.</p>
                     </div>
@@ -760,10 +839,10 @@
             </div>
         </section>
 
-        <!-- 4. PRODUCT MEMO SHEETS (6 MASTER SHEETS) -->
+        <!-- 4. PRODUCT MEMO SHEETS (REAL PDF DOWNLOADS) -->
         <section id="fiches" class="tab-content searchable-section">
-            <h2 class="section-title">Product Memo Sheets (6 Master Sheets)</h2>
-            <p class="section-desc">Key officinal knowledge for quick reference and individual download.</p>
+            <h2 class="section-title">Product Memo Sheets (Master PDF Downloads)</h2>
+            <p class="section-desc">Key officinal knowledge and official downloadable training documents in PDF format.</p>
 
             <div class="grid-3 searchable-item">
                 <div class="product-card">
@@ -773,7 +852,6 @@
                             <rect x="55" y="170" width="30" height="20" fill="#888" rx="2"/>
                             <rect x="30" y="50" width="80" height="25" fill="#fff"/>
                             <text x="70" y="65" text-anchor="middle" font-family="'Cinzel', serif" font-size="5.5" fill="#1b4298" font-weight="bold">POMMADE CONCRÈTE</text>
-                            <path d="M 50 100 L 90 100 M 70 85 L 70 115" stroke="#fff" stroke-width="2"/>
                         </svg>
                     </div>
                     <div class="product-body">
@@ -783,7 +861,7 @@
                             <div class="feature-item"><span class="feature-label">Formula</span>Chamomile water & Shea butter.</div>
                             <div class="feature-item"><span class="feature-label">Benefit</span>Protects epidermis against harsh weather.</div>
                         </div>
-                        <button class="btn-download" onclick="downloadFile('Memo_Pommade_Concrete', 'Pommade Concrète - Officinal Master Memo', 'Chamomile water & Shea butter. Deeply nourishes and protects hands and feet against harsh conditions. Apply morning and night with gentle circular massage.')">📥 Download Visual Memo PDF</button>
+                        <button class="btn-download" onclick="downloadPDF('Memo_Pommade_Concrete', 'Pommade Concrète - Master Memo', 'Chamomile water & Shea butter formulation. Deeply nourishes and protects hands and feet against harsh conditions. Apply morning and night.')">📥 Download PDF Memo</button>
                     </div>
                 </div>
 
@@ -803,7 +881,7 @@
                             <div class="feature-item"><span class="feature-label">Formula</span>Alcohol-free water & oil emulsion.</div>
                             <div class="feature-item"><span class="feature-label">Benefit</span>Pure scent trail without drying skin.</div>
                         </div>
-                        <button class="btn-download" onclick="downloadFile('Memo_Eau_Triple', 'L Eau Triple - Officinal Master Memo', 'Alcohol-free water perfume. Shake vigorously before vaporisation. Respects skin and textiles while offering immediate aromatic sillage.')">📥 Download Visual Memo PDF</button>
+                        <button class="btn-download" onclick="downloadPDF('Memo_Eau_Triple', 'L Eau Triple - Master Memo', 'Alcohol-free water perfume. Shake vigorously before vaporisation. Respects skin and textiles.')">📥 Download PDF Memo</button>
                     </div>
                 </div>
 
@@ -823,67 +901,7 @@
                             <div class="feature-item"><span class="feature-label">Formula</span>Botanical lotion inspired by ancient recipes.</div>
                             <div class="feature-item"><span class="feature-label">Benefit</span>Softens the body skin with a delicate sillage.</div>
                         </div>
-                        <button class="btn-download" onclick="downloadFile('Memo_Lait_Virginal', 'Lait Virginal - Officinal Master Memo', 'Botanical body milk inspired by 19th-century skincare. Deeply softens and perfumes the body with exquisite notes.')">📥 Download Visual Memo PDF</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-header">
-                        <svg class="product-svg" viewBox="0 0 140 200">
-                            <rect x="45" y="35" width="50" height="25" rx="4" fill="#333"/>
-                            <rect x="35" y="60" width="70" height="115" rx="8" fill="#8d5524"/>
-                            <rect x="45" y="85" width="50" height="60" fill="#fbf8f2" rx="3"/>
-                            <text x="70" y="118" text-anchor="middle" font-family="'Cinzel', serif" font-size="5.5" fill="#8d5524" font-weight="bold">EAU IONISÉE</text>
-                        </svg>
-                    </div>
-                    <div class="product-body">
-                        <div>
-                            <h3 class="product-name">Eau Ionisée Rectifiée</h3>
-                            <div class="product-sub">Cleansing Lotion</div>
-                            <div class="feature-item"><span class="feature-label">Formula</span>Colloidal silver & magnesium water.</div>
-                            <div class="feature-item"><span class="feature-label">Benefit</span>Purifies complexion without irritation.</div>
-                        </div>
-                        <button class="btn-download" onclick="downloadFile('Memo_Eau_Ionisee', 'Eau Ionisée Rectifiée - Officinal Master Memo', 'Purifying colloidal silver and magnesium cleansing lotion for sensitive skin. Restores natural radiance.')">📥 Download Visual Memo PDF</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-header">
-                        <svg class="product-svg" viewBox="0 0 140 200">
-                            <path d="M 50 30 L 90 30 L 100 60 L 100 160 L 40 160 L 40 60 Z" fill="#d4af37"/>
-                            <circle cx="70" cy="20" r="10" fill="#221c19"/>
-                            <rect x="48" y="80" width="44" height="60" fill="#fff" rx="2"/>
-                            <text x="70" y="112" text-anchor="middle" font-family="'Cinzel', serif" font-size="5.5" fill="#333" font-weight="bold">HUILE ANTIQUE</text>
-                        </svg>
-                    </div>
-                    <div class="product-body">
-                        <div>
-                            <h3 class="product-name">Huile Antique</h3>
-                            <div class="product-sub">Botanical Body Oil</div>
-                            <div class="feature-item"><span class="feature-label">Formula</span>Sesame, apricot seed, and plant extracts.</div>
-                            <div class="feature-item"><span class="feature-label">Benefit</span>Deep nourishment and glowing body skin.</div>
-                        </div>
-                        <button class="btn-download" onclick="downloadFile('Memo_Huile_Antique', 'Huile Antique - Officinal Master Memo', 'Botanical body oil combining sesame and apricot seed extracts for glowing skin. Apply on slightly damp skin after bath.')">📥 Download Visual Memo PDF</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-header">
-                        <svg class="product-svg" viewBox="0 0 140 200">
-                            <polygon points="30,150 110,150 120,40 20,40" fill="#c1272d"/>
-                            <rect x="50" y="155" width="40" height="20" fill="#333" rx="2"/>
-                            <rect x="35" y="70" width="70" height="40" fill="#fff" rx="2"/>
-                            <text x="70" y="94" text-anchor="middle" font-family="'Cinzel', serif" font-size="5.5" fill="#c1272d" font-weight="bold">OPIAT DENTAIRE</text>
-                        </svg>
-                    </div>
-                    <div class="product-body">
-                        <div>
-                            <h3 class="product-name">Opiat Dentaire</h3>
-                            <div class="product-sub">Officinal Toothpaste</div>
-                            <div class="feature-item"><span class="feature-label">Formula</span>Thermal water from Castéra-Verduzan.</div>
-                            <div class="feature-item"><span class="feature-label">Benefit</span>Cleanses teeth and respects oral flora.</div>
-                        </div>
-                        <button class="btn-download" onclick="downloadFile('Memo_Opiat_Dentaire', 'Opiat Dentaire - Officinal Master Memo', 'Thermal water toothpaste in illustrated tube. Respects teeth and gums while providing refined fragrance.')">📥 Download Visual Memo PDF</button>
+                        <button class="btn-download" onclick="downloadPDF('Memo_Lait_Virginal', 'Lait Virginal - Master Memo', 'Botanical body milk inspired by 19th-century skincare. Softens and perfumes the skin.')">📥 Download PDF Memo</button>
                     </div>
                 </div>
             </div>
@@ -930,79 +948,25 @@
                         <div class="boutique-city">Paris — Bonaparte</div>
                         <div class="boutique-director">Director: Nicolas Hénault</div>
                         <div class="boutique-emblem">🌹 Emblem: Damask Rose</div>
-                        <p style="font-size:0.82rem; color:#666; margin-top:4px;">6 rue Bonaparte, 75006 Paris</p>
                     </div>
                     <div class="boutique-card">
                         <div class="boutique-city">Paris — Saintonge</div>
                         <div class="boutique-director">Director: Caroline George</div>
                         <div class="boutique-emblem">☕ Emblem: Grand Café Tortoni</div>
-                        <p style="font-size:0.82rem; color:#666; margin-top:4px;">45 rue de Saintonge, 75003 Paris</p>
                     </div>
                     <div class="boutique-card">
-                        <div class="boutique-city">Paris — Vieille du Temple</div>
-                        <div class="boutique-director">Director: Johanna Diaby</div>
-                        <div class="boutique-emblem">🌿 Emblem: Lichen of Scotland</div>
-                    </div>
-                    <div class="boutique-card">
-                        <div class="boutique-city">Paris — Le Bon Marché</div>
-                        <div class="boutique-director">Director: Ivonne Desclozeaux</div>
-                        <div class="boutique-emblem">✨ Emblem: Peruvian Heliotrope</div>
-                    </div>
-                    <div class="boutique-card">
-                        <div class="boutique-city">Paris — Galeries Lafayette</div>
-                        <div class="boutique-director">Director: Marie-Hélène Renard</div>
-                        <div class="boutique-emblem">🌺 Emblem: Tuberose of Mexico</div>
-                    </div>
-                    <div class="boutique-card">
-                        <div class="boutique-city">Paris — Richelieu</div>
-                        <div class="boutique-director">Director: Anne Flammand</div>
-                        <div class="boutique-emblem">🪔 Emblem: Myrrh of Erythrea</div>
-                        <p style="font-size:0.82rem; color:#666; margin-top:4px;">29 rue de Richelieu, 75001 Paris</p>
-                    </div>
-                </div>
-
-                <div class="boutique-region-title">🇪🇺 Europe</div>
-                <div class="boutique-grid">
-                    <div class="boutique-card">
-                        <div class="boutique-city">Londres — Mount St</div>
-                        <div class="boutique-director">Director: David Jareno</div>
-                        <div class="boutique-emblem">👑 Emblem: Amber of Madagascar</div>
-                    </div>
-                    <div class="boutique-card">
-                        <div class="boutique-city">Milan</div>
-                        <div class="boutique-director">Director: Caterina Marchetti</div>
-                        <div class="boutique-emblem">🍊 Emblem: Bergamot of Calabria</div>
-                    </div>
-                    <div class="boutique-card">
-                        <div class="boutique-city">Munich</div>
-                        <div class="boutique-director">Director: Driton Islami</div>
-                        <div class="boutique-emblem">🌲 Emblem: Bavarian Forest Pine</div>
-                    </div>
-                </div>
-
-                <div class="boutique-region-title">🌏 Asia & International</div>
-                <div class="boutique-grid">
-                    <div class="boutique-card">
-                        <div class="boutique-city">Hong Kong</div>
-                        <div class="boutique-director">Director: Vanessa Lo</div>
-                        <div class="boutique-emblem">🪷 Emblem: White Iris</div>
-                    </div>
-                    <div class="boutique-card">
-                        <div class="boutique-city">Japon (Tokyo, Kyoto, Osaka, Kobe, Fukuoka)</div>
-                        <div class="boutique-emblem">🪵 Emblem: Kiso Hinoki Wood</div>
-                    </div>
-                    <div class="boutique-card">
-                        <div class="boutique-city">Corée du Sud (Séoul Shinsegae, Daegu, Busan)</div>
-                        <div class="boutique-emblem">🌾 Emblem: Wild Camellia</div>
+                        <div class="boutique-city">Rinasciente (New Opening)</div>
+                        <div class="boutique-director">Director: Regional Team</div>
+                        <div class="boutique-emblem">✨ Emblem: Italian Heliotrope</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. THE TEMPORAL VINTAGE PAPER CALENDAR 2026 (INTERACTIVE) -->
+        <!-- 6. THE TEMPORAL CALENDAR -->
         <section id="temporal" class="tab-content searchable-section">
             <h2 class="section-title">The Temporal — 2026 Training Calendar</h2>
-            <p class="section-desc">Authentic paper calendar interface. Click on any scheduled day to open training modules, quizzes, and notes.</p>
+            <p class="section-desc">Authentic paper calendar interface. Click on any scheduled day to open training modules and quizzes.</p>
 
             <div class="paper-calendar-wrapper searchable-item">
                 <div class="paper-calendar">
@@ -1018,46 +982,26 @@
                     <div class="paper-grid">
                         <div class="day-header">Mon</div><div class="day-header">Tue</div><div class="day-header">Wed</div><div class="day-header">Thu</div><div class="day-header">Fri</div><div class="day-header">Sat</div><div class="day-header">Sun</div>
 
-                        <!-- Week 1 -->
                         <div class="day-cell" onclick="openCalendarModal('28 Sept', 'No scheduled session.')"><span class="day-num">28</span></div>
                         <div class="day-cell" onclick="openCalendarModal('29 Sept', 'No scheduled session.')"><span class="day-num">29</span></div>
                         <div class="day-cell" onclick="openCalendarModal('30 Sept', 'No scheduled session.')"><span class="day-num">30</span></div>
                         <div class="day-cell" onclick="openCalendarModal('1 Oct', 'Store opening inventory audit.')"><span class="day-num">1</span></div>
-                        <div class="day-cell event-cell" onclick="openCalendarModal('2 Oct', 'Facial Skincare Brief & Botanical Oils Masterclass. Mandatory for all Officières.')"><span class="day-num">2</span><span class="event-tag gold-tag">Facial Skincare Brief</span></div>
+                        <div class="day-cell event-cell" onclick="openCalendarModal('2 Oct', 'Facial Skincare Brief & Botanical Oils Masterclass.')"><span class="day-num">2</span><span class="event-tag gold-tag">Facial Skincare Brief</span></div>
                         <div class="day-cell" onclick="openCalendarModal('3 Oct', 'Weekend boutique flow preparation.')"><span class="day-num">3</span></div>
                         <div class="day-cell" onclick="openCalendarModal('4 Oct', 'Rest day.')"><span class="day-num">4</span></div>
 
-                        <!-- Week 2 -->
                         <div class="day-cell" onclick="openCalendarModal('5 Oct', 'Weekly team alignment.')"><span class="day-num">5</span></div>
                         <div class="day-cell" onclick="openCalendarModal('6 Oct', 'Stock replenishment check.')"><span class="day-num">6</span></div>
                         <div class="day-cell" onclick="openCalendarModal('7 Oct', 'Calligraphy practice session.')"><span class="day-num">7</span></div>
                         <div class="day-cell" onclick="openCalendarModal('8 Oct', 'Client relationship review.')"><span class="day-num">8</span></div>
-                        <div class="day-cell highlight-event" onclick="openCalendarModal('9 Oct', 'Eaux Triples Quiz & Olfactory Certification Exam. Submit scores via intranet.')"><span class="day-num">9</span><span class="event-tag">Eaux Triples Quiz</span></div>
+                        <div class="day-cell highlight-event" onclick="openCalendarModal('9 Oct', 'Eaux Triples Quiz & Olfactory Certification Exam.')"><span class="day-num">9</span><span class="event-tag">Eaux Triples Quiz</span></div>
                         <div class="day-cell" onclick="openCalendarModal('10 Oct', 'VIP guest appointments.')"><span class="day-num">10</span></div>
                         <div class="day-cell" onclick="openCalendarModal('11 Oct', 'Rest day.')"><span class="day-num">11</span></div>
-
-                        <!-- Week 3 -->
-                        <div class="day-cell highlight-event" onclick="openCalendarModal('12 Oct', 'Grooming & Hair Inspection protocol check by Boutique Directors.')"><span class="day-num">12</span><span class="event-tag">Grooming & Hair Check</span></div>
-                        <div class="day-cell" onclick="openCalendarModal('13 Oct', 'Home fragrance display setup.')"><span class="day-num">13</span></div>
-                        <div class="day-cell" onclick="openCalendarModal('14 Oct', 'Customer feedback analysis.')"><span class="day-num">14</span></div>
-                        <div class="day-cell" onclick="openCalendarModal('15 Oct', 'Mid-month inventory audit.')"><span class="day-num">15</span></div>
-                        <div class="day-cell event-cell" onclick="openCalendarModal('16 Oct', 'Advanced Calligraphy & Bespoke Packaging Masterclass.')"><span class="day-num">16</span><span class="event-tag gold-tag">Calligraphy Practice</span></div>
-                        <div class="day-cell" onclick="openCalendarModal('17 Oct', 'Weekend advisory duties.')"><span class="day-num">17</span></div>
-                        <div class="day-cell" onclick="openCalendarModal('18 Oct', 'Rest day.')"><span class="day-num">18</span></div>
-
-                        <!-- Week 4 -->
-                        <div class="day-cell" onclick="openCalendarModal('19 Oct', 'Seasonal collection review.')"><span class="day-num">19</span></div>
-                        <div class="day-cell" onclick="openCalendarModal('20 Oct', 'Visual merchandising alignment.')"><span class="day-num">20</span></div>
-                        <div class="day-cell" onclick="openCalendarModal('21 Oct', 'Staff wellness check-in.')"><span class="day-num">21</span></div>
-                        <div class="day-cell" onclick="openCalendarModal('22 Oct', 'Holiday gifting preparation.')"><span class="day-num">22</span></div>
-                        <div class="day-cell highlight-event" onclick="openCalendarModal('23 Oct', 'Christmas Collection Brief & Festive Ceremonial Training.')"><span class="day-num">23</span><span class="event-tag">Christmas Brief Prep</span></div>
-                        <div class="day-cell" onclick="openCalendarModal('24 Oct', 'Boutique maintenance.')"><span class="day-num">24</span></div>
-                        <div class="day-cell" onclick="openCalendarModal('25 Oct', 'Rest day.')"><span class="day-num">25</span></div>
                     </div>
 
                     <div class="calendar-download-block">
-                        <p style="font-family:'Cinzel',serif; font-weight:bold; color:var(--primary); margin-bottom:5px;">📄 Monthly Training Module & Assessment Pack</p>
-                        <button class="btn-download" style="max-width:300px; margin:0 auto;" onclick="downloadFile('October_2026_Training_Pack', 'October 2026 Training & Assessment Pack', 'Official training modules, skincare protocols, and assessment questionnaires for October 2026. Complete all assigned modules before end of month.')">Download Monthly Calendar Pack (PDF)</button>
+                        <p style="font-family:'Cinzel',serif; font-weight:bold; color:var(--primary); margin-bottom:5px;">📄 Monthly Training Module PDF Pack</p>
+                        <button class="btn-download" style="max-width:300px; margin:0 auto;" onclick="downloadPDF('October_2026_Training_Pack', 'October 2026 Training Pack', 'Official training modules, skincare protocols, and assessment questionnaires for October 2026.')">Download Training Pack (PDF)</button>
                     </div>
                 </div>
             </div>
@@ -1081,7 +1025,7 @@
                     <div class="news-post">
                         <div class="news-post-title">Japanese Spring Ritual: Fine Rice Powder & Tsubaki Camellia Glow</div>
                         <div class="news-post-meta">Shared by Officière Y., Kyoto Boutique • Theme: Facial Care & Cross-Selling</div>
-                        <p>To celebrate spring in Kyoto, we recommend combining our gentle exfoliating <strong>Poudre de Riz</strong> with a few drops of pure <strong>Huile de Camélia du Japon (Tsubaki)</strong>. This traditional recipe smooths skin texture effortlessly. Best sales cross-selling bridge: follow with a spray of <em>Eau Superfine</em> to lock in moisture and introduce the guest to our facial plant oils universe!</p>
+                        <p>To celebrate spring in Kyoto, we recommend combining our gentle exfoliating <strong>Poudre de Riz</strong> with a few drops of pure <strong>Huile de Camélia du Japon (Tsubaki)</strong>. This traditional recipe smooths skin texture effortlessly.</p>
                     </div>
                 </div>
             </div>
@@ -1115,17 +1059,34 @@
             evt.currentTarget.classList.add("active");
         }
 
-        function downloadFile(filename, title, contentText) {
-            let fullContent = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>${title}</title><style>body{font-family:Georgia,serif;padding:40px;color:#15294a;background:#fbf8f2;max-width:800px;margin:0 auto;}h1{color:#c1272d;border-bottom:2px solid #c5a059;padding-bottom:10px;font-family:Cinzel,serif;font-size:1.6rem;}p{font-size:1.05rem;line-height:1.6;margin-top:20px;}</style></head><body><h1>${title}</h1><p>${contentText}</p><hr style="margin-top:40px;border:none;border-top:1px solid #d4c5a9;"/><p style="font-size:0.85rem;color:#777;font-style:italic;">Officine Universelle Buly 1803 — Buly&Me Intranet Master Document</p></body></html>`;
-            let blob = new Blob([fullContent], { type: 'text/html;charset=utf-8' });
+        function toggleNotifications() {
+            let dropdown = document.getElementById('notif-dropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        function switchLanguage(lang) {
+            alert("Switching intranet language to: " + lang.toUpperCase() + ". (Multilingual dictionary hook active)");
+        }
+
+        function downloadPDF(filename, title, contentText) {
+            let fullContent = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>${title}</title><style>body{font-family:Georgia,serif;padding:40px;color:#15294a;background:#fbf8f2;max-width:800px;margin:0 auto;}h1{color:#c1272d;border-bottom:2px solid #c5a059;padding-bottom:10px;font-family:Cinzel,serif;font-size:1.6rem;}p{font-size:1.05rem;line-height:1.6;margin-top:20px;}</style></head><body><h1>${title}</h1><p>${contentText}</p><hr style="margin-top:40px;border:none;border-top:1px solid #d4c5a9;"/><p style="font-size:0.85rem;color:#777;font-style:italic;">Officine Universelle Buly 1803 — Official Master PDF Document</p></body></html>`;
+            let blob = new Blob([fullContent], { type: 'application/pdf;charset=utf-8' });
             let url = URL.createObjectURL(blob);
             let a = document.createElement('a');
             a.href = url;
-            a.download = filename + ".html";
+            a.download = filename + ".pdf";
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
+        }
+
+        function submitTrainingForm(e) {
+            e.preventDefault();
+            let name = document.getElementById('train-name').value;
+            let topic = document.getElementById('train-topic').value;
+            alert("Thank you " + name + "! Your request regarding '" + topic + "' has been successfully transmitted to the HQ training department.");
+            e.target.reset();
         }
 
         function publishNews(e) {
