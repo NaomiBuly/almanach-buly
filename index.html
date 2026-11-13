@@ -134,7 +134,7 @@
             justify-content: center;
             gap: 15px;
             margin: 10px 0;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--gold);
             font-family: 'Cinzel', serif;
         }
@@ -279,7 +279,7 @@
 
         /* HOME PAGE STYLES */
         .home-hero {
-            background: linear-gradient(rgba(21, 41, 74, 0.85), rgba(21, 41, 74, 0.85)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.1"><rect width="100" height="100" fill="%23c5a059"/></svg>');
+            background: linear-gradient(rgba(21, 41, 74, 0.88), rgba(21, 41, 74, 0.88)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.1"><rect width="100" height="100" fill="%23c5a059"/></svg>');
             color: #fff;
             padding: 45px 30px;
             border-radius: 6px;
@@ -378,19 +378,19 @@
         .result-sketch-box { background: var(--parchment-dark); border: 1px solid var(--gold); border-radius: 6px; padding: 15px; text-align: center; }
         .result-sketch-title { font-family: 'Cinzel', serif; color: var(--primary); font-size: 0.9rem; margin-bottom: 10px; font-weight: bold; }
 
-        /* CATALOGUE */
-        .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 25px; }
-        .catalog-category-card { background: #fff; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden; transition: transform 0.3s ease; text-align: center; }
-        .catalog-category-card:hover { transform: translateY(-3px); }
+        /* CATALOGUE (3D RENDER STYLE SIMULATION) */
+        .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 25px; }
+        .catalog-category-card { background: #fff; border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; transition: all 0.3s ease; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+        .catalog-category-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
         .catalog-category-header { background: var(--parchment-dark); padding: 15px; border-bottom: 1px solid var(--border-color); text-align: center; }
         .catalog-category-title { font-family: 'Cinzel', serif; color: var(--buly-red); font-size: 1.15rem; font-weight: bold; }
         .catalog-category-body { padding: 20px; font-size: 0.9rem; color: #444; font-family: 'Montserrat', sans-serif; }
-        .catalog-svg-icon { width: 110px; height: 110px; margin: 0 auto 10px; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.15)); }
+        .catalog-svg-icon { width: 120px; height: 120px; margin: 0 auto 12px; filter: drop-shadow(4px 8px 12px rgba(0,0,0,0.2)); }
 
         /* FICHES PRODUITS MEMOS */
-        .product-card { background: #fff; border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; position: relative; }
+        .product-card { background: #fff; border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; position: relative; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
         .product-header { padding: 25px 20px; text-align: center; border-bottom: 1px solid var(--border-color); background: #fff; }
-        .product-svg { height: 190px; margin: 0 auto; display: block; filter: drop-shadow(3px 6px 8px rgba(0,0,0,0.1)); }
+        .product-svg { height: 190px; margin: 0 auto; display: block; filter: drop-shadow(4px 8px 12px rgba(0,0,0,0.15)); }
         .product-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; font-family: 'Montserrat', sans-serif; }
         .product-name { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--buly-red); margin-bottom: 5px; }
         .product-sub { font-style: italic; color: #666; margin-bottom: 15px; font-size: 0.9rem; }
@@ -482,12 +482,6 @@
 
         <div class="header-logo-text">Officine Universelle Buly</div>
         <div class="header-subtitle">Fondée en 1803 • Paris</div>
-        
-        <div class="header-medals">
-            <span>★ LONDRES 1901 ★</span>
-            <span>★ PARIS 1900 ★</span>
-            <span>★ ANVERS 1885 ★</span>
-        </div>
 
         <div class="header-title">Buly From Within — Internal Emporium Portal</div>
         
@@ -526,7 +520,7 @@
                 <!-- Portal Status & Utility -->
                 <div class="card-box searchable-item">
                     <h3>Emporium Status & Portal Utility</h3>
-                    <p><strong>Network Status:</strong> Fully Operational across Paris, London, Milan, Tokyo, Seoul, and our latest prestigious opening at **Rinasciente**.</p>
+                    <p><strong>Network Status:</strong> Fully Operational across Paris, London, Milan (Brera Rinasciente), Tokyo, Seoul, and worldwide emporiums.</p>
                     <p><strong>Portal Utility:</strong> Buly From Within provides real-time access to master product sheets, training schedules, grooming guidelines, and inter-boutique intelligence.</p>
                     <p><strong>Current Training Focus:</strong> Holiday Season Eaux Triples layering, festive ceremonial packaging, and Olfactory Certification quizzes.</p>
                 </div>
@@ -961,7 +955,7 @@
             </div>
         </section>
 
-        <!-- 5. LEADERS & WORLDWIDE BOUTIQUES -->
+        <!-- 5. LEADERS & WORLDWIDE NETWORK -->
         <section id="dirigeants" class="tab-content searchable-section">
             <div class="page-toc">
                 <span>Summary:</span>
@@ -1002,40 +996,72 @@
                         <div class="boutique-city">Paris — Bonaparte</div>
                         <div class="boutique-director">Director: Nicolas Hénault</div>
                         <div class="boutique-emblem">🌹 Emblem: Damask Rose</div>
+                        <p style="font-size:0.82rem; color:#666; margin-top:4px;">6 rue Bonaparte, 75006 Paris</p>
                     </div>
                     <div class="boutique-card">
                         <div class="boutique-city">Paris — Saintonge</div>
                         <div class="boutique-director">Director: Caroline George</div>
                         <div class="boutique-emblem">☕ Emblem: Grand Café Tortoni</div>
+                        <p style="font-size:0.82rem; color:#666; margin-top:4px;">45 rue de Saintonge, 75003 Paris</p>
                     </div>
                     <div class="boutique-card">
-                        <div class="boutique-city">Paris — Richelieu</div>
-                        <div class="boutique-director">Director: Anne Flammand</div>
-                        <div class="boutique-emblem">🪔 Emblem: Myrrh of Erythrea</div>
+                        <div class="boutique-city">Paris — Vieille du Temple</div>
+                        <div class="boutique-director">Director: Johanna Diaby</div>
+                        <div class="boutique-emblem">🌿 Emblem: Lichen of Scotland</div>
                     </div>
                     <div class="boutique-card">
                         <div class="boutique-city">Paris — Le Bon Marché</div>
                         <div class="boutique-director">Director: Ivone Desclozeaux</div>
                         <div class="boutique-emblem">✨ Emblem: Peruvian Heliotrope</div>
                     </div>
-                </div>
-
-                <div class="boutique-region-title">🇪🇺 Europe & International</div>
-                <div class="boutique-grid">
                     <div class="boutique-card">
-                        <div class="boutique-city">Milan (Rinasciente)</div>
-                        <div class="boutique-director">Director: Rahma Hafsi<br>Deputy Director: Caterina Marchetti</div>
-                        <div class="boutique-emblem">🍊 Emblem: Italian Bergamot</div>
+                        <div class="boutique-city">Paris — Galeries Lafayette</div>
+                        <div class="boutique-director">Director: Marie-Hélène Renard</div>
+                        <div class="boutique-emblem">🌺 Emblem: Tuberose of Mexico</div>
                     </div>
                     <div class="boutique-card">
-                        <div class="boutique-city">London — Mount St</div>
+                        <div class="boutique-city">Paris — Richelieu</div>
+                        <div class="boutique-director">Director: Anne Flammand</div>
+                        <div class="boutique-emblem">🪔 Emblem: Myrrh of Erythrea</div>
+                        <p style="font-size:0.82rem; color:#666; margin-top:4px;">29 rue de Richelieu, 75001 Paris</p>
+                    </div>
+                </div>
+
+                <div class="boutique-region-title">🇪🇺 Europe</div>
+                <div class="boutique-grid">
+                    <div class="boutique-card">
+                        <div class="boutique-city">Milan — Brera (Rinasciente)</div>
+                        <div class="boutique-director">Director: Rahma Hafsi<br>Deputy Director: Caterina Marchetti</div>
+                        <div class="boutique-emblem">🍊 Emblem: Bergamot of Calabria</div>
+                    </div>
+                    <div class="boutique-card">
+                        <div class="boutique-city">Londres — Mount St</div>
                         <div class="boutique-director">Director: David Jareno</div>
                         <div class="boutique-emblem">👑 Emblem: Amber of Madagascar</div>
                     </div>
                     <div class="boutique-card">
-                        <div class="boutique-city">Tokyo & Kyoto (Japan)</div>
+                        <div class="boutique-city">Munich</div>
+                        <div class="boutique-director">Director: Driton Islami</div>
+                        <div class="boutique-emblem">🌲 Emblem: Bavarian Forest Pine</div>
+                    </div>
+                </div>
+
+                <div class="boutique-region-title">🌏 Asia & International</div>
+                <div class="boutique-grid">
+                    <div class="boutique-card">
+                        <div class="boutique-city">Hong Kong</div>
+                        <div class="boutique-director">Director: Vanessa Lo</div>
+                        <div class="boutique-emblem">🪷 Emblem: White Iris</div>
+                    </div>
+                    <div class="boutique-card">
+                        <div class="boutique-city">Japon (Tokyo, Kyoto, Osaka, Kobe, Fukuoka)</div>
                         <div class="boutique-director">Regional Director: Japanese Network</div>
                         <div class="boutique-emblem">🪵 Emblem: Kiso Hinoki Wood</div>
+                    </div>
+                    <div class="boutique-card">
+                        <div class="boutique-city">Corée du Sud (Séoul Shinsegae, Daegu, Busan)</div>
+                        <div class="boutique-director">Regional Director: Korean Network</div>
+                        <div class="boutique-emblem">🌾 Emblem: Wild Camellia</div>
                     </div>
                 </div>
             </div>
@@ -1199,14 +1225,19 @@
 
         function filterIntranet() {
             let query = document.getElementById('global-search').value.toLowerCase();
-            let items = document.querySelectorAll('.searchable-item');
-            items.forEach(item => {
-                let text = item.innerText.toLowerCase();
-                if (text.includes(query) || query === '') {
-                    item.style.display = '';
-                } else {
-                    item.style.display = 'none';
-                }
+            let sections = document.querySelectorAll('.searchable-section');
+            sections.forEach(sec => {
+                let items = sec.querySelectorAll('.searchable-item');
+                let hasMatch = false;
+                items.forEach(item => {
+                    let text = item.innerText.toLowerCase();
+                    if (text.includes(query) || query === '') {
+                        item.style.display = '';
+                        hasMatch = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
             });
         }
 
@@ -1222,7 +1253,6 @@
 
             let chatMessages = document.getElementById('chat-messages');
             
-            // User message
             let userDiv = document.createElement('div');
             userDiv.className = 'chat-msg user';
             userDiv.innerText = text;
@@ -1231,7 +1261,6 @@
             inputField.value = '';
             chatMessages.scrollTop = chatMessages.scrollHeight;
 
-            // Bot response simulation
             setTimeout(() => {
                 let botDiv = document.createElement('div');
                 botDiv.className = 'chat-msg bot';
